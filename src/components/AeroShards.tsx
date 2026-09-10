@@ -290,7 +290,7 @@ const mixColor = (from: Color, to: Color, amount: number): Color => [
   1
 ];
 
-const SHARD_SHADER = \`
+const SHARD_SHADER = `
 struct ViewParams {
   viewport: vec4f,
   shape: vec4f,
@@ -567,9 +567,9 @@ fn pointerField(delta: vec2f, radius: f32, flow: vec2f, depth: f32) -> vec2f {
 }
 
 fn rippleWave(age: f32) -> f32 {
-  if (age <= 0.0 || age >= \${RIPPLE_TAIL}) { return 0.0; }
+  if (age <= 0.0 || age >= ${RIPPLE_TAIL}) { return 0.0; }
   let attack = smoothstep(0.0, 0.14, age);
-  let release = 1.0 - smoothstep(1.4, \${RIPPLE_TAIL}, age);
+  let release = 1.0 - smoothstep(1.4, ${RIPPLE_TAIL}, age);
   return sin(age * 10.0) * exp(-age * 3.2) * attack * release;
 }
 
@@ -578,7 +578,7 @@ fn rippleDisplacement(position: vec3f, pulse: vec4f) -> vec4f {
   let perspective = 1.0 / max(0.62, 1.0 - position.z * 0.34);
   let delta = (position.xy * perspective - pulse.xy) * view.viewport.z;
   let distance = sqrt(dot(delta, delta) + 0.0016) - 0.04;
-  let wave = rippleWave(pulse.z - distance / \${RIPPLE_SPEED}) * pulse.w;
+  let wave = rippleWave(pulse.z - distance / ${RIPPLE_SPEED}) * pulse.w;
   let radial = delta / (distance + 0.12);
   return vec4f(radial * wave * 0.28, wave * 0.12, abs(wave));
 }
@@ -843,9 +843,9 @@ fn fs_main(in: VertexOut) -> @location(0) vec4f {
   let coveredAlpha = in.baseAlpha.a * coverage;
   return vec4f(mapped * coveredAlpha, coveredAlpha);
 }
-\`;
+`;
 
-const BLOOM_SHADER = \`
+const BLOOM_SHADER = `
 struct PostParams {
   viewport: vec4f,
   bloomInfo: vec4f,
@@ -880,9 +880,9 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   glow += visibleResidual(uv + vec2f(-offset.x, offset.y));
   return glow * 0.25;
 }
-\`;
+`;
 
-const BLOOM_BLUR_SHADER = \`
+const BLOOM_BLUR_SHADER = `
 struct BlurParams {
   direction: vec4f,
 }
@@ -902,7 +902,7 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   color += textureSampleLevel(bloomTexture, linearSampler, uv - farOffset, 0.0) * 0.0702702703;
   return color;
 }
-\`;
+`;
 
 // Compact 5×7 glyphs keep ASCII self-contained: no font downloads, canvas atlas, or readbacks.
 // Space, punctuation, directional strokes, and dense glyphs cover the six shape samples.
@@ -957,7 +957,7 @@ for (let sample = 0; sample < 6; sample += 1) {
   for (const shape of ASCII_SHAPES) shape[sample] /= Math.max(peak, 0.001);
 }
 
-const STYLE_COMMON = \`
+const STYLE_COMMON = `
 struct StyleParams {
   viewport: vec4f,
   background: vec4f,
@@ -975,10 +975,10 @@ fn inkLevel(color: vec3f) -> f32 {
   // Measure contrast against the chosen background, not black: white stays empty too.
   return clamp(dot(abs(color - style.background.rgb), vec3f(0.2126, 0.7152, 0.0722)) * 2.4, 0.0, 1.0);
 }
-\`;
+`;
 
-const ASCII_CELL_SHADER = \`\${STYLE_COMMON}
-const INNER = array<vec2f, 6>(\${ASCII_SAMPLES.map(point => \`vec2f(\${point.join(', ')})\`).join(', ')});
+const ASCII_CELL_SHADER = `${STYLE_COMMON}
+const INNER = array<vec2f, 6>(${ASCII_SAMPLES.map(point => `vec2f(${point.join(', ')})`).join(', ')});
 const OUTER = array<vec2f, 10>(
   vec2f(0.28, -0.2), vec2f(0.72, -0.2), vec2f(-0.22, 0.25), vec2f(1.22, 0.25),
   vec2f(-0.22, 0.5), vec2f(1.22, 0.5), vec2f(-0.22, 0.75), vec2f(1.22, 0.75),
@@ -986,9 +986,9 @@ const OUTER = array<vec2f, 10>(
 );
 const RING = array<vec2f, 6>(vec2f(1.0, 0.0), vec2f(0.5, 0.8660254), vec2f(-0.5, 0.8660254),
   vec2f(-1.0, 0.0), vec2f(-0.5, -0.8660254), vec2f(0.5, -0.8660254));
-const SHAPES = array<vec3f, \${ASCII_GLYPHS.length * 2}>(
-  \${ASCII_SHAPES.flatMap(shape => [shape.slice(0, 3), shape.slice(3)])
-    .map(part => \`vec3f(\${part.map(value => value.toFixed(6)).join(', ')})\`)
+const SHAPES = array<vec3f, ${ASCII_GLYPHS.length * 2}>(
+  ${ASCII_SHAPES.flatMap(shape => [shape.slice(0, 3), shape.slice(3)])
+    .map(part => `vec3f(${part.map(value => value.toFixed(6)).join(', ')})`)
     .join(',\\n  ')}
 );
 fn edgeContrast(value: f32, outside: f32) -> f32 {
@@ -1030,7 +1030,7 @@ fn fs_main(@builtin(position) pixel: vec4f) -> @location(0) vec4f {
   let shapeB = b * sqrt(b * gain) * gain;
   var best = 0u;
   var bestDistance = 100.0;
-  for (var glyph = 0u; glyph < \${ASCII_GLYPHS.length}u; glyph++) {
+  for (var glyph = 0u; glyph < ${ASCII_GLYPHS.length}u; glyph++) {
     let da = shapeA - SHAPES[glyph * 2u];
     let db = shapeB - SHAPES[glyph * 2u + 1u];
     let distance = dot(da, da) + dot(db, db);
@@ -1040,12 +1040,12 @@ fn fs_main(@builtin(position) pixel: vec4f) -> @location(0) vec4f {
   let ink = style.background.rgb + (colorSum / weightSum - style.background.rgb) * 2.2;
   return vec4f(clamp(ink, vec3f(0.0), vec3f(1.0)), f32(best) / 255.0);
 }
-\`;
+`;
 
-const STYLE_SHADER = \`\${STYLE_COMMON}
+const STYLE_SHADER = `${STYLE_COMMON}
 @group(0) @binding(3) var asciiCells: texture_2d<f32>;
-const GLYPHS = array<vec2u, \${ASCII_GLYPHS.length}>(
-  \${ASCII_GLYPHS.map(rows => \`vec2u(\${rows.slice(0, 4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u, \${rows.slice(4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u)\`).join(',\\n  ')}
+const GLYPHS = array<vec2u, ${ASCII_GLYPHS.length}>(
+  ${ASCII_GLYPHS.map(rows => `vec2u(${rows.slice(0, 4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u, ${rows.slice(4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u)`).join(',\\n  ')}
 );
 // A centered Bayer screen distributes quantization error across a stable 4×4 grid.
 const THRESHOLDS = array<f32, 16>(
@@ -1075,7 +1075,7 @@ fn fs_main(@builtin(position) pixel: vec4f) -> @location(0) vec4f {
     return vec4f(orderedDither(color, style.background.rgb, THRESHOLDS[index]), 1.0);
   }
   let info = textureLoad(asciiCells, clamp(cell, vec2i(0), vec2i(textureDimensions(asciiCells)) - 1), 0);
-  let glyph = min(u32(round(info.a * 255.0)), \${ASCII_GLYPHS.length - 1}u);
+  let glyph = min(u32(round(info.a * 255.0)), ${ASCII_GLYPHS.length - 1}u);
   // Integrate the compact glyph over each display pixel; keep subpixel strokes visible.
   let local = fract(cellPosition) * vec2f(6.0, 10.0) - vec2f(0.5, 1.5);
   let footprint = vec2f(6.0, 10.0) / style.viewport.zw;
@@ -1093,9 +1093,9 @@ fn fs_main(@builtin(position) pixel: vec4f) -> @location(0) vec4f {
   coverage /= footprint.x * footprint.y;
   return vec4f(mix(style.background.rgb, info.rgb, clamp(coverage, 0.0, 1.0)), 1.0);
 }
-\`;
+`;
 
-const FINISH_SHADER = \`
+const FINISH_SHADER = `
 struct PostParams {
   viewport: vec4f,
   bloomInfo: vec4f,
@@ -1155,7 +1155,7 @@ fn fs_main(@location(0) uv: vec2f, @builtin(position) pixel: vec4f) -> @location
 
   return vec4f(clamp(background + foreground, vec3f(0.0), vec3f(1.0)), 1.0);
 }
-\`;
+`;
 
 const parseColor = (value: string, fallback: string): Color => {
   const match = /^#?([\\da-f]{2})([\\da-f]{2})([\\da-f]{2})$/i.exec(value);
@@ -2133,14 +2133,14 @@ export default function AeroShards({
   return (
     <div
       ref={rootRef}
-      className={\`pointer-events-none relative isolate h-full w-full overflow-hidden \${className}\`}
+      className={`pointer-events-none relative isolate h-full w-full overflow-hidden ${className}`}
       data-ready={ready}
       style={{ backgroundColor }}
       aria-hidden="true"
     >
       <canvas
         ref={canvasRef}
-        className={\`pointer-events-none absolute inset-0 block h-full w-full transition-opacity duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none \${ready ? 'opacity-100' : 'opacity-0'}\`}
+        className={`pointer-events-none absolute inset-0 block h-full w-full transition-opacity duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${ready ? 'opacity-100' : 'opacity-0'}`}
       />
     </div>
   );
