@@ -44,13 +44,13 @@ export default function SudokuMenu() {
               key={puzzle.id}
               className="block group"
             >
-              <div className="bg-white/10 hover:bg-white/20 transition-all duration-300 p-5 rounded-2xl border border-white/10 hover:border-pink-300/50 backdrop-blur-md shadow-lg transform hover:-translate-y-1">
+              <div className="bg-black/40 hover:bg-black/60 transition-all duration-300 p-5 rounded-2xl border border-white/10 hover:border-pink-400/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,0,0,0.5)] transform hover:-translate-y-1">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h2 className="text-xl font-bold text-pink-50 group-hover:text-white">
+                    <h2 className="text-xl font-bold text-white group-hover:text-pink-100 drop-shadow-md">
                       {puzzle.name}
                     </h2>
-                    <span className="text-sm font-semibold text-pink-300/80 uppercase tracking-wider mt-1 block">
+                    <span className="text-sm font-bold text-pink-300 uppercase tracking-wider mt-1 block drop-shadow-sm">
                       {puzzle.difficulty}
                     </span>
                   </div>

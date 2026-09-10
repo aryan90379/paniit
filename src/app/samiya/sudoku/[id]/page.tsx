@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { puzzles } from '@/lib/sudokuData';
 import SudokuGame from '@/components/SudokuGame';
+import '@/components/SudokuGame.css';
 
 export default async function SudokuPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
