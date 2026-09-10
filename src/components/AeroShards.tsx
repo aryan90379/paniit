@@ -1158,8 +1158,8 @@ fn fs_main(@location(0) uv: vec2f, @builtin(position) pixel: vec4f) -> @location
 `;
 
 const parseColor = (value: string, fallback: string): Color => {
-  const match = /^#?([\\da-f]{2})([\\da-f]{2})([\\da-f]{2})$/i.exec(value);
-  const source = match || /^#?([\\da-f]{2})([\\da-f]{2})([\\da-f]{2})$/i.exec(fallback)!;
+  const match = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(value);
+  const source = match || /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(fallback)!;
   return [parseInt(source[1], 16) / 255, parseInt(source[2], 16) / 255, parseInt(source[3], 16) / 255, 1];
 };
 
