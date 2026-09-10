@@ -364,3 +364,8 @@
     width: 3px;
   }
 }
+
+.game-input.wrong-text {
+  color: #e53935;
+  background-color: #ffcdd2;
+}

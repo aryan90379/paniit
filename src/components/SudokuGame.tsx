@@ -94,65 +94,53 @@ const Time = ({ isSolved }: { isSolved: boolean }) => {
 export default function SudokuGame({ puzzle }: SudokuGameProps) {
   const router = useRouter();
   
-  // Transform initialGrid to flat array format for neumorphic UI compatibility
-  const initialFlat = puzzle.initialGrid.flat();
-  const [puzzleObj, setPuzzleObj] = useState(
-    initialFlat.map((item, id) => {
-      return {
-        id,
-        value: item !== null ? String(item) : "",
-        isPreFilled: item !== null
-      };
-    })
-  );
+  const [puzzleObj, setPuzzleObj] = useState<{ id: number, value: string, isPreFilled: boolean }[]>([]);
+  const [solutionGrid, setSolutionGrid] = useState<number[][]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [selectedInput, setSelectedInput] = useState<number | null>(null);
   const [selectedRow, setSelectedRow] = useState(0);
   const [selectedCol, setSelectedCol] = useState(0);
   const [isSolved, setIsSolved] = useState(false);
 
+  useEffect(() => {
+    setIsLoading(true);
+    // Generate on client so it's fresh every time
+    import('@/lib/sudokuGenerator').then(({ generatePuzzle }) => {
+      const { initialGrid, solutionGrid } = generatePuzzle(puzzle.difficulty);
+      setSolutionGrid(solutionGrid);
+      const initialFlat = initialGrid.flat();
+      setPuzzleObj(
+        initialFlat.map((item, id) => {
+          return {
+            id,
+            value: item !== null ? String(item) : "",
+            isPreFilled: item !== null
+          };
+        })
+      );
+      setIsLoading(false);
+      setIsSolved(false);
+      setSelectedInput(null);
+      setSelectedRow(0);
+      setSelectedCol(0);
+    });
+  }, [puzzle.id, puzzle.difficulty]);
+
   const checkWin = useCallback((currentGrid: typeof puzzleObj) => {
-    // Check if fully filled
     if (currentGrid.some(cell => cell.value === "")) return false;
-
-    // Convert back to 9x9 for easy validation
-    const grid2D: string[][] = Array.from({ length: 9 }, () => Array(9).fill(""));
     for (let i = 0; i < 81; i++) {
-      grid2D[Math.floor(i / 9)][i % 9] = currentGrid[i].value;
-    }
-
-    // Check rows and columns
-    for (let i = 0; i < 9; i++) {
-      const rowSet = new Set();
-      const colSet = new Set();
-      for (let j = 0; j < 9; j++) {
-        const rowVal = grid2D[i][j];
-        const colVal = grid2D[j][i];
-        if (rowSet.has(rowVal) || colSet.has(colVal)) return false;
-        rowSet.add(rowVal);
-        colSet.add(colVal);
+      const row = Math.floor(i / 9);
+      const col = i % 9;
+      if (currentGrid[i].value !== String(solutionGrid[row][col])) {
+        return false;
       }
     }
-
-    // Check 3x3 boxes
-    for (let boxRow = 0; boxRow < 3; boxRow++) {
-      for (let boxCol = 0; boxCol < 3; boxCol++) {
-        const boxSet = new Set();
-        for (let r = 0; r < 3; r++) {
-          for (let c = 0; c < 3; c++) {
-            const val = grid2D[boxRow * 3 + r][boxCol * 3 + c];
-            if (boxSet.has(val)) return false;
-            boxSet.add(val);
-          }
-        }
-      }
-    }
-    
     return true;
-  }, []);
+  }, [solutionGrid]);
 
   const onHandleChange = useCallback((value: string, clearValue: boolean = false) => {
-    if (isSolved) return;
+    if (isSolved || selectedInput === null) return;
     const isValueValid = (/^\d+$/.test(value) && value !== "0") || clearValue;
 
     setPuzzleObj((prevItems) => {
@@ -168,6 +156,13 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
       
       if (checkWin(newItems)) {
         setIsSolved(true);
+        if (typeof window !== 'undefined' && (window as any).confetti) {
+          (window as any).confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
       }
       return newItems;
     });
@@ -182,7 +177,15 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
     }
   };
 
-  // Keyboard support
+  const onHint = () => {
+    if (selectedInput !== null && !isSolved) {
+      const r = Math.floor(selectedInput / 9);
+      const c = selectedInput % 9;
+      const correctVal = String(solutionGrid[r][c]);
+      onHandleChange(correctVal);
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key >= '1' && e.key <= '9') {
@@ -195,8 +198,19 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onHandleChange]);
 
+  if (isLoading) {
+    return (
+      <div className="neumorphic-wrapper flex-center" style={{ minHeight: '100vh', flexDirection: 'column' }}>
+        <h2 style={{ color: 'var(--text-color)', marginBottom: '20px' }}>Generating Puzzle...</h2>
+        <div style={{ width: '50px', height: '50px', border: '5px solid #c9cde7', borderTop: '5px solid #777d9c', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+        <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
+
   return (
     <div className="neumorphic-wrapper">
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
       <style>{`
         @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
         @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
@@ -206,6 +220,26 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
         {/* Header */}
         <header className="d-flex align-items-center">
           <IconButton icon="keyboard_backspace" onClick={() => router.push('/samiya/sudoku')} />
+          <div className="ml-auto">
+            <IconButton icon="refresh" onClick={() => {
+              setIsLoading(true);
+              import('@/lib/sudokuGenerator').then(({ generatePuzzle }) => {
+                const { initialGrid, solutionGrid } = generatePuzzle(puzzle.difficulty);
+                setSolutionGrid(solutionGrid);
+                const initialFlat = initialGrid.flat();
+                setPuzzleObj(
+                  initialFlat.map((item, id) => {
+                    return { id, value: item !== null ? String(item) : "", isPreFilled: item !== null };
+                  })
+                );
+                setIsLoading(false);
+                setIsSolved(false);
+                setSelectedInput(null);
+                setSelectedRow(0);
+                setSelectedCol(0);
+              });
+            }} />
+          </div>
         </header>
 
         {/* Sub Header */}
@@ -231,13 +265,17 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
             className={`game-wrapper select-row-${selectedRow} select-col-${selectedCol}`}
           >
             {puzzleObj.map(({ value, isPreFilled }, index) => {
+              const row = Math.floor(index / 9);
+              const col = index % 9;
+              const isWrong = !isSolved && value !== "" && value !== String(solutionGrid[row][col]);
+              
               return (
                 <input
                   key={index}
                   value={value}
                   readOnly={isPreFilled}
                   tabIndex={isPreFilled ? -1 : 0}
-                  className={`game-input ${isPreFilled ? "prefilled-text" : ""}`}
+                  className={`game-input ${isPreFilled ? "prefilled-text" : ""} ${isWrong ? "wrong-text" : ""}`}
                   type="text"
                   maxLength={1}
                   name={`game-input-${index}`}
@@ -246,9 +284,7 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
                     onHandleFocus(isPreFilled, index);
                   }}
                   onBlur={() => {
-                    // Slight delay to allow clicks on numpad before losing selection styling
                     setTimeout(() => {
-                      // Only clear if active element is not an input
                       if (document.activeElement?.tagName !== 'INPUT') {
                         setSelectedRow(0);
                         setSelectedCol(0);
@@ -263,8 +299,11 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
         </div>
 
         {/* Actions */}
-        <div className="actions d-flex align-items-center justify-content-end">
-          <Time isSolved={isSolved} />
+        <div className="actions d-flex align-items-center">
+          <IconButton icon="lightbulb" onClick={onHint} isRound />
+          <div className="ml-auto">
+            <Time isSolved={isSolved} />
+          </div>
         </div>
 
         {/* Numpad */}
