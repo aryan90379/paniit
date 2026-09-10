@@ -61,6 +61,7 @@
 .d-flex { display: flex; }
 .align-items-center { align-items: center; }
 .flex-center { display: flex; align-items: center; justify-content: center; }
+.justify-content-end { justify-content: flex-end; }
 .ml-auto { margin-left: auto; }
 .ml-15 { margin-left: 15px; }
 .mt-20 { margin-top: 20px; }

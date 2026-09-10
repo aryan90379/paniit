@@ -206,15 +206,6 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
         {/* Header */}
         <header className="d-flex align-items-center">
           <IconButton icon="keyboard_backspace" onClick={() => router.push('/samiya/sudoku')} />
-          <div className="ml-auto">
-            <IconButton icon="palette" />
-          </div>
-          <div className="ml-15">
-            <IconButton icon="help_outline" />
-          </div>
-          <div className="ml-15">
-            <IconButton icon="settings" />
-          </div>
         </header>
 
         {/* Sub Header */}
@@ -272,17 +263,8 @@ export default function SudokuGame({ puzzle }: SudokuGameProps) {
         </div>
 
         {/* Actions */}
-        <div className="actions d-flex align-items-center">
-          <IconButton icon="undo" isRound />
-          <div className="ml-15">
-            <IconButton icon="edit" isRound />
-          </div>
-          <div className="ml-15">
-            <IconButton icon="lightbulb" isRound />
-          </div>
-          <div className="ml-auto">
-            <Time isSolved={isSolved} />
-          </div>
+        <div className="actions d-flex align-items-center justify-content-end">
+          <Time isSolved={isSolved} />
         </div>
 
         {/* Numpad */}

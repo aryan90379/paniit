@@ -56,7 +56,7 @@ export const puzzles: SudokuPuzzle[] = [
   },
   {
     id: "4",
-    name: "Date Night",
+    name: "Night Owl",
     difficulty: "Expert",
     initialGrid: [
       [null, null, 5, 3, null, null, null, null, null],
