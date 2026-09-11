@@ -1,64 +1,119 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ChromaGrid from '../ChromaGrid';
+import ChromaGrid, { ChromaItem } from '../ChromaGrid';
 
-const FEATURED_GUESTS = [
+const SPEAKER_ITEMS: ChromaItem[] = [
   {
-    name: "Sri Nara Chandrababu Naidu",
-    title: "Hon'ble Chief Minister",
-    org: "Andhra Pradesh",
-    role: "Chief Guest"
+    image: 'https://i.pravatar.cc/300?img=68',
+    title: 'Sri Nara Chandrababu Naidu',
+    subtitle: "Hon'ble Chief Minister",
+    location: 'Andhra Pradesh',
+    borderColor: '#1e3a8a',
+    gradient: 'linear-gradient(145deg, #1e3a8a1a, #0a0a0a)',
   },
   {
-    name: "Sri Nara Lokesh",
-    title: "Hon'ble Minister",
-    org: "Govt. of Andhra Pradesh",
-    role: "Guest of Honour"
+    image: 'https://i.pravatar.cc/300?img=12',
+    title: 'Sri Nara Lokesh',
+    subtitle: "Hon'ble Minister",
+    location: 'Govt. of Andhra Pradesh',
+    borderColor: '#dc2626',
+    gradient: 'linear-gradient(180deg, #dc26261a, #0a0a0a)',
   },
   {
-    name: "Sri Kinjarapu Rammohan Naidu",
-    title: "Hon'ble Minister",
-    org: "Govt. of India",
-    role: "Guest of Honour"
+    image: 'https://i.pravatar.cc/300?img=33',
+    title: 'Sri Kinjarapu Rammohan Naidu',
+    subtitle: "Hon'ble Minister",
+    location: 'Govt. of India',
+    borderColor: '#3b82f6',
+    gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)',
   },
   {
-    name: "Sri Ajai Chowdhry",
-    title: "Co-Founder",
-    org: "HCL",
-    role: "Featured Guest"
+    image: 'https://i.pravatar.cc/300?img=47',
+    title: 'Dr. Pemmasani Chandra Sekhar',
+    subtitle: "Hon'ble Minister of State",
+    location: 'Govt. of India',
+    borderColor: '#ef4444',
+    gradient: 'linear-gradient(135deg, #ef44441a, #0a0a0a)',
   },
   {
-    name: "Sri Sunil Kumar Barnwal",
-    title: "Principal Secretary",
-    org: "Higher Education",
-    role: "Featured Guest"
-  }
+    image: 'https://i.pravatar.cc/300?img=50',
+    title: 'Sundar Pichai',
+    subtitle: 'CEO',
+    handle: 'Alphabet & Google',
+    borderColor: '#1e3a8a',
+    gradient: 'linear-gradient(165deg, #1e3a8a1a, #0a0a0a)',
+  },
+  {
+    image: 'https://i.pravatar.cc/300?img=60',
+    title: 'Satya Nadella',
+    subtitle: 'Chairman & CEO',
+    handle: 'Microsoft',
+    borderColor: '#dc2626',
+    gradient: 'linear-gradient(195deg, #dc26261a, #0a0a0a)',
+  },
+  {
+    image: 'https://i.pravatar.cc/300?img=15',
+    title: 'Shantanu Narayen',
+    subtitle: 'Chair & CEO',
+    handle: 'Adobe',
+    borderColor: '#3b82f6',
+    gradient: 'linear-gradient(145deg, #3b82f61a, #0a0a0a)',
+  },
+  {
+    image: 'https://i.pravatar.cc/300?img=5',
+    title: 'Arvind Krishna',
+    subtitle: 'Chairman & CEO',
+    handle: 'IBM',
+    borderColor: '#ef4444',
+    gradient: 'linear-gradient(225deg, #ef44441a, #0a0a0a)',
+  },
+  {
+    image: 'https://i.pravatar.cc/300?img=20',
+    title: 'N. R. Narayana Murthy',
+    subtitle: 'Founder',
+    handle: 'Infosys',
+    borderColor: '#1e3a8a',
+    gradient: 'linear-gradient(135deg, #1e3a8a1a, #0a0a0a)',
+  },
+  {
+    image: 'https://i.pravatar.cc/300?img=31',
+    title: 'Nandan Nilekani',
+    subtitle: 'Co-founder',
+    handle: 'Infosys',
+    borderColor: '#dc2626',
+    gradient: 'linear-gradient(165deg, #dc26261a, #0a0a0a)',
+  },
+  {
+    image: 'https://i.pravatar.cc/300?img=40',
+    title: 'Vinod Khosla',
+    subtitle: 'Founder',
+    handle: 'Khosla Ventures',
+    borderColor: '#3b82f6',
+    gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)',
+  },
+  {
+    image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0OCIgZmlsbD0iIzQ0NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPis8L3RleHQ+PC9zdmc+',
+    title: 'Many More Leaders',
+    subtitle: 'Global Innovators',
+    handle: '& Policymakers',
+    borderColor: '#ef4444',
+    gradient: 'linear-gradient(180deg, #ef44441a, #0a0a0a)',
+  },
 ];
-
-const SPEAKER_ITEMS = Array.from({ length: 11 }).map((_, i) => ({
-  image: `https://i.pravatar.cc/300?img=${(i % 70) + 1}`,
-  title: `Speaker Name ${i + 1}`,
-  subtitle: "Eminent Leader / IIT Director",
-  handle: "Industry / Academia",
-  borderColor: ["#1e3a8a", "#dc2626", "#3b82f6", "#ef4444"][i % 4],
-  gradient: `linear-gradient(${120 + i * 15}deg, ${["#1e3a8a1a", "#dc26261a", "#3b82f61a", "#ef44441a"][i % 4]}, #000)`,
-}));
-
-// Add the "+ Many More" card
-SPEAKER_ITEMS.push({
-  image: `https://ui-avatars.com/api/?name=%2B&background=111&color=fff&size=300`,
-  title: "Many More",
-  subtitle: "To be announced",
-  handle: "Stay tuned",
-  borderColor: "#ffffff",
-  gradient: "linear-gradient(145deg, #ffffff1a, #000)",
-});
 
 export default function Speakers() {
   return (
-    <section id="speakers" className="py-24 bg-[#050505] relative border-t border-white/5 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="speakers" className="py-24 bg-[#0a0a0a] relative ">
+      
+      {/* Convex curve bulging upwards into the previous white section */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-[calc(100%-2px)] z-10 pointer-events-none rotate-180">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px] md:h-[80px]">
+          <path d="M0,0 C600,120 1200,0 1200,0 L1200,0 L0,0 Z" className="fill-[#0a0a0a]"></path>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-20">
         
         <div className="text-center mb-16">
           <motion.h2 
@@ -80,45 +135,20 @@ export default function Speakers() {
           </motion.p>
         </div>
 
-        {/* Featured Guests */}
-        <div className="flex flex-wrap justify-center gap-6 mb-20">
-          {FEATURED_GUESTS.map((guest, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`flex flex-col items-center text-center p-6 rounded-2xl bg-white/[0.02] border ${i === 0 ? 'border-blue-500/50 shadow-[0_0_30px_rgba(37,99,235,0.15)] bg-blue-900/10' : 'border-white/10'} w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]`}
-            >
-              <div className="text-xs font-bold uppercase tracking-widest text-red-400 mb-6">
-                {guest.role}
-              </div>
-              <div className="w-32 h-32 rounded-full bg-gray-800 border-4 border-gray-700 mb-6 overflow-hidden relative group">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-xs text-center p-2">
-                  [TBD Photo]
-                </div>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-1">{guest.name}</h3>
-              <p className="text-gray-300 font-medium">{guest.title}</p>
-              <p className="text-gray-500 text-sm">{guest.org}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* ChromaGrid for Speakers */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="w-full"
         >
+          {/* Note: The Tailwind ChromaGrid component natively handles responsiveness */}
           <ChromaGrid 
             items={SPEAKER_ITEMS}
             radius={400}
             damping={0.45}
             fadeOut={0.6}
             ease="power3.out"
-            columns={4}
           />
         </motion.div>
 

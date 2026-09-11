@@ -3,12 +3,16 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
 import AeroShards from '../AeroShards';
+import WebThreads from '../WebThreads';
 
 export default function Hero() {
   return (
     <section className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
-      {/* Background with AeroShards */}
+      {/* Background with WebThreads (or AeroShards) */}
       <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
+        
+        {/* Previous AeroShards implementation kept in stasis for quick switching */}
+        {/*
         <AeroShards
           backgroundColor="#0a0a0a"
           shardColor="#1e3a8a" // PanIIT Navy Blue
@@ -39,6 +43,32 @@ export default function Hero() {
           rippleIntensity={1}
           holdToGather={true}
         />
+        */}
+
+        <WebThreads
+          color1="#1e3a8a" // PanIIT Navy Blue
+          color2="#dc2626" // PanIIT Red
+          color3="#FFFFFF"
+          speed={0.2}
+          threadCount={6}
+          frequency={5}
+          spread={0.18}
+          taper={1}
+          position={0.5}
+          fanMode="center"
+          glow={0.02}
+          falloff={0.6}
+          thickness={1.1}
+          brightness={0.8}
+          opacity={1}
+          mirror={true}
+          shimmer={false}
+          grain={true}
+          grainIntensity={0.05}
+          mouseInteraction={true}
+          mouseStrength={0.3}
+        />
+        
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-transparent to-[#0a0a0a] z-10 pointer-events-none" />
       </div>
 
