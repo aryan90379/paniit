@@ -5,7 +5,7 @@ import ChromaGrid, { ChromaItem } from '../ChromaGrid';
 
 const SPEAKER_ITEMS: ChromaItem[] = [
   {
-    image: 'https://i.pravatar.cc/300?img=68',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Sri Nara Chandrababu Naidu',
     subtitle: "Hon'ble Chief Minister",
     location: 'Andhra Pradesh',
@@ -13,7 +13,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(145deg, #1e3a8a1a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=12',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Sri Nara Lokesh',
     subtitle: "Hon'ble Minister",
     location: 'Govt. of Andhra Pradesh',
@@ -21,7 +21,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(180deg, #dc26261a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=33',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Sri Kinjarapu Rammohan Naidu',
     subtitle: "Hon'ble Minister",
     location: 'Govt. of India',
@@ -29,7 +29,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=47',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Dr. Pemmasani Chandra Sekhar',
     subtitle: "Hon'ble Minister of State",
     location: 'Govt. of India',
@@ -37,7 +37,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(135deg, #ef44441a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=50',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Sundar Pichai',
     subtitle: 'CEO',
     handle: 'Alphabet & Google',
@@ -45,7 +45,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(165deg, #1e3a8a1a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=60',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Satya Nadella',
     subtitle: 'Chairman & CEO',
     handle: 'Microsoft',
@@ -53,7 +53,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(195deg, #dc26261a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=15',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Shantanu Narayen',
     subtitle: 'Chair & CEO',
     handle: 'Adobe',
@@ -61,7 +61,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(145deg, #3b82f61a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=5',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Arvind Krishna',
     subtitle: 'Chairman & CEO',
     handle: 'IBM',
@@ -69,7 +69,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(225deg, #ef44441a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=20',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'N. R. Narayana Murthy',
     subtitle: 'Founder',
     handle: 'Infosys',
@@ -77,7 +77,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(135deg, #1e3a8a1a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=31',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Nandan Nilekani',
     subtitle: 'Co-founder',
     handle: 'Infosys',
@@ -85,7 +85,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(165deg, #dc26261a, #0a0a0a)',
   },
   {
-    image: 'https://i.pravatar.cc/300?img=40',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
     title: 'Vinod Khosla',
     subtitle: 'Founder',
     handle: 'Khosla Ventures',

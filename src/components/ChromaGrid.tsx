@@ -43,7 +43,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const demo: ChromaItem[] = [
     {
-      image: 'https://i.pravatar.cc/300?img=8',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
       title: 'Alex Rivera',
       subtitle: 'Full Stack Developer',
       handle: '@alexrivera',
@@ -52,7 +52,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: 'https://github.com/'
     },
     {
-      image: 'https://i.pravatar.cc/300?img=11',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
       title: 'Jordan Chen',
       subtitle: 'DevOps Engineer',
       handle: '@jordanchen',
@@ -61,7 +61,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: 'https://linkedin.com/in/'
     },
     {
-      image: 'https://i.pravatar.cc/300?img=3',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
       title: 'Morgan Blake',
       subtitle: 'UI/UX Designer',
       handle: '@morganblake',
