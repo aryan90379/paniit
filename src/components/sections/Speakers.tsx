@@ -5,7 +5,7 @@ import ChromaGrid, { ChromaItem } from '../ChromaGrid';
 
 const SPEAKER_ITEMS: ChromaItem[] = [
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Sri Nara Chandrababu Naidu',
     subtitle: "Hon'ble Chief Minister",
     location: 'Andhra Pradesh',
@@ -13,7 +13,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(145deg, #1e3a8a1a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Sri Nara Lokesh',
     subtitle: "Hon'ble Minister",
     location: 'Govt. of Andhra Pradesh',
@@ -21,7 +21,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(180deg, #dc26261a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Sri Kinjarapu Rammohan Naidu',
     subtitle: "Hon'ble Minister",
     location: 'Govt. of India',
@@ -29,7 +29,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Dr. Pemmasani Chandra Sekhar',
     subtitle: "Hon'ble Minister of State",
     location: 'Govt. of India',
@@ -37,7 +37,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(135deg, #ef44441a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Sundar Pichai',
     subtitle: 'CEO',
     handle: 'Alphabet & Google',
@@ -45,7 +45,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(165deg, #1e3a8a1a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Satya Nadella',
     subtitle: 'Chairman & CEO',
     handle: 'Microsoft',
@@ -53,7 +53,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(195deg, #dc26261a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Shantanu Narayen',
     subtitle: 'Chair & CEO',
     handle: 'Adobe',
@@ -61,7 +61,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(145deg, #3b82f61a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Arvind Krishna',
     subtitle: 'Chairman & CEO',
     handle: 'IBM',
@@ -69,7 +69,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(225deg, #ef44441a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'N. R. Narayana Murthy',
     subtitle: 'Founder',
     handle: 'Infosys',
@@ -77,7 +77,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(135deg, #1e3a8a1a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Nandan Nilekani',
     subtitle: 'Co-founder',
     handle: 'Infosys',
@@ -85,7 +85,7 @@ const SPEAKER_ITEMS: ChromaItem[] = [
     gradient: 'linear-gradient(165deg, #dc26261a, #0a0a0a)',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
     title: 'Vinod Khosla',
     subtitle: 'Founder',
     handle: 'Khosla Ventures',

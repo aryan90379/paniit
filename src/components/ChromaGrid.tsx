@@ -43,7 +43,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const demo: ChromaItem[] = [
     {
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+      image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
       title: 'Alex Rivera',
       subtitle: 'Full Stack Developer',
       handle: '@alexrivera',
@@ -52,7 +52,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: 'https://github.com/'
     },
     {
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+      image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
       title: 'Jordan Chen',
       subtitle: 'DevOps Engineer',
       handle: '@jordanchen',
@@ -61,7 +61,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: 'https://linkedin.com/in/'
     },
     {
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF3r7htkMJP7WU4GABsucEM8hSo4YjWOTq7SYrZbwbWlpouO83Wgzz14&s=10',
+      image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
       title: 'Morgan Blake',
       subtitle: 'UI/UX Designer',
       handle: '@morganblake',
