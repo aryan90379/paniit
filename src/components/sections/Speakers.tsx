@@ -29,13 +29,25 @@ const GUESTS_OF_HONOUR = [
 
 const DISTINGUISHED_GUESTS = [
   {
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Kantilal%20Dande%20-%20Principal%20Secretary.jpeg',
+    name: 'Sri Kantilal Dande, IAS',
+    role: 'Principal Secretary',
+    org: 'Government of Andhra Pradesh'
+  },
+  {
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Krishna%20Teja%20-%20Commissioner%2C%20Panchayati%20Raj.jpeg',
+    name: 'Sri Krishna Teja, IAS',
+    role: 'Commissioner',
+    org: 'Panchayati Raj'
+  },
+  {
     image: PLACEHOLDER,
     name: 'Sri Sai Prasad Guttapalli',
     role: "Chief Secretary of\nAndhra Pradesh",
     org: ""
   },
   {
-    image: PLACEHOLDER,
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20Sunil%20Kumar%20Barnwal.jpg',
     name: 'Dr. Sunil Kumar Barnwal',
     role: "Chief Executive Officer,\nNational Health Authority,\nMinistry of Health and\nFamily Welfare, Government\nof India",
     org: ""
@@ -58,7 +70,7 @@ const INDUSTRY_LEADERS = [
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/DR%20SURESH%20PODE%20%2C%20President%2C%20LAURUS%20LABS.jpeg', name: 'Dr. Suresh Pode', role: 'President\nLaurus Labs' },
   { image: PLACEHOLDER, name: 'Sri Lalit Agarwal', role: 'India Head\nSchlumberger India' },
   { image: PLACEHOLDER, name: 'Sri Yaram Vijay\nKumar', role: 'India MD\nHoneywell Aerospace' },
-  { image: PLACEHOLDER, name: 'Sri Hitesh Garg', role: 'India MD\nNXP Semiconductors' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Hitesh%20Garg%20(India%20MD)%20NXP_Semiconductors.jpg', name: 'Sri Hitesh Garg', role: 'India MD\nNXP Semiconductors' },
   { image: PLACEHOLDER, name: 'Arun Ramchandani', role: 'Sr Vice President &\nHead, L&T - Precision Engineering &\nSystems' },
   { image: PLACEHOLDER, name: 'Sri Amit Singhee', role: 'Director, IBM Research India & IBM\nSoftware Innovation Lab; CTO, IBM\nIndia & South Asia.' },
   { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/C%20V%20Sridhar_%20Director%20of%20the%20Andhra%20Pradesh%20State%20Quantum%20Mission%20(APSQM).jpeg", name: 'Sri C Sridhar', role: 'Director of the Andhra Pradesh State\nQuantum Mission (APSQM) and the\nAmaravati Quantum Valley' },
