@@ -5,11 +5,9 @@ import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
   { name: 'About', href: '#about' },
-  { name: 'Summit', href: '#summit' },
-  { name: 'Andhra Advantage', href: '#advantage' },
+  { name: 'Advantage', href: '#advantage' },
   { name: 'Speakers', href: '#speakers' },
   { name: 'Schedule', href: '#schedule' },
-  { name: 'Partner', href: '#partner' },
   { name: 'Committee', href: '#committee' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -35,18 +33,18 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* Logo Placeholder */}
-          <div className={`text-xl md:text-2xl font-black tracking-tighter uppercase ${isScrolled ? 'text-[#153063]' : 'text-[#153063]'}`}>
+          <div className={`text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap ${isScrolled ? 'text-[#153063]' : 'text-[#153063]'}`}>
             <span className="text-[#E13926]">PanIIT</span> AP Summit
           </div>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`text-sm font-bold uppercase transition-colors ${
+              className={`text-sm font-bold uppercase transition-colors whitespace-nowrap ${
                 isScrolled ? 'text-gray-600 hover:text-[#E13926]' : 'text-[#153063]/80 hover:text-[#E13926]'
               }`}
             >
@@ -56,28 +54,30 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-4 xl:gap-6">
           <a
             href="#partner"
-            className="text-sm font-bold text-[#153063] hover:text-[#E13926] transition-colors uppercase"
+            className="text-sm font-bold text-[#153063] hover:text-[#E13926] transition-colors uppercase whitespace-nowrap"
           >
             Become a Partner
           </a>
           <a
             href="#register"
-            className="px-5 py-2.5 rounded-full bg-[#E13926] hover:bg-[#E13926] text-white text-sm font-bold uppercase transition-all shadow-md hover:shadow-lg"
+            className="px-5 py-2.5 rounded-full bg-[#E13926] hover:bg-[#E13926] text-white text-sm font-bold uppercase transition-all shadow-md hover:shadow-lg whitespace-nowrap"
           >
             Register
           </a>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className={`lg:hidden ${isScrolled ? 'text-[#153063]' : 'text-[#153063]'}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-4">
+          <button
+            className={`text-[#153063]`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -93,7 +93,7 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <div className="flex flex-col gap-3 pt-2">
+          <div className="flex flex-col gap-3 pt-2 lg:hidden">
             <a
               href="#partner"
               className="text-center py-2 text-[#153063] font-bold uppercase border border-[#153063]/20 rounded-lg"
