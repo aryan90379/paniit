@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronDown } from 'lucide-react';
 import AeroShards from '../AeroShards';
+import SpecularButton from '../SpecularButton';
 
 export default function Hero() {
   return (
@@ -101,10 +102,32 @@ export default function Hero() {
             <Calendar className="text-blue-400" size={24} />
             <span className="text-white font-bold text-lg">3rd October, 2026</span>
           </div>
-          <div className="flex items-center gap-3 bg-black/40 backdrop-blur-md px-6 py-3 rounded-2xl shadow-sm border border-blue-500/20">
-            <MapPin className="text-blue-400" size={24} />
-            <span className="text-white font-bold text-lg text-left leading-tight">Dr. B. R. Ambedkar Kala Vedika,<br/>Buckingham Peta, Vijayawada</span>
-          </div>
+          <SpecularButton
+            size="md"
+            radius={18}
+            tint="#3b82f6"
+            tintOpacity={0.1}
+            blur={8}
+            textColor="#ffffff"
+            lineColor="#3b82f6"
+            baseColor="#050B14"
+            intensity={1.5}
+            shineSize={15}
+            shineFade={40}
+            thickness={1}
+            speed={0.35}
+            followMouse
+            proximity={250}
+            autoAnimate={false}
+            onClick={() => window.open('https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar\'+\Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D', '_blank')}
+            className="w-full sm:w-auto hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all"
+          >
+            <MapPin className="text-blue-400 flex-shrink-0" size={28} />
+            <div className="flex flex-col text-left pl-2">
+              <span className="font-bold text-lg leading-tight">Dr. B. R. Ambedkar Kala Vedika,</span>
+              <span className="text-[13px] text-blue-300 uppercase tracking-wider font-semibold mt-1">Get Directions →</span>
+            </div>
+          </SpecularButton>
         </motion.div>
 
         <motion.div
@@ -119,15 +142,7 @@ export default function Hero() {
           >
             Registration Open Now
           </a>
-          <a
-            href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 rounded-full bg-blue-900/40 border border-blue-500/30 hover:bg-blue-800/60 text-white font-black text-lg transition-all shadow-sm hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:-translate-y-1 tracking-wide uppercase flex items-center justify-center gap-3 backdrop-blur-md"
-          >
-            <MapPin size={22} />
-            Get Directions
-          </a>
+
         </motion.div>
       </div>
 
