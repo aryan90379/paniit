@@ -36,7 +36,7 @@ export default function VisionMission() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1 rounded-full border border-red-200 bg-white text-red-600 text-sm font-medium mb-4"
+            className="inline-block px-4 py-1 rounded-full border border-red-200 bg-white text-[#E13926] text-sm font-medium mb-4"
           >
             About The Summit
           </motion.div>
@@ -45,7 +45,7 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-[#1e3a8a] tracking-tight leading-tight"
+            className="text-3xl md:text-5xl font-bold text-[#153063] tracking-tight leading-tight"
           >
             Vision of PanIIT Andhra Pradesh <br className="hidden md:block" />Summit 2026
           </motion.h2>

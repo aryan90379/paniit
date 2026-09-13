@@ -49,7 +49,7 @@ export default function PastEminentSpeakers() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[#1e3a8a] mb-4 tracking-tight uppercase"
+            className="text-3xl md:text-5xl font-bold text-[#153063] mb-4 tracking-tight uppercase"
           >
             Eminent Speakers From Past PanIIT Events
           </motion.h2>

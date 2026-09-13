@@ -16,13 +16,13 @@ const HIGHLIGHTS = [
 
 const THEMES = [
   { icon: Shield, label: 'AI in Governance', color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
-  { icon: Satellite, label: 'Defence & SpaceTech', color: 'text-red-600', bg: 'bg-red-100', border: 'border-red-200' },
+  { icon: Satellite, label: 'Defence & SpaceTech', color: 'text-[#E13926]', bg: 'bg-red-100', border: 'border-red-200' },
   { icon: Cpu, label: 'Quantum Computing', color: 'text-indigo-600', bg: 'bg-indigo-100', border: 'border-indigo-200' },
   { icon: Microchip, label: 'Semiconductors', color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-200' },
-  { icon: BookOpen, label: 'Skilling / Entrepreneurship', color: 'text-red-600', bg: 'bg-red-50', border: 'border-red-200' },
+  { icon: BookOpen, label: 'Skilling / Entrepreneurship', color: 'text-[#E13926]', bg: 'bg-red-50', border: 'border-red-200' },
   { icon: Tractor, label: 'AgriTech', color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'border-indigo-200' },
   { icon: HeartPulse, label: 'BioValley/HealthTech', color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
-  { icon: Battery, label: 'Energy', color: 'text-red-600', bg: 'bg-red-100', border: 'border-red-200' },
+  { icon: Battery, label: 'Energy', color: 'text-[#E13926]', bg: 'bg-red-100', border: 'border-red-200' },
 ];
 
 const NOISE_SVG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIG9wYWNpdHk9IjAuODQiPjxkZWZzPjxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPgoJPGZlVHVyYnVsZW5jZSB0eXBlPSJ0dXJidWxlbmNlIiBiYXNlRnJlcXVlbmN5PSIwLjIiIG51bU9jdGF2ZXM9IjQiIHNlZWQ9IjE1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHJlc3VsdD0idHVyYnVsZW5jZSI+PC9mZVR1cmJ1bGVuY2U+Cgk8ZmVTcGVjdWxhckxpZ2h0aW5nIHN1cmZhY2VTY2FsZT0iMjYiIHNwZWN1bGFyQ29uc3RhbnQ9IjMiIHNwZWN1bGFyRXhwb25lbnQ9IjIwIiBsaWdodGluZy1jb2xvcj0iIzA1Njk2OSIgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpbj0idHVyYnVsZW5jZSIgcmVzdWx0PSJzcGVjdWxhckxpZ2h0aW5nIj4KICAgIAkJPGZlRGlzdGFudExpZ2h0IGF6aW11dGg9IjMiIGVsZXZhdGlvbj0iMTc4Ij48L2ZlRGlzdGFudExpZ2h0PgogIAk8L2ZlU3BlY3VsYXJMaWdodGluZz4KICAKPC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSIjMDU2OTY5IiBmaWx0ZXI9InVybCgjbm5ub2lzZS1maWx0ZXIpIj48L3JlY3Q+PC9zdmc+";
@@ -54,9 +54,9 @@ export default function Highlights() {
                   transition={{ delay: i * 0.05 }}
                   className="relative group cursor-pointer"
                 >
-                  <div className="absolute inset-0 bg-red-600 rounded-[1.5rem] rotate-6 scale-95 opacity-20 mix-blend-multiply group-hover:rotate-8 transition-transform duration-300 origin-center" />
+                  <div className="absolute inset-0 bg-[#E13926] rounded-[1.5rem] rotate-6 scale-95 opacity-20 mix-blend-multiply group-hover:rotate-8 transition-transform duration-300 origin-center" />
                   
-                  <div className="relative z-10 p-8 rounded-[1.5rem] h-full flex flex-col justify-center items-center text-center overflow-hidden border border-blue-400/30 shadow-[0_0.5rem_1rem_rgba(0,0,0,0.1),0_1rem_3rem_rgba(0,0,0,0.15)] bg-[#1e3a8a] text-white transition-transform duration-300 group-hover:-translate-y-1">
+                  <div className="relative z-10 p-8 rounded-[1.5rem] h-full flex flex-col justify-center items-center text-center overflow-hidden border border-blue-400/30 shadow-[0_0.5rem_1rem_rgba(0,0,0,0.1),0_1rem_3rem_rgba(0,0,0,0.15)] bg-[#153063] text-white transition-transform duration-300 group-hover:-translate-y-1">
                     
                     <div 
                       className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none grayscale brightness-150" 

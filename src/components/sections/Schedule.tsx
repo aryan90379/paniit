@@ -84,7 +84,7 @@ export default function Schedule() {
                       key={i} 
                       className={`cursor-pointer transition-all duration-300 origin-left border-b border-dotted pb-2 ${
                         activeIdx === i 
-                          ? 'text-red-600 font-bold scale-110 border-transparent' 
+                          ? 'text-[#E13926] font-bold scale-110 border-transparent' 
                           : 'text-gray-400 hover:text-gray-900 border-gray-300'
                       }`}
                       onClick={() => {
@@ -121,7 +121,7 @@ export default function Schedule() {
                       : 'bg-white/50 border-gray-100 shadow-sm opacity-50'
                   }`}
                 >
-                  <div className="inline-block px-3 py-1 bg-red-50 text-red-600 font-bold rounded-lg mb-4 text-sm border border-red-100 shadow-sm">
+                  <div className="inline-block px-3 py-1 bg-red-50 text-[#E13926] font-bold rounded-lg mb-4 text-sm border border-red-100 shadow-sm">
                     {item.time}
                   </div>
                   
@@ -140,7 +140,7 @@ export default function Schedule() {
                     <motion.div 
                       initial={{ opacity: 0, width: 0 }}
                       animate={{ opacity: 1, width: "3rem" }}
-                      className="h-1 bg-red-600 mt-8 rounded-full"
+                      className="h-1 bg-[#E13926] mt-8 rounded-full"
                     />
                   )}
                 </motion.div>

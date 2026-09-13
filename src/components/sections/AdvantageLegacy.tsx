@@ -60,7 +60,7 @@ export default function AdvantageLegacy() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
+            className="text-3xl md:text-5xl font-bold text-[#153063] mb-6 tracking-tight"
           >
             Andhra Pradesh: Powering India's Next Wave of Innovation & Industrial Growth
           </motion.h2>
@@ -79,7 +79,7 @@ export default function AdvantageLegacy() {
                 className="flex items-center gap-6 p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex-1 text-right">
-                  <p className="text-lg md:text-xl text-[#1e3a8a] font-medium leading-relaxed text-right md:text-center">
+                  <p className="text-lg md:text-xl text-[#153063] font-medium leading-relaxed text-right md:text-center">
                     {item.text}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ export default function AdvantageLegacy() {
           })}
         </div>
         
-        <div className="mt-12 text-center text-lg md:text-xl text-white bg-[#1e3a8a] py-6 px-8 rounded-[2rem] font-medium shadow-lg max-w-3xl mx-auto">
+        <div className="mt-12 text-center text-lg md:text-xl text-white bg-[#153063] py-6 px-8 rounded-[2rem] font-medium shadow-lg max-w-3xl mx-auto">
           Building on a strong industrial legacy to drive the next era of innovation-led growth.
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function AdvantageLegacy() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-[#1e3a8a] uppercase tracking-tight"
+              className="text-3xl md:text-5xl font-bold text-[#153063] uppercase tracking-tight"
             >
               Beyond The Summit:<br/>
               <span className="text-gray-900">PanIIT–Andhra Pradesh Legacy Initiatives</span>
@@ -123,7 +123,7 @@ export default function AdvantageLegacy() {
                   transition={{ delay: i * 0.1 }}
                   className="bg-white p-8 rounded-[2rem] border border-blue-100 shadow-sm hover:shadow-lg transition-all flex flex-col gap-4"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[#e0e7ff] text-[#1e3a8a] flex items-center justify-center mb-2">
+                  <div className="w-16 h-16 rounded-2xl bg-[#e0e7ff] text-[#153063] flex items-center justify-center mb-2">
                     <Icon size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>

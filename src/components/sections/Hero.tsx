@@ -1,91 +1,55 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin } from 'lucide-react';
-import AeroShards from '../AeroShards';
+import { Calendar, MapPin, ChevronDown } from 'lucide-react';
 import WebThreads from '../WebThreads';
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
-      {/* Background with WebThreads (or AeroShards) */}
-      <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
-        
-        {/* Previous AeroShards implementation kept in stasis for quick switching */}
-        {/*
-        <AeroShards
-          backgroundColor="#0a0a0a"
-          shardColor="#1e3a8a" // PanIIT Navy Blue
-          accentColor="#dc2626" // PanIIT Red
-          placement="full"
-          flow="stream"
-          material="chrome"
-          detail="balanced"
-          effect="none"
-          scale={1}
-          spread={1}
-          depth={1}
-          speed={1.5}
-          spin={1}
-          interaction="repel"
-          density={1.5}
-          shardSize={1.1}
-          stretch={1}
-          turbulence={1}
-          glow={1}
-          edgeSoftness={2}
-          bloom={0.5}
-          grain={0.05}
-          chromaticAberration={0.0075}
-          transitionDuration={1}
-          interactionRadius={1.5}
-          interactionStrength={0.5}
-          rippleIntensity={1}
-          holdToGather={true}
-        />
-        */}
-
+    <section className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50 via-white to-gray-50">
+      {/* Background with WebThreads - LIGHT THEME */}
+      <div className="absolute inset-0 z-0">
         <WebThreads
-          color1="#1e3a8a" // PanIIT Navy Blue
-          color2="#dc2626" // PanIIT Red
-          color3="#FFFFFF"
+          color1="#153063" // Deep Navy Blue
+          color2="#E13926" // Bright Orange-Red
+          color3="#3b82f6" // Light Blue
           speed={0.2}
-          threadCount={6}
-          frequency={5}
-          spread={0.18}
+          threadCount={5}
+          frequency={4}
+          spread={0.2}
           taper={1}
           position={0.5}
           fanMode="center"
-          glow={0.02}
-          falloff={0.6}
-          thickness={1.1}
+          glow={0}
+          falloff={0.4}
+          thickness={1.5}
           brightness={0.8}
-          opacity={1}
+          opacity={0.6}
           mirror={true}
           shimmer={false}
-          grain={true}
-          grainIntensity={0.05}
+          grain={false}
           mouseInteraction={true}
           mouseStrength={0.3}
         />
         
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-transparent to-[#0a0a0a] z-10 pointer-events-none" />
+        {/* Subtle overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-white/40 z-10 pointer-events-none backdrop-blur-[2px]" />
       </div>
 
-      <div className="container relative z-20 mx-auto px-4 md:px-6 text-center mt-16">
+      <div className="container relative z-20 mx-auto px-4 md:px-6 text-center mt-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-wrap justify-center gap-3 mb-8"
+          className="flex flex-wrap justify-center gap-3 mb-10"
         >
-          <span className="px-4 py-1.5 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-400 text-sm font-medium backdrop-blur-md">
+          <span className="px-5 py-2 rounded-full bg-white border border-[#153063]/20 text-[#153063] text-sm font-bold shadow-sm uppercase tracking-wider">
             AI & DeepTech
           </span>
-          <span className="px-4 py-1.5 rounded-full bg-red-900/40 border border-red-500/30 text-red-400 text-sm font-medium backdrop-blur-md">
+          <span className="px-5 py-2 rounded-full bg-white border border-[#E13926]/20 text-[#E13926] text-sm font-bold shadow-sm uppercase tracking-wider">
             Quantum Technology
           </span>
-          <span className="px-4 py-1.5 rounded-full bg-indigo-900/40 border border-indigo-500/30 text-indigo-400 text-sm font-medium backdrop-blur-md">
+          <span className="px-5 py-2 rounded-full bg-white border border-blue-500/20 text-blue-600 text-sm font-bold shadow-sm uppercase tracking-wider">
             Startups
           </span>
         </motion.div>
@@ -94,9 +58,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-[1.1]"
+          className="text-5xl md:text-7xl lg:text-[7rem] font-black tracking-tighter text-[#153063] mb-8 leading-[1.05] uppercase"
         >
-          PanIIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-500">Andhra Pradesh</span><br />
+          PanIIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-[#E13926]">Andhra Pradesh</span><br />
           Summit 2026
         </motion.h1>
 
@@ -104,34 +68,33 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-xl md:text-2xl text-gray-300 font-light mb-2"
+          className="text-xl md:text-3xl text-[#153063] font-semibold mb-3 tracking-tight"
         >
-          Andhra's DeepTech Decade: Anchored by PanIIT
+          Andhra's Resilient <span className="text-[#E13926] font-black">DEEPTECH DECADE:</span><br/>ANCHORED BY PANIIT
         </motion.p>
         
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="text-lg md:text-xl text-red-400 font-medium mb-12"
+          className="text-lg md:text-2xl text-[#153063] font-bold mb-12 uppercase tracking-wide"
         >
-          Swarna Andhra to Viksit Bharat 2047
+          Swarna Andhra to <span className="text-[#E13926] font-black">Viksit Bharat 2047</span>
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 text-gray-300"
+          className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12"
         >
-          <div className="flex items-center gap-2">
-            <Calendar className="text-blue-400" size={20} />
-            <span>3rd October, 2026</span>
+          <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-2xl shadow-sm border border-gray-100">
+            <Calendar className="text-[#E13926]" size={24} />
+            <span className="text-[#153063] font-bold text-lg">3rd October, 2026</span>
           </div>
-          <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-gray-700" />
-          <div className="flex items-center gap-2">
-            <MapPin className="text-blue-400" size={20} />
-            <span>Dr. B. R. Ambedkar Kala Vedika, Buckingham Peta, Vijayawada</span>
+          <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-2xl shadow-sm border border-gray-100">
+            <MapPin className="text-[#E13926]" size={24} />
+            <span className="text-[#153063] font-bold text-lg text-left leading-tight">Dr. B. R. Ambedkar Kala Vedika,<br/>Buckingham Peta, Vijayawada</span>
           </div>
         </motion.div>
 
@@ -143,18 +106,25 @@ export default function Hero() {
         >
           <a
             href="#register"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-red-600 hover:bg-red-500 text-white font-semibold text-lg transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:shadow-[0_0_35px_rgba(220,38,38,0.6)]"
+            className="w-full sm:w-auto px-10 py-4 rounded-full bg-[#E13926] hover:bg-[#E13926] text-white font-black text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 tracking-wide uppercase"
           >
-            Register for the Event
-          </a>
-          <a
-            href="#partner"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-lg backdrop-blur-sm transition-all"
-          >
-            Become a Partner
+            Registration Open Now
           </a>
         </motion.div>
       </div>
+
+      {/* Down arrow indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce"
+      >
+        <a href="#about" className="text-[#153063]/50 hover:text-[#153063] transition-colors">
+          <ChevronDown size={40} />
+        </a>
+      </motion.div>
+
     </section>
   );
 }

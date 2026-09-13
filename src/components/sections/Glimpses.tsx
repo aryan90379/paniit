@@ -12,7 +12,7 @@ export default function Glimpses() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[#1e3a8a] tracking-tight uppercase"
+            className="text-3xl md:text-5xl font-bold text-[#153063] tracking-tight uppercase"
           >
             Glimpses From Past Summits
           </motion.h2>

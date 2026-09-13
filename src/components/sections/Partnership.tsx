@@ -37,7 +37,7 @@ export default function Partnership() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-[#1e3a8a] mb-6 tracking-tight uppercase"
+              className="text-3xl md:text-5xl font-bold text-[#153063] mb-6 tracking-tight uppercase"
             >
               Why Partner With The Summit?
             </motion.h2>
@@ -58,7 +58,7 @@ export default function Partnership() {
                     <Icon size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-                  <div className="w-12 h-1 bg-red-600 rounded-full" />
+                  <div className="w-12 h-1 bg-[#E13926] rounded-full" />
                   <p className="text-gray-600 font-medium leading-relaxed">{item.desc}</p>
                 </motion.div>
               )
@@ -72,7 +72,7 @@ export default function Partnership() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6 tracking-tight uppercase"
+            className="text-3xl md:text-4xl font-bold text-[#153063] mb-6 tracking-tight uppercase"
           >
             Key Benefits To Sponsors
           </motion.h2>
@@ -94,7 +94,7 @@ export default function Partnership() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-gray-50 border border-gray-200 px-6 py-4 rounded-xl flex items-center gap-4"
               >
-                <div className="text-2xl font-black text-[#1e3a8a] opacity-30">0{i+1}</div>
+                <div className="text-2xl font-black text-[#153063] opacity-30">0{i+1}</div>
                 <div className="font-bold text-gray-800">{benefit}</div>
               </motion.div>
             ))}
@@ -107,7 +107,7 @@ export default function Partnership() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[#1e3a8a] mb-6 tracking-tight uppercase"
+            className="text-3xl md:text-5xl font-bold text-[#153063] mb-6 tracking-tight uppercase"
           >
             Partnership Tiers At A Glance
           </motion.h2>
@@ -123,7 +123,7 @@ export default function Partnership() {
               transition={{ delay: i * 0.1 }}
               className={`p-8 rounded-[2rem] flex flex-col ${
                 tier.popular 
-                  ? 'bg-[#1e3a8a] text-white shadow-xl scale-105 border-4 border-blue-400/30' 
+                  ? 'bg-[#153063] text-white shadow-xl scale-105 border-4 border-blue-400/30' 
                   : 'bg-white text-gray-900 border border-gray-200 shadow-sm'
               }`}
             >
@@ -131,7 +131,7 @@ export default function Partnership() {
                 <h3 className={`text-2xl font-bold mb-2 ${tier.popular ? 'text-white' : 'text-gray-900'}`}>
                   {tier.name}
                 </h3>
-                <div className={`text-4xl font-black ${tier.popular ? 'text-blue-300' : 'text-[#1e3a8a]'}`}>
+                <div className={`text-4xl font-black ${tier.popular ? 'text-blue-300' : 'text-[#153063]'}`}>
                   {tier.price}
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function Partnership() {
 
               <button className={`w-full py-4 rounded-xl font-bold transition-all ${
                 tier.popular
-                  ? 'bg-red-600 text-white hover:bg-red-500 shadow-lg shadow-red-600/30'
+                  ? 'bg-[#E13926] text-white hover:bg-red-500 shadow-lg shadow-red-600/30'
                   : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
               }`}>
                 Express Interest
@@ -158,7 +158,7 @@ export default function Partnership() {
 
         {/* Past Sponsors placeholder */}
         <div className="mt-32 text-center">
-          <h2 className="text-3xl font-bold text-[#1e3a8a] mb-12 uppercase">Past Sponsors and Partners</h2>
+          <h2 className="text-3xl font-bold text-[#153063] mb-12 uppercase">Past Sponsors and Partners</h2>
           <div className="flex flex-wrap justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             {/* Real CDNs will be added later by user, using placeholder boxes for now */}
             {[...Array(12)].map((_, i) => (

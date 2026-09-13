@@ -12,8 +12,8 @@ export default function Footer() {
       <div className="absolute inset-0 z-0">
         <GradientWaves
           horizonColor="#000000" 
-          waveColor="#1e3a8a" // PanIIT Navy Blue
-          crestColor="#dc2626" // PanIIT Red
+          waveColor="#153063" // PanIIT Navy Blue
+          crestColor="#E13926" // PanIIT Red
           speed={0.4}
           amplitude={2.5}
           waveScale={0.6}
@@ -58,7 +58,7 @@ export default function Footer() {
                     placeholder="Enter your work email" 
                     className="px-4 py-3 rounded-lg bg-black/80 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors backdrop-blur-sm"
                   />
-                  <button className="px-4 py-3 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold flex items-center justify-center gap-2 transition-colors shadow-lg">
+                  <button className="px-4 py-3 rounded-lg bg-[#E13926] hover:bg-red-500 text-white font-bold flex items-center justify-center gap-2 transition-colors shadow-lg">
                     Register Now <ArrowRight size={18} />
                   </button>
                 </form>

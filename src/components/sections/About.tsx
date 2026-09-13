@@ -59,7 +59,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-8 py-3 bg-red-600 text-white text-2xl md:text-3xl font-bold rounded-lg mb-10 shadow-md uppercase tracking-wide"
+            className="inline-block px-8 py-3 bg-[#E13926] text-white text-2xl md:text-3xl font-bold rounded-lg mb-10 shadow-md uppercase tracking-wide"
           >
             Who Will Attend?
           </motion.h3>
@@ -75,7 +75,7 @@ export default function About() {
                   transition={{ delay: i * 0.1 }}
                   className="flex flex-col items-center justify-center gap-4 p-6 rounded-[2rem] bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-red-200 transition-all w-48 h-48 group"
                 >
-                  <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-red-600 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-[#E13926] group-hover:scale-110 transition-transform">
                     <Icon size={32} />
                   </div>
                   <div className="text-sm md:text-base text-gray-800 font-bold text-center leading-tight uppercase">
