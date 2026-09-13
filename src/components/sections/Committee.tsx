@@ -13,7 +13,7 @@ const OFFICE_BEARERS = [
 
 const ADVISORS = [
   { image: PLACEHOLDER, name: 'Prof. V. Kamakoti', role: 'Director, IIT Madras' },
-  { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20K.%20N.%20Satyanarayana%20Director%2C%20IIT%20Tirupati.png", name: 'Dr. K. N. Satyanarayana', role: 'Director, IIT Tirupati' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Satyamnarayana_%20IIT%20Tirupathi%20director.jpeg', name: 'Dr. K. N. Satyanarayana', role: 'Director, IIT Tirupati' },
   { image: PLACEHOLDER, name: 'Prof. Mahesh Panchagnula', role: 'Ex Dean, IIT Madras' },
 ];
 

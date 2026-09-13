@@ -14,6 +14,12 @@ const CHIEF_GUEST = {
 
 const GUESTS_OF_HONOUR = [
   {
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Pawan%20Kalyan.jpg',
+    name: 'Sri Pawan Kalyan',
+    role: "Hon'ble Deputy Chief Minister",
+    org: "Andhra Pradesh"
+  },
+  {
     image: PLACEHOLDER,
     name: 'Shri Kinjarapu Rammohan Naidu',
     role: "Hon'ble Minister of Civil Aviation,",
@@ -28,6 +34,12 @@ const GUESTS_OF_HONOUR = [
 ];
 
 const DISTINGUISHED_GUESTS = [
+  {
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Vishwanadhan%20-%20Director%2C%20I%26PR.webp',
+    name: 'Sri Vishwanadhan, IAS',
+    role: 'Director',
+    org: 'I&PR'
+  },
   {
     image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Kantilal%20Dande%20-%20Principal%20Secretary.jpeg',
     name: 'Sri Kantilal Dande, IAS',
@@ -56,19 +68,19 @@ const DISTINGUISHED_GUESTS = [
 
 const KEY_GUESTS = [
   { image: PLACEHOLDER, name: 'Prof. V. Kamakoti', role: 'Director\nIIT Madras' },
-  { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20K.%20N.%20Satyanarayana%20Director%2C%20IIT%20Tirupati.png", name: 'Prof.\nK N Satyamnarayana', role: 'Director\nIIT Tirupati' },
-  { image: PLACEHOLDER, name: 'Prof.\nB. S. Murthy', role: 'Director\nIIT Hyderabad' },
-  { image: PLACEHOLDER, name: 'Prof.\nSukumar Mishra', role: 'Director\nIIT (ISM) Dhanbad' },
-  { image: PLACEHOLDER, name: 'Dr. A. Seshadri Sekhar', role: 'Director\nIIT Palakkad' },
-  { image: PLACEHOLDER, name: 'Prof. Suhas Joshi', role: 'Director\nIIT Indore' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Satyamnarayana_%20IIT%20Tirupathi%20director.jpeg', name: 'Prof.\nK N Satyamnarayana', role: 'Director\nIIT Tirupati' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Budaraju%20Srinivasa%20Murty_%20IITH%20director.jpeg', name: 'Prof.\nB. S. Murthy', role: 'Director\nIIT Hyderabad' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20%20Sukumar%20Mishra%20Director%20%20IIT%20%20(ISM)%20Dhanbad.jpg', name: 'Prof.\nSukumar Mishra', role: 'Director\nIIT (ISM) Dhanbad' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/prof%20a%20seshadri%20sekhar%20director%20iit%20palakkad-Picsart-AiImageEnhancer.jpg', name: 'Dr. A. Seshadri Sekhar', role: 'Director\nIIT Palakkad' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Suhas%20Joshi%2C%20Director%2C%20IIT%20Indore.jpg', name: 'Prof. Suhas Joshi', role: 'Director\nIIT Indore' },
   { image: PLACEHOLDER, name: 'Prof.\nShalivahan', role: 'Director, Indian Institute of\nPetroleum & Energy, Vizag' },
   { image: PLACEHOLDER, name: 'Prof. Balaram\nRavindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
-  { image: PLACEHOLDER, name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' }
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Arun%20Tangirala.jpg', name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' }
 ];
 
 const INDUSTRY_LEADERS = [
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/DR%20SURESH%20PODE%20%2C%20President%2C%20LAURUS%20LABS.jpeg', name: 'Dr. Suresh Pode', role: 'President\nLaurus Labs' },
-  { image: PLACEHOLDER, name: 'Sri Lalit Agarwal', role: 'India Head\nSchlumberger India' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/LALIT%20AGARWAL.jpg', name: 'Sri Lalit Agarwal', role: 'India Head\nSchlumberger India' },
   { image: PLACEHOLDER, name: 'Sri Yaram Vijay\nKumar', role: 'India MD\nHoneywell Aerospace' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Hitesh%20Garg%20(India%20MD)%20NXP_Semiconductors.jpg', name: 'Sri Hitesh Garg', role: 'India MD\nNXP Semiconductors' },
   { image: PLACEHOLDER, name: 'Arun Ramchandani', role: 'Sr Vice President &\nHead, L&T - Precision Engineering &\nSystems' },
@@ -139,7 +151,7 @@ export default function Speakers() {
       <div className="py-20 border-b border-gray-100 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <SectionTitle title="Guest of Honour" />
-          <div className="grid md:grid-cols-2 gap-12 md:gap-24">
+          <div className="flex flex-wrap justify-center gap-12 md:gap-20">
             {GUESTS_OF_HONOUR.map((guest, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div className="w-full max-w-[300px] aspect-square relative mb-6">
@@ -163,7 +175,7 @@ export default function Speakers() {
       <div className="py-20 border-b border-gray-100 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <SectionTitle title="Distinguished Guests" />
-          <div className="grid md:grid-cols-2 gap-12 md:gap-24">
+          <div className="flex flex-wrap justify-center gap-12 md:gap-20">
             {DISTINGUISHED_GUESTS.map((guest, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div className="w-full max-w-[300px] aspect-square relative mb-6">
