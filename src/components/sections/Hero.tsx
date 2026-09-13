@@ -5,11 +5,13 @@ import { Calendar, MapPin, ChevronDown } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function Hero() {
+    const heroRef = useRef<HTMLElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
-    if (!cursor) return;
+    const hero = heroRef.current;
+    if (!cursor || !hero) return;
 
     let cursorP = { x: 0, y: 0 };
     let pageP = { x: 0, y: 0 };
@@ -19,17 +21,18 @@ export default function Hero() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      cursor.style.opacity = '0.3'; // matches user's opacity(30%)
-      pageP.x = e.clientX;
-      pageP.y = e.clientY;
+      cursor.style.opacity = '0.3';
+      const rect = hero.getBoundingClientRect();
+      pageP.x = e.clientX - rect.left;
+      pageP.y = e.clientY - rect.top;
     };
 
     const handleMouseOut = () => {
       cursor.style.opacity = '0';
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseout", handleMouseOut);
+    hero.addEventListener("mousemove", handleMouseMove);
+    hero.addEventListener("mouseleave", handleMouseOut);
 
     let animationFrameId: number;
     const loop = () => {
@@ -41,14 +44,14 @@ export default function Hero() {
     loop();
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseout", handleMouseOut);
+      hero.removeEventListener("mousemove", handleMouseMove);
+      hero.removeEventListener("mouseleave", handleMouseOut);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col z-[2] bg-[#fef6e4] lg:bg-[#f8f9fa] overflow-x-hidden">
+    <section ref={heroRef} className="relative w-full min-h-screen flex flex-col z-[2] bg-[#fef6e4] lg:bg-[#f8f9fa] overflow-x-hidden">
       
       {/* Grainy overlay */}
       <div 
@@ -59,7 +62,7 @@ export default function Hero() {
       {/* Interactive Gradient Cursor */}
       <div 
         ref={cursorRef}
-        className="fixed z-[1] w-[250px] h-[250px] left-0 top-0 pointer-events-none transition-opacity duration-1000 opacity-0 blur-[30px]"
+        className="absolute z-[1] w-[250px] h-[250px] left-0 top-0 pointer-events-none transition-opacity duration-1000 opacity-0 blur-[30px]"
       >
         <div 
           className="w-full h-full rounded-full animate-[spin_20s_linear_infinite_alternate]"
