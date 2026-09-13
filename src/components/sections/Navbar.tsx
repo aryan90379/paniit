@@ -31,15 +31,18 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
-              alt="PanIIT AP Summit" 
-              className="h-10 md:h-12 object-contain mix-blend-multiply" 
-            />
-          </div>
+        <div className="flex items-center gap-3 md:gap-4">
+          <img 
+            src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg" 
+            alt="PanIIT Alumni India" 
+            className="h-8 md:h-12 object-contain mix-blend-multiply" 
+          />
+          <div className="w-px h-6 md:h-8 bg-[#153063]/20"></div>
+          <img 
+            src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
+            alt="PanIIT AP Summit" 
+            className="h-8 md:h-12 object-contain mix-blend-multiply" 
+          />
         </div>
 
         {/* Desktop Nav */}
@@ -57,6 +60,11 @@ export default function Navbar() {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-6">
+          <img 
+            src="https://wabflow.b-cdn.net/paniit/logos/Emblem_of_Andhra_Pradesh.png" 
+            alt="Govt of Andhra Pradesh" 
+            className="h-10 md:h-12 object-contain mix-blend-multiply mr-2 xl:mr-4" 
+          />
           <a
             href="#partner"
             className="text-sm font-bold text-[#153063]/70 hover:text-[#E13926] transition-colors uppercase whitespace-nowrap"
@@ -71,14 +79,19 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="xl:hidden flex items-center gap-4">
+        {/* Mobile Menu Toggle & Emblem */}
+        <div className="xl:hidden flex items-center gap-3">
           <button
             className={`text-[#001858]`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+          <img 
+            src="https://wabflow.b-cdn.net/paniit/logos/Emblem_of_Andhra_Pradesh.png" 
+            alt="Govt of Andhra Pradesh" 
+            className="h-8 object-contain mix-blend-multiply" 
+          />
         </div>
       </div>
 
