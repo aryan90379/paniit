@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const PLACEHOLDER = "https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80";
 
 const CHIEF_GUEST = {
-  image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/CNB%20-%20Chairman%20-%20VC.jpeg',
+  image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg',
   name: 'Sri Nara Chandra Babu Naidu',
   role: "Hon'ble Chief Minister",
   org: "of Andhra Pradesh",
@@ -20,13 +20,13 @@ const GUESTS_OF_HONOUR = [
     org: "Andhra Pradesh"
   },
   {
-    image: PLACEHOLDER,
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Kinjarapu%20%20Rammohan%20Naidu.png',
     name: 'Shri Kinjarapu Rammohan Naidu',
     role: "Hon'ble Minister of Civil Aviation,",
     org: "Government of India"
   },
   {
-    image: PLACEHOLDER,
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Lokesh.jpg',
     name: 'Sri Nara Lokesh',
     role: "Hon'ble Minister for Information Technology,\nElectronics and Communications,",
     org: "Andhra Pradesh"
@@ -34,6 +34,12 @@ const GUESTS_OF_HONOUR = [
 ];
 
 const DISTINGUISHED_GUESTS = [
+  {
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20S.%20Krishnan%20Secretary%2C%20Ministry%20of%20Electronics%20and%20Information%20Technology.png',
+    name: 'Sri S. Krishnan, IAS',
+    role: 'Secretary',
+    org: 'Ministry of Electronics and IT'
+  },
   {
     image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Vishwanadhan%20-%20Director%2C%20I%26PR.webp',
     name: 'Sri Vishwanadhan, IAS',
@@ -53,7 +59,7 @@ const DISTINGUISHED_GUESTS = [
     org: 'Panchayati Raj'
   },
   {
-    image: PLACEHOLDER,
+    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Sai%20Prasad%20Guttapalli%20Chief%20Secretary%20of%20Andhra%20Pradesh.png',
     name: 'Sri Sai Prasad Guttapalli',
     role: "Chief Secretary of\nAndhra Pradesh",
     org: ""
@@ -67,7 +73,7 @@ const DISTINGUISHED_GUESTS = [
 ];
 
 const KEY_GUESTS = [
-  { image: PLACEHOLDER, name: 'Prof. V. Kamakoti', role: 'Director\nIIT Madras' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20V.%20Kamakoti%20Director%2C%20IIT%20Madras.jpg', name: 'Prof. V. Kamakoti', role: 'Director\nIIT Madras' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Satyamnarayana_%20IIT%20Tirupathi%20director.jpeg', name: 'Prof.\nK N Satyamnarayana', role: 'Director\nIIT Tirupati' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Budaraju%20Srinivasa%20Murty_%20IITH%20director.jpeg', name: 'Prof.\nB. S. Murthy', role: 'Director\nIIT Hyderabad' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20%20Sukumar%20Mishra%20Director%20%20IIT%20%20(ISM)%20Dhanbad.jpg', name: 'Prof.\nSukumar Mishra', role: 'Director\nIIT (ISM) Dhanbad' },
@@ -79,17 +85,18 @@ const KEY_GUESTS = [
 ];
 
 const INDUSTRY_LEADERS = [
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Ajai%20Chowdhry%2C%20Co-founder%20HCL.jpg', name: 'Sri Ajai Chowdhry', role: 'Co-founder\nHCL' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/DR%20SURESH%20PODE%20%2C%20President%2C%20LAURUS%20LABS.jpeg', name: 'Dr. Suresh Pode', role: 'President\nLaurus Labs' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/LALIT%20AGARWAL.jpg', name: 'Sri Lalit Agarwal', role: 'India Head\nSchlumberger India' },
-  { image: PLACEHOLDER, name: 'Sri Yaram Vijay\nKumar', role: 'India MD\nHoneywell Aerospace' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Yaram%20Vijay%20%20Kumar.jpg', name: 'Sri Yaram Vijay\nKumar', role: 'India MD\nHoneywell Aerospace' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Hitesh%20Garg%20(India%20MD)%20NXP_Semiconductors.jpg', name: 'Sri Hitesh Garg', role: 'India MD\nNXP Semiconductors' },
   { image: PLACEHOLDER, name: 'Arun Ramchandani', role: 'Sr Vice President &\nHead, L&T - Precision Engineering &\nSystems' },
-  { image: PLACEHOLDER, name: 'Sri Amit Singhee', role: 'Director, IBM Research India & IBM\nSoftware Innovation Lab; CTO, IBM\nIndia & South Asia.' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Amit%20Singhee.jpg', name: 'Sri Amit Singhee', role: 'Director, IBM Research India & IBM\nSoftware Innovation Lab; CTO, IBM\nIndia & South Asia.' },
   { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/C%20V%20Sridhar_%20Director%20of%20the%20Andhra%20Pradesh%20State%20Quantum%20Mission%20(APSQM).jpeg", name: 'Sri C Sridhar', role: 'Director of the Andhra Pradesh State\nQuantum Mission (APSQM) and the\nAmaravati Quantum Valley' },
   { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20Giridhar%20Parvatam.jpg", name: 'Dr. Giridhar\nParvatam', role: 'Head, CFTRI' },
   { image: PLACEHOLDER, name: 'Dr. Jitendra\nSharma', role: 'CEO, AMTZ' },
   { image: PLACEHOLDER, name: 'Sri Ankit Todi', role: 'Chief Sustainability Officer\nMahindra Group' },
-  { image: PLACEHOLDER, name: 'Sri BH. V. Seshagiri\nRao', role: 'CEO( MC) Retd, HAL, NASIK' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sheshagiri%20Rao%20IIT%20M%20%2C%20CEO(%20X)%20HAL%20NASIK.jpeg', name: 'Sri BH. V. Seshagiri\nRao', role: 'CEO( MC) Retd, HAL, NASIK' },
   { image: PLACEHOLDER, name: 'Sri Shekar Reddy', role: 'CMD\nCrux Biotech & SRI CHAKRA' },
   { image: PLACEHOLDER, name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd\nHyderabad' },
   { image: PLACEHOLDER, name: 'Dr. Vidhya Sagar', role: 'FCMD, Avantel' }
