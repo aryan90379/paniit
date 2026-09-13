@@ -142,57 +142,58 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="flex-1 w-full lg:relative flex flex-col lg:block gap-6 mt-12 lg:mt-0 items-center lg:items-start"
+            className="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-12 lg:mt-0 relative"
           >
             {/* Chief Guest Focal Card */}
-            <div className="lg:absolute lg:top-[60px] lg:left-[20px] w-[300px] rounded-2xl p-6 text-[#172c66] backdrop-blur-xl shadow-2xl bg-white/80 border border-white flex flex-col items-center text-center z-30 transform hover:scale-105 transition-transform duration-300">
-              <div className="w-32 h-32 rounded-full mb-4 relative shadow-[0_0_20px_rgba(225,57,38,0.2)]">
+            <div className="rounded-2xl p-5 text-[#172c66] backdrop-blur-xl shadow-xl bg-white/90 border border-white/60 flex flex-col items-center text-center z-30 lg:-translate-y-4 hover:-translate-y-6 transition-transform duration-300">
+              <div className="w-24 h-24 rounded-full mb-3 relative shadow-md">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#E13926] to-[#153063] rounded-full scale-[1.05]" />
-                <img src="https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg" alt="Chief Guest" className="w-full h-full object-cover rounded-full relative z-10 border-4 border-white bg-gray-100" />
+                <img src="https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg" alt="Chief Guest" className="w-full h-full object-cover rounded-full relative z-10 border-[3px] border-white bg-gray-100" />
               </div>
-              <div className="px-4 py-1 rounded-full bg-[#E13926] text-white text-[10px] font-black uppercase tracking-widest mb-3 shadow-sm">
+              <div className="px-3 py-1 rounded-full bg-[#E13926] text-white text-[9px] font-black uppercase tracking-widest mb-2 shadow-sm">
                 Chief Guest
               </div>
-              <h2 className="font-black text-xl text-[#001858] mb-1 leading-tight">
+              <h2 className="font-black text-[1rem] text-[#001858] leading-tight mb-1">
                 Sri Nara Chandrababu Naidu
               </h2>
-              <p className="font-bold text-[#E13926] text-[11px] uppercase tracking-wider">
+              <p className="font-bold text-[#E13926] text-[10px] uppercase tracking-wider">
                 Hon'ble Chief Minister, AP
               </p>
             </div>
 
             {/* Card 1 - Top Right Orbit */}
-            <div className="lg:absolute lg:top-[-30px] lg:right-[10px] rounded-xl p-5 w-full lg:w-[240px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_20px_-5px_rgba(0,0,0,0.1)] bg-[#f3d2c1]/60 border border-white/40 z-20 hover:-translate-y-1 transition-transform">
-              <div className="font-bold text-lg mb-2 text-[#001858]">"A Global Network"</div>
-              <p className="text-[0.95rem] leading-relaxed mb-3 opacity-90">
+            <div className="rounded-xl p-5 text-[#172c66] backdrop-blur-[5px] shadow-lg bg-[#f3d2c1]/60 border border-white/40 z-20 lg:translate-y-8 hover:translate-y-6 transition-transform">
+              <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"A Global Network"</div>
+              <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">
                 1000+ top-tier alumni converging for the future of deeptech.
               </p>
-              <div className="font-extrabold text-[10px] uppercase tracking-wider text-[#E13926] text-right">
+              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right mt-auto">
                 Community
               </div>
             </div>
 
+            {/* Card 3 - Bottom Left Orbit */}
+            <div className="rounded-xl p-5 text-[#172c66] backdrop-blur-[5px] shadow-lg bg-[#E13926]/10 border border-white/40 z-20 hover:-translate-y-2 transition-transform">
+              <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"Real Impact"</div>
+              <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">
+                Bridging the gap between engineering talent and state governance.
+              </p>
+              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right mt-auto">
+                Action
+              </div>
+            </div>
+
             {/* Card 2 - Bottom Right Orbit */}
-            <div className="lg:absolute lg:top-[240px] lg:right-[-20px] rounded-xl p-5 w-full lg:w-[250px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_20px_-5px_rgba(0,0,0,0.1)] bg-[#8bd3dd]/50 border border-white/40 z-40 hover:-translate-y-1 transition-transform">
-              <div className="font-bold text-lg mb-2 text-[#001858]">"Actionable Insights"</div>
-              <p className="text-[0.95rem] leading-relaxed mb-3 opacity-90">
+            <div className="rounded-xl p-5 text-[#172c66] backdrop-blur-[5px] shadow-lg bg-[#8bd3dd]/50 border border-white/40 z-40 lg:translate-y-12 hover:translate-y-10 transition-transform">
+              <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"Actionable Insights"</div>
+              <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">
                 20+ industry leaders sharing quantum & AI strategies.
               </p>
-              <div className="font-extrabold text-[10px] uppercase tracking-wider text-[#153063] text-right">
+              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#153063] text-right mt-auto">
                 Knowledge
               </div>
             </div>
 
-            {/* Card 3 - Bottom Left Orbit */}
-            <div className="lg:absolute lg:top-[300px] lg:left-[-30px] rounded-xl p-5 w-full lg:w-[260px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_20px_-5px_rgba(0,0,0,0.1)] bg-[#E13926]/10 border border-white/40 z-20 hover:-translate-y-1 transition-transform">
-              <div className="font-bold text-lg mb-2 text-[#001858]">"Real Impact"</div>
-              <p className="text-[0.95rem] leading-relaxed mb-3 opacity-90">
-                Bridging the gap between engineering talent and state governance.
-              </p>
-              <div className="font-extrabold text-[10px] uppercase tracking-wider text-[#E13926] text-right">
-                Action
-              </div>
-            </div>
           </motion.div>
           
         </div>
