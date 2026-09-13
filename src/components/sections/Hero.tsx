@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronDown } from 'lucide-react';
-import AeroShards from '../AeroShards';
+import WebThreads from '../WebThreads';
 import SpecularButton from '../SpecularButton';
 
 export default function Hero() {
@@ -10,36 +10,29 @@ export default function Hero() {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-white md:bg-[#050B14] py-32">
       {/* Background with AeroShards - DARK THEME */}
       <div className="hidden md:block absolute inset-0 z-0">
-        <AeroShards
+        <WebThreads
+          color1="#E13926"
+          color2="#3b82f6"
+          color3="#FFFFFF"
           backgroundColor="#050B14"
-          shardColor="#E13926"
-          accentColor="#ffffff"
-          placement="full"
-          flow="stream"
-          material="pearl"
-          detail="balanced"
-          effect="none"
-          scale={1}
-          spread={1}
-          depth={1}
-          speed={1}
-          spin={1}
-          interaction="repel"
-          density={1.5}
-          shardSize={1.1}
-          stretch={1}
-          turbulence={1}
-          glow={1}
-          edgeSoftness={2}
-          bloom={0.5}
-          grain={0.05}
-          chromaticAberration={0.0075}
-          transitionDuration={1}
-          interactionRadius={1.5}
-          interactionStrength={0.5}
-          rippleIntensity={1}
-          holdToGather={true}
-          paused={false}
+          speed={0.2}
+          threadCount={6}
+          frequency={5}
+          spread={0.18}
+          taper={1}
+          position={0.5}
+          fanMode="center"
+          glow={0.02}
+          falloff={0.6}
+          thickness={1.1}
+          brightness={0.6}
+          opacity={1}
+          mirror
+          shimmer={false}
+          grain
+          grainIntensity={0.05}
+          mouseInteraction
+          mouseStrength={0.3}
         />
         
         {/* Subtle overlay to ensure text readability */}
