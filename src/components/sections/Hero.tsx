@@ -118,6 +118,15 @@ export default function Hero() {
           >
             Registration Open Now
           </a>
+          <a
+            href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-10 py-4 rounded-full bg-blue-900/40 border border-blue-500/30 hover:bg-blue-800/60 text-white font-black text-lg transition-all shadow-sm hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:-translate-y-1 tracking-wide uppercase flex items-center justify-center gap-3 backdrop-blur-md"
+          >
+            <MapPin size={22} />
+            Get Directions
+          </a>
         </motion.div>
       </div>
 
