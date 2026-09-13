@@ -9,7 +9,7 @@ export default function Footer() {
     <footer id="contact" className="bg-[#050505] border-t border-white/10 pt-24 pb-12 overflow-hidden relative">
       
       {/* Immersive Wave Background - HIGH VISIBILITY */}
-      <div className="absolute inset-0 z-0">
+      <div className="hidden md:block absolute inset-0 z-0">
         <GradientWaves
           horizonColor="#000000" 
           waveColor="#153063" // PanIIT Navy Blue

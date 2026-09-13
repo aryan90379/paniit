@@ -7,9 +7,9 @@ import SpecularButton from '../SpecularButton';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#050B14] py-32">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-white md:bg-[#050B14] py-32">
       {/* Background with AeroShards - DARK THEME */}
-      <div className="absolute inset-0 z-0">
+      <div className="hidden md:block absolute inset-0 z-0">
         <AeroShards
           backgroundColor="#050B14"
           shardColor="#E13926"
@@ -53,13 +53,13 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-wrap justify-center gap-3 mb-10"
         >
-          <span className="px-5 py-2 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+          <span className="px-5 py-2 rounded-full bg-blue-50 md:bg-blue-900/40 border border-blue-200 md:border-blue-500/30 text-blue-700 md:text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
             AI & DeepTech
           </span>
-          <span className="px-5 py-2 rounded-full bg-[#E13926]/20 border border-[#E13926]/40 text-red-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+          <span className="px-5 py-2 rounded-full bg-red-50 md:bg-[#E13926]/20 border border-red-200 md:border-[#E13926]/40 text-red-700 md:text-red-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
             Quantum Technology
           </span>
-          <span className="px-5 py-2 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+          <span className="px-5 py-2 rounded-full bg-blue-50 md:bg-blue-900/40 border border-blue-200 md:border-blue-500/30 text-blue-700 md:text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
             Startups
           </span>
         </motion.div>
@@ -68,9 +68,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-[7rem] font-black tracking-tighter text-white mb-8 leading-[1.05] uppercase"
+          className="text-5xl md:text-7xl lg:text-[7rem] font-black tracking-tighter text-gray-900 md:text-white mb-8 leading-[1.05] uppercase"
         >
-          PanIIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-[#E13926]">Andhra Pradesh</span><br />
+          PanIIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E13926] to-red-700 md:from-red-400 md:to-[#E13926]">Andhra Pradesh</span><br />
           Summit 2026
         </motion.h1>
 
@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-xl md:text-3xl text-blue-100 font-semibold mb-3 tracking-tight"
+          className="text-xl md:text-3xl text-gray-600 md:text-blue-100 font-semibold mb-3 tracking-tight"
         >
           Andhra's Resilient <span className="text-[#E13926] font-black">DEEPTECH DECADE:</span><br/>ANCHORED BY PANIIT
         </motion.p>
@@ -87,7 +87,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="text-lg md:text-2xl text-blue-100 font-bold mb-12 uppercase tracking-wide"
+          className="text-lg md:text-2xl text-gray-700 md:text-blue-100 font-bold mb-12 uppercase tracking-wide"
         >
           Swarna Andhra to <span className="text-[#E13926] font-black">Viksit Bharat 2047</span>
         </motion.p>
@@ -98,11 +98,26 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12"
         >
-          <div className="flex items-center gap-3 bg-black/40 backdrop-blur-md px-6 py-3 rounded-2xl shadow-sm border border-blue-500/20">
-            <Calendar className="text-blue-400" size={24} />
-            <span className="text-white font-bold text-lg">3rd October, 2026</span>
+          <div className="flex items-center gap-3 bg-gray-100 md:bg-black/40 backdrop-blur-md px-6 py-3 rounded-2xl shadow-sm border border-gray-200 md:border-blue-500/20">
+            <Calendar className="text-blue-600 md:text-blue-400" size={24} />
+            <span className="text-gray-900 md:text-white font-bold text-lg">3rd October, 2026</span>
           </div>
-          <SpecularButton
+          {/* Mobile Address Pill Fallback */}
+          <a
+            href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden flex items-center gap-3 bg-gray-100 px-6 py-3 rounded-2xl shadow-sm border border-gray-200"
+          >
+            <MapPin className="text-blue-600 flex-shrink-0" size={28} />
+            <div className="flex flex-col text-left">
+              <span className="font-bold text-lg text-gray-900 leading-tight">Dr. B. R. Ambedkar Kala Vedika,</span>
+              <span className="text-[13px] text-blue-700 uppercase tracking-wider font-semibold mt-1">Get Directions →</span>
+            </div>
+          </a>
+          
+          <div className="hidden md:block">
+            <SpecularButton
             size="md"
             radius={18}
             tint="#3b82f6"
@@ -122,12 +137,13 @@ export default function Hero() {
             onClick={() => window.open('https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar\'+\Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D', '_blank')}
             className="w-full sm:w-auto hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all"
           >
-            <MapPin className="text-blue-400 flex-shrink-0" size={28} />
+            <MapPin className="text-blue-600 md:text-blue-400 flex-shrink-0" size={28} />
             <div className="flex flex-col text-left pl-2">
               <span className="font-bold text-lg leading-tight">Dr. B. R. Ambedkar Kala Vedika,</span>
               <span className="text-[13px] text-blue-300 uppercase tracking-wider font-semibold mt-1">Get Directions →</span>
             </div>
           </SpecularButton>
+          </div>
         </motion.div>
 
         <motion.div
@@ -153,7 +169,7 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce"
       >
-        <a href="#about" className="text-white/50 hover:text-white transition-colors">
+        <a href="#about" className="text-gray-400 hover:text-gray-900 md:text-white/50 md:hover:text-white transition-colors">
           <ChevronDown size={40} />
         </a>
       </motion.div>

@@ -27,13 +27,13 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-3 shadow-sm' : 'bg-transparent py-5'
+        isScrolled ? 'bg-white/90 md:bg-black/80 backdrop-blur-md border-b border-gray-200 md:border-white/10 py-3 shadow-sm' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* Logo */}
-          <div className={`text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap text-white`}>
+          <div className={`text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap text-gray-900 md:text-white`}>
             <span className="text-[#E13926]">PanIIT</span> AP Summit
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <div className="xl:hidden flex items-center gap-4">
           <button
-            className={`text-white`}
+            className={`text-gray-900 md:text-white`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -80,12 +80,12 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 w-full bg-black border-b border-white/10 py-4 px-4 flex flex-col gap-4 shadow-xl">
+        <div className="xl:hidden absolute top-full left-0 w-full bg-white md:bg-black border-b border-gray-200 md:border-white/10 py-4 px-4 flex flex-col gap-4 shadow-xl">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-white font-bold uppercase py-2 border-b border-white/5"
+              className="text-gray-900 md:text-white font-bold uppercase py-2 border-b border-gray-100 md:border-white/5"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -94,7 +94,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-3 pt-2 lg:hidden">
             <a
               href="#partner"
-              className="text-center py-2 text-white font-bold uppercase border border-white/20 rounded-lg"
+              className="text-center py-2 text-gray-900 md:text-white font-bold uppercase border border-gray-300 md:border-white/20 rounded-lg"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Become a Partner
