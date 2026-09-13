@@ -83,7 +83,7 @@ export default function AdvantageLegacy() {
                     {item.text}
                   </p>
                 </div>
-                <div className="w-16 h-16 shrink-0 flex items-center justify-center text-[#d97706] bg-orange-50 rounded-xl">
+                <div className="w-16 h-16 shrink-0 flex items-center justify-center text-[#E13926] bg-red-50 rounded-xl">
                   <Icon size={32} />
                 </div>
               </motion.div>

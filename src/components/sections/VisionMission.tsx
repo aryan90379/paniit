@@ -63,8 +63,8 @@ export default function VisionMission() {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-start gap-6 group"
               >
-                <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center shrink-0 group-hover:border-[#d97706] group-hover:shadow-md transition-all">
-                  <Icon size={32} className="text-[#d97706]" />
+                <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center shrink-0 group-hover:border-[#E13926] group-hover:shadow-md transition-all">
+                  <Icon size={32} className="text-[#E13926]" />
                 </div>
                 <div className="pt-2">
                   <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
