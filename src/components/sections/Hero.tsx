@@ -76,6 +76,21 @@ export default function Hero() {
           
           {/* LEFT COLUMN - Title Area */}
           <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left pt-10">
+            {/* Official Logos */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex items-center justify-center lg:justify-start gap-4 md:gap-8 mb-8 w-full max-w-lg"
+            >
+              <img src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg" alt="PanIIT Alumni India" className="h-16 md:h-20 object-contain mix-blend-multiply" />
+              <div className="w-px h-12 bg-[#153063]/20 hidden sm:block"></div>
+              <img src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" alt="PanIIT AP Summit" className="h-16 md:h-20 object-contain mix-blend-multiply" />
+              <div className="w-px h-12 bg-[#153063]/20 hidden sm:block"></div>
+              <img src="https://wabflow.b-cdn.net/paniit/logos/Emblem_of_Andhra_Pradesh.png" alt="Govt of Andhra Pradesh" className="h-16 md:h-20 object-contain mix-blend-multiply" />
+            </motion.div>
+
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
