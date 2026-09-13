@@ -4,18 +4,22 @@ import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 
 const SCHEDULE = [
-  { time: "08:30 AM", title: "Registration & Breakfast", subtitle: "Welcome delegates and networking." },
-  { time: "09:30 AM", title: "Inaugural Ceremony", subtitle: "Lighting of Lamp & Opening Remarks." },
-  { time: "10:30 AM", title: "Panel 1: AI in Governance", subtitle: "Transforming public infrastructure." },
-  { time: "11:30 AM", title: "Networking Tea Break", subtitle: "Connect with peers." },
-  { time: "11:45 AM", title: "Panel 2: Quantum Leap", subtitle: "DeepTech's next frontier." },
-  { time: "12:45 PM", title: "Panel 3: Startup Ecosystem", subtitle: "Fostering unicorn growth." },
-  { time: "01:45 PM", title: "Executive Lunch", subtitle: "Exclusive networking sessions." },
-  { time: "02:45 PM", title: "Panel 4: Green Energy", subtitle: "Sustainable tech for the future." },
-  { time: "03:45 PM", title: "Panel 5: Skilling 2047", subtitle: "Empowering the next generation." },
-  { time: "04:45 PM", title: "High Tea", subtitle: "Evening refreshments." },
-  { time: "05:00 PM", title: "Valedictory Session", subtitle: "Hon'ble CM's Closing Address." },
-  { time: "06:00 PM", title: "Dinner & Networking", subtitle: "End of Summit." }
+  { time: "08:00 AM", title: "Registration, Networking & Tea", subtitle: "Welcome delegates" },
+  { time: "09:00 AM", title: "Lighting of the Lamp & Welcome Address", subtitle: "Opening of the summit" },
+  { time: "09:15 AM", title: "Inaugural Ceremony", subtitle: "Guest of Honour: Shri Kinjarapu Rammohan Naidu & Sri Lokesh Nara" },
+  { time: "10:00 AM", title: "PANEL 1: Energy & Fuel Cost Optimisation", subtitle: "Swachh Andhra" },
+  { time: "10:45 AM", title: "PANEL 2: Deep Tech in All Walks of Life", subtitle: "Quantum, Semiconductors & AI" },
+  { time: "11:30 AM", title: "PANEL 3: Space & Defence Mfg", subtitle: "Product Perfection" },
+  { time: "12:15 PM", title: "PANEL 4: BioValley", subtitle: "Health Access & Screening at Scale" },
+  { time: "01:00 PM", title: "Networking Lunch", subtitle: "" },
+  { time: "02:00 PM", title: "CM's Visit to Pavilions & Exhibition", subtitle: "Hon'ble Chief Minister of AP Arrival" },
+  { time: "02:00 PM", title: "PANEL 5: Agri Tech", subtitle: "Farmers & Water Security" },
+  { time: "02:45 PM", title: "Skilling & Entrepreneurship", subtitle: "by IIT Madras Pravarthak" },
+  { time: "03:00 PM", title: "AI in Governance", subtitle: "Addresses & Talks" },
+  { time: "03:30 PM", title: "Networking Tea", subtitle: "" },
+  { time: "04:00 PM", title: "Summary Presentations", subtitle: "Insights from all 5 panels" },
+  { time: "05:00 PM", title: "CM Closing Block", subtitle: "Proceedings on Main Stage; HCM joins" },
+  { time: "06:00 PM", title: "Closing Ceremony", subtitle: "National Anthem" }
 ];
 
 export default function Schedule() {
@@ -32,7 +36,7 @@ export default function Schedule() {
           }
         });
       },
-      { rootMargin: '-20% 0px -60% 0px' } // Triggers when element is in the top 20-40% of viewport
+      { rootMargin: '-20% 0px -60% 0px' }
     );
 
     sectionRefs.current.forEach((ref) => {
@@ -113,7 +117,6 @@ export default function Schedule() {
                       : 'bg-white/50 border-gray-100 shadow-sm opacity-50'
                   }`}
                 >
-                  {/* Mobile Time Badge (only shows on mobile since desktop has sidebar) */}
                   <div className="md:hidden inline-block px-3 py-1 bg-red-50 text-red-600 font-bold rounded-lg mb-4 text-sm">
                     {item.time}
                   </div>
@@ -123,9 +126,11 @@ export default function Schedule() {
                   }`}>
                     {item.title}
                   </h3>
-                  <p className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
-                    {item.subtitle}
-                  </p>
+                  {item.subtitle && (
+                    <p className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
+                      {item.subtitle}
+                    </p>
+                  )}
                   
                   {activeIdx === i && (
                     <motion.div 

@@ -24,16 +24,15 @@ export default function Footer() {
           zoom={1}
           height={5.5}
           fogDepth={15}
-          detail="high" // increased detail
-          brightness={1.5} // Boosted brightness
-          opacity={1} // Full opacity!
+          detail="high"
+          brightness={1.5}
+          opacity={1}
           mouseInteraction={true}
           parallaxStrength={0.5}
           grain={true}
           grainIntensity={0.05}
         />
-        {/* Removed heavy black gradients so waves are perfectly clear! Just a tiny fade at the very bottom edge if needed, but let's keep it clean */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#050505] to-transparent pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -82,21 +81,41 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm drop-shadow-lg">Contact Secretariat</h4>
             <ul className="space-y-4">
+              
               <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold">
                 <Mail size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
                 <span>
-                  <div className="font-bold text-white">Padmini Padhy</div>
-                  <a href="mailto:secretariat@paniit.org" className="hover:text-blue-300 transition-colors">secretariat@paniit.org</a>
+                  <div className="font-bold text-white mb-1">PanIIT Secretariat</div>
+                  <a href="mailto:secretariat@paniit.org" className="hover:text-blue-300 transition-colors block">secretariat@paniit.org</a>
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold">
+
+              <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold mt-4">
                 <Phone size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
-                <span>+91 97111 95445</span>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                  <div>
+                    <div className="text-gray-300 text-xs">Padmini Padhy</div>
+                    <div>+91 97111 95445</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-300 text-xs">Sanskreeti Raj</div>
+                    <div>+91 98354 19705</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-300 text-xs">Sai Teja</div>
+                    <div>+91 84189 44154</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-300 text-xs">Gadi Akhil</div>
+                    <div>+91 94910 80512</div>
+                  </div>
+                </div>
               </li>
-              <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold">
+
+              <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold mt-4">
                 <MapPin size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
                 <span>Dr. B. R. Ambedkar Kala Vedika,<br/>Vijayawada, Andhra Pradesh</span>
               </li>

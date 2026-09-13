@@ -3,108 +3,44 @@
 import { motion } from 'framer-motion';
 import ChromaGrid, { ChromaItem } from '../ChromaGrid';
 
+const PLACEHOLDER = "https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80";
+
 const SPEAKER_ITEMS: ChromaItem[] = [
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Sri Nara Chandrababu Naidu',
-    subtitle: "Hon'ble Chief Minister",
-    location: 'Andhra Pradesh',
-    borderColor: '#1e3a8a',
-    gradient: 'linear-gradient(145deg, #1e3a8a1a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Sri Nara Lokesh',
-    subtitle: "Hon'ble Minister",
-    location: 'Govt. of Andhra Pradesh',
-    borderColor: '#dc2626',
-    gradient: 'linear-gradient(180deg, #dc26261a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Sri Kinjarapu Rammohan Naidu',
-    subtitle: "Hon'ble Minister",
-    location: 'Govt. of India',
-    borderColor: '#3b82f6',
-    gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Dr. Pemmasani Chandra Sekhar',
-    subtitle: "Hon'ble Minister of State",
-    location: 'Govt. of India',
-    borderColor: '#ef4444',
-    gradient: 'linear-gradient(135deg, #ef44441a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Sundar Pichai',
-    subtitle: 'CEO',
-    handle: 'Alphabet & Google',
-    borderColor: '#1e3a8a',
-    gradient: 'linear-gradient(165deg, #1e3a8a1a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Satya Nadella',
-    subtitle: 'Chairman & CEO',
-    handle: 'Microsoft',
-    borderColor: '#dc2626',
-    gradient: 'linear-gradient(195deg, #dc26261a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Shantanu Narayen',
-    subtitle: 'Chair & CEO',
-    handle: 'Adobe',
-    borderColor: '#3b82f6',
-    gradient: 'linear-gradient(145deg, #3b82f61a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Arvind Krishna',
-    subtitle: 'Chairman & CEO',
-    handle: 'IBM',
-    borderColor: '#ef4444',
-    gradient: 'linear-gradient(225deg, #ef44441a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'N. R. Narayana Murthy',
-    subtitle: 'Founder',
-    handle: 'Infosys',
-    borderColor: '#1e3a8a',
-    gradient: 'linear-gradient(135deg, #1e3a8a1a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Nandan Nilekani',
-    subtitle: 'Co-founder',
-    handle: 'Infosys',
-    borderColor: '#dc2626',
-    gradient: 'linear-gradient(165deg, #dc26261a, #0a0a0a)',
-  },
-  {
-    image: 'https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80',
-    title: 'Vinod Khosla',
-    subtitle: 'Founder',
-    handle: 'Khosla Ventures',
-    borderColor: '#3b82f6',
-    gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)',
-  },
-  {
-    image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0OCIgZmlsbD0iIzQ0NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPis8L3RleHQ+PC9zdmc+',
-    title: 'Many More Leaders',
-    subtitle: 'Global Innovators',
-    handle: '& Policymakers',
-    borderColor: '#ef4444',
-    gradient: 'linear-gradient(180deg, #ef44441a, #0a0a0a)',
-  },
+  // Key Guests
+  { image: PLACEHOLDER, title: 'Sri Nara Chandra Babu Naidu', subtitle: "Hon'ble Chief Minister of AP", borderColor: '#1e3a8a', gradient: 'linear-gradient(145deg, #1e3a8a1a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Shri Kinjarapu Rammohan Naidu', subtitle: "Hon'ble Minister of Civil Aviation", borderColor: '#dc2626', gradient: 'linear-gradient(180deg, #dc26261a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Nara Lokesh', subtitle: "Hon'ble Minister for IT", borderColor: '#3b82f6', gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Sai Prasad Guttapalli', subtitle: 'Chief Secretary of AP', borderColor: '#ef4444', gradient: 'linear-gradient(135deg, #ef44441a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Dr. Sunil Kumar Barnwal', subtitle: 'CEO, National Health Authority', borderColor: '#1e3a8a', gradient: 'linear-gradient(165deg, #1e3a8a1a, #0a0a0a)' },
+  // Academic Leaders
+  { image: PLACEHOLDER, title: 'Prof. V. Kamakoti', subtitle: 'Director, IIT Madras', borderColor: '#dc2626', gradient: 'linear-gradient(195deg, #dc26261a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Prof. K N Satyanarayana', subtitle: 'Director, IIT Tirupati', borderColor: '#3b82f6', gradient: 'linear-gradient(145deg, #3b82f61a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Prof. B. S. Murthy', subtitle: 'Director, IIT Hyderabad', borderColor: '#ef4444', gradient: 'linear-gradient(225deg, #ef44441a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Prof. Sukumar Mishra', subtitle: 'Director, IIT (ISM) Dhanbad', borderColor: '#1e3a8a', gradient: 'linear-gradient(135deg, #1e3a8a1a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Dr. A. Seshadri Sekhar', subtitle: 'Director, IIT Palakkad', borderColor: '#dc2626', gradient: 'linear-gradient(165deg, #dc26261a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Prof. Suhas Joshi', subtitle: 'Director, IIT Indore', borderColor: '#3b82f6', gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Prof. Shalivahan', subtitle: 'Director, IIPE Vizag', borderColor: '#ef4444', gradient: 'linear-gradient(180deg, #ef44441a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Prof. Balaram Ravindran', subtitle: 'Head of Data Science, IIT Madras', borderColor: '#1e3a8a', gradient: 'linear-gradient(145deg, #1e3a8a1a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Prof. Arun Tangirala', subtitle: 'Dean, CDO, IIT Tirupati', borderColor: '#dc2626', gradient: 'linear-gradient(180deg, #dc26261a, #0a0a0a)' },
+  // Industry Leaders
+  { image: PLACEHOLDER, title: 'Sri Lalit Agarwal', subtitle: 'India Head, Schlumberger', borderColor: '#3b82f6', gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Yaram Vijay Kumar', subtitle: 'India MD, Honeywell Aerospace', borderColor: '#ef4444', gradient: 'linear-gradient(135deg, #ef44441a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Hitesh Garg', subtitle: 'India MD, NXP Semiconductors', borderColor: '#1e3a8a', gradient: 'linear-gradient(165deg, #1e3a8a1a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Arun Ramchandani', subtitle: 'Sr VP, L&T', borderColor: '#dc2626', gradient: 'linear-gradient(195deg, #dc26261a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Amit Singhee', subtitle: 'Director, IBM Research India', borderColor: '#3b82f6', gradient: 'linear-gradient(145deg, #3b82f61a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri C Sridhar', subtitle: 'Director, APSQM', borderColor: '#ef4444', gradient: 'linear-gradient(225deg, #ef44441a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Dr. Giridhar Parvatam', subtitle: 'Head, CFTRI', borderColor: '#1e3a8a', gradient: 'linear-gradient(135deg, #1e3a8a1a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Dr. Jitendra Sharma', subtitle: 'CEO, AMTZ', borderColor: '#dc2626', gradient: 'linear-gradient(165deg, #dc26261a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Ankit Todi', subtitle: 'Chief Sustainability Officer, Mahindra', borderColor: '#3b82f6', gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri BH. V. Seshagiri Rao', subtitle: 'CEO Retd, HAL', borderColor: '#ef4444', gradient: 'linear-gradient(180deg, #ef44441a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Shekar Reddy', subtitle: 'CMD, Crux Biotech', borderColor: '#1e3a8a', gradient: 'linear-gradient(145deg, #1e3a8a1a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Sri Ram Bandi', subtitle: 'Founder & CEO, Styrax', borderColor: '#dc2626', gradient: 'linear-gradient(180deg, #dc26261a, #0a0a0a)' },
+  { image: PLACEHOLDER, title: 'Dr. Vidhya Sagar', subtitle: 'FCMD, Avantel', borderColor: '#3b82f6', gradient: 'linear-gradient(210deg, #3b82f61a, #0a0a0a)' },
 ];
 
 export default function Speakers() {
   return (
-    <section id="speakers" className="py-24 bg-[#0a0a0a] relative ">
+    <section id="speakers" className="py-24 bg-[#0a0a0a] relative">
       
       {/* Convex curve bulging upwards into the previous white section */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-[calc(100%-2px)] z-10 pointer-events-none rotate-180">
@@ -122,7 +58,7 @@ export default function Speakers() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight"
           >
-            Key Guests & Speakers
+            Key Guests & Industry Leaders
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -142,7 +78,6 @@ export default function Speakers() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="w-full"
         >
-          {/* Note: The Tailwind ChromaGrid component natively handles responsiveness */}
           <ChromaGrid 
             items={SPEAKER_ITEMS}
             radius={400}

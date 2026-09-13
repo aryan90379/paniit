@@ -7,6 +7,7 @@ import Highlights from '@/components/sections/Highlights';
 import Speakers from '@/components/sections/Speakers';
 import Schedule from '@/components/sections/Schedule';
 import Partnership from '@/components/sections/Partnership';
+import Committee from '@/components/sections/Committee';
 import Footer from '@/components/sections/Footer';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <Speakers />
       <Schedule />
       <Partnership />
+      <Committee />
       <Footer />
     </main>
   );
