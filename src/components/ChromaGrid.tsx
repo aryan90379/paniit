@@ -161,11 +161,11 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
           <div className="relative z-10 flex-1 p-[10px] box-border">
             <img src={c.image} alt={c.title} loading="lazy" className="w-full aspect-[4/5] object-cover rounded-[10px]" />
           </div>
-          <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-            <h3 className="m-0 text-[1.05rem] font-semibold truncate">{c.title}</h3>
-            {c.handle && <span className="text-[0.95rem] opacity-80 text-right truncate">{c.handle}</span>}
-            <p className="m-0 text-[0.85rem] opacity-85 truncate">{c.subtitle}</p>
-            {c.location && <span className="text-[0.85rem] opacity-85 text-right truncate">{c.location}</span>}
+          <footer className="relative z-10 p-4 text-white font-sans flex flex-col gap-1.5">
+            <h3 className="m-0 text-[1.05rem] font-semibold leading-tight">{c.title}</h3>
+            {c.handle && <span className="text-[0.95rem] opacity-80">{c.handle}</span>}
+            <p className="m-0 text-[0.85rem] opacity-85 leading-snug mt-1">{c.subtitle}</p>
+            {c.location && <span className="text-[0.85rem] opacity-85">{c.location}</span>}
           </footer>
         </article>
       ))}
