@@ -33,8 +33,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* Logo */}
-          <div className={`text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap text-[#001858]`}>
-            <span className="text-[#E13926]">PanIIT</span> AP Summit
+          <div className="flex items-center">
+            <img 
+              src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
+              alt="PanIIT AP Summit" 
+              className="h-10 md:h-12 object-contain mix-blend-multiply" 
+            />
           </div>
         </div>
 
