@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const PLACEHOLDER = "https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80";
 
 const CHIEF_GUEST = {
-  image: PLACEHOLDER,
+  image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/CNB%20-%20Chairman%20-%20VC.jpeg',
   name: 'Sri Nara Chandra Babu Naidu',
   role: "Hon'ble Chief Minister",
   org: "of Andhra Pradesh",
@@ -44,7 +44,7 @@ const DISTINGUISHED_GUESTS = [
 
 const KEY_GUESTS = [
   { image: PLACEHOLDER, name: 'Prof. V. Kamakoti', role: 'Director\nIIT Madras' },
-  { image: PLACEHOLDER, name: 'Prof.\nK N Satyamnarayana', role: 'Director\nIIT Tirupati' },
+  { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20K.%20N.%20Satyanarayana%20Director%2C%20IIT%20Tirupati.png", name: 'Prof.\nK N Satyamnarayana', role: 'Director\nIIT Tirupati' },
   { image: PLACEHOLDER, name: 'Prof.\nB. S. Murthy', role: 'Director\nIIT Hyderabad' },
   { image: PLACEHOLDER, name: 'Prof.\nSukumar Mishra', role: 'Director\nIIT (ISM) Dhanbad' },
   { image: PLACEHOLDER, name: 'Dr. A. Seshadri Sekhar', role: 'Director\nIIT Palakkad' },
@@ -55,13 +55,14 @@ const KEY_GUESTS = [
 ];
 
 const INDUSTRY_LEADERS = [
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/DR%20SURESH%20PODE%20%2C%20President%2C%20LAURUS%20LABS.jpeg', name: 'Dr. Suresh Pode', role: 'President\nLaurus Labs' },
   { image: PLACEHOLDER, name: 'Sri Lalit Agarwal', role: 'India Head\nSchlumberger India' },
   { image: PLACEHOLDER, name: 'Sri Yaram Vijay\nKumar', role: 'India MD\nHoneywell Aerospace' },
   { image: PLACEHOLDER, name: 'Sri Hitesh Garg', role: 'India MD\nNXP Semiconductors' },
   { image: PLACEHOLDER, name: 'Arun Ramchandani', role: 'Sr Vice President &\nHead, L&T - Precision Engineering &\nSystems' },
   { image: PLACEHOLDER, name: 'Sri Amit Singhee', role: 'Director, IBM Research India & IBM\nSoftware Innovation Lab; CTO, IBM\nIndia & South Asia.' },
   { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/C%20V%20Sridhar_%20Director%20of%20the%20Andhra%20Pradesh%20State%20Quantum%20Mission%20(APSQM).jpeg", name: 'Sri C Sridhar', role: 'Director of the Andhra Pradesh State\nQuantum Mission (APSQM) and the\nAmaravati Quantum Valley' },
-  { image: PLACEHOLDER, name: 'Dr. Giridhar\nParvatam', role: 'Head, CFTRI' },
+  { image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20Giridhar%20Parvatam.jpg", name: 'Dr. Giridhar\nParvatam', role: 'Head, CFTRI' },
   { image: PLACEHOLDER, name: 'Dr. Jitendra\nSharma', role: 'CEO, AMTZ' },
   { image: PLACEHOLDER, name: 'Sri Ankit Todi', role: 'Chief Sustainability Officer\nMahindra Group' },
   { image: PLACEHOLDER, name: 'Sri BH. V. Seshagiri\nRao', role: 'CEO( MC) Retd, HAL, NASIK' },
