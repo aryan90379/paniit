@@ -50,8 +50,8 @@ export default function Footer() {
             <div id="register" className="p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(30,58,138,0.3)] relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
               <div className="relative z-10">
-                <h4 className="text-xl font-bold text-white mb-2">Register your interest</h4>
-                <p className="text-sm text-gray-200 mb-4 font-medium">This is an invite-only event. Request an invitation.</p>
+                <h4 className="text-xl font-bold text-white mb-2">Register for the Summit</h4>
+                <p className="text-sm text-gray-200 mb-4 font-medium">Join us in shaping the future of innovation, investment, and talent.</p>
                 <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
                   <input 
                     type="email" 
@@ -59,7 +59,7 @@ export default function Footer() {
                     className="px-4 py-3 rounded-lg bg-black/80 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors backdrop-blur-sm"
                   />
                   <button className="px-4 py-3 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold flex items-center justify-center gap-2 transition-colors shadow-lg">
-                    Apply to Attend <ArrowRight size={18} />
+                    Register Now <ArrowRight size={18} />
                   </button>
                 </form>
               </div>
@@ -117,7 +117,7 @@ export default function Footer() {
 
               <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold mt-4">
                 <MapPin size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
-                <span>Dr. B. R. Ambedkar Kala Vedika,<br/>Vijayawada, Andhra Pradesh</span>
+                <span>Dr. B. R. Ambedkar Kala Vedika, Buckingham Peta, Vijayawada</span>
               </li>
             </ul>
             
