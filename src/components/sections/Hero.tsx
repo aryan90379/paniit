@@ -142,92 +142,53 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="flex-1 w-full mt-12 lg:mt-0"
+            className="flex-1 w-full lg:relative flex flex-col lg:block gap-4 mt-12 lg:mt-0"
           >
-            {/* Desktop Orbital Layout */}
-            <div className="hidden lg:block relative w-full h-[450px]">
-              {/* Chief Guest Focal Card - DEAD CENTER */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] w-[280px] rounded-2xl p-6 text-[#172c66] backdrop-blur-xl shadow-2xl bg-white border border-white flex flex-col items-center text-center z-40 transform hover:scale-105 transition-transform duration-300">
-                <div className="w-28 h-28 rounded-full mb-4 relative shadow-[0_0_20px_rgba(225,57,38,0.2)]">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#E13926] to-[#153063] rounded-full scale-[1.05]" />
-                  <img src="https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg" alt="Chief Guest" className="w-full h-full object-cover rounded-full relative z-10 border-[3px] border-white bg-gray-100" />
-                </div>
-                <div className="px-4 py-1 rounded-full bg-[#E13926] text-white text-[10px] font-black uppercase tracking-widest mb-3 shadow-sm">
-                  Chief Guest
-                </div>
-                <h2 className="font-black text-[1.1rem] text-[#001858] leading-tight mb-1">
-                  Sri Nara Chandrababu Naidu
-                </h2>
-                <p className="font-bold text-[#E13926] text-[10px] uppercase tracking-wider">
-                  Hon'ble Chief Minister, AP
-                </p>
+            {/* Chief Guest Big Pill - Top Right */}
+            <div className="lg:absolute lg:top-[-20px] lg:right-[-10px] rounded-full p-2 pr-8 text-[#172c66] backdrop-blur-xl shadow-xl bg-white/90 border border-white flex items-center gap-4 z-40 hover:-translate-y-1 transition-transform">
+              <div className="w-16 h-16 rounded-full relative shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#E13926] to-[#153063] rounded-full scale-[1.05]" />
+                <img src="https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg" alt="Chief Guest" className="w-full h-full object-cover rounded-full relative z-10 border-2 border-white bg-gray-100" />
               </div>
-
-              {/* Card 1 - Top Left Orbit */}
-              <div className="absolute top-0 left-[10px] rounded-xl p-5 w-[230px] text-[#172c66] backdrop-blur-[8px] shadow-lg bg-[#f3d2c1]/80 border border-white/60 z-20 hover:-translate-y-2 transition-transform">
-                <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"A Global Network"</div>
-                <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">
-                  1000+ top-tier alumni converging for the future of deeptech.
-                </p>
-                <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right mt-auto">
-                  Community
-                </div>
-              </div>
-
-              {/* Card 2 - Top Right Orbit */}
-              <div className="absolute top-[60px] right-0 rounded-xl p-5 w-[230px] text-[#172c66] backdrop-blur-[8px] shadow-lg bg-[#8bd3dd]/70 border border-white/60 z-20 hover:-translate-y-2 transition-transform">
-                <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"Actionable Insights"</div>
-                <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">
-                  20+ industry leaders sharing quantum & AI strategies.
-                </p>
-                <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#153063] text-right mt-auto">
-                  Knowledge
-                </div>
-              </div>
-
-              {/* Card 3 - Bottom Center Orbit */}
-              <div className="absolute bottom-[20px] left-1/2 -translate-x-[40%] rounded-xl p-5 w-[250px] text-[#172c66] backdrop-blur-[8px] shadow-lg bg-[#E13926]/15 border border-white/60 z-50 hover:-translate-y-2 transition-transform">
-                <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"Real Impact"</div>
-                <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">
-                  Bridging the gap between engineering talent and state governance.
-                </p>
-                <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right mt-auto">
-                  Action
-                </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-black uppercase text-[#E13926] tracking-widest leading-none mb-1.5">Chief Guest</span>
+                <span className="text-[1rem] font-black text-[#001858] leading-none mb-1">Sri Nara Chandrababu Naidu</span>
+                <span className="text-[10px] font-bold text-[#153063]/80 leading-none uppercase">Hon'ble Chief Minister, AP</span>
               </div>
             </div>
 
-            {/* Mobile Stack Layout */}
-            <div className="lg:hidden flex flex-col gap-4">
-              <div className="rounded-2xl p-5 text-[#172c66] backdrop-blur-xl shadow-xl bg-white border border-white/60 flex flex-col items-center text-center z-30">
-                <div className="w-24 h-24 rounded-full mb-3 relative shadow-md">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#E13926] to-[#153063] rounded-full scale-[1.05]" />
-                  <img src="https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg" alt="Chief Guest" className="w-full h-full object-cover rounded-full relative z-10 border-[3px] border-white bg-gray-100" />
-                </div>
-                <div className="px-3 py-1 rounded-full bg-[#E13926] text-white text-[9px] font-black uppercase tracking-widest mb-2 shadow-sm">
-                  Chief Guest
-                </div>
-                <h2 className="font-black text-[1rem] text-[#001858] leading-tight mb-1">
-                  Sri Nara Chandrababu Naidu
-                </h2>
-                <p className="font-bold text-[#E13926] text-[10px] uppercase tracking-wider">
-                  Hon'ble Chief Minister, AP
-                </p>
-              </div>
-              <div className="rounded-xl p-5 text-[#172c66] backdrop-blur-[5px] shadow-lg bg-[#f3d2c1]/60 border border-white/40">
-                <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"A Global Network"</div>
-                <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">1000+ top-tier alumni converging for the future of deeptech.</p>
-              </div>
-              <div className="rounded-xl p-5 text-[#172c66] backdrop-blur-[5px] shadow-lg bg-[#8bd3dd]/50 border border-white/40">
-                <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"Actionable Insights"</div>
-                <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">20+ industry leaders sharing quantum & AI strategies.</p>
-              </div>
-              <div className="rounded-xl p-5 text-[#172c66] backdrop-blur-[5px] shadow-lg bg-[#E13926]/10 border border-white/40">
-                <div className="font-bold text-[1.05rem] mb-2 text-[#001858]">"Real Impact"</div>
-                <p className="text-[0.85rem] leading-relaxed mb-3 opacity-90">Bridging the gap between engineering talent and state governance.</p>
+            {/* Card 1 - Center Left */}
+            <div className="lg:absolute lg:top-[60px] lg:left-[-30px] rounded-xl p-4 lg:w-[220px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#f3d2c1]/40 border border-white/20 z-20 hover:-translate-y-1 transition-transform">
+              <div className="font-bold text-[1.1rem] mb-1.5 text-[#001858]">"A Global Network"</div>
+              <p className="text-[0.85rem] leading-relaxed mb-2 opacity-90">
+                1000+ top-tier alumni converging to shape the future of deeptech.
+              </p>
+              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right">
+                Community
               </div>
             </div>
 
+            {/* Card 2 - Center Right */}
+            <div className="lg:absolute lg:top-[160px] lg:right-[10px] rounded-xl p-4 lg:w-[220px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#8bd3dd]/30 border border-white/20 z-10 hover:-translate-y-1 transition-transform">
+              <div className="font-bold text-[1.1rem] mb-1.5 text-[#001858]">"Actionable Insights"</div>
+              <p className="text-[0.85rem] leading-relaxed mb-2 opacity-90">
+                20+ industry leaders sharing strategies for quantum computing, AI, and startups.
+              </p>
+              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#153063] text-right">
+                Knowledge
+              </div>
+            </div>
+
+            {/* Card 3 - Bottom Left */}
+            <div className="lg:absolute lg:top-[280px] lg:left-[20px] rounded-xl p-4 lg:w-[220px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#E13926]/10 border border-white/20 z-0 hover:-translate-y-1 transition-transform">
+              <div className="font-bold text-[1.1rem] mb-1.5 text-[#001858]">"Real Impact"</div>
+              <p className="text-[0.85rem] leading-relaxed mb-2 opacity-90">
+                Bridging the gap between world-class engineering talent and state governance.
+              </p>
+              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right">
+                Action
+              </div>
+            </div>
           </motion.div>
           
         </div>
