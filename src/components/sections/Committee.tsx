@@ -6,7 +6,7 @@ const PLACEHOLDER = "https://img.magnific.com/free-photo/close-up-portrait-young
 
 const OFFICE_BEARERS = [
   { image: PLACEHOLDER, name: 'Prabhat Kumar, IRS', role: 'Chairman' },
-  { image: PLACEHOLDER, name: 'Dr. Amitabh Ranjan', role: 'Vice Chairman' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Dr.%20Amitabh%20Ranjan.jpg', name: 'Dr. Amitabh Ranjan', role: 'Vice Chairman' },
   { image: PLACEHOLDER, name: 'Rajeev Singh', role: 'General Secretary' },
   { image: PLACEHOLDER, name: 'Ashish Kela', role: 'Treasurer' },
 ];
@@ -26,23 +26,27 @@ const CORE_COMMITTEE_MEMBERS = [
   { image: PLACEHOLDER, name: 'Sudhakar Gande', role: '' },
   { image: PLACEHOLDER, name: 'M S Reddy', role: '' },
   { image: PLACEHOLDER, name: 'Dr. Ramunaidu Randhi', role: '' },
-  { image: PLACEHOLDER, name: 'Dr. Gundala Nagaraju', role: '' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Dr.%20Gundala%20Nagaraju%20(right).jpg', name: 'Dr. Gundala Nagaraju', role: '' },
 ];
 
 const COMMITTEE_MEMBERS = [
-  { image: PLACEHOLDER, name: 'Prof. Murali Krishna\nIyyanki' },
-  { image: PLACEHOLDER, name: 'Rajesh Rathi' },
-  { image: PLACEHOLDER, name: 'Neeraj Kumar' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Abhilash%20Kondai.jpg', name: 'Abhilash Kondai' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/J%20V%20Prem%20Kumar%20Reddy.jpeg', name: 'J V Prem Kumar Reddy' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/NS%20Bhanuprakash.jpg', name: 'NS Bhanuprakash' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Pradip%20Sasmal.jpg', name: 'Pradip Sasmal' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Prof.%20Murali%20Krishna%20%20Iyyanki%20(left).jpg', name: 'Prof. Murali Krishna\nIyyanki' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Rajesh%20Rathi.jpg', name: 'Rajesh Rathi' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Neeraj%20Kumar%20(right).jpg', name: 'Neeraj Kumar' },
   { image: PLACEHOLDER, name: 'Praveen Kumar' },
-  { image: PLACEHOLDER, name: 'Phani Arega' },
-  { image: PLACEHOLDER, name: 'Sai Teja Duggempudi' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Phani%20Arega.jpg', name: 'Phani Arega' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Sai%20Teja%20Duggempudi.jpg', name: 'Sai Teja Duggempudi' },
   { image: PLACEHOLDER, name: 'Tejavath Jagadeesh' },
-  { image: PLACEHOLDER, name: 'Dr. Anjanna Matta' },
-  { image: PLACEHOLDER, name: 'C P Madhusudan' },
-  { image: PLACEHOLDER, name: 'Thejaswini Kalasamudram' },
-  { image: PLACEHOLDER, name: 'Gadi Akhil Sai Ram' },
-  { image: PLACEHOLDER, name: 'Kshitij Tiwari' },
-  { image: PLACEHOLDER, name: 'Sanskreeti Raj' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Dr.%20Anjanna%20Matta.jpeg', name: 'Dr. Anjanna Matta' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/C%20P%20Madhusudan_.jpg', name: 'C P Madhusudan' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Thejaswini%20Kalasamudram.jpeg', name: 'Thejaswini Kalasamudram' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Gadi%20Akhil%20Sai%20Ram.jpg', name: 'Gadi Akhil Sai Ram' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Kshitij%20Tiwari.jpg', name: 'Kshitij Tiwari' },
+  { image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Sanskreeti%20Raj.jpg', name: 'Sanskreeti Raj' },
   { image: PLACEHOLDER, name: 'Vishakh Agarwal' },
   { image: PLACEHOLDER, name: 'Vishal Bhandari' },
 ];
