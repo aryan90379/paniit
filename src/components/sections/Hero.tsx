@@ -7,13 +7,13 @@ import SpecularButton from '../SpecularButton';
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-[#050B14]">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#050B14] py-32">
       {/* Background with AeroShards - DARK THEME */}
       <div className="absolute inset-0 z-0">
         <AeroShards
-          backgroundColor="#120F17"
-          shardColor="#896ABD"
-          accentColor="#A855F7"
+          backgroundColor="#050B14"
+          shardColor="#E13926"
+          accentColor="#ffffff"
           placement="full"
           flow="stream"
           material="pearl"
