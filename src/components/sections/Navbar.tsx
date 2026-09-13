@@ -27,26 +27,24 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md border-b border-gray-200 py-3 shadow-sm' : 'bg-transparent py-5'
+        isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-3 shadow-sm' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          {/* Logo Placeholder */}
-          <div className={`text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap ${isScrolled ? 'text-[#153063]' : 'text-[#153063]'}`}>
+          {/* Logo */}
+          <div className={`text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap text-white`}>
             <span className="text-[#E13926]">PanIIT</span> AP Summit
           </div>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+        <nav className="hidden xl:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`text-sm font-bold uppercase transition-colors whitespace-nowrap ${
-                isScrolled ? 'text-gray-600 hover:text-[#E13926]' : 'text-[#153063]/80 hover:text-[#E13926]'
-              }`}
+              className={`text-sm font-bold uppercase transition-colors whitespace-nowrap text-gray-300 hover:text-white`}
             >
               {link.name}
             </a>
@@ -54,25 +52,25 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-4 xl:gap-6">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           <a
             href="#partner"
-            className="text-sm font-bold text-[#153063] hover:text-[#E13926] transition-colors uppercase whitespace-nowrap"
+            className="text-sm font-bold text-gray-300 hover:text-white transition-colors uppercase whitespace-nowrap"
           >
             Become a Partner
           </a>
           <a
             href="#register"
-            className="px-5 py-2.5 rounded-full bg-[#E13926] hover:bg-[#E13926] text-white text-sm font-bold uppercase transition-all shadow-md hover:shadow-lg whitespace-nowrap"
+            className="px-5 py-2.5 rounded-full bg-[#E13926] hover:bg-red-500 text-white text-sm font-bold uppercase transition-all shadow-md hover:shadow-lg whitespace-nowrap"
           >
             Register
           </a>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden flex items-center gap-4">
+        <div className="xl:hidden flex items-center gap-4">
           <button
-            className={`text-[#153063]`}
+            className={`text-white`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,12 +80,12 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 py-4 px-4 flex flex-col gap-4 shadow-xl">
+        <div className="xl:hidden absolute top-full left-0 w-full bg-black border-b border-white/10 py-4 px-4 flex flex-col gap-4 shadow-xl">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-[#153063] font-bold uppercase py-2 border-b border-gray-100"
+              className="text-white font-bold uppercase py-2 border-b border-white/5"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -96,7 +94,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-3 pt-2 lg:hidden">
             <a
               href="#partner"
-              className="text-center py-2 text-[#153063] font-bold uppercase border border-[#153063]/20 rounded-lg"
+              className="text-center py-2 text-white font-bold uppercase border border-white/20 rounded-lg"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Become a Partner

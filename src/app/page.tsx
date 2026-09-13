@@ -14,7 +14,7 @@ import Footer from '@/components/sections/Footer';
 
 export default function Home() {
   return (
-    <main className="bg-white text-gray-900 min-h-screen selection:bg-blue-500/30 selection:text-white">
+    <main className="bg-black text-white min-h-screen selection:bg-blue-500/30 selection:text-white">
       <Navbar />
       <Hero />
       <About />
