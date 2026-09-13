@@ -4,22 +4,23 @@ import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 
 const SCHEDULE = [
-  { time: "08:00 AM", title: "Registration, Networking & Tea", subtitle: "Welcome delegates" },
-  { time: "09:00 AM", title: "Lighting of the Lamp & Welcome Address", subtitle: "Opening of the summit" },
-  { time: "09:15 AM", title: "Inaugural Ceremony", subtitle: "Guest of Honour: Shri Kinjarapu Rammohan Naidu & Sri Lokesh Nara" },
-  { time: "10:00 AM", title: "PANEL 1: Energy & Fuel Cost Optimisation", subtitle: "Swachh Andhra" },
-  { time: "10:45 AM", title: "PANEL 2: Deep Tech in All Walks of Life", subtitle: "Quantum, Semiconductors & AI" },
-  { time: "11:30 AM", title: "PANEL 3: Space & Defence Mfg", subtitle: "Product Perfection" },
-  { time: "12:15 PM", title: "PANEL 4: BioValley", subtitle: "Health Access & Screening at Scale" },
-  { time: "01:00 PM", title: "Networking Lunch", subtitle: "" },
-  { time: "02:00 PM", title: "CM's Visit to Pavilions & Exhibition", subtitle: "Hon'ble Chief Minister of AP Arrival" },
-  { time: "02:00 PM", title: "PANEL 5: Agri Tech", subtitle: "Farmers & Water Security" },
-  { time: "02:45 PM", title: "Skilling & Entrepreneurship", subtitle: "by IIT Madras Pravarthak" },
-  { time: "03:00 PM", title: "AI in Governance", subtitle: "Addresses & Talks" },
-  { time: "03:30 PM", title: "Networking Tea", subtitle: "" },
-  { time: "04:00 PM", title: "Summary Presentations", subtitle: "Insights from all 5 panels" },
-  { time: "05:00 PM", title: "CM Closing Block", subtitle: "Proceedings on Main Stage; HCM joins" },
-  { time: "06:00 PM", title: "Closing Ceremony", subtitle: "National Anthem" }
+  { time: "08:00 AM – 09:00 AM", title: "Registration, Networking & Tea", subtitle: "Welcome delegates" },
+  { time: "09:00 AM – 09:15 AM", title: "Lighting of the Lamp & Welcome Address", subtitle: "Opening of the summit" },
+  { time: "09:15 AM – 10:00 AM", title: "Inaugural Ceremony", subtitle: "Guest of Honour: Shri Kinjarapu Rammohan Naidu & Sri Lokesh Nara" },
+  { time: "10:00 AM – 10:45 AM", title: "PANEL 1: Energy & Fuel Cost Optimisation", subtitle: "Swachh Andhra" },
+  { time: "10:45 AM – 11:30 AM", title: "PANEL 2: Deep Tech in All Walks of Life", subtitle: "Quantum, Semiconductors & AI" },
+  { time: "11:30 AM – 12:15 PM", title: "PANEL 3: Space & Defence Mfg", subtitle: "Product Perfection" },
+  { time: "12:15 PM – 01:00 PM", title: "PANEL 4: BioValley", subtitle: "Health Access & Screening at Scale" },
+  { time: "01:00 PM – 02:00 PM", title: "Networking Lunch", subtitle: "" },
+  { time: "02:00 PM", title: "Hon'ble Chief Minister of AP Arrival", subtitle: "Arrival at Venue" },
+  { time: "02:00 PM – 02:30 PM", title: "CM's Visit to Pavilions & Exhibition", subtitle: "" },
+  { time: "02:00 PM – 02:45 PM", title: "PANEL 5: Agri Tech", subtitle: "Farmers & Water Security" },
+  { time: "02:45 PM – 03:00 PM", title: "Skilling & Entrepreneurship", subtitle: "by IIT Madras Pravarthak" },
+  { time: "03:00 PM – 03:30 PM", title: "AI in Governance", subtitle: "Addresses & Talks" },
+  { time: "03:30 PM – 04:00 PM", title: "Networking Tea", subtitle: "" },
+  { time: "04:00 PM – 05:00 PM", title: "Summary Presentations", subtitle: "Insights from all 5 panels" },
+  { time: "05:00 PM – 06:00 PM", title: "CM Closing Block", subtitle: "Proceedings on Main Stage; HCM joins" },
+  { time: "06:00 PM Onwards", title: "Closing Ceremony", subtitle: "National Anthem" }
 ];
 
 export default function Schedule() {
@@ -76,21 +77,24 @@ export default function Schedule() {
           <div className="hidden md:block w-1/3 relative">
             <nav className="sticky top-32">
               <ul className="list-none border-l-2 border-gray-200/60 pl-6 py-4 space-y-6">
-                {SCHEDULE.map((item, i) => (
-                  <li 
-                    key={i} 
-                    className={`cursor-pointer transition-all duration-300 origin-left border-b border-dotted pb-2 ${
-                      activeIdx === i 
-                        ? 'text-red-600 font-bold scale-110 border-transparent' 
-                        : 'text-gray-400 hover:text-gray-900 border-gray-300'
-                    }`}
-                    onClick={() => {
-                      sectionRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }}
-                  >
-                    {item.time}
-                  </li>
-                ))}
+                {SCHEDULE.map((item, i) => {
+                  const startTime = item.time.split(' – ')[0].split(' ')[0] + ' ' + item.time.split(' – ')[0].split(' ')[1];
+                  return (
+                    <li 
+                      key={i} 
+                      className={`cursor-pointer transition-all duration-300 origin-left border-b border-dotted pb-2 ${
+                        activeIdx === i 
+                          ? 'text-red-600 font-bold scale-110 border-transparent' 
+                          : 'text-gray-400 hover:text-gray-900 border-gray-300'
+                      }`}
+                      onClick={() => {
+                        sectionRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                      }}
+                    >
+                      {startTime}
+                    </li>
+                  )
+                })}
               </ul>
             </nav>
           </div>
@@ -117,7 +121,7 @@ export default function Schedule() {
                       : 'bg-white/50 border-gray-100 shadow-sm opacity-50'
                   }`}
                 >
-                  <div className="md:hidden inline-block px-3 py-1 bg-red-50 text-red-600 font-bold rounded-lg mb-4 text-sm">
+                  <div className="inline-block px-3 py-1 bg-red-50 text-red-600 font-bold rounded-lg mb-4 text-sm border border-red-100 shadow-sm">
                     {item.time}
                   </div>
                   
