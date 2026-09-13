@@ -10,16 +10,16 @@ export default function Hero() {
       {/* Background with AeroShards - DARK THEME */}
       <div className="absolute inset-0 z-0">
         <AeroShards
-          backgroundColor="#050B14" // Deep Dark Navy
-          shardColor="#3b82f6" // Bright Blue (from poster's sky/water)
-          accentColor="#E13926" // Vermilion Red (from poster's text)
+          backgroundColor="#120F17"
+          shardColor="#896ABD"
+          accentColor="#A855F7"
           placement="full"
           flow="stream"
           material="pearl"
           detail="balanced"
           effect="none"
           scale={1}
-          spread={1.5}
+          spread={1}
           depth={1}
           speed={1}
           spin={1}
@@ -38,10 +38,11 @@ export default function Hero() {
           interactionStrength={0.5}
           rippleIntensity={1}
           holdToGather={true}
+          paused={false}
         />
         
-        {/* Overlay to ensure text readability and maintain deep dark vibe */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050B14]/80 via-transparent to-[#050B14] z-10 pointer-events-none" />
+        {/* Subtle overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
       </div>
 
       <div className="container relative z-20 mx-auto px-4 md:px-6 text-center mt-24">
