@@ -2,171 +2,219 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronDown } from 'lucide-react';
-import WebThreads from '../WebThreads';
-import SpecularButton from '../SpecularButton';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
+  const cursorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+
+    let cursorP = { x: 0, y: 0 };
+    let pageP = { x: 0, y: 0 };
+
+    const lerp = (start: number, end: number, amount = 0.05) => {
+      return (1 - amount) * start + amount * end;
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      cursor.style.opacity = '0.3'; // matches user's opacity(30%)
+      pageP.x = e.clientX;
+      pageP.y = e.clientY;
+    };
+
+    const handleMouseOut = () => {
+      cursor.style.opacity = '0';
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseout", handleMouseOut);
+
+    let animationFrameId: number;
+    const loop = () => {
+      cursorP.x = lerp(cursorP.x, pageP.x, 0.1);
+      cursorP.y = lerp(cursorP.y, pageP.y, 0.1);
+      cursor.style.transform = `translate(calc(${cursorP.x}px - 50%), calc(${cursorP.y}px - 50%))`;
+      animationFrameId = requestAnimationFrame(loop);
+    };
+    loop();
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseout", handleMouseOut);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-white md:bg-[#050B14] py-32">
-      {/* Background with AeroShards - DARK THEME */}
-      <div className="hidden md:block absolute inset-0 z-0">
-        <WebThreads
-          color1="#E13926"
-          color2="#3b82f6"
-          color3="#FFFFFF"
-          backgroundColor="#050B14"
-          speed={0.2}
-          threadCount={6}
-          frequency={5}
-          spread={0.18}
-          taper={1}
-          position={0.5}
-          fanMode="center"
-          glow={0.02}
-          falloff={0.6}
-          thickness={1.1}
-          brightness={0.6}
-          opacity={1}
-          mirror
-          shimmer={false}
-          grain
-          grainIntensity={0.05}
-          mouseInteraction
-          mouseStrength={0.3}
+    <section className="relative w-full min-h-screen flex flex-col z-[2] bg-[#fef6e4] lg:bg-[#f8f9fa] overflow-x-hidden">
+      
+      {/* Grainy overlay */}
+      <div 
+        className="absolute inset-0 z-[3] mix-blend-normal opacity-40 pointer-events-none"
+        style={{ backgroundImage: 'url(https://grainy-gradients.vercel.app/noise.svg)' }}
+      />
+      
+      {/* Interactive Gradient Cursor */}
+      <div 
+        ref={cursorRef}
+        className="fixed z-[1] w-[250px] h-[250px] left-0 top-0 pointer-events-none transition-opacity duration-1000 opacity-0 blur-[30px]"
+      >
+        <div 
+          className="w-full h-full rounded-full animate-[spin_20s_linear_infinite_alternate]"
+          style={{ background: 'radial-gradient(circle, #E13926, #153063)' }}
         />
-        
-        {/* Subtle overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
       </div>
 
-      <div className="container relative z-20 mx-auto px-4 md:px-6 text-center mt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
-        >
-          <span className="px-5 py-2 rounded-full bg-blue-50 md:bg-blue-900/40 border border-blue-200 md:border-blue-500/30 text-blue-700 md:text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
-            AI & DeepTech
-          </span>
-          <span className="px-5 py-2 rounded-full bg-red-50 md:bg-[#E13926]/20 border border-red-200 md:border-[#E13926]/40 text-red-700 md:text-red-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
-            Quantum Technology
-          </span>
-          <span className="px-5 py-2 rounded-full bg-blue-50 md:bg-blue-900/40 border border-blue-200 md:border-blue-500/30 text-blue-700 md:text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
-            Startups
-          </span>
-        </motion.div>
+      <div className="container relative z-10 mx-auto px-4 md:px-6 pt-32 flex-grow flex flex-col justify-center">
+        
+        <div className="flex flex-col lg:flex-row w-full max-w-6xl mx-auto items-center lg:items-start gap-12 lg:gap-8">
+          
+          {/* LEFT COLUMN - Title Area */}
+          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left pt-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8"
+            >
+              <span className="px-4 py-1.5 rounded-full bg-[#153063]/10 border border-[#153063]/20 text-[#153063] text-xs font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+                AI & DeepTech
+              </span>
+              <span className="px-4 py-1.5 rounded-full bg-[#E13926]/10 border border-[#E13926]/20 text-[#E13926] text-xs font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+                Quantum Technology
+              </span>
+            </motion.div>
 
-        <motion.h1
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-5xl md:text-7xl font-black tracking-tighter text-[#153063] mb-6 leading-[1.05] uppercase"
+            >
+              PanIIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E13926] to-[#f582ae]">Andhra Pradesh</span><br />
+              Summit 2026
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="text-xl md:text-2xl text-[#172c66] font-semibold mb-2 tracking-tight"
+            >
+              Andhra's Resilient <span className="text-[#E13926] font-black">DEEPTECH DECADE</span>
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              className="text-lg md:text-xl text-[#172c66]/80 font-bold mb-10 uppercase tracking-wide"
+            >
+              Swarna Andhra to <span className="text-[#E13926] font-black">Viksit Bharat 2047</span>
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row items-center gap-6"
+            >
+              <a
+                href="#register"
+                className="group relative px-8 py-4 bg-[#fef6e4] border-none cursor-pointer z-0 outline-none"
+              >
+                <span className="relative z-10 block bg-[#fef6e4] rounded-sm text-[#001858] font-black uppercase tracking-wide px-4 py-2">
+                  Registration Open Now
+                </span>
+                <div className="absolute inset-[-3px] bg-gradient-to-r from-[#E13926] to-[#153063] rounded-lg -z-10 transition-shadow duration-300 ease-in group-hover:shadow-[0_0_10px_#f3d2c1,0_0_20px_#f582ae]"></div>
+              </a>
+            </motion.div>
+          </div>
+
+          {/* RIGHT COLUMN - Glassmorphism Cards */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="flex-1 w-full lg:relative flex flex-col lg:block gap-4 mt-12 lg:mt-0"
+          >
+            {/* Card 1 */}
+            <div className="lg:absolute lg:top-[-40px] lg:left-[-20px] rounded-lg p-5 lg:w-[260px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#f3d2c1]/40 border border-white/20">
+              <div className="font-bold text-xl mb-2 text-[#001858]">"A Global Network"</div>
+              <p className="text-[1rem] leading-relaxed mb-3 opacity-90">
+                1000+ top-tier alumni converging to shape the future of deeptech and innovation in Andhra Pradesh.
+              </p>
+              <div className="font-extrabold text-xs uppercase tracking-wider text-[#E13926] text-right">
+                Community
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="lg:absolute lg:top-[120px] lg:right-[10px] rounded-lg p-5 lg:w-[260px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#8bd3dd]/30 border border-white/20">
+              <div className="font-bold text-xl mb-2 text-[#001858]">"Actionable Insights"</div>
+              <p className="text-[1rem] leading-relaxed mb-3 opacity-90">
+                20+ industry leaders sharing strategies for quantum computing, AI, and startup ecosystems.
+              </p>
+              <div className="font-extrabold text-xs uppercase tracking-wider text-[#153063] text-right">
+                Knowledge
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="lg:absolute lg:top-[280px] lg:left-[40px] rounded-lg p-5 lg:w-[260px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#E13926]/10 border border-white/20">
+              <div className="font-bold text-xl mb-2 text-[#001858]">"Real Impact"</div>
+              <p className="text-[1rem] leading-relaxed mb-3 opacity-90">
+                Bridging the gap between world-class engineering talent and transformative state governance.
+              </p>
+              <div className="font-extrabold text-xs uppercase tracking-wider text-[#E13926] text-right">
+                Action
+              </div>
+            </div>
+          </motion.div>
+          
+        </div>
+
+        </div>
+
+      {/* BOTTOM ROW - Event Details menu style */}
+        <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-[7rem] font-black tracking-tighter text-gray-900 md:text-white mb-8 leading-[1.05] uppercase"
+          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+          className="w-full bg-white/40 backdrop-blur-md border-t border-white/50 py-8 px-4 mt-12"
         >
-          PanIIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E13926] to-red-700 md:from-red-400 md:to-[#E13926]">Andhra Pradesh</span><br />
-          Summit 2026
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-xl md:text-3xl text-gray-600 md:text-blue-100 font-semibold mb-3 tracking-tight"
-        >
-          Andhra's Resilient <span className="text-[#E13926] font-black">DEEPTECH DECADE:</span><br/>ANCHORED BY PANIIT
-        </motion.p>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="text-lg md:text-2xl text-gray-700 md:text-blue-100 font-bold mb-12 uppercase tracking-wide"
-        >
-          Swarna Andhra to <span className="text-[#E13926] font-black">Viksit Bharat 2047</span>
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12"
-        >
-          <div className="flex items-center gap-3 bg-gray-100 md:bg-black/40 backdrop-blur-md px-6 py-3 rounded-2xl shadow-sm border border-gray-200 md:border-blue-500/20">
-            <Calendar className="text-blue-600 md:text-blue-400" size={24} />
-            <span className="text-gray-900 md:text-white font-bold text-lg">3rd October, 2026</span>
-          </div>
-          {/* Mobile Address Pill Fallback */}
-          <a
-            href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:hidden flex items-center gap-3 bg-gray-100 px-6 py-3 rounded-2xl shadow-sm border border-gray-200"
-          >
-            <MapPin className="text-blue-600 flex-shrink-0" size={28} />
-            <div className="flex flex-col text-left">
-              <span className="font-bold text-lg text-gray-900 leading-tight">Dr. B. R. Ambedkar Kala Vedika,</span>
-              <span className="text-[13px] text-blue-700 uppercase tracking-wider font-semibold mt-1">Get Directions →</span>
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div className="flex flex-col text-center md:text-left">
+              <h3 className="font-black text-[#001858] text-lg uppercase tracking-wide">Date & Time</h3>
+              <div className="flex items-center justify-center md:justify-start gap-2 mt-2 text-[#172c66]">
+                <Calendar size={20} className="text-[#E13926]" />
+                <span className="font-bold">3rd October, 2026</span>
+              </div>
             </div>
-          </a>
-          
-          <div className="hidden md:block">
-            <SpecularButton
-            size="md"
-            radius={18}
-            tint="#3b82f6"
-            tintOpacity={0.1}
-            blur={8}
-            textColor="#ffffff"
-            lineColor="#3b82f6"
-            baseColor="#050B14"
-            intensity={1.5}
-            shineSize={15}
-            shineFade={40}
-            thickness={1}
-            speed={0.35}
-            followMouse
-            proximity={250}
-            autoAnimate={false}
-            onClick={() => window.open('https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar\'+\Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D', '_blank')}
-            className="w-full sm:w-auto hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all"
-          >
-            <MapPin className="text-blue-600 md:text-blue-400 flex-shrink-0" size={28} />
-            <div className="flex flex-col text-left pl-2">
-              <span className="font-bold text-lg leading-tight">Dr. B. R. Ambedkar Kala Vedika,</span>
-              <span className="text-[13px] text-blue-300 uppercase tracking-wider font-semibold mt-1">Get Directions →</span>
+            
+            <div className="hidden md:block w-px h-12 bg-[#153063]/20"></div>
+
+            <div className="flex flex-col text-center md:text-left flex-1 max-w-lg">
+              <h3 className="font-black text-[#001858] text-lg uppercase tracking-wide">Venue</h3>
+              <a 
+                href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center md:justify-start gap-2 mt-2 text-[#172c66] hover:text-[#E13926] transition-colors"
+              >
+                <MapPin size={20} className="text-[#E13926] group-hover:scale-110 transition-transform flex-shrink-0" />
+                <span className="font-bold leading-tight">
+                  Dr. B. R. Ambedkar Kala Vedika, Vijayawada, AP
+                  <span className="block text-xs uppercase tracking-wider text-[#E13926] mt-1 opacity-80 group-hover:opacity-100">Get Directions &rarr;</span>
+                </span>
+              </a>
             </div>
-          </SpecularButton>
+
           </div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a
-            href="#register"
-            className="w-full sm:w-auto px-10 py-4 rounded-full bg-[#E13926] hover:bg-red-600 text-white font-black text-lg transition-all shadow-[0_0_20px_rgba(225,57,38,0.4)] hover:shadow-[0_0_35px_rgba(225,57,38,0.6)] hover:-translate-y-1 tracking-wide uppercase"
-          >
-            Registration Open Now
-          </a>
-
-        </motion.div>
-      </div>
-
-      {/* Down arrow indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce"
-      >
-        <a href="#about" className="text-gray-400 hover:text-gray-900 md:text-white/50 md:hover:text-white transition-colors">
-          <ChevronDown size={40} />
-        </a>
-      </motion.div>
-
     </section>
   );
 }
