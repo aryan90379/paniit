@@ -65,11 +65,12 @@ export default function PastEminentSpeakers() {
               transition={{ delay: (i % 6) * 0.1 }}
               className="flex flex-col items-center text-center group"
             >
-              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 border-[3px] border-red-600 p-1 group-hover:scale-105 transition-transform">
+              <div className="relative w-28 h-28 md:w-36 md:h-36 mb-6 group-hover:scale-105 transition-transform">
+                <div className="absolute inset-0 bg-[#E13926] rounded-full rounded-br-none scale-105" style={{ transformOrigin: 'center' }} />
                 <img 
                   src={PLACEHOLDER} 
                   alt={speaker.name} 
-                  className="w-full h-full object-cover rounded-full bg-gray-100"
+                  className="w-full h-full object-cover rounded-full relative z-10 border-[3px] border-white bg-gray-100"
                 />
               </div>
               <h3 className="font-bold text-gray-900 text-sm md:text-base leading-tight mb-1">{speaker.name}</h3>
