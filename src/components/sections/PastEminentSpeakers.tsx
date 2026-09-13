@@ -5,24 +5,24 @@ import { motion } from 'framer-motion';
 const PLACEHOLDER = "https://img.magnific.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?semt=ais_hybrid&w=740&q=80";
 
 const PAST_SPEAKERS = [
-  { name: 'Sri Narendra Modi', desc: "Hon'ble Prime Minister, India" },
-  { name: 'Dr. APJ Abdul Kalam', desc: 'Former President, India' },
-  { name: 'Dr. Manmohan Singh', desc: 'Former Prime Minister, India' },
-  { name: 'Gurudev Sri Sri Ravi Shankar', desc: '' },
-  { name: 'Sri Bill Clinton', desc: 'Former President, USA' },
-  { name: 'Sri Bill Gates', desc: 'Chairman, Gates Foundation' },
-  { name: 'Sri NR Narayana Murthy', desc: 'Founder, Infosys' },
-  { name: 'Sri Manohar Parrikar', desc: 'Former Chief Minister, Goa' },
-  { name: 'Sri Amartya Sen', desc: 'Nobel Prize Winner and Professor, Harvard' },
-  { name: 'Sri Nandan M. Nilekani', desc: 'Co-Founder & Chairman, Infosys' },
-  { name: 'Sri Thawar Chand Gehlot', desc: 'Governor of Karnataka' },
-  { name: 'Sri Vinod Khosla', desc: 'Founder & MD, Khosla Ventures' },
-  { name: 'Sri A S Kiran Kumar', desc: 'Former Chairman, ISRO' },
-  { name: 'Sri Carl Bass', desc: 'Former President & CEO, Autodesk' },
-  { name: 'Sri Nitin Gadkari', desc: 'Union Minister, Road Transport & Highways' },
-  { name: 'Sri Piyush Goyal', desc: 'Union Minister, Commerce and Industry of India' },
-  { name: 'Sri Abhay Karandikar', desc: 'Member, NITI Aayog' },
-  { name: 'Sri MK Stalin', desc: 'Chief Minister, Tamil Nadu' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Official_Photograph_of_Prime_Minister_Narendra_Modi_Portrait.png', name: 'Sri Narendra Modi', desc: "Hon'ble Prime Minister, India" },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/A.P.J._Abdul_Kalam.jpg', name: 'Dr. APJ Abdul Kalam', desc: 'Former President, India' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Manmohan_Singh_Portrait_1300x1500.jpg', name: 'Dr. Manmohan Singh', desc: 'Former Prime Minister, India' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Sri_Sri_Ravi_Shankar_%2845347209351%29_%28cropped%29.jpg', name: 'Gurudev Sri Sri Ravi Shankar', desc: '' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Bill_Clinton.jpg', name: 'Sri Bill Clinton', desc: 'Former President, USA' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Bill_Gates_2018.jpg', name: 'Sri Bill Gates', desc: 'Chairman, Gates Foundation' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/N_R_Narayana_Murthy.jpg', name: 'Sri NR Narayana Murthy', desc: 'Founder, Infosys' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Manohar_Parrikar.jpg', name: 'Sri Manohar Parrikar', desc: 'Former Chief Minister, Goa' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Amartya_Sen_2022.jpg', name: 'Sri Amartya Sen', desc: 'Nobel Prize Winner and Professor, Harvard' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Nandan_Nilekani.jpg', name: 'Sri Nandan M. Nilekani', desc: 'Co-Founder & Chairman, Infosys' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Thawar_Chand_Gehlot.jpg', name: 'Sri Thawar Chand Gehlot', desc: 'Governor of Karnataka' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Vinod_Khosla.jpg', name: 'Sri Vinod Khosla', desc: 'Founder & MD, Khosla Ventures' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/Aluru_Seelin_Kiran_Kumar.jpg', name: 'Sri A S Kiran Kumar', desc: 'Former Chairman, ISRO' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Carl_Bass_2012.jpg', name: 'Sri Carl Bass', desc: 'Former President & CEO, Autodesk' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Nitin_Gadkari_official_portrait_%281%29.jpg', name: 'Sri Nitin Gadkari', desc: 'Union Minister, Road Transport & Highways' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Piyush_Goyal_in_2022.jpg', name: 'Sri Piyush Goyal', desc: 'Union Minister, Commerce and Industry of India' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/7/75/Abhay_Karandikar.jpg', name: 'Sri Abhay Karandikar', desc: 'Member, NITI Aayog' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/M._K._Stalin_2022_%28cropped%29.jpg', name: 'Sri MK Stalin', desc: 'Chief Minister, Tamil Nadu' },
   { name: 'Sri Dr. V Anantha Nageswaran', desc: 'Chief Economic Advisor, Government of India' },
   { name: 'Sri Sudhansh Panth', desc: 'IAS (IITKGP) Chief Secretary Rajasthan' },
   { name: 'Sri Navin Mittal, IAS', desc: 'Special Chief Secretary, Policy, Regulation & Energy at Govt. of Telangana' },
@@ -68,7 +68,7 @@ export default function PastEminentSpeakers() {
               <div className="relative w-28 h-28 md:w-36 md:h-36 mb-6 group-hover:scale-105 transition-transform">
                 <div className="absolute inset-0 bg-[#E13926] rounded-full rounded-br-none scale-105" style={{ transformOrigin: 'center' }} />
                 <img 
-                  src={PLACEHOLDER} 
+                  src={speaker.image || PLACEHOLDER} 
                   alt={speaker.name} 
                   className="w-full h-full object-cover rounded-full relative z-10 border-[3px] border-white bg-gray-100"
                 />
