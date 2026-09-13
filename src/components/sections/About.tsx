@@ -11,12 +11,11 @@ const STATS = [
 ];
 
 const AUDIENCE = [
-  { icon: Building2, label: 'Corporate CEOs & Investors' },
-  { icon: Briefcase, label: 'CXOs & VCs' },
-  { icon: Users, label: 'Global IIT Alumni' },
-  { icon: Landmark, label: 'IIT Directors & Policymakers' },
-  { icon: Lightbulb, label: 'Startup Founders' },
-  { icon: Trophy, label: 'Industry Leaders' },
+  { icon: Building2, label: 'Corporate CEOs & CXOs' },
+  { icon: Landmark, label: 'Investors & VCs' },
+  { icon: Users, label: 'IIT Directors & Global Alumni' },
+  { icon: Briefcase, label: 'Policy Makers' },
+  { icon: Lightbulb, label: 'Startup Founders' }
 ];
 
 export default function About() {
@@ -30,60 +29,41 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight"
+            className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight"
           >
-            About PanIIT
+            What is PanIIT ?
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-gray-600 font-light mb-6"
+            className="text-lg md:text-xl text-gray-600 font-light mb-6 leading-relaxed text-justify md:text-center"
           >
-            The umbrella body of alumni from all 23 IITs, representing over <strong className="text-gray-900">500,000+ IIT graduates globally</strong> across India, US, Canada, UK, Korea, Singapore, and Australia.
+            PanIIT Alumni India (PanIIT) is the umbrella body of alumni from all 23 IITs, uniting 500,000+ graduates across India and global hubs like the US, Canada, UK, Korea, Singapore, and Australia to drive nation-building and innovation-led growth. Through summits, policy dialogues, and programmes such as PanIIT Alumni Foundation (PARFI), WHEELS, IIT Startups and IIT-IIT, it channels the IIT alumni community's expertise towards India's development and global leadership.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-blue-600 font-medium"
+            className="text-lg md:text-xl text-gray-600 font-light leading-relaxed text-justify md:text-center"
           >
-            Key Initiatives: PARFI, WHEELS, IIT Startups, IIT-IIT
+            Its work has received national and international recognition, most notably, by the Hon'ble Prime Minister of India Shri Narendra Modi in his Independence Day 2026 address this year. IIT Directors and Faculty are regular participants in all the endeavours of PanIIT.
           </motion.p>
         </div>
 
-        {/* Impact & Reach Stats Band */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-          {STATS.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-2xl bg-white border border-gray-200 shadow-sm text-center group hover:border-blue-500/30 hover:shadow-md transition-all"
-            >
-              <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-red-600 mb-2 group-hover:scale-105 transition-transform duration-300">
-                {stat.value}
-              </div>
-              <div className="text-sm md:text-base text-gray-600 font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Who Will Attend */}
-        <div className="text-center">
+        <div className="text-center mb-24">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-gray-900 mb-10"
+            className="inline-block px-8 py-3 bg-red-600 text-white text-2xl md:text-3xl font-bold rounded-lg mb-10 shadow-md uppercase tracking-wide"
           >
-            Who Will Attend
+            Who Will Attend?
           </motion.h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {AUDIENCE.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -93,17 +73,59 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex flex-col items-center gap-4 p-6 rounded-xl bg-gray-50 border border-gray-100 hover:bg-blue-50 hover:border-blue-200 transition-colors"
+                  className="flex flex-col items-center justify-center gap-4 p-6 rounded-[2rem] bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-red-200 transition-all w-48 h-48 group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-2">
-                    <Icon size={24} />
+                  <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-red-600 group-hover:scale-110 transition-transform">
+                    <Icon size={32} />
                   </div>
-                  <div className="text-sm text-gray-700 font-medium leading-tight">
+                  <div className="text-sm md:text-base text-gray-800 font-bold text-center leading-tight uppercase">
                     {item.label}
                   </div>
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+
+        {/* Impact & Reach Stats Band */}
+        <div className="bg-[#0a0a0a] rounded-[2rem] p-12 text-center text-white relative overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 px-6 py-1 bg-blue-600 rounded-b-lg text-xs font-bold uppercase tracking-wider">
+            Impact & Reach
+          </div>
+          
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold mb-6 mt-4"
+          >
+            EVENT IN NUMBERS
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-gray-400 max-w-2xl mx-auto mb-12"
+          >
+            PanIIT Andhra Pradesh Summit 2026 unites innovators, nation builders, and policy makers for a day of keynotes, panels, and roundtables.
+          </motion.p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {STATS.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-8 rounded-2xl bg-white/5 border border-white/10 shadow-sm text-center"
+              >
+                <div className="text-4xl md:text-5xl font-bold text-white mb-3">
+                  {stat.value}
+                </div>
+                <div className="text-sm md:text-base text-gray-300 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
           </div>
         </div>
 

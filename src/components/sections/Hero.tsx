@@ -126,12 +126,12 @@ export default function Hero() {
         >
           <div className="flex items-center gap-2">
             <Calendar className="text-blue-400" size={20} />
-            <span>October 2-3, 2026</span>
+            <span>3rd October, 2026</span>
           </div>
           <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-gray-700" />
           <div className="flex items-center gap-2">
             <MapPin className="text-blue-400" size={20} />
-            <span>Vijayawada, Andhra Pradesh</span>
+            <span>Dr. B. R. Ambedkar Kala Vedika, Buckingham Peta, Vijayawada</span>
           </div>
         </motion.div>
 

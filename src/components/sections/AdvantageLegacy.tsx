@@ -1,131 +1,142 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TrendingUp, Rocket, Factory, Ship, Cpu, ShieldCheck } from 'lucide-react';
+import { Factory, Cpu, Building2, Anchor, Microscope, Landmark, Rocket, Network, Lightbulb, Users, School } from 'lucide-react';
 
-const ADVANTAGES = [
+const ADVANTAGE = [
   {
-    icon: TrendingUp,
-    title: "~25% of India's Investments",
-    desc: "Proposed investments in FY 2025–26, marking AP as the leading destination."
+    icon: Factory,
+    text: "Capturing nearly 25% of India's FY 2025-26 proposed investments, Andhra Pradesh secured over ₹6.74 lakh crore across different industry sectors."
   },
   {
-    icon: Landmark,
-    title: "₹74.74 Lakh Crore+",
-    desc: "Investment proposals approved and actively being mobilized."
-  },
-  {
-    icon: Globe,
-    title: "Global Tech Leaders",
-    desc: "Google, Reliance, and others investing heavily in AI, data centres, and digital infra."
-  },
-  {
-    icon: Ship,
-    title: "Unmatched Logistics",
-    desc: "6 operational ports and 3 national industrial corridors providing strong connectivity."
+    icon: Lightbulb,
+    text: "Powering India's deep-tech future, Andhra Pradesh is building a premier Quantum Valley Park to drive Quantum computing, literacy, and commercial innovation."
   },
   {
     icon: Cpu,
-    title: "Emerging DeepTech Hub",
-    desc: "Leading in AI, space-tech, semiconductors, electronics, and clean energy."
+    text: "Global technology leaders such as Google and Reliance are driving large-scale investments in AI, digital infrastructure, and next-generation data centres in AP."
+  },
+  {
+    icon: Anchor,
+    text: "Strategic east-coast location with 6 operational world-class ports, 3 national industrial corridors, and strong logistics connectivity."
+  },
+  {
+    icon: Microscope,
+    text: "Emerging hub for AI, Space-tech, semiconductors, deep-tech, electronics, clean energy, and advanced manufacturing."
   }
 ];
 
-// Re-using Lucide imports locally since we missed Landmark/Globe in this file
-import { Landmark, Globe } from 'lucide-react';
-
-const OUTCOMES = [
-  "IIT technology-transfer pipeline for AP.",
-  "Andhra PanIIT Declaration (23 IITs + Industry + Govt of AP).",
-  "Quantum & frontier-tech capabilities (incl. NMIQPS).",
-  "DeepTech policy package.",
-  "PanIIT Amaravati Council + permanent secretariat.",
-  "PanIIT Amaravati Venture Fund.",
-  "100-member Global IIT Mentor Network.",
-  "10 Industry Chairs across AP institutions."
+const LEGACY = [
+  {
+    icon: Landmark,
+    title: "Amaravati Council & Venture Fund",
+    desc: "PAN IIT Amaravati Council to be constituted with a permanent secretariat. PAN IIT Amaravati Venture Fund to be launched for DeepTech investment in the State."
+  },
+  {
+    icon: Network,
+    title: "Tech Transfer & Declaration",
+    desc: "IIT technology-transfer pipeline to be created for commercialisation. Andhra PanIIT Declaration to be released—a long-term commitment between the 23 IITs, Industry and Govt. of AP."
+  },
+  {
+    icon: Rocket,
+    title: "Quantum & DeepTech Policy",
+    desc: "Quantum computing and frontier-tech capabilities to be launched (including NMIOPS). DeepTech policy package unveiled to attract R&D, startups, and advanced manufacturing."
+  },
+  {
+    icon: Users,
+    title: "Mentorship & Academia",
+    desc: "100-member Global IIT Mentor Network to be launched. 10 Industry Chairs to be established across different institutions/universities in AP."
+  }
 ];
 
 export default function AdvantageLegacy() {
   return (
-    <section id="advantage" className="py-24 bg-[#050505] relative border-t border-white/5">
-      <div className="container mx-auto px-4 md:px-6">
-        
-        {/* Andhra Advantage */}
-        <div className="mb-32">
+    <section id="advantage" className="bg-white">
+      
+      {/* Andhra Advantage Section */}
+      <div className="py-24 pt-32 container mx-auto px-4 md:px-6 max-w-6xl">
+        <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-16 tracking-tight text-center"
+            className="text-3xl md:text-5xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
           >
-            Why Andhra Pradesh
+            Andhra Pradesh: Powering India's Next Wave of Innovation & Industrial Growth
           </motion.h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ADVANTAGES.map((adv, i) => {
-              const Icon = adv.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.05] transition-colors ${i === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}
-                >
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
-                    <Icon size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{adv.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{adv.desc}</p>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
 
-        {/* Legacy Beyond the Summit */}
-        <div>
+        <div className="flex flex-col gap-8 max-w-4xl mx-auto">
+          {ADVANTAGE.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center gap-6 p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex-1 text-right">
+                  <p className="text-lg md:text-xl text-[#1e3a8a] font-medium leading-relaxed text-right md:text-center">
+                    {item.text}
+                  </p>
+                </div>
+                <div className="w-16 h-16 shrink-0 flex items-center justify-center text-[#d97706] bg-orange-50 rounded-xl">
+                  <Icon size={32} />
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+        
+        <div className="mt-12 text-center text-lg md:text-xl text-white bg-[#1e3a8a] py-6 px-8 rounded-[2rem] font-medium shadow-lg max-w-3xl mx-auto">
+          Building on a strong industrial legacy to drive the next era of innovation-led growth.
+        </div>
+      </div>
+
+      {/* Legacy Initiatives Section */}
+      <div className="py-24 bg-gray-50 border-t border-gray-200">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="text-center mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight"
+              className="text-3xl md:text-5xl font-bold text-[#1e3a8a] uppercase tracking-tight"
             >
-              Legacy Beyond the Summit
+              Beyond The Summit:<br/>
+              <span className="text-gray-900">PanIIT–Andhra Pradesh Legacy Initiatives</span>
             </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto"
-            >
-              Committed outcomes and deliverables driving long-term impact.
-            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-            {OUTCOMES.map((outcome, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex items-start gap-4 p-5 rounded-xl bg-gradient-to-r from-red-900/10 to-transparent border border-red-500/10 hover:border-red-500/30 transition-colors"
-              >
-                <div className="mt-1 text-red-400">
-                  <ShieldCheck size={20} />
-                </div>
-                <div className="text-gray-200 font-medium">{outcome}</div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {LEGACY.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white p-8 rounded-[2rem] border border-blue-100 shadow-sm hover:shadow-lg transition-all flex flex-col gap-4"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-[#e0e7ff] text-[#1e3a8a] flex items-center justify-center mb-2">
+                    <Icon size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed font-medium">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
-
       </div>
+
     </section>
   );
 }
