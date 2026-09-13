@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useRef, useState } from 'react';
 import { draw, effect, frame, init, sampler, surface, target, uniforms } from 'vgpu';
 import type { Frame } from 'vgpu';
@@ -533,7 +532,7 @@ fn weightedPath(seedPhase: f32, phaseOffset: f32, aspect: f32, weights: vec4f) -
     }
     if (weights.y > 0.0001) {
       let left = sidePath(phase, 0.0, aspect, -1.0);
-      result.position += left.position * left.tangent * weights.y;
+      result.position += left.position * weights.y;
       result.tangent += left.tangent * weights.y;
     }
     if (weights.z > 0.0001) {
@@ -988,7 +987,7 @@ const RING = array<vec2f, 6>(vec2f(1.0, 0.0), vec2f(0.5, 0.8660254), vec2f(-0.5,
 const SHAPES = array<vec3f, ${ASCII_GLYPHS.length * 2}>(
   ${ASCII_SHAPES.flatMap(shape => [shape.slice(0, 3), shape.slice(3)])
     .map(part => `vec3f(${part.map(value => value.toFixed(6)).join(', ')})`)
-    .join(',\n  ')}
+    .join(',\\n  ')}
 );
 fn edgeContrast(value: f32, outside: f32) -> f32 {
   let peak = max(max(value, outside), 0.0001);
@@ -1044,7 +1043,7 @@ fn fs_main(@builtin(position) pixel: vec4f) -> @location(0) vec4f {
 const STYLE_SHADER = `${STYLE_COMMON}
 @group(0) @binding(3) var asciiCells: texture_2d<f32>;
 const GLYPHS = array<vec2u, ${ASCII_GLYPHS.length}>(
-  ${ASCII_GLYPHS.map(rows => `vec2u(${rows.slice(0, 4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u, ${rows.slice(4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u)`).join(',\n  ')}
+  ${ASCII_GLYPHS.map(rows => `vec2u(${rows.slice(0, 4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u, ${rows.slice(4).reduce((sum, row, i) => sum + row * 2 ** (i * 5), 0)}u)`).join(',\\n  ')}
 );
 // A centered Bayer screen distributes quantization error across a stable 4×4 grid.
 const THRESHOLDS = array<f32, 16>(

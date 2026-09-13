@@ -2,42 +2,42 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronDown } from 'lucide-react';
-import LightTunnel from '../LightTunnel';
+import AeroShards from '../AeroShards';
 
 export default function Hero() {
   return (
     <section className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-[#050B14]">
-      {/* Background with LightTunnel - DARK THEME */}
+      {/* Background with AeroShards - DARK THEME */}
       <div className="absolute inset-0 z-0">
-        <LightTunnel
-          cableColor="#3b82f6" // Bright Blue (from poster's sky/water)
-          pulseColor="#E13926" // Vermilion Red (from poster's text)
-          tunnelColor="#0B192C" // Deep Dark Navy
-          tunnelOpacity={0.4}
-          speed={0.1}
-          flowDirection="outward"
-          pulseSpeed={2}
-          pulseLength={0.28}
-          pulseBlend={1}
-          pulseWidth={1}
-          cableCount={20}
-          thickness={0.35}
-          rimWidth={0.15}
-          waviness={0.3}
-          sway={0.5}
-          size={1}
-          centerX={0}
-          centerY={0}
-          glow={0.8}
-          fadeNear={0.5}
-          fadeFar={2}
-          brightness={1}
-          colorVariance
-          grain
-          grainIntensity={0.05}
-          opacity={1}
-          mouseInteraction
-          mouseStrength={0.1}
+        <AeroShards
+          backgroundColor="#050B14" // Deep Dark Navy
+          shardColor="#3b82f6" // Bright Blue (from poster's sky/water)
+          accentColor="#E13926" // Vermilion Red (from poster's text)
+          placement="full"
+          flow="stream"
+          material="pearl"
+          detail="balanced"
+          effect="none"
+          scale={1}
+          spread={1.5}
+          depth={1}
+          speed={1}
+          spin={1}
+          interaction="repel"
+          density={1.5}
+          shardSize={1.1}
+          stretch={1}
+          turbulence={1}
+          glow={1}
+          edgeSoftness={2}
+          bloom={0.5}
+          grain={0.05}
+          chromaticAberration={0.0075}
+          transitionDuration={1}
+          interactionRadius={1.5}
+          interactionStrength={0.5}
+          rippleIntensity={1}
+          holdToGather={true}
         />
         
         {/* Overlay to ensure text readability and maintain deep dark vibe */}
