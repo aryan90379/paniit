@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import type { CSSProperties } from 'react';
 import { Renderer, Triangle, Program, Mesh, Texture } from 'ogl';
@@ -581,7 +582,9 @@ export default function MorphSlider({
     overlayColor,
     loop
   });
-  optsRef.current = { transition, duration, ease, intensity, scale, aberration, drift, overlayColor, loop };
+  useEffect(() => {
+    optsRef.current = { transition, duration, ease, intensity, scale, aberration, drift, overlayColor, loop };
+  }, [transition, duration, ease, intensity, scale, aberration, drift, overlayColor, loop]);
 
   useEffect(() => {
     if (!containerRef.current) return undefined;

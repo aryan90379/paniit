@@ -1,6 +1,5 @@
-import MorphSlider from "@/components/ui/MorphSlider";
-
 'use client';
+import MorphSlider from "@/components/ui/MorphSlider";
 
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronDown } from 'lucide-react';
