@@ -52,7 +52,7 @@ export default function Highlights() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 relative group cursor-pointer"
+                  className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 relative group cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-[#DD1D21] rounded-[1.5rem] rotate-6 scale-95 opacity-20 mix-blend-multiply group-hover:rotate-8 transition-transform duration-300 origin-center" />
                   

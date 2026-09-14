@@ -52,7 +52,7 @@ export default function AdvantageLegacy() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto auto-rows-[320px]">
+        <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-3 gap-6 max-w-6xl mx-auto md:auto-rows-[320px] hide-scrollbar snap-x snap-mandatory pb-8 px-4 md:px-0 -mx-4 md:mx-auto">
           
           {/* Bento Card 1 - Big Number */}
           <motion.div 
@@ -60,7 +60,7 @@ export default function AdvantageLegacy() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-2 row-span-1 rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
+            className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[320px] snap-center shrink-0 md:col-span-2 row-span-1 rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1600&auto=format&fit=crop")' }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 transition-opacity duration-500 group-hover:opacity-90" />
@@ -82,7 +82,7 @@ export default function AdvantageLegacy() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
+            className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[320px] snap-center shrink-0 col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1600&auto=format&fit=crop")' }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 transition-opacity duration-500 group-hover:opacity-90" />
@@ -102,7 +102,7 @@ export default function AdvantageLegacy() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
+            className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[320px] snap-center shrink-0 col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1600&auto=format&fit=crop")' }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 transition-opacity duration-500 group-hover:opacity-90" />
@@ -124,7 +124,7 @@ export default function AdvantageLegacy() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
+            className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[320px] snap-center shrink-0 col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1586528116311-ad8ed7c663be?q=80&w=1600&auto=format&fit=crop")' }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 transition-opacity duration-500 group-hover:opacity-90" />
@@ -147,7 +147,7 @@ export default function AdvantageLegacy() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
+            className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[320px] snap-center shrink-0 col-span-1 row-span-1 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-end shadow-xl group cursor-default bg-cover bg-center "
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop")' }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 transition-opacity duration-500 group-hover:opacity-90" />
@@ -185,7 +185,7 @@ export default function AdvantageLegacy() {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-2 gap-6 hide-scrollbar snap-x snap-mandatory pb-8 px-4 md:px-0 -mx-4 md:mx-auto">
             {LEGACY.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -195,7 +195,7 @@ export default function AdvantageLegacy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-4 group"
+                  className="min-w-[80vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 bg-white p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-4 group"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-white text-[#06206A] flex items-center justify-center mb-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <Icon size={32} />

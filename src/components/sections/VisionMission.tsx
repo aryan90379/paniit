@@ -47,7 +47,7 @@ export default function VisionMission() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 row-span-1 bg-[#061128] rounded-[2rem] p-8 md:p-10 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-blue-900/50"
+            className="col-span-1 md:col-span-2 row-span-1 bg-[#061128] rounded-[2rem] p-8 md:p-10 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-blue-900/50"
           >
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061128] via-[#061128]/50 to-transparent pointer-events-none" />
@@ -69,7 +69,7 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="col-span-1 row-span-1 bg-[#0a0a0a] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-gray-800"
+            className="col-span-1 row-span-1 bg-[#0a0a0a] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-gray-800"
           >
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent pointer-events-none" />
@@ -91,7 +91,7 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="col-span-1 row-span-1 bg-[#1A0B10] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-red-900/30"
+            className="col-span-1 row-span-1 bg-[#1A0B10] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-red-900/30"
           >
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1A0B10] via-[#1A0B10]/50 to-transparent pointer-events-none" />
@@ -113,7 +113,7 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="col-span-1 row-span-1 bg-[#091515] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-teal-900/30"
+            className="col-span-1 row-span-1 bg-[#091515] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-teal-900/30"
           >
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#091515] via-[#091515]/50 to-transparent pointer-events-none" />
@@ -135,7 +135,7 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="col-span-1 row-span-1 bg-[#0c1222] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-blue-900/30"
+            className="col-span-1 row-span-1 bg-[#0c1222] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-blue-900/30"
           >
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c1222] via-[#0c1222]/50 to-transparent pointer-events-none" />

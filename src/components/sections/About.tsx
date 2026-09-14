@@ -63,7 +63,7 @@ export default function About() {
               PanIIT Andhra Pradesh Summit 2026 unites innovators, nation builders, and policy makers for a day of keynotes, panels, and roundtables.
             </motion.p>
             
-            <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 pb-6 md:pb-0 hide-scrollbar snap-x snap-mandatory">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-8">
               {COMBINED_STATS.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
@@ -73,7 +73,7 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="h-full min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0"
+                    className="h-full"
                   >
                     <BorderGlow
                       edgeSensitivity={30}
@@ -85,15 +85,15 @@ export default function About() {
                       coneSpread={30}
                       animated={false}
                       colors={['#3b82f6', '#8b5cf6', '#ec4899']}
-                      className="h-full p-6 flex flex-col justify-center items-center text-center cursor-pointer group"
+                      className="h-full p-3 md:p-6 flex flex-col justify-center items-center text-center cursor-pointer group"
                     >
-                      <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
-                        <Icon size={24} />
+                      <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 mb-2 md:mb-4 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+                        <Icon className="w-4 h-4 md:w-6 md:h-6" />
                       </div>
-                      <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 mb-3 drop-shadow-sm">
+                      <div className="text-2xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 mb-1 md:mb-3 drop-shadow-sm">
                         {stat.value}
                       </div>
-                      <div className="text-xs md:text-sm text-gray-300 font-bold uppercase tracking-wider leading-snug">{stat.label}</div>
+                      <div className="text-[9px] md:text-sm text-gray-300 font-bold uppercase tracking-wider leading-snug">{stat.label}</div>
                     </BorderGlow>
                   </motion.div>
                 );
