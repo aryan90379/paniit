@@ -6,11 +6,11 @@ import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-[100px] pb-12 bg-white flex flex-col justify-between overflow-hidden" id="hero">
+    <section className="relative w-full pt-[80px] bg-white flex flex-col justify-between overflow-hidden" id="hero">
       
       {/* FULL WIDTH SLIDER */}
-      <div className="w-full h-[60vh] md:h-[75vh] min-h-[500px] max-h-[800px] relative px-4 md:px-8 mx-auto max-w-[1920px]">
-        <div className="w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl relative">
+      <div className="w-full h-[60vh] md:h-[75vh] min-h-[500px] max-h-[800px] relative ">
+        <div className="w-full h-full overflow-hidden relative">
           <MorphSlider
             items={[
               { image: 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop', caption: 'Global Network' },
@@ -18,14 +18,14 @@ export default function Hero() {
               { image: 'https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop', caption: 'Real Impact' }
             ]}
             transition="melt"
-            intensity={0.55}
-            aberration={0.35}
-            drift={0.4}
+            intensity={0.15}
+            aberration={0.05}
+            drift={0.1}
             autoplay={true}
             overlayColor="#05060a"
             duration={1.1}
             ease="power2.inOut"
-            scale={2.4}
+            scale={1.1}
             autoplayDelay={4}
             loop={true}
             radius={0}
