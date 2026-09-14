@@ -19,19 +19,27 @@ export default function Glimpses() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {/* Placeholder for images, user will provide CDNs later */}
-          {[...Array(8)].map((_, i) => (
+          {[
+            'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1558403194-611308249627?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1475721025870-24608f5fd151?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=800&auto=format&fit=crop'
+          ].map((url, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: (i % 4) * 0.1 }}
-              className="aspect-square bg-gray-100 rounded-2xl overflow-hidden relative group"
+              className="aspect-square bg-gray-100 rounded-2xl overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-bold tracking-wider">PANIIT SUMMIT</span>
+              <img src={url} alt={`Glimpse ${i+1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <span className="text-white font-black tracking-widest text-lg drop-shadow-md">PANIIT SUMMIT</span>
               </div>
             </motion.div>
           ))}
