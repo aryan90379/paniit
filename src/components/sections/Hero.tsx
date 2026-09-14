@@ -70,7 +70,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 md:px-6 pt-32 flex-grow flex flex-col justify-center">
+      <div className="container relative z-10 mx-auto px-4 md:px-6 pt-[200px] flex-grow flex flex-col justify-center">
         
         <div className="flex flex-col lg:flex-row w-full max-w-6xl mx-auto items-center lg:items-start gap-12 lg:gap-8">
           
