@@ -63,7 +63,7 @@ export default function About() {
               PanIIT Andhra Pradesh Summit 2026 unites innovators, nation builders, and policy makers for a day of keynotes, panels, and roundtables.
             </motion.p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
+            <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 pb-6 md:pb-0 hide-scrollbar snap-x snap-mandatory">
               {COMBINED_STATS.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
@@ -73,7 +73,7 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="h-full"
+                    className="h-full min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0"
                   >
                     <BorderGlow
                       edgeSensitivity={30}

@@ -185,7 +185,7 @@ export default function Partnership() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 md:pb-0 hide-scrollbar snap-x snap-mandatory">
           {TIERS.map((tier, i) => (
             <motion.div 
               key={i}
@@ -193,7 +193,7 @@ export default function Partnership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-8 rounded-[2rem] flex flex-col ${
+              className={`p-8 rounded-[2rem] flex flex-col min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 ${
                 tier.popular 
                   ? 'bg-[#153063] text-white shadow-xl scale-105 border-4 border-blue-400/30' 
                   : 'bg-white text-gray-900 border border-gray-200 shadow-sm'
