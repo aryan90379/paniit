@@ -25,7 +25,7 @@ export default function Glimpses() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1 rounded-full border border-blue-200 bg-blue-50 text-blue-600 text-sm font-medium mb-4 uppercase tracking-widest"
+            className="inline-block px-4 py-1 rounded-full border border-blue-200 bg-[#E3F0FA] text-[#43AAF0] text-sm font-medium mb-4 uppercase tracking-widest"
           >
             Past Events
           </motion.div>
@@ -34,7 +34,7 @@ export default function Glimpses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#153063] tracking-tight uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#06206A] tracking-tight uppercase"
           >
             Glimpses From The Past
           </motion.h2>

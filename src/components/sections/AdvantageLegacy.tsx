@@ -28,7 +28,7 @@ const LEGACY = [
 
 export default function AdvantageLegacy() {
   return (
-    <section id="advantage" className="bg-gray-50">
+    <section id="advantage" className="bg-[#F4ECE4]">
       
       {/* Andhra Advantage Section - Bento Grid */}
       <div className="py-24 pt-32 container mx-auto px-4 md:px-6 max-w-7xl">
@@ -37,7 +37,7 @@ export default function AdvantageLegacy() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-[#153063] mb-6 tracking-tight uppercase"
+            className="text-3xl md:text-5xl font-black text-[#06206A] mb-6 tracking-tight uppercase"
           >
             Powering India's Next Wave of Innovation
           </motion.h2>
@@ -178,7 +178,7 @@ export default function AdvantageLegacy() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-black text-[#153063] uppercase tracking-tight"
+              className="text-3xl md:text-5xl font-black text-[#06206A] uppercase tracking-tight"
             >
               Beyond The Summit<br/>
               <span className="text-gray-400 font-bold text-2xl md:text-4xl mt-2 block">Legacy Initiatives</span>
@@ -195,12 +195,12 @@ export default function AdvantageLegacy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-gray-50 p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-4 group"
+                  className="bg-[#F4ECE4] p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-4 group"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-white text-[#153063] flex items-center justify-center mb-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 rounded-2xl bg-white text-[#06206A] flex items-center justify-center mb-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <Icon size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#153063]">{item.title}</h3>
+                  <h3 className="text-2xl font-bold text-[#06206A]">{item.title}</h3>
                   <p className="text-gray-500 leading-relaxed font-medium">
                     {item.desc}
                   </p>

@@ -48,7 +48,7 @@ const tier2Logos = [
 
 export default function Partnership() {
   return (
-    <section id="partner" className="py-24 bg-gray-50 text-gray-900 relative">
+    <section id="partner" className="py-24 bg-[#F4ECE4] text-gray-900 relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         {/* Why Partner (Visual Bento Grid) */}
@@ -58,7 +58,7 @@ export default function Partnership() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block px-6 py-2 rounded-full bg-blue-100 text-blue-800 font-bold uppercase tracking-widest mb-6 border border-blue-200"
+              className="inline-block px-6 py-2 rounded-full bg-[#C6E1F8] text-blue-800 font-bold uppercase tracking-widest mb-6 border border-blue-200"
             >
               Exclusive Partnership
             </motion.div>
@@ -66,7 +66,7 @@ export default function Partnership() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-[#153063] mb-6 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-[#06206A] mb-6 tracking-tight"
             >
               WHY PARTNER WITH US?
             </motion.h2>
@@ -87,7 +87,7 @@ export default function Partnership() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 md:col-span-2 row-span-1 bg-[#153063] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 md:col-span-2 row-span-1 bg-[#06206A] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] opacity-20 bg-cover bg-center mix-blend-overlay group-hover:opacity-30 transition-opacity duration-700" />
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl -mr-40 -mt-40 pointer-events-none" />
@@ -111,7 +111,7 @@ export default function Partnership() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 row-span-1 bg-gradient-to-br from-[#E13926] to-red-700 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 row-span-1 bg-gradient-to-br from-[#DD1D21] to-red-700 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
               <Target className="text-white/10 absolute -right-8 -bottom-8 w-56 h-56 transform group-hover:scale-110 transition-all duration-700" />
               
@@ -140,7 +140,7 @@ export default function Partnership() {
                 <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center border border-indigo-100 mb-6">
                   <Users className="text-indigo-600" size={28} />
                 </div>
-                <h3 className="text-2xl font-black text-[#153063] mb-4 tracking-tight uppercase leading-tight">High Quality<br/>Audience</h3>
+                <h3 className="text-2xl font-black text-[#06206A] mb-4 tracking-tight uppercase leading-tight">High Quality<br/>Audience</h3>
                 <p className="text-gray-500 font-medium leading-relaxed">
                   Founders, builders, and investors across enterprise SaaS, AI, and deep tech.
                 </p>
@@ -184,7 +184,7 @@ export default function Partnership() {
                   transition={{ delay: i * 0.1 }}
                   className="bg-white border border-gray-200 px-6 py-3 rounded-full flex items-center gap-3 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer"
                 >
-                  <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 text-xs font-bold">
+                  <div className="w-6 h-6 rounded-full bg-[#E3F0FA] flex items-center justify-center text-[#43AAF0] text-xs font-bold">
                     {i + 1}
                   </div>
                   <div className="font-bold text-gray-700">{benefit}</div>
@@ -201,7 +201,7 @@ export default function Partnership() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-[#153063] mb-4 tracking-wide uppercase"
+              className="text-3xl md:text-5xl font-bold text-[#06206A] mb-4 tracking-wide uppercase"
             >
               Past Sponsors & Partners
             </motion.h2>
@@ -244,7 +244,7 @@ export default function Partnership() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[#153063] mb-6 tracking-tight uppercase"
+            className="text-3xl md:text-5xl font-bold text-[#06206A] mb-6 tracking-tight uppercase"
           >
             Partnership Tiers At A Glance
           </motion.h2>
@@ -260,7 +260,7 @@ export default function Partnership() {
               transition={{ delay: i * 0.1 }}
               className={`p-8 rounded-[2rem] flex flex-col min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 ${
                 tier.popular 
-                  ? 'bg-[#153063] text-white shadow-xl scale-105 border-4 border-blue-400/30' 
+                  ? 'bg-[#06206A] text-white shadow-xl scale-105 border-4 border-blue-400/30' 
                   : 'bg-white text-gray-900 border border-gray-200 shadow-sm'
               }`}
             >
@@ -268,7 +268,7 @@ export default function Partnership() {
                 <h3 className={`text-2xl font-bold mb-2 ${tier.popular ? 'text-white' : 'text-gray-900'}`}>
                   {tier.name}
                 </h3>
-                <div className={`text-4xl font-black ${tier.popular ? 'text-blue-300' : 'text-[#153063]'}`}>
+                <div className={`text-4xl font-black ${tier.popular ? 'text-blue-300' : 'text-[#06206A]'}`}>
                   {tier.price}
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function Partnership() {
 
               <button className={`w-full py-4 rounded-xl font-bold transition-all ${
                 tier.popular
-                  ? 'bg-[#E13926] text-white hover:bg-red-500 shadow-lg shadow-red-600/30'
+                  ? 'bg-[#DD1D21] text-white hover:bg-red-500 shadow-lg shadow-red-600/30'
                   : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
               }`}>
                 Express Interest

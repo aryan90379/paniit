@@ -1,0 +1,172 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Calendar, MapPin, ChevronDown } from 'lucide-react';
+import WebThreads from '../WebThreads';
+import SpecularButton from '../SpecularButton';
+
+export default function Hero() {
+  return (
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-white md:bg-[#050B14] py-32">
+      {/* Background with AeroShards - DARK THEME */}
+      <div className="hidden md:block absolute inset-0 z-0">
+        <WebThreads
+          color1="#E13926"
+          color2="#3b82f6"
+          color3="#FFFFFF"
+          backgroundColor="#050B14"
+          speed={0.2}
+          threadCount={6}
+          frequency={5}
+          spread={0.18}
+          taper={1}
+          position={0.5}
+          fanMode="center"
+          glow={0.02}
+          falloff={0.6}
+          thickness={1.1}
+          brightness={0.6}
+          opacity={1}
+          mirror
+          shimmer={false}
+          grain
+          grainIntensity={0.05}
+          mouseInteraction
+          mouseStrength={0.3}
+        />
+        
+        {/* Subtle overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
+      </div>
+
+      <div className="container relative z-20 mx-auto px-4 md:px-6 text-center mt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
+          <span className="px-5 py-2 rounded-full bg-blue-50 md:bg-blue-900/40 border border-blue-200 md:border-blue-500/30 text-blue-700 md:text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+            AI & DeepTech
+          </span>
+          <span className="px-5 py-2 rounded-full bg-red-50 md:bg-[#E13926]/20 border border-red-200 md:border-[#E13926]/40 text-red-700 md:text-red-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+            Quantum Technology
+          </span>
+          <span className="px-5 py-2 rounded-full bg-blue-50 md:bg-blue-900/40 border border-blue-200 md:border-blue-500/30 text-blue-700 md:text-blue-300 text-sm font-bold shadow-sm uppercase tracking-wider backdrop-blur-md">
+            Startups
+          </span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="text-5xl md:text-7xl lg:text-[7rem] font-black tracking-tighter text-gray-900 md:text-white mb-8 leading-[1.05] uppercase"
+        >
+          PanIIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E13926] to-red-700 md:from-red-400 md:to-[#E13926]">Andhra Pradesh</span><br />
+          Summit 2026
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="text-xl md:text-3xl text-gray-600 md:text-blue-100 font-semibold mb-3 tracking-tight"
+        >
+          Andhra's Resilient <span className="text-[#E13926] font-black">DEEPTECH DECADE:</span><br/>ANCHORED BY PANIIT
+        </motion.p>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          className="text-lg md:text-2xl text-gray-700 md:text-blue-100 font-bold mb-12 uppercase tracking-wide"
+        >
+          Swarna Andhra to <span className="text-[#E13926] font-black">Viksit Bharat 2047</span>
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12"
+        >
+          <div className="flex items-center gap-3 bg-gray-100 md:bg-black/40 backdrop-blur-md px-6 py-3 rounded-2xl shadow-sm border border-gray-200 md:border-blue-500/20">
+            <Calendar className="text-blue-600 md:text-blue-400" size={24} />
+            <span className="text-gray-900 md:text-white font-bold text-lg">3rd October, 2026</span>
+          </div>
+          {/* Mobile Address Pill Fallback */}
+          <a
+            href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden flex items-center gap-3 bg-gray-100 px-6 py-3 rounded-2xl shadow-sm border border-gray-200"
+          >
+            <MapPin className="text-blue-600 flex-shrink-0" size={28} />
+            <div className="flex flex-col text-left">
+              <span className="font-bold text-lg text-gray-900 leading-tight">Dr. B. R. Ambedkar Kala Vedika,</span>
+              <span className="text-[13px] text-blue-700 uppercase tracking-wider font-semibold mt-1">Get Directions →</span>
+            </div>
+          </a>
+          
+          <div className="hidden md:block">
+            <SpecularButton
+            size="md"
+            radius={18}
+            tint="#3b82f6"
+            tintOpacity={0.1}
+            blur={8}
+            textColor="#ffffff"
+            lineColor="#3b82f6"
+            baseColor="#050B14"
+            intensity={1.5}
+            shineSize={15}
+            shineFade={40}
+            thickness={1}
+            speed={0.35}
+            followMouse
+            proximity={250}
+            autoAnimate={false}
+            onClick={() => window.open('https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar\'+\Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D', '_blank')}
+            className="w-full sm:w-auto hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all"
+          >
+            <MapPin className="text-blue-600 md:text-blue-400 flex-shrink-0" size={28} />
+            <div className="flex flex-col text-left pl-2">
+              <span className="font-bold text-lg leading-tight">Dr. B. R. Ambedkar Kala Vedika,</span>
+              <span className="text-[13px] text-blue-300 uppercase tracking-wider font-semibold mt-1">Get Directions →</span>
+            </div>
+          </SpecularButton>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="#register"
+            className="w-full sm:w-auto px-10 py-4 rounded-full bg-[#E13926] hover:bg-red-600 text-white font-black text-lg transition-all shadow-[0_0_20px_rgba(225,57,38,0.4)] hover:shadow-[0_0_35px_rgba(225,57,38,0.6)] hover:-translate-y-1 tracking-wide uppercase"
+          >
+            Registration Open Now
+          </a>
+
+        </motion.div>
+      </div>
+
+      {/* Down arrow indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce"
+      >
+        <a href="#about" className="text-gray-400 hover:text-gray-900 md:text-white/50 md:hover:text-white transition-colors">
+          <ChevronDown size={40} />
+        </a>
+      </motion.div>
+
+    </section>
+  );
+}

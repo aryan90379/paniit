@@ -12,8 +12,8 @@ export default function Footer() {
       <div className="hidden md:block absolute inset-0 z-0">
         <GradientWaves
           horizonColor="#000000" 
-          waveColor="#153063" // PanIIT Navy Blue
-          crestColor="#E13926" // PanIIT Red
+          waveColor="#06206A" // PanIIT Navy Blue
+          crestColor="#DD1D21" // PanIIT Red
           speed={0.4}
           amplitude={2.5}
           waveScale={0.6}
@@ -48,7 +48,7 @@ export default function Footer() {
                     alt="PanIIT Alumni India" 
                     className="h-12 object-contain mix-blend-multiply" 
                   />
-                  <div className="w-px h-10 bg-[#153063]/20"></div>
+                  <div className="w-px h-10 bg-[#06206A]/20"></div>
                   <img 
                     src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
                     alt="PanIIT AP Summit" 
@@ -142,7 +142,7 @@ export default function Footer() {
                       className="px-5 py-3.5 rounded-xl bg-black/80 border border-white/30 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors backdrop-blur-sm text-sm"
                     />
                   </div>
-                  <button className="px-5 py-4 rounded-xl bg-[#E13926] hover:bg-red-500 text-white font-black uppercase tracking-wide flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-red-500/25 mt-2">
+                  <button className="px-5 py-4 rounded-xl bg-[#DD1D21] hover:bg-red-500 text-white font-black uppercase tracking-wide flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-red-500/25 mt-2">
                     Register Now <ArrowRight size={18} />
                   </button>
                 </form>

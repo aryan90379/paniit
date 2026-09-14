@@ -58,7 +58,7 @@ export default function PastEminentSpeakers() {
   };
 
   return (
-    <section id="speakers-legacy-section" className="py-24 bg-gray-50 relative border-t border-gray-200">
+    <section id="speakers-legacy-section" className="py-24 bg-[#F4ECE4] relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         <div className="text-center mb-12">
@@ -66,7 +66,7 @@ export default function PastEminentSpeakers() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[#153063] mb-4 tracking-tight uppercase"
+            className="text-3xl md:text-5xl font-bold text-[#06206A] mb-4 tracking-tight uppercase"
           >
             Legacy of Eminent Speakers
           </motion.h2>
@@ -86,13 +86,13 @@ export default function PastEminentSpeakers() {
             {/* Carousel Navigation */}
             <button 
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#153063] hover:bg-gray-50 transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-[#F4ECE4] transition-colors"
             >
               <ChevronLeft size={24} />
             </button>
             <button 
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#153063] hover:bg-gray-50 transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-[#F4ECE4] transition-colors"
             >
               <ChevronRight size={24} />
             </button>
@@ -113,10 +113,10 @@ export default function PastEminentSpeakers() {
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
-                      className="w-full h-full object-cover rounded-full relative z-10 bg-gray-50 border border-gray-100 shadow-sm"
+                      className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100 shadow-sm"
                     />
                   </div>
-                  <h3 className="font-bold text-[#153063] text-base md:text-lg leading-snug mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
+                  <h3 className="font-bold text-[#06206A] text-base md:text-lg leading-snug mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
                   {speaker.desc && (
                     <p className="text-xs md:text-sm text-gray-500 relative z-10 font-medium">{speaker.desc}</p>
                   )}
@@ -128,7 +128,7 @@ export default function PastEminentSpeakers() {
             <div className="flex justify-center mt-6">
               <button 
                 onClick={() => setShowAll(true)}
-                className="group flex items-center gap-2 px-8 py-3 bg-[#153063] text-white rounded-full font-semibold hover:bg-indigo-600 transition-all shadow-md hover:shadow-lg"
+                className="group flex items-center gap-2 px-8 py-3 bg-[#06206A] text-white rounded-full font-semibold hover:bg-indigo-600 transition-all shadow-md hover:shadow-lg"
               >
                 <Grid size={18} />
                 View All Speakers
@@ -153,10 +153,10 @@ export default function PastEminentSpeakers() {
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
-                      className="w-full h-full object-cover rounded-full relative z-10 bg-gray-50 border border-gray-100 shadow-sm"
+                      className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100 shadow-sm"
                     />
                   </div>
-                  <h3 className="font-bold text-[#153063] text-sm md:text-base leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
+                  <h3 className="font-bold text-[#06206A] text-sm md:text-base leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
                   {speaker.desc && (
                     <p className="text-[11px] md:text-xs text-gray-500 relative z-10 font-medium">{speaker.desc}</p>
                   )}
@@ -174,7 +174,7 @@ export default function PastEminentSpeakers() {
                         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }, 100);
                 }}
-                className="group flex items-center gap-2 px-8 py-3 bg-gray-200 text-[#153063] rounded-full font-semibold hover:bg-gray-300 transition-all shadow-sm"
+                className="group flex items-center gap-2 px-8 py-3 bg-gray-200 text-[#06206A] rounded-full font-semibold hover:bg-gray-300 transition-all shadow-sm"
               >
                 Hide Full List
               </button>
