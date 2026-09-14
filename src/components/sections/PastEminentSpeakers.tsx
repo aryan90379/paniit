@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 const PLACEHOLDER = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23cbd5e1%22%3E%3Cpath%20d%3D%22M12%2012c2.21%200%204-1.79%204-4s-1.79-4-4-4-4%201.79-4%204%201.79%204%204%204zm0%202c-2.67%200-8%201.34-8%204v2h16v-2c0-2.66-5.33-4-8-4z%22%2F%3E%3C%2Fsvg%3E";
 
 const PAST_SPEAKERS = [
-  { image: PLACEHOLDER, name: 'Sri Narendra Modi', desc: "Hon'ble Prime Minister, India" },
-  { image: PLACEHOLDER, name: 'Dr. APJ Abdul Kalam', desc: 'Former President, India' },
-  { image: PLACEHOLDER, name: 'Dr. Manmohan Singh', desc: 'Former Prime Minister, India' },
-  { image: PLACEHOLDER, name: 'Gurudev Sri Sri Ravi Shankar', desc: '' },
-  { image: PLACEHOLDER, name: 'Sri Bill Clinton', desc: 'Former President, USA' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled', name: 'Sri Narendra Modi', desc: "Hon'ble Prime Minister, India" },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/A._P._J._Abdul_Kalam.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original', name: 'Dr. APJ Abdul Kalam', desc: 'Former President, India' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Official_Portrait_of_the_Prime_Minister_Dr._Manmohan_Singh_%283x4_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original', name: 'Dr. Manmohan Singh', desc: 'Former Prime Minister, India' },
+  { image: 'https://gurudev.artofliving.org/wp-content/uploads/Spiritual_teacher_2048.jpg', name: 'Gurudev Sri Sri Ravi Shankar', desc: '' },
+  { image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Bill_Clinton.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original', name: 'Sri Bill Clinton', desc: 'Former President, USA' },
   { image: PLACEHOLDER, name: 'Sri Bill Gates', desc: 'Chairman, Gates Foundation' },
   { image: PLACEHOLDER, name: 'Sri NR Narayana Murthy', desc: 'Founder, Infosys' },
   { image: PLACEHOLDER, name: 'Sri Manohar Parrikar', desc: 'Former Chief Minister, Goa' },
