@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Users, Briefcase, Trophy, Building2, Lightbulb, Landmark } from 'lucide-react';
+import BorderGlow from '@/components/ui/BorderGlow';
+import { LogoLoop } from '@/components/ui/LogoLoop';
 
 const STATS = [
   { value: '800+', label: 'Delegates' },
@@ -16,6 +18,33 @@ const AUDIENCE = [
   { icon: Users, label: 'IIT Directors & Global Alumni' },
   { icon: Briefcase, label: 'Policy Makers' },
   { icon: Lightbulb, label: 'Startup Founders' }
+];
+
+const LogoText = ({ text, color }: { text: string, color: string }) => (
+  <span 
+    className="font-black text-4xl md:text-5xl uppercase tracking-tighter opacity-40 hover:opacity-100 transition-opacity duration-300 px-4" 
+    style={{ color }}
+  >
+    {text}
+  </span>
+);
+
+const tier1Logos = [
+  { node: <LogoText text="Google" color="#ffffff" />, title: "Google" },
+  { node: <LogoText text="Microsoft" color="#ffffff" />, title: "Microsoft" },
+  { node: <LogoText text="Amazon" color="#ffffff" />, title: "Amazon" },
+  { node: <LogoText text="IBM" color="#ffffff" />, title: "IBM" },
+  { node: <LogoText text="Intel" color="#ffffff" />, title: "Intel" },
+  { node: <LogoText text="NVIDIA" color="#ffffff" />, title: "NVIDIA" },
+];
+
+const tier2Logos = [
+  { node: <LogoText text="Cisco" color="#ffffff" />, title: "Cisco" },
+  { node: <LogoText text="Oracle" color="#ffffff" />, title: "Oracle" },
+  { node: <LogoText text="Salesforce" color="#ffffff" />, title: "Salesforce" },
+  { node: <LogoText text="SAP" color="#ffffff" />, title: "SAP" },
+  { node: <LogoText text="Tata" color="#ffffff" />, title: "Tata" },
+  { node: <LogoText text="Infosys" color="#ffffff" />, title: "Infosys" },
 ];
 
 export default function About() {
@@ -87,46 +116,119 @@ export default function About() {
           </div>
         </div>
 
-        {/* Impact & Reach Stats Band */}
-        <div className="bg-[#0a0a0a] rounded-[2rem] p-12 text-center text-white relative overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 px-6 py-1 bg-blue-600 rounded-b-lg text-xs font-bold uppercase tracking-wider">
-            Impact & Reach
+        {/* Impact & Sponsors Combined Black Band */}
+        <div className="bg-[#0a0a0a] rounded-[2.5rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+          {/* Background Image Overlay */}
+          <div 
+            className="absolute inset-0 opacity-10 bg-cover bg-center pointer-events-none mix-blend-overlay"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/50 via-transparent to-[#0a0a0a]/80 pointer-events-none" />
+
+          {/* Section 1: Event In Numbers */}
+          <div className="relative z-10 mb-24">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -mt-16 md:-mt-24 px-8 py-2 bg-blue-600 rounded-b-xl text-sm md:text-base font-bold uppercase tracking-widest shadow-lg">
+              Impact & Reach
+            </div>
+            
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-black mb-6 mt-8 tracking-wide"
+            >
+              EVENT IN NUMBERS
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-gray-400 max-w-2xl mx-auto mb-16 text-lg"
+            >
+              PanIIT Andhra Pradesh Summit 2026 unites innovators, nation builders, and policy makers for a day of keynotes, panels, and roundtables.
+            </motion.p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {STATS.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="h-full"
+                >
+                  <BorderGlow
+                    edgeSensitivity={30}
+                    glowColor="210 100 50" // Blue glow
+                    backgroundColor="#121212"
+                    borderRadius={24}
+                    glowRadius={40}
+                    glowIntensity={1.5}
+                    coneSpread={30}
+                    animated={false}
+                    colors={['#3b82f6', '#8b5cf6', '#ec4899']}
+                    className="h-full p-8 flex flex-col justify-center items-center text-center cursor-pointer"
+                  >
+                    <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 mb-4 drop-shadow-sm">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm md:text-base text-gray-300 font-bold uppercase tracking-wider">{stat.label}</div>
+                  </BorderGlow>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-6 mt-4"
-          >
-            EVENT IN NUMBERS
-          </motion.h3>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-gray-400 max-w-2xl mx-auto mb-12"
-          >
-            PanIIT Andhra Pradesh Summit 2026 unites innovators, nation builders, and policy makers for a day of keynotes, panels, and roundtables.
-          </motion.p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {STATS.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 shadow-sm text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-white mb-3">
-                  {stat.value}
-                </div>
-                <div className="text-sm md:text-base text-gray-300 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
+
+          {/* Section 2: Sponsors Loop */}
+          <div className="relative z-10 border-t border-white/10 pt-20">
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-black mb-12 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500"
+            >
+              PAST SPONSORS & PARTNERS
+            </motion.h3>
+
+            <div className="flex flex-col gap-10 w-full mb-12">
+              <div className="relative w-full">
+                <LogoLoop
+                  logos={tier1Logos}
+                  speed={40}
+                  direction="left"
+                  logoHeight={60}
+                  gap={100}
+                  pauseOnHover={true}
+                  scaleOnHover={true}
+                  fadeOut={true}
+                  fadeOutColor="#0a0a0a"
+                />
+              </div>
+
+              <div className="relative w-full">
+                <LogoLoop
+                  logos={tier2Logos}
+                  speed={40}
+                  direction="right"
+                  logoHeight={60}
+                  gap={100}
+                  pauseOnHover={true}
+                  scaleOnHover={true}
+                  fadeOut={true}
+                  fadeOutColor="#0a0a0a"
+                />
+              </div>
+            </div>
+            
+            <a
+              href="#partner"
+              className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/20 text-white font-bold uppercase tracking-widest rounded-sm hover:bg-white hover:text-black transition-colors"
+            >
+              Become a Partner
+            </a>
           </div>
+
         </div>
 
       </div>
