@@ -39,21 +39,21 @@ export default function VisionMission() {
           </motion.p>
         </div>
 
-        {/* Bento Grid - Carousel on Mobile */}
-        <div className="flex md:grid overflow-x-auto md:overflow-visible grid-cols-1 md:grid-cols-3 gap-6 pb-8 md:pb-0 hide-scrollbar snap-x snap-mandatory auto-rows-[280px]">
+        {/* Visual Bento Grid - Carousel on Mobile */}
+        <div className="flex md:grid overflow-x-auto md:overflow-visible grid-cols-1 md:grid-cols-3 gap-6 pb-8 md:pb-0 hide-scrollbar snap-x snap-mandatory auto-rows-[300px]">
           
           {/* Card 1: Viksit Bharat */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 row-span-1 bg-[#153063] rounded-[2rem] p-8 md:p-10 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between"
+            className="col-span-1 md:col-span-2 row-span-1 bg-[#061128] rounded-[2rem] p-8 md:p-10 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-blue-900/50"
           >
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none group-hover:bg-blue-400/20 transition-colors duration-500" />
-            <Globe2 className="text-white/10 absolute right-8 -bottom-8 w-48 h-48 transform group-hover:rotate-12 transition-all duration-700" />
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#061128] via-[#061128]/50 to-transparent pointer-events-none" />
             
-            <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 mb-4">
-              <Target className="text-white" size={28} />
+            <div className="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-blue-400/30 mb-4 z-10">
+              <Target className="text-blue-300" size={28} />
             </div>
             <div className="relative z-10">
               <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">Swarna Andhra 2047</h3>
@@ -69,16 +69,17 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="col-span-1 row-span-1 bg-gray-50 border border-gray-200 rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between"
+            className="col-span-1 row-span-1 bg-[#0a0a0a] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-gray-800"
           >
-            <Network className="text-gray-200 absolute -right-6 -bottom-6 w-40 h-40 transform group-hover:-translate-y-2 group-hover:-translate-x-2 transition-all duration-500" />
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent pointer-events-none" />
             
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-gray-100 mb-4 z-10">
-              <Users className="text-[#153063]" size={28} />
+            <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/20 mb-4 z-10">
+              <Users className="text-white" size={28} />
             </div>
             <div className="relative z-10">
-              <h3 className="text-2xl font-black text-[#153063] mb-3 leading-tight">Global Network</h3>
-              <p className="text-gray-600 font-medium text-sm leading-relaxed">
+              <h3 className="text-2xl font-black text-white mb-3 leading-tight">Global Network</h3>
+              <p className="text-gray-300 font-medium text-sm leading-relaxed">
                 Connecting Global IIT Alumni, Industry Leaders, and Policymakers to drive growth.
               </p>
             </div>
@@ -90,17 +91,17 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="col-span-1 row-span-1 bg-gradient-to-br from-[#E13926] to-red-800 rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between"
+            className="col-span-1 row-span-1 bg-[#1A0B10] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-red-900/30"
           >
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] pointer-events-none" />
-            <Cpu className="text-white/20 absolute -right-4 -bottom-4 w-36 h-36 transform group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500" />
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A0B10] via-[#1A0B10]/50 to-transparent pointer-events-none" />
             
-            <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 mb-4 z-10">
-              <Rocket className="text-white" size={28} />
+            <div className="w-14 h-14 bg-red-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-red-500/30 mb-4 z-10">
+              <Rocket className="text-red-400" size={28} />
             </div>
             <div className="relative z-10">
               <h3 className="text-2xl font-black text-white mb-3 leading-tight">AI & Deep Tech</h3>
-              <p className="text-red-100 font-medium text-sm leading-relaxed">
+              <p className="text-red-200/80 font-medium text-sm leading-relaxed">
                 Catalyzing AI, Quantum Computing, Green Energy, and Entrepreneurship.
               </p>
             </div>
@@ -112,16 +113,17 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="col-span-1 row-span-1 bg-gray-900 rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between"
+            className="col-span-1 row-span-1 bg-[#091515] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-teal-900/30"
           >
-            <TrendingUp className="text-gray-800 absolute -right-6 -bottom-6 w-40 h-40 transform group-hover:-translate-y-4 transition-all duration-700" />
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#091515] via-[#091515]/50 to-transparent pointer-events-none" />
             
-            <div className="w-14 h-14 bg-gray-800 rounded-2xl flex items-center justify-center border border-gray-700 mb-4 z-10">
-              <Lightbulb className="text-yellow-400" size={28} />
+            <div className="w-14 h-14 bg-teal-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-teal-500/30 mb-4 z-10">
+              <Lightbulb className="text-teal-400" size={28} />
             </div>
             <div className="relative z-10">
               <h3 className="text-2xl font-black text-white mb-3 leading-tight">Talent Pool</h3>
-              <p className="text-gray-400 font-medium text-sm leading-relaxed">
+              <p className="text-teal-100/70 font-medium text-sm leading-relaxed">
                 Transforming AP's youth into a globally competitive talent pool for emerging industries.
               </p>
             </div>
@@ -133,16 +135,17 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="col-span-1 row-span-1 bg-blue-50 border border-blue-100 rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between"
+            className="col-span-1 row-span-1 bg-[#0c1222] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border border-blue-900/30"
           >
-            <MapPin className="text-blue-200 absolute -right-4 -bottom-8 w-40 h-40 transform group-hover:scale-110 transition-all duration-500" />
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c1222] via-[#0c1222]/50 to-transparent pointer-events-none" />
             
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-blue-100 mb-4 z-10">
-              <MapPin className="text-blue-600" size={28} />
+            <div className="w-14 h-14 bg-indigo-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-indigo-500/30 mb-4 z-10">
+              <MapPin className="text-indigo-400" size={28} />
             </div>
             <div className="relative z-10">
-              <h3 className="text-2xl font-black text-blue-900 mb-3 leading-tight">Innovation Hub</h3>
-              <p className="text-blue-700/80 font-medium text-sm leading-relaxed">
+              <h3 className="text-2xl font-black text-white mb-3 leading-tight">Innovation Hub</h3>
+              <p className="text-indigo-200/70 font-medium text-sm leading-relaxed">
                 Showcasing Andhra Pradesh as a hub of skilled talent and strategic investment.
               </p>
             </div>
