@@ -60,7 +60,7 @@ const SectionTitle = ({ title }: { title: string }) => (
 );
 
 const CircularProfile = ({ person, large = false }: { person: any, large?: boolean }) => (
-  <div className="flex flex-col items-center text-center group p-4 rounded-[2rem] hover:bg-[#F4ECE4] transition-all duration-300 relative cursor-default">
+  <div className="flex flex-col items-center text-center group p-4 rounded-[2rem] hover:bg-gray-50 transition-all duration-300 relative cursor-default">
     <div className={`relative mb-6 group-hover:-translate-y-2 transition-transform duration-300 ${large ? 'w-48 h-48 md:w-56 md:h-56' : 'w-32 h-32 md:w-40 md:h-40'}`}>
       <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
       <img src={person.image} alt={person.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm" />

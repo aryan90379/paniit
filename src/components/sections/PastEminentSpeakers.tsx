@@ -58,7 +58,7 @@ export default function PastEminentSpeakers() {
   };
 
   return (
-    <section id="speakers-legacy-section" className="py-24 bg-[#F4ECE4] relative border-t border-gray-200">
+    <section id="speakers-legacy-section" className="py-24 bg-white relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         <div className="text-center mb-12">
@@ -86,13 +86,13 @@ export default function PastEminentSpeakers() {
             {/* Carousel Navigation */}
             <button 
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-[#F4ECE4] transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-gray-50 transition-colors"
             >
               <ChevronLeft size={24} />
             </button>
             <button 
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-[#F4ECE4] transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-gray-50 transition-colors"
             >
               <ChevronRight size={24} />
             </button>
@@ -113,7 +113,7 @@ export default function PastEminentSpeakers() {
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
-                      className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100 shadow-sm"
+                      className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm"
                     />
                   </div>
                   <h3 className="font-bold text-[#06206A] text-base md:text-lg leading-snug mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
@@ -153,7 +153,7 @@ export default function PastEminentSpeakers() {
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
-                      className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100 shadow-sm"
+                      className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm"
                     />
                   </div>
                   <h3 className="font-bold text-[#06206A] text-sm md:text-base leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>

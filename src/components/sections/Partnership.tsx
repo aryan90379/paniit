@@ -48,7 +48,7 @@ const tier2Logos = [
 
 export default function Partnership() {
   return (
-    <section id="partner" className="py-24 bg-[#F4ECE4] text-gray-900 relative">
+    <section id="partner" className="py-24 bg-white text-gray-900 relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         {/* Why Partner (Visual Bento Grid) */}

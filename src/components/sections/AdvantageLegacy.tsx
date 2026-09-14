@@ -28,7 +28,7 @@ const LEGACY = [
 
 export default function AdvantageLegacy() {
   return (
-    <section id="advantage" className="bg-[#F4ECE4]">
+    <section id="advantage" className="bg-white">
       
       {/* Andhra Advantage Section - Bento Grid */}
       <div className="py-24 pt-32 container mx-auto px-4 md:px-6 max-w-7xl">
@@ -195,7 +195,7 @@ export default function AdvantageLegacy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-[#F4ECE4] p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-4 group"
+                  className="bg-white p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-4 group"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-white text-[#06206A] flex items-center justify-center mb-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <Icon size={32} />

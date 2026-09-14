@@ -48,7 +48,7 @@ export default function Schedule() {
   }, []);
 
   return (
-    <section id="schedule" className="py-24 bg-[#F4ECE4] text-gray-900 relative border-t border-gray-200">
+    <section id="schedule" className="py-24 bg-white text-gray-900 relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         
         <div className="text-center mb-16">

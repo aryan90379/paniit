@@ -121,7 +121,7 @@ const SpeakerCard = ({ speaker }: { speaker: any }) => (
       <img 
         src={speaker.image || PLACEHOLDER} 
         alt={speaker.name} 
-        className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100"
+        className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100"
       />
     </div>
     <h3 className="font-bold text-[#06206A] text-sm md:text-lg leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors whitespace-pre-line">{speaker.name}</h3>
@@ -144,7 +144,7 @@ export default function Speakers() {
                    
               <div className="relative w-64 h-64 md:w-80 md:h-80 mb-8 group-hover:-translate-y-2 transition-transform duration-300">
                 <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-3xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                <img src={CHIEF_GUEST.image} alt={CHIEF_GUEST.name} className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100 shadow-xl" />
+                <img src={CHIEF_GUEST.image} alt={CHIEF_GUEST.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-xl" />
               </div>
               <h3 className="text-2xl md:text-4xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{CHIEF_GUEST.name}</h3>
               <p className="text-lg md:text-xl text-gray-500 relative z-10 font-medium">
@@ -170,7 +170,7 @@ export default function Speakers() {
                      
                 <div className="relative w-40 h-40 md:w-56 md:h-56 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
                   <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                  <img src={guest.image} alt={guest.name} className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100 shadow-md" />
+                  <img src={guest.image} alt={guest.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{guest.name}</h3>
                 <p className="text-sm md:text-base text-gray-500 relative z-10 whitespace-pre-line font-medium">
@@ -194,7 +194,7 @@ export default function Speakers() {
                      
                 <div className="relative w-36 h-36 md:w-48 md:h-48 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
                   <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                  <img src={guest.image} alt={guest.name} className="w-full h-full object-cover rounded-full relative z-10 bg-[#F4ECE4] border border-gray-100 shadow-md" />
+                  <img src={guest.image} alt={guest.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{guest.name}</h3>
                 <p className="text-xs md:text-sm text-gray-500 relative z-10 whitespace-pre-line font-medium">
@@ -226,7 +226,7 @@ export default function Speakers() {
             {INDUSTRY_LEADERS.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />
             ))}
-            <div className="flex flex-col justify-center items-center h-full min-h-[250px] p-4 md:p-6 rounded-3xl bg-[#F4ECE4] hover:bg-white transition-all duration-300 group cursor-pointer relative">
+            <div className="flex flex-col justify-center items-center h-full min-h-[250px] p-4 md:p-6 rounded-3xl bg-white hover:bg-white transition-all duration-300 group cursor-pointer relative">
                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
                  style={{ boxShadow: '0 10px 40px -10px rgba(99, 102, 241, 0.4)' }} />
               <div className="text-xl md:text-2xl font-bold text-gray-400 group-hover:text-indigo-600 transition-colors relative z-10">+ Many More</div>
