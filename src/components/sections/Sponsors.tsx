@@ -13,50 +13,40 @@ const SPONSORS = [
   { name: 'Schneider', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Schneider_Electric_2007.svg' },
   { name: 'Coal India', logo: 'https://upload.wikimedia.org/wikipedia/en/7/7b/Coal_India_Logo.svg' },
   { name: 'NMDC', logo: 'https://upload.wikimedia.org/wikipedia/en/4/4b/NMDC_Logo.svg' },
+  { name: 'GAIL', logo: 'https://upload.wikimedia.org/wikipedia/en/0/0d/GAIL_%28India%29_logo.svg' },
+  { name: 'EaseMyTrip', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/14/EaseMyTrip_Logo.svg' },
 ];
 
 export default function Sponsors() {
-  // Duplicate for seamless infinite scroll
-  const marqueeSponsors = [...SPONSORS, ...SPONSORS, ...SPONSORS];
-
   return (
-    <section className="py-20 bg-white relative overflow-hidden border-t border-gray-100">
-      <div className="container mx-auto px-4 md:px-6 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#153063]/5 border border-[#153063]/10 text-[#153063] text-sm font-bold uppercase tracking-widest mb-6">
-            Ecosystem
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#001858] mb-6 tracking-tight uppercase">
-            Past <span className="text-[#E13926]">Sponsors</span> & Partners
-          </h2>
-          <p className="text-lg text-gray-600 font-medium">
-            Over the years, PanIIT has partnered with the world's most influential technology and enterprise brands.
-          </p>
-        </motion.div>
-      </div>
+    <section className="py-24 bg-white relative">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-black text-[#153063] tracking-tight uppercase"
+          >
+            PAST SPONSORS AND PARTNERS
+          </motion.h2>
+        </div>
 
-      {/* Infinite Marquee Slider */}
-      <div className="relative w-full flex overflow-x-hidden group">
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
-
-        <div className="flex animate-marquee gap-16 py-8 items-center shrink-0">
-          {marqueeSponsors.map((sponsor, idx) => (
-            <div 
-              key={`${sponsor.name}-${idx}`} 
-              className="w-40 h-20 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0"
+        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+          {SPONSORS.map((sponsor, idx) => (
+            <motion.div 
+              key={`${sponsor.name}-${idx}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: (idx % 6) * 0.1 }}
+              className="w-32 h-16 md:w-40 md:h-20 bg-gray-50 rounded-xl flex items-center justify-center p-4 hover:shadow-md transition-shadow border border-gray-100"
             >
               <img 
                 src={sponsor.logo} 
                 alt={sponsor.name} 
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 onError={(e) => {
-                  // Fallback to text if image fails to load
                   (e.target as HTMLElement).style.display = 'none';
                   const nextSibling = (e.target as HTMLElement).nextElementSibling;
                   if (nextSibling) {
@@ -64,24 +54,11 @@ export default function Sponsors() {
                   }
                 }}
               />
-              <span className="hidden font-black text-xl text-[#001858] tracking-widest uppercase text-center w-full">{sponsor.name}</span>
-            </div>
+              <span className="hidden font-bold text-sm text-[#153063] text-center w-full">{sponsor.name}</span>
+            </motion.div>
           ))}
         </div>
       </div>
-      
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-100% / 3)); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-        .group:hover .animate-marquee {
-          animation-play-state: paused;
-        }
-      `}} />
     </section>
   );
 }
