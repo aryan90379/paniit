@@ -7,15 +7,13 @@ import DriftWall from '@/components/ui/DriftWall';
 // to ensure the DriftWall has enough tiles to look amazing.
 const items = [
   { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 1' },
-  { image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop', title: 'Audience' },
-  { image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop', title: 'Panel' },
   { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 2' },
-  { image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop', title: 'Networking' },
-  { image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=2070&auto=format&fit=crop', title: 'Stage' },
   { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 3' },
-  { image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop', title: 'Tech Talk' },
-  { image: 'https://images.unsplash.com/photo-1475721025592-229bac54c546?q=80&w=2070&auto=format&fit=crop', title: 'Innovation' },
   { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 4' },
+  { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 5' },
+  { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 6' },
+  { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 7' },
+  { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 8' },
 ];
 
 export default function Glimpses() {
@@ -60,9 +58,9 @@ export default function Glimpses() {
           variance={0.5}
           parallax={0}
           lift={50}
-          fade={0.6}
-          dim={0.55}
-          overlayColor="#ffffff"
+          fade={0.1}
+          dim={1.0}
+          overlayColor="transparent"
           radius={16}
           roll={0}
           pauseOnHover={false}
