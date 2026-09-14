@@ -1,163 +1,169 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Factory, Cpu, Anchor, Microscope, Landmark, Rocket, Network, Users, TrendingUp, Zap, Server, Globe } from 'lucide-react';
+import { Target, Zap, Server, Anchor, Microscope, Rocket, Globe2, Lightbulb, Users, Building, Shield, ChevronRight } from 'lucide-react';
+
+const NODES_LEFT = [
+  { id: 'n1', title: 'Investments', desc: '₹6.74 Lakh Cr+ secured', icon: Building, color: '#153063' },
+  { id: 'n2', title: 'AI & Data Centers', desc: 'Global tech infrastructure', icon: Server, color: '#153063' },
+  { id: 'n3', title: 'Global Startups', desc: 'Fostering 1000+ deep-tech startups', icon: Rocket, color: '#153063' },
+];
+
+const NODES_RIGHT = [
+  { id: 'n4', title: 'Quantum Valley', desc: 'Powering commercial innovation', icon: Zap, color: '#E13926' },
+  { id: 'n5', title: 'Logistics', desc: '6 Ports & 3 Corridors', icon: Anchor, color: '#153063' },
+  { id: 'n6', title: 'Multi-Sector Hub', desc: 'Space-tech & Semiconductors', icon: Microscope, color: '#153063' },
+];
 
 const LEGACY = [
-  {
-    icon: Landmark,
-    title: "Amaravati Council & Venture Fund",
-    desc: "PAN IIT Amaravati Council to be constituted with a permanent secretariat. PAN IIT Amaravati Venture Fund to be launched for DeepTech investment in the State."
-  },
-  {
-    icon: Network,
-    title: "Tech Transfer & Declaration",
-    desc: "IIT technology-transfer pipeline to be created for commercialisation. Andhra PanIIT Declaration to be released—a long-term commitment between the 23 IITs, Industry and Govt. of AP."
-  },
-  {
-    icon: Rocket,
-    title: "Quantum & DeepTech Policy",
-    desc: "Quantum computing and frontier-tech capabilities to be launched (including NMIOPS). DeepTech policy package unveiled to attract R&D, startups, and advanced manufacturing."
-  },
-  {
-    icon: Users,
-    title: "Mentorship & Academia",
-    desc: "100-member Global IIT Mentor Network to be launched. 10 Industry Chairs to be established across different institutions/universities in AP."
-  }
+  { title: "PanIIT Mentorship Network", desc: "Connecting AP startups with top-tier IIT alumni mentors for strategic guidance and global market access.", icon: Users },
+  { title: "Innovation Sandbox", desc: "A regulatory sandbox allowing deep-tech startups to test and deploy critical infrastructure solutions.", icon: Lightbulb },
+  { title: "Global Market Bridge", desc: "Dedicated programs to help homegrown companies expand operations to US, Europe, and Southeast Asia.", icon: Globe2 },
+  { title: "DeepTech Fund", desc: "A dedicated venture capital initiative supported by alumni to fund early-stage hardware and AI companies.", icon: Shield },
 ];
 
 export default function AdvantageLegacy() {
   return (
-    <section id="advantage" className="bg-gray-50">
+    <section className="py-24 bg-gray-50 text-gray-900 relative border-t border-gray-100 overflow-hidden" id="advantage">
       
-      {/* Andhra Advantage Section - Bento Grid */}
-      <div className="py-24 pt-32 container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="text-center mb-16 max-w-4xl mx-auto">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-100 rounded-full blur-[100px] opacity-60" />
+        <div className="absolute top-1/2 -left-40 w-96 h-96 bg-red-100 rounded-full blur-[100px] opacity-60" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block px-4 py-1 rounded-full border border-blue-200 bg-blue-100 text-blue-700 text-sm font-bold uppercase tracking-widest mb-6"
+          >
+            The AP Advantage
+          </motion.div>
+          
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-[#153063] mb-6 tracking-tight uppercase"
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl font-black text-[#153063] uppercase tracking-tighter leading-tight"
           >
-            Powering India's Next Wave of Innovation
+            Powering India's Next<br/> Wave of Innovation
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-gray-500 font-medium"
+            transition={{ delay: 0.2 }}
+            className="mt-6 text-xl text-gray-600 font-medium max-w-2xl mx-auto"
           >
             Andhra Pradesh is rapidly transforming into a global deep-tech and industrial powerhouse.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto auto-rows-[250px]">
+        {/* Animated Node Flow Diagram */}
+        <div className="w-full max-w-6xl mx-auto relative h-[800px] lg:h-[600px] hidden md:block mt-12 mb-20 bg-[#0a0a0a] rounded-[3rem] p-8 border border-gray-800 shadow-2xl overflow-hidden">
           
-          {/* Bento Card 1 - Big Number */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="md:col-span-2 row-span-1 bg-[#153063] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group cursor-default"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none group-hover:bg-blue-400/30 transition-colors duration-500" />
-            <TrendingUp className="text-blue-400/30 absolute right-8 bottom-8 w-32 h-32 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
+          {/* SVG Connection Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600" preserveAspectRatio="none">
+            {/* Base static lines */}
+            <path d="M250,100 C350,100 400,300 450,300" fill="none" stroke="#222" strokeWidth="3" />
+            <path d="M250,300 C350,300 400,300 450,300" fill="none" stroke="#222" strokeWidth="3" />
+            <path d="M250,500 C350,500 400,300 450,300" fill="none" stroke="#222" strokeWidth="3" />
             
-            <h3 className="text-blue-300 font-bold tracking-widest uppercase text-sm mb-4">Investments Secured</h3>
-            <div className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter">
-              ₹6.74 <span className="text-3xl md:text-4xl text-blue-200">Lakh Cr+</span>
-            </div>
-            <p className="text-blue-100/80 text-lg max-w-md font-medium leading-snug">
-              Capturing nearly 25% of India's FY 2025-26 proposed investments across various industry sectors.
-            </p>
+            <path d="M750,100 C650,100 600,300 550,300" fill="none" stroke="#222" strokeWidth="3" />
+            <path d="M750,300 C650,300 600,300 550,300" fill="none" stroke="#222" strokeWidth="3" />
+            <path d="M750,500 C650,500 600,300 550,300" fill="none" stroke="#222" strokeWidth="3" />
+
+            {/* Animated Dashed Lines (Flowing into Center) */}
+            <motion.path d="M250,100 C350,100 400,300 450,300" fill="none" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeDasharray="10 20" animate={{ strokeDashoffset: [30, 0] }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }} />
+            <motion.path d="M250,300 C350,300 400,300 450,300" fill="none" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeDasharray="10 20" animate={{ strokeDashoffset: [30, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }} />
+            <motion.path d="M250,500 C350,500 400,300 450,300" fill="none" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeDasharray="10 20" animate={{ strokeDashoffset: [30, 0] }} transition={{ duration: 0.9, repeat: Infinity, ease: "linear" }} />
+            
+            <motion.path d="M750,100 C650,100 600,300 550,300" fill="none" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeDasharray="10 20" animate={{ strokeDashoffset: [-30, 0] }} transition={{ duration: 1.1, repeat: Infinity, ease: "linear" }} />
+            <motion.path d="M750,300 C650,300 600,300 550,300" fill="none" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeDasharray="10 20" animate={{ strokeDashoffset: [-30, 0] }} transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }} />
+            <motion.path d="M750,500 C650,500 600,300 550,300" fill="none" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeDasharray="10 20" animate={{ strokeDashoffset: [-30, 0] }} transition={{ duration: 1.3, repeat: Infinity, ease: "linear" }} />
+          </svg>
+
+          {/* Center Node */}
+          <motion.div 
+            initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', bounce: 0.5, duration: 1 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex flex-col items-center justify-center shadow-[0_0_60px_rgba(34,197,94,0.4)] border-2 border-green-400/50 z-20"
+          >
+            <div className="absolute inset-0 bg-white/5 rounded-3xl animate-pulse" />
+            <Target className="text-white w-12 h-12 mb-2" />
+            <div className="text-white font-black text-center leading-tight">AP<br/>Ecosystem</div>
           </motion.div>
 
-          {/* Bento Card 2 - Quantum */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="col-span-1 row-span-1 bg-gradient-to-br from-[#E13926] to-red-700 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-xl group cursor-default"
-          >
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] pointer-events-none" />
-            <Zap className="text-white/30 absolute right-6 top-6 w-24 h-24 transform group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500" />
-            
-            <h3 className="text-white font-black text-3xl leading-tight mb-3">Quantum<br/>Valley Park</h3>
-            <p className="text-red-100 font-medium text-sm leading-relaxed">
-              Powering India's deep-tech future to drive quantum computing and commercial innovation.
-            </p>
-          </motion.div>
+          {/* Left Nodes */}
+          {NODES_LEFT.map((node, i) => (
+            <motion.div 
+              key={node.id}
+              initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.2 }} viewport={{ once: true }}
+              className="absolute left-8 w-[240px] bg-[#141414] rounded-2xl p-4 shadow-2xl border border-gray-800 flex items-center gap-4 z-10 hover:scale-105 transition-transform cursor-default"
+              style={{ top: `calc(${16.66 + i * 33.33}% - 45px)` }}
+            >
+              <div className="w-12 h-12 rounded-xl bg-black/50 flex items-center justify-center shrink-0 border border-gray-800">
+                <node.icon className="text-[#153063] w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-100 leading-tight text-sm mb-0.5">{node.title}</h4>
+                <p className="text-xs text-gray-400 leading-tight">{node.desc}</p>
+              </div>
+            </motion.div>
+          ))}
 
-          {/* Bento Card 3 - AI & Data Centers */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="col-span-1 row-span-1 bg-white rounded-[2rem] p-8 border border-gray-100 shadow-md relative overflow-hidden group cursor-default"
-          >
-            <Server className="text-gray-100 absolute -right-4 -bottom-4 w-40 h-40 transform group-hover:-translate-y-4 group-hover:-translate-x-4 transition-all duration-500" />
-            
-            <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6">
-              <Cpu className="text-indigo-600" size={28} />
-            </div>
-            <h3 className="text-[#153063] font-bold text-2xl mb-3">AI & Data Centers</h3>
-            <p className="text-gray-500 font-medium text-sm leading-relaxed relative z-10">
-              Global tech leaders like Google and Reliance are driving large-scale digital infrastructure in AP.
-            </p>
-          </motion.div>
-
-          {/* Bento Card 4 - Logistics */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="col-span-1 row-span-1 bg-white rounded-[2rem] p-8 border border-gray-100 shadow-md relative overflow-hidden group cursor-default"
-          >
-            <Globe className="text-gray-100 absolute -right-4 -bottom-4 w-40 h-40 transform group-hover:rotate-45 transition-all duration-700" />
-            
-            <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6">
-              <Anchor className="text-emerald-600" size={28} />
-            </div>
-            <h3 className="text-[#153063] font-bold text-2xl mb-1">6 Ports &</h3>
-            <h3 className="text-[#153063] font-bold text-2xl mb-3">3 Corridors</h3>
-            <p className="text-gray-500 font-medium text-sm leading-relaxed relative z-10">
-              Strategic east-coast location providing world-class logistics and industrial connectivity.
-            </p>
-          </motion.div>
-
-          {/* Bento Card 5 - Hub */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="col-span-1 row-span-1 bg-white rounded-[2rem] p-8 border border-gray-100 shadow-md relative overflow-hidden group cursor-default"
-          >
-            <Factory className="text-gray-100 absolute -right-4 -bottom-4 w-40 h-40 transform group-hover:scale-110 transition-all duration-500" />
-            
-            <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-6">
-              <Microscope className="text-amber-600" size={28} />
-            </div>
-            <h3 className="text-[#153063] font-bold text-2xl mb-3">Multi-Sector Hub</h3>
-            <p className="text-gray-500 font-medium text-sm leading-relaxed relative z-10">
-              Emerging center for Space-tech, semiconductors, clean energy, and advanced manufacturing.
-            </p>
-          </motion.div>
-
+          {/* Right Nodes */}
+          {NODES_RIGHT.map((node, i) => (
+            <motion.div 
+              key={node.id}
+              initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.2 }} viewport={{ once: true }}
+              className="absolute right-8 w-[240px] bg-[#141414] rounded-2xl p-4 shadow-2xl border border-gray-800 flex items-center gap-4 z-10 hover:scale-105 transition-transform cursor-default"
+              style={{ top: `calc(${16.66 + i * 33.33}% - 45px)` }}
+            >
+              <div className="w-12 h-12 rounded-xl bg-black/50 flex items-center justify-center shrink-0 border border-gray-800">
+                <node.icon className="text-[#E13926] w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-100 leading-tight text-sm mb-0.5">{node.title}</h4>
+                <p className="text-xs text-gray-400 leading-tight">{node.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        
-        <div className="mt-12 text-center text-sm md:text-base text-gray-500 font-bold uppercase tracking-widest max-w-3xl mx-auto">
-          Building on a strong industrial legacy to drive the next era of innovation-led growth.
+
+        {/* Mobile Fallback Grid (Stacked cards) */}
+        <div className="md:hidden flex flex-col gap-4 mt-12 mb-20">
+          <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-6 flex items-center gap-4 shadow-xl text-white">
+            <Target className="text-white w-10 h-10" />
+            <div>
+              <h3 className="font-black text-xl">AP Ecosystem</h3>
+              <p className="text-blue-200 text-sm">The central hub of innovation</p>
+            </div>
+          </div>
+          {[...NODES_LEFT, ...NODES_RIGHT].map((node, i) => (
+            <motion.div 
+              key={node.id}
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
+              className="bg-white rounded-2xl p-5 shadow-lg border border-gray-800 flex items-center gap-4"
+            >
+              <div className="w-12 h-12 rounded-xl bg-black/50 flex items-center justify-center shrink-0 border border-gray-800">
+                <node.icon color={node.color} className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-100 text-lg mb-0.5">{node.title}</h4>
+                <p className="text-sm text-gray-400">{node.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
       </div>
 
       {/* Legacy Initiatives Section */}
-      <div className="py-24 bg-white border-t border-gray-100">
+      <div className="py-24 bg-white border-t border-gray-800">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="text-center mb-16">
             <motion.h2 
@@ -187,7 +193,7 @@ export default function AdvantageLegacy() {
                     <Icon size={32} />
                   </div>
                   <h3 className="text-2xl font-bold text-[#153063]">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed font-medium">
+                  <p className="text-gray-400 leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </motion.div>
