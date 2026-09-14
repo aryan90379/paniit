@@ -80,14 +80,14 @@ export default function Partnership() {
             </motion.p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+          <div className="flex md:grid md:grid-cols-3 gap-6 md:auto-rows-[300px] overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-8 px-4 md:px-0">
             
             {/* Card 1: Trusted Ecosystem (Large Graphic) */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="col-span-1 md:col-span-2 row-span-1 bg-[#153063] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 md:col-span-2 row-span-1 bg-[#153063] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] opacity-20 bg-cover bg-center mix-blend-overlay group-hover:opacity-30 transition-opacity duration-700" />
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl -mr-40 -mt-40 pointer-events-none" />
@@ -111,7 +111,7 @@ export default function Partnership() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="col-span-1 row-span-1 bg-gradient-to-br from-[#E13926] to-red-700 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 row-span-1 bg-gradient-to-br from-[#E13926] to-red-700 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
               <Target className="text-white/10 absolute -right-8 -bottom-8 w-56 h-56 transform group-hover:scale-110 transition-all duration-700" />
               
@@ -132,7 +132,7 @@ export default function Partnership() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-md group"
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 row-span-1 bg-white border border-gray-200 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-md group"
             >
               <Users className="text-gray-100 absolute -right-4 -bottom-4 w-48 h-48 transform group-hover:-translate-x-4 transition-all duration-500" />
               
@@ -153,7 +153,7 @@ export default function Partnership() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="col-span-1 md:col-span-2 row-span-1 bg-gray-900 rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 md:col-span-2 row-span-1 bg-gray-900 rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] pointer-events-none" />
               <Zap className="text-gray-800 absolute right-8 -bottom-12 w-72 h-72 transform group-hover:-translate-y-4 transition-all duration-700" />
