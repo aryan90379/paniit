@@ -41,8 +41,20 @@ export default function Footer() {
           {/* Brand & Contact (Left Column) */}
           <div className="lg:col-span-4 flex flex-col gap-12">
             <div>
-              <div className="text-3xl font-bold tracking-tighter text-white mb-4">
-                <span className="text-blue-500 drop-shadow-md">PanIIT</span> AP Summit 2026
+              <div className="mb-6 inline-block bg-white p-3 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/20">
+                <div className="flex items-center gap-4">
+                  <img 
+                    src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg" 
+                    alt="PanIIT Alumni India" 
+                    className="h-12 object-contain mix-blend-multiply" 
+                  />
+                  <div className="w-px h-10 bg-[#153063]/20"></div>
+                  <img 
+                    src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
+                    alt="PanIIT AP Summit" 
+                    className="h-12 object-contain mix-blend-multiply" 
+                  />
+                </div>
               </div>
               <p className="text-white font-medium max-w-md drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 Andhra's DeepTech Decade. Join us in shaping the future of innovation, investment, and talent.
