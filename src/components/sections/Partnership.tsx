@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, ShieldCheck, Target, Users, Zap } from 'lucide-react';
+import { LogoLoop } from '@/components/ui/LogoLoop';
 
 const WHY_PARTNER = [
   { title: "TRUSTED ECOSYSTEM ACCESS", desc: "Direct connection to one of India's most influential and credible alumni networks", icon: ShieldCheck },
@@ -23,6 +24,33 @@ const TIERS = [
   { name: 'Silver', price: '₹10 L', benefits: ['Category partner association', 'Medium logo visibility', 'Courtyard space', 'Standalone Social Media Mention', 'Logo Mention in Booklet', '1 Standee in event'] },
   { name: 'Gold', price: '₹25 L', popular: true, benefits: ['Category partner association', '1 Panel Speaker slot', 'High logo visibility', 'Courtyard space', 'Standalone Social Media Mention', 'Event Mailer (500K+)', 'Media Coverage', 'Logo Mention in Booklet', '2 Standees in event'] },
   { name: 'Title', price: '₹50 L', benefits: ['Presented by (yes)', 'Keynote Speaker Slot', 'Maximum logo visibility', 'Courtyard space', 'Standalone Social Media Mention', 'Event Mailer (500K+)', 'Media Coverage', 'Dedicated Page in Booklet', '5 Standees in event'] }
+];
+
+const LogoText = ({ text, color }: { text: string, color: string }) => (
+  <span 
+    className="font-black text-4xl md:text-5xl uppercase tracking-tighter opacity-40 hover:opacity-100 transition-opacity duration-300 px-4" 
+    style={{ color }}
+  >
+    {text}
+  </span>
+);
+
+const tier1Logos = [
+  { node: <LogoText text="Google" color="#4285F4" />, title: "Google" },
+  { node: <LogoText text="Microsoft" color="#00A4EF" />, title: "Microsoft" },
+  { node: <LogoText text="Amazon" color="#FF9900" />, title: "Amazon" },
+  { node: <LogoText text="IBM" color="#0530AD" />, title: "IBM" },
+  { node: <LogoText text="Intel" color="#0068B5" />, title: "Intel" },
+  { node: <LogoText text="NVIDIA" color="#76B900" />, title: "NVIDIA" },
+];
+
+const tier2Logos = [
+  { node: <LogoText text="Cisco" color="#1BA0D7" />, title: "Cisco" },
+  { node: <LogoText text="Oracle" color="#F80000" />, title: "Oracle" },
+  { node: <LogoText text="Salesforce" color="#00A1E0" />, title: "Salesforce" },
+  { node: <LogoText text="SAP" color="#008FD3" />, title: "SAP" },
+  { node: <LogoText text="Tata" color="#184589" />, title: "Tata" },
+  { node: <LogoText text="Infosys" color="#007CC3" />, title: "Infosys" },
 ];
 
 export default function Partnership() {
@@ -101,6 +129,50 @@ export default function Partnership() {
           </div>
         </div>
 
+        {/* Past Sponsors Loop */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold text-[#153063] mb-4 tracking-wide uppercase"
+            >
+              Past Sponsors & Partners
+            </motion.h2>
+          </div>
+
+          <div className="flex flex-col gap-10 md:gap-16 w-full py-8 overflow-hidden rounded-[2rem] bg-white border border-gray-200 shadow-sm">
+            <div className="relative w-full">
+              <LogoLoop
+                logos={tier1Logos}
+                speed={40}
+                direction="left"
+                logoHeight={80}
+                gap={100}
+                pauseOnHover={true}
+                scaleOnHover={true}
+                fadeOut={true}
+                fadeOutColor="#ffffff"
+              />
+            </div>
+
+            <div className="relative w-full">
+              <LogoLoop
+                logos={tier2Logos}
+                speed={40}
+                direction="right"
+                logoHeight={80}
+                gap={100}
+                pauseOnHover={true}
+                scaleOnHover={true}
+                fadeOut={true}
+                fadeOutColor="#ffffff"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Tiers */}
         <div className="text-center mb-16">
           <motion.h2 
@@ -154,17 +226,6 @@ export default function Partnership() {
               </button>
             </motion.div>
           ))}
-        </div>
-
-        {/* Past Sponsors placeholder */}
-        <div className="mt-32 text-center">
-          <h2 className="text-3xl font-bold text-[#153063] mb-12 uppercase">Past Sponsors and Partners</h2>
-          <div className="flex flex-wrap justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Real CDNs will be added later by user, using placeholder boxes for now */}
-            {[...Array(12)].map((_, i) => (
-              <div key={i} className="w-32 h-16 bg-gray-200 rounded-lg animate-pulse" />
-            ))}
-          </div>
         </div>
 
       </div>
