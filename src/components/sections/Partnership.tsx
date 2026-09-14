@@ -1,16 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Target, Users, Zap } from 'lucide-react';
+import { Check, ShieldCheck, Target, Users, Zap, Network, Award, Globe, Rocket } from 'lucide-react';
 import { LogoLoop } from '@/components/ui/LogoLoop';
-import BorderGlow from '@/components/ui/BorderGlow';
-
-const WHY_PARTNER = [
-  { title: "TRUSTED ECOSYSTEM ACCESS", desc: "Direct connection to one of India's most influential and credible alumni networks.", icon: ShieldCheck },
-  { title: "DEPTH OVER VOLUME", desc: "Conversations designed for learning, strategic thinking, and long-term value creation.", icon: Target },
-  { title: "CURATED HIGH QUALITY AUDIENCE", desc: "Early stage, growth stage, and scaled founders, builders, investors across deep tech.", icon: Users },
-  { title: "ECOSYSTEM CONTRIBUTORS", desc: "Partners engage as enablers and builders, not transactional sponsors.", icon: Zap }
-];
 
 const BENEFITS = [
   "Powerful Brand Visibility",
@@ -59,95 +51,145 @@ export default function Partnership() {
     <section id="partner" className="py-24 bg-gray-50 text-gray-900 relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
-        {/* Why Partner (Redesigned as Premium Dark Section) */}
-        <div className="mb-24 bg-[#0a0a0a] rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl border border-gray-900">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2029&auto=format&fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/90 pointer-events-none" />
-
-          <div className="relative z-10">
-            <div className="text-center mb-16">
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-block px-4 py-1 rounded-full bg-blue-900/30 text-blue-300 border border-blue-500/20 text-sm font-bold uppercase tracking-widest mb-6"
-              >
-                Exclusive Partnership
-              </motion.div>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight"
-              >
-                WHY PARTNER WITH THE SUMMIT?
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-gray-400 font-medium text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-              >
-                Join an elite ecosystem of global leaders and secure your brand's position at the forefront of India's deep-tech and industrial revolution.
-              </motion.p>
-            </div>
+        {/* Why Partner (Visual Bento Grid) */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block px-6 py-2 rounded-full bg-blue-100 text-blue-800 font-bold uppercase tracking-widest mb-6 border border-blue-200"
+            >
+              Exclusive Partnership
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-[#153063] mb-6 tracking-tight"
+            >
+              WHY PARTNER WITH US?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-gray-500 font-medium text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
+            >
+              Join an elite ecosystem of global leaders and secure your brand's position at the forefront of India's deep-tech and industrial revolution.
+            </motion.p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
-              {WHY_PARTNER.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <BorderGlow
-                      edgeSensitivity={30}
-                      glowColor="210 100 60"
-                      backgroundColor="#121212"
-                      borderRadius={28}
-                      glowRadius={40}
-                      glowIntensity={1.5}
-                      coneSpread={25}
-                      animated={false}
-                      colors={['#3b82f6', '#8b5cf6', '#ec4899']}
-                      className="p-8 md:p-10 flex flex-col gap-6 group cursor-pointer h-full"
-                    >
-                      <div className="w-16 h-16 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300 shadow-sm border border-blue-500/10">
-                        <Icon size={32} />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-black text-white mb-4 tracking-wide uppercase">{item.title}</h3>
-                        <p className="text-gray-400 font-medium leading-relaxed text-lg">{item.desc}</p>
-                      </div>
-                    </BorderGlow>
-                  </motion.div>
-                )
-              })}
-            </div>
-
-            {/* Key Benefits (Integrated as glowing chips) */}
-            <div className="border-t border-white/10 pt-16 text-center">
-              <h3 className="text-2xl font-bold text-gray-300 mb-10 tracking-wide uppercase">Core Benefits Included</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                {BENEFITS.map((benefit, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full flex items-center gap-3 hover:bg-white/10 hover:border-blue-500/30 transition-all cursor-pointer shadow-lg"
-                  >
-                    <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-xs font-bold">
-                      {i + 1}
-                    </div>
-                    <div className="font-bold text-gray-200">{benefit}</div>
-                  </motion.div>
-                ))}
+            {/* Card 1: Trusted Ecosystem (Large Graphic) */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="col-span-1 md:col-span-2 row-span-1 bg-[#153063] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+            >
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] opacity-20 bg-cover bg-center mix-blend-overlay group-hover:opacity-30 transition-opacity duration-700" />
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl -mr-40 -mt-40 pointer-events-none" />
+              
+              <Network className="text-white/10 absolute right-4 bottom-4 w-64 h-64 transform group-hover:scale-110 group-hover:-rotate-12 transition-all duration-700" />
+              
+              <div className="relative z-10 max-w-lg">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-blue-400/30 mb-6">
+                  <ShieldCheck className="text-blue-300" size={32} />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight uppercase">Trusted Ecosystem</h3>
+                <p className="text-blue-100 font-medium text-lg leading-relaxed">
+                  Direct connection to one of India's most influential and credible alumni networks.
+                </p>
               </div>
+            </motion.div>
+
+            {/* Card 2: Depth over Volume */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="col-span-1 row-span-1 bg-gradient-to-br from-[#E13926] to-red-700 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+            >
+              <Target className="text-white/10 absolute -right-8 -bottom-8 w-56 h-56 transform group-hover:scale-110 transition-all duration-700" />
+              
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 mb-6">
+                  <Target className="text-white" size={28} />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight uppercase leading-tight">Depth Over<br/>Volume</h3>
+                <p className="text-red-100 font-medium leading-relaxed">
+                  Conversations designed for learning, strategic thinking, and long-term value creation.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 3: Quality Audience */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-md group"
+            >
+              <Users className="text-gray-100 absolute -right-4 -bottom-4 w-48 h-48 transform group-hover:-translate-x-4 transition-all duration-500" />
+              
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center border border-indigo-100 mb-6">
+                  <Users className="text-indigo-600" size={28} />
+                </div>
+                <h3 className="text-2xl font-black text-[#153063] mb-4 tracking-tight uppercase leading-tight">High Quality<br/>Audience</h3>
+                <p className="text-gray-500 font-medium leading-relaxed">
+                  Founders, builders, and investors across enterprise SaaS, AI, and deep tech.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 4: Contributors (Large Graphic) */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="col-span-1 md:col-span-2 row-span-1 bg-gray-900 rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
+            >
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] pointer-events-none" />
+              <Zap className="text-gray-800 absolute right-8 -bottom-12 w-72 h-72 transform group-hover:-translate-y-4 transition-all duration-700" />
+              
+              <div className="relative z-10 max-w-lg">
+                <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center border border-gray-700 mb-6">
+                  <Zap className="text-yellow-400" size={32} />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight uppercase">Ecosystem Contributors</h3>
+                <p className="text-gray-400 font-medium text-lg leading-relaxed">
+                  Partners engage as enablers and builders, not just transactional sponsors. We build long-term value.
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Key Benefits (Integrated as glowing chips) */}
+          <div className="mt-16 text-center">
+            <h3 className="text-xl font-bold text-gray-500 mb-8 tracking-widest uppercase">Core Benefits Included</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {BENEFITS.map((benefit, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white border border-gray-200 px-6 py-3 rounded-full flex items-center gap-3 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer"
+                >
+                  <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 text-xs font-bold">
+                    {i + 1}
+                  </div>
+                  <div className="font-bold text-gray-700">{benefit}</div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
