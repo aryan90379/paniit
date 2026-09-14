@@ -41,7 +41,7 @@ const PAST_SPEAKERS = [
 
 export default function PastEminentSpeakers() {
   return (
-    <section className="py-24 bg-gray-50/50 relative border-t border-gray-200">
+    <section className="py-24 bg-gray-50 relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         <div className="text-center mb-16">
@@ -73,7 +73,7 @@ export default function PastEminentSpeakers() {
                 <img 
                   src={speaker.image || PLACEHOLDER} 
                   alt={speaker.name} 
-                  className="w-full h-full object-cover rounded-full relative z-10 bg-gray-100 border border-gray-100"
+                  className="w-full h-full object-cover rounded-full relative z-10 bg-gray-50 border border-gray-100"
                 />
               </div>
               <h3 className="font-bold text-[#153063] text-sm md:text-[15px] leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
