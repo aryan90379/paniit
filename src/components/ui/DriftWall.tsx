@@ -175,7 +175,7 @@ const DriftWall = ({
           const meta = columnMeta[c];
           if (!meta) continue;
           const paused = wallHoveredRef.current && pauseOnHover;
-          const factor = paused || hoveredColRef.current === c ? 0 : 1;
+          const factor = paused || (pauseOnHover && hoveredColRef.current === c) ? 0 : 1;
           const target = baseVelocities[c] * factor;
 
           const ease = 1 - Math.exp(-dt / (target === 0 ? 0.16 : 0.28));

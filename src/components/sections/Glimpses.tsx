@@ -20,14 +20,14 @@ const items = [
 
 export default function Glimpses() {
   return (
-    <section className="py-24 bg-[#0a0a0a] text-white relative overflow-hidden">
+    <section className="py-24 bg-white text-gray-900 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl mb-12">
         <div className="text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1 rounded-full border border-gray-700 bg-gray-800 text-gray-300 text-sm font-medium mb-4 uppercase tracking-widest"
+            className="inline-block px-4 py-1 rounded-full border border-blue-200 bg-blue-50 text-blue-600 text-sm font-medium mb-4 uppercase tracking-widest"
           >
             Past Events
           </motion.div>
@@ -36,7 +36,7 @@ export default function Glimpses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#153063] tracking-tight uppercase"
           >
             Glimpses From The Past
           </motion.h2>
@@ -58,14 +58,14 @@ export default function Glimpses() {
           speed={35}
           direction="up"
           variance={0.5}
-          parallax={0.7}
+          parallax={0}
           lift={50}
           fade={0.6}
           dim={0.55}
-          overlayColor="#0a0a0a"
+          overlayColor="#ffffff"
           radius={16}
           roll={0}
-          pauseOnHover={true}
+          pauseOnHover={false}
           grayscale={false}
         />
       </div>
@@ -76,7 +76,7 @@ export default function Glimpses() {
           {items.map((item, i) => (
             <div 
               key={i} 
-              className="min-w-[85vw] sm:min-w-[70vw] snap-center shrink-0 rounded-2xl overflow-hidden border border-gray-800"
+              className="min-w-[85vw] sm:min-w-[70vw] snap-center shrink-0 rounded-2xl overflow-hidden border border-gray-200"
             >
               <img 
                 src={item.image} 
@@ -89,9 +89,9 @@ export default function Glimpses() {
         
         {/* Swipe Indicator */}
         <div className="flex justify-center mt-6 gap-2 opacity-50">
-          <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-          <div className="w-2 h-2 rounded-full bg-gray-600" />
-          <div className="w-2 h-2 rounded-full bg-gray-600" />
+          <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-gray-300" />
+          <div className="w-2 h-2 rounded-full bg-gray-300" />
         </div>
       </div>
       
