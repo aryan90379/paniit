@@ -42,7 +42,7 @@ export default function Highlights() {
             Summit Highlights
           </motion.h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 max-w-6xl mx-auto">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-8 px-4 md:px-0">
             {HIGHLIGHTS.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -52,7 +52,7 @@ export default function Highlights() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="relative group cursor-pointer"
+                  className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 relative group cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-[#E13926] rounded-[1.5rem] rotate-6 scale-95 opacity-20 mix-blend-multiply group-hover:rotate-8 transition-transform duration-300 origin-center" />
                   
@@ -94,7 +94,7 @@ export default function Highlights() {
             Session Themes
           </motion.h2>
 
-          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+          <div className="flex md:flex-wrap md:justify-center gap-4 max-w-5xl mx-auto overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-4 px-4 md:px-0">
             {THEMES.map((theme, i) => {
               const Icon = theme.icon;
               return (
@@ -104,7 +104,7 @@ export default function Highlights() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className={`flex items-center gap-3 px-6 py-4 rounded-full ${theme.bg} border ${theme.border} cursor-default hover:scale-105 transition-transform duration-300 shadow-sm`}
+                  className={`snap-center shrink-0 flex items-center gap-3 px-6 py-4 rounded-full ${theme.bg} border ${theme.border} cursor-default hover:scale-105 transition-transform duration-300 shadow-sm`}
                 >
                   <Icon size={20} className={theme.color} />
                   <span className="font-semibold text-gray-800 tracking-wide">{theme.label}</span>
