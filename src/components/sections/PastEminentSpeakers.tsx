@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight, Grid } from 'lucide-react';
 
 const PLACEHOLDER = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23cbd5e1%22%3E%3Cpath%20d%3D%22M12%2012c2.21%200%204-1.79%204-4s-1.79-4-4-4-4%201.79-4%204%201.79%204%204%204zm0%202c-2.67%200-8%201.34-8%204v2h16v-2c0-2.66-5.33-4-8-4z%22%2F%3E%3C%2Fsvg%3E";
 
@@ -40,53 +42,145 @@ const PAST_SPEAKERS = [
 ];
 
 export default function PastEminentSpeakers() {
+  const [showAll, setShowAll] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-24 bg-gray-50 relative border-t border-gray-200">
+    <section id="speakers-legacy-section" className="py-24 bg-gray-50 relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-[#153063] mb-4 tracking-tight uppercase"
           >
-            Eminent Speakers From Past PanIIT Events
+            Legacy of Eminent Speakers
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-500 font-medium max-w-2xl mx-auto"
+          >
+            PanIIT summits have previously hosted global leaders, honoring our legacy of tech, policy, and innovation leadership.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-12">
-          {PAST_SPEAKERS.map((speaker, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 6) * 0.1 }}
-              className="flex flex-col items-center text-center group p-4 md:p-6 rounded-3xl hover:bg-white transition-all duration-300 relative"
+        {!showAll ? (
+          <div className="relative">
+            {/* Carousel Navigation */}
+            <button 
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#153063] hover:bg-gray-50 transition-colors"
             >
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
-                   style={{ boxShadow: '0 10px 40px -10px rgba(99, 102, 241, 0.4)' }} />
-                   
-              <div className="relative w-28 h-28 md:w-32 md:h-32 mb-5 group-hover:-translate-y-1 transition-transform duration-300">
-                <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                <img 
-                  src={speaker.image || PLACEHOLDER} 
-                  alt={speaker.name} 
-                  className="w-full h-full object-cover rounded-full relative z-10 bg-gray-50 border border-gray-100"
-                />
-              </div>
-              <h3 className="font-bold text-[#153063] text-sm md:text-[15px] leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
-              {speaker.desc && (
-                <p className="text-[11px] md:text-xs text-gray-500 relative z-10">{speaker.desc}</p>
-              )}
-            </motion.div>
-          ))}
-        </div>
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#153063] hover:bg-gray-50 transition-colors"
+            >
+              <ChevronRight size={24} />
+            </button>
 
-        <div className="text-center mt-16 font-bold text-xl text-gray-400">
-          + Many More
-        </div>
+            {/* Carousel Container */}
+            <div 
+              ref={carouselRef}
+              className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 hide-scrollbar px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {PAST_SPEAKERS.slice(0, 10).map((speaker, i) => (
+                <div 
+                  key={i}
+                  className="snap-start shrink-0 w-[260px] md:w-[280px] flex flex-col items-center text-center group p-6 rounded-[30px] bg-white transition-all duration-300 relative border border-gray-100/50 hover:shadow-[0_15px_40px_-10px_rgba(99,102,241,0.2)]"
+                >
+                  <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
+                    <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                    <img 
+                      src={speaker.image || PLACEHOLDER} 
+                      alt={speaker.name} 
+                      className="w-full h-full object-cover rounded-full relative z-10 bg-gray-50 border border-gray-100 shadow-sm"
+                    />
+                  </div>
+                  <h3 className="font-bold text-[#153063] text-base md:text-lg leading-snug mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
+                  {speaker.desc && (
+                    <p className="text-xs md:text-sm text-gray-500 relative z-10 font-medium">{speaker.desc}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+            
+            {/* View All Button */}
+            <div className="flex justify-center mt-6">
+              <button 
+                onClick={() => setShowAll(true)}
+                className="group flex items-center gap-2 px-8 py-3 bg-[#153063] text-white rounded-full font-semibold hover:bg-indigo-600 transition-all shadow-md hover:shadow-lg"
+              >
+                <Grid size={18} />
+                View All Speakers
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="relative">
+            {/* Grid Container */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-12 pb-8 pt-4">
+              {PAST_SPEAKERS.map((speaker, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (i % 5) * 0.05 }}
+                  className="flex flex-col items-center text-center group p-4 md:p-6 rounded-[30px] hover:bg-white transition-all duration-300 relative hover:shadow-[0_15px_40px_-10px_rgba(99,102,241,0.2)]"
+                >
+                  <div className="relative w-28 h-28 md:w-32 md:h-32 mb-5 group-hover:-translate-y-1 transition-transform duration-300">
+                    <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                    <img 
+                      src={speaker.image || PLACEHOLDER} 
+                      alt={speaker.name} 
+                      className="w-full h-full object-cover rounded-full relative z-10 bg-gray-50 border border-gray-100 shadow-sm"
+                    />
+                  </div>
+                  <h3 className="font-bold text-[#153063] text-sm md:text-base leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
+                  {speaker.desc && (
+                    <p className="text-[11px] md:text-xs text-gray-500 relative z-10 font-medium">{speaker.desc}</p>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* View Less Button */}
+            <div className="flex justify-center mt-10">
+              <button 
+                onClick={() => {
+                    setShowAll(false);
+                    setTimeout(() => {
+                        const el = document.getElementById('speakers-legacy-section');
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                }}
+                className="group flex items-center gap-2 px-8 py-3 bg-gray-200 text-[#153063] rounded-full font-semibold hover:bg-gray-300 transition-all shadow-sm"
+              >
+                Hide Full List
+              </button>
+            </div>
+          </div>
+        )}
 
       </div>
     </section>
