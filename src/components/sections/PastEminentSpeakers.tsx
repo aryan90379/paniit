@@ -41,7 +41,7 @@ const PAST_SPEAKERS = [
 
 export default function PastEminentSpeakers() {
   return (
-    <section className="py-24 bg-white relative border-t border-gray-200">
+    <section className="py-24 bg-gray-50/50 relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         <div className="text-center mb-16">
@@ -63,19 +63,22 @@ export default function PastEminentSpeakers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i % 6) * 0.1 }}
-              className="flex flex-col items-center text-center group"
+              className="flex flex-col items-center text-center group p-4 md:p-6 rounded-3xl hover:bg-white transition-all duration-300 relative"
             >
-              <div className="relative w-28 h-28 md:w-36 md:h-36 mb-6 group-hover:scale-105 transition-transform">
-                <div className="absolute inset-0 bg-[#E13926] rounded-full rounded-br-none scale-105" style={{ transformOrigin: 'center' }} />
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
+                   style={{ boxShadow: '0 10px 40px -10px rgba(99, 102, 241, 0.4)' }} />
+                   
+              <div className="relative w-28 h-28 md:w-32 md:h-32 mb-5 group-hover:-translate-y-1 transition-transform duration-300">
+                <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
                 <img 
                   src={speaker.image || PLACEHOLDER} 
                   alt={speaker.name} 
-                  className="w-full h-full object-cover rounded-full relative z-10 border-[3px] border-white bg-gray-100"
+                  className="w-full h-full object-cover rounded-full relative z-10 bg-gray-100 border border-gray-100"
                 />
               </div>
-              <h3 className="font-bold text-gray-900 text-sm md:text-base leading-tight mb-1">{speaker.name}</h3>
+              <h3 className="font-bold text-[#153063] text-sm md:text-[15px] leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
               {speaker.desc && (
-                <p className="text-xs md:text-sm text-gray-600">{speaker.desc}</p>
+                <p className="text-[11px] md:text-xs text-gray-500 relative z-10">{speaker.desc}</p>
               )}
             </motion.div>
           ))}
