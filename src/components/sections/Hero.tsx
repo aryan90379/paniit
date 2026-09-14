@@ -1,3 +1,5 @@
+import MorphSlider from "@/components/ui/MorphSlider";
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -137,15 +139,40 @@ export default function Hero() {
               </a>
             </motion.div>
           </div>
-          {/* RIGHT COLUMN - Glassmorphism Cards & Chief Guest */}
+          {/* RIGHT COLUMN - Image Slider */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="flex-1 w-full lg:relative flex flex-col lg:block gap-4 mt-12 lg:mt-0"
+            className="flex-1 w-full lg:w-1/2 mt-12 lg:mt-0 relative z-10"
           >
-            {/* Chief Guest Big Pill - Top Right */}
-            <div className="lg:absolute lg:top-[-20px] lg:right-[-10px] rounded-full p-2 pr-8 text-[#172c66] backdrop-blur-xl shadow-xl bg-white/90 border border-white flex items-center gap-4 z-40 hover:-translate-y-1 transition-transform">
+            <div className="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl relative">
+              <MorphSlider
+                items={[
+                  { image: 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop', caption: 'Global Network' },
+                  { image: 'https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop', caption: 'Actionable Insights' },
+                  { image: 'https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop', caption: 'Real Impact' }
+                ]}
+                transition="melt"
+                intensity={0.55}
+                aberration={0.35}
+                drift={0.4}
+                autoplay={true}
+                overlayColor="#05060a"
+                duration={1.1}
+                ease="power2.inOut"
+                scale={2.4}
+                autoplayDelay={4}
+                loop={true}
+                radius={16}
+                showCaptions={true}
+                showControls={true}
+                showIndicators={true}
+              />
+            </div>
+            
+            {/* Chief Guest floating over the slider */}
+            <div className="absolute -top-6 -right-4 md:-top-8 md:-right-8 rounded-full p-2 pr-8 text-[#172c66] backdrop-blur-xl shadow-xl bg-white/90 border border-white flex items-center gap-4 z-40 hover:-translate-y-1 transition-transform">
               <div className="w-16 h-16 rounded-full relative shadow-sm">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#E13926] to-[#153063] rounded-full scale-[1.05]" />
                 <img src="https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg" alt="Chief Guest" className="w-full h-full object-cover rounded-full relative z-10 border-2 border-white bg-gray-100" />
@@ -156,45 +183,11 @@ export default function Hero() {
                 <span className="text-[10px] font-bold text-[#153063]/80 leading-none uppercase">Hon'ble Chief Minister, AP</span>
               </div>
             </div>
-
-            {/* Card 1 - Center Left */}
-            <div className="lg:absolute lg:top-[60px] lg:left-[-30px] rounded-xl p-4 lg:w-[220px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#f3d2c1]/40 border border-white/20 z-20 hover:-translate-y-1 transition-transform">
-              <div className="font-bold text-[1.1rem] mb-1.5 text-[#001858]">"A Global Network"</div>
-              <p className="text-[0.85rem] leading-relaxed mb-2 opacity-90">
-                1000+ top-tier alumni converging to shape the future of deeptech.
-              </p>
-              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right">
-                Community
-              </div>
-            </div>
-
-            {/* Card 2 - Center Right */}
-            <div className="lg:absolute lg:top-[160px] lg:right-[10px] rounded-xl p-4 lg:w-[220px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#8bd3dd]/30 border border-white/20 z-10 hover:-translate-y-1 transition-transform">
-              <div className="font-bold text-[1.1rem] mb-1.5 text-[#001858]">"Actionable Insights"</div>
-              <p className="text-[0.85rem] leading-relaxed mb-2 opacity-90">
-                20+ industry leaders sharing strategies for quantum computing, AI, and startups.
-              </p>
-              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#153063] text-right">
-                Knowledge
-              </div>
-            </div>
-
-            {/* Card 3 - Bottom Left */}
-            <div className="lg:absolute lg:top-[280px] lg:left-[20px] rounded-xl p-4 lg:w-[220px] text-[#172c66] backdrop-blur-[5px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1)] bg-[#E13926]/10 border border-white/20 z-0 hover:-translate-y-1 transition-transform">
-              <div className="font-bold text-[1.1rem] mb-1.5 text-[#001858]">"Real Impact"</div>
-              <p className="text-[0.85rem] leading-relaxed mb-2 opacity-90">
-                Bridging the gap between world-class engineering talent and state governance.
-              </p>
-              <div className="font-extrabold text-[9px] uppercase tracking-wider text-[#E13926] text-right">
-                Action
-              </div>
-            </div>
           </motion.div>
           
         </div>
-
         </div>
-
+        
       {/* BOTTOM ROW - Event Details menu style */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
