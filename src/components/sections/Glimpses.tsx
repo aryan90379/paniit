@@ -74,7 +74,7 @@ export default function Glimpses() {
           {items.map((item, i) => (
             <div 
               key={i} 
-              className="min-w-[85vw] sm:min-w-[70vw] snap-center shrink-0 rounded-2xl overflow-hidden border border-gray-200"
+              className="min-w-[75vw] sm:min-w-[70vw] snap-center shrink-0 rounded-2xl overflow-hidden border border-gray-200"
             >
               <img 
                 src={item.image} 

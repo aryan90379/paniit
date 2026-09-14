@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 md:gap-12 lg:gap-8 mb-20">
           
           {/* Brand & Contact (Left Column) */}
           <div className="lg:col-span-4 flex flex-col gap-12">
@@ -74,26 +74,22 @@ export default function Footer() {
 
                 <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold">
                   <Phone size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
-                  <div className="flex flex-col gap-3 w-full">
-                    <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-                      <div>
-                        <div className="text-gray-300 text-xs">Padmini Padhy</div>
-                        <div className="text-sm">+91 97111 95445</div>
-                      </div>
-                      <div>
-                        <div className="text-gray-300 text-xs">Sanskreeti Raj</div>
-                        <div className="text-sm">+91 98354 19705</div>
-                      </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 w-full">
+                    <div>
+                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Padmini Padhy</div>
+                      <div className="text-sm font-mono">+91 97111 95445</div>
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-                      <div>
-                        <div className="text-gray-300 text-xs">Sai Teja</div>
-                        <div className="text-sm">+91 84189 44154</div>
-                      </div>
-                      <div>
-                        <div className="text-gray-300 text-xs">Gadi Akhil</div>
-                        <div className="text-sm">+91 94910 80512</div>
-                      </div>
+                    <div>
+                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Sanskreeti Raj</div>
+                      <div className="text-sm font-mono">+91 98354 19705</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Sai Teja</div>
+                      <div className="text-sm font-mono">+91 84189 44154</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Gadi Akhil</div>
+                      <div className="text-sm font-mono">+91 94910 80512</div>
                     </div>
                   </div>
                 </li>
@@ -128,7 +124,7 @@ export default function Footer() {
 
           {/* Registration (Right Column) */}
           <div className="lg:col-span-4 md:col-span-2">
-            <div id="register" className="p-8 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/20 shadow-[0_0_50px_rgba(30,58,138,0.2)] relative overflow-hidden h-full flex flex-col">
+            <div id="register" className="p-8 md:p-10 rounded-[2rem] bg-black/60 backdrop-blur-xl border border-white/20 shadow-[0_0_50px_rgba(30,58,138,0.2)] relative overflow-hidden h-full flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
               <div className="relative z-10 flex-grow flex flex-col justify-center">
                 <h4 className="text-2xl font-black text-white mb-3">Register for the Summit</h4>
@@ -152,7 +148,7 @@ export default function Footer() {
           
         </div>
 
-        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white drop-shadow-lg font-semibold backdrop-blur-xl bg-black/40 py-4 px-6 rounded-2xl border border-white/10">
+        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white drop-shadow-lg font-semibold backdrop-blur-xl bg-black/40 py-4 px-6 rounded-2xl border border-white/10">
           <div>
             &copy; {new Date().getFullYear()} PanIIT Alumni India. All rights reserved.
           </div>
