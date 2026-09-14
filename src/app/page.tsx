@@ -6,6 +6,7 @@ import AdvantageLegacy from '@/components/sections/AdvantageLegacy';
 import Highlights from '@/components/sections/Highlights';
 import Speakers from '@/components/sections/Speakers';
 import PastEminentSpeakers from '@/components/sections/PastEminentSpeakers';
+import Sponsors from '@/components/sections/Sponsors';
 import Schedule from '@/components/sections/Schedule';
 import Partnership from '@/components/sections/Partnership';
 import Glimpses from '@/components/sections/Glimpses';
@@ -23,6 +24,7 @@ export default function Home() {
       <Schedule />
       <Speakers />
       <PastEminentSpeakers />
+      <Sponsors />
       <Highlights />
       <Partnership />
       <Glimpses />

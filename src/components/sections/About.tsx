@@ -1,9 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Briefcase, Trophy, Building2, Lightbulb, Landmark } from 'lucide-react';
+import { Users, Briefcase, Building2, Lightbulb, Landmark } from 'lucide-react';
 import BorderGlow from '@/components/ui/BorderGlow';
-import { LogoLoop } from '@/components/ui/LogoLoop';
 
 const STATS = [
   { value: '800+', label: 'Delegates' },
@@ -20,33 +19,6 @@ const AUDIENCE = [
   { icon: Lightbulb, label: 'Startup Founders' }
 ];
 
-const LogoText = ({ text, color }: { text: string, color: string }) => (
-  <span 
-    className="font-black text-4xl md:text-5xl uppercase tracking-tighter opacity-40 hover:opacity-100 transition-opacity duration-300 px-4" 
-    style={{ color }}
-  >
-    {text}
-  </span>
-);
-
-const tier1Logos = [
-  { node: <LogoText text="Google" color="#ffffff" />, title: "Google" },
-  { node: <LogoText text="Microsoft" color="#ffffff" />, title: "Microsoft" },
-  { node: <LogoText text="Amazon" color="#ffffff" />, title: "Amazon" },
-  { node: <LogoText text="IBM" color="#ffffff" />, title: "IBM" },
-  { node: <LogoText text="Intel" color="#ffffff" />, title: "Intel" },
-  { node: <LogoText text="NVIDIA" color="#ffffff" />, title: "NVIDIA" },
-];
-
-const tier2Logos = [
-  { node: <LogoText text="Cisco" color="#ffffff" />, title: "Cisco" },
-  { node: <LogoText text="Oracle" color="#ffffff" />, title: "Oracle" },
-  { node: <LogoText text="Salesforce" color="#ffffff" />, title: "Salesforce" },
-  { node: <LogoText text="SAP" color="#ffffff" />, title: "SAP" },
-  { node: <LogoText text="Tata" color="#ffffff" />, title: "Tata" },
-  { node: <LogoText text="Infosys" color="#ffffff" />, title: "Infosys" },
-];
-
 export default function About() {
   return (
     <section id="about" className="py-24 bg-white text-gray-900 relative">
@@ -60,25 +32,15 @@ export default function About() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight"
           >
-            What is PanIIT ?
+            What is PanIIT?
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-gray-600 font-light mb-6 leading-relaxed text-justify md:text-center"
+            className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed text-center"
           >
-            PanIIT Alumni India (PanIIT) is the umbrella body of alumni from all 23 IITs, uniting 500,000+ graduates across India and global hubs like the US, Canada, UK, Korea, Singapore, and Australia to drive nation-building and innovation-led growth. Through summits, policy dialogues, and programmes such as PanIIT Alumni Foundation (PARFI), WHEELS, IIT Startups and IIT-IIT, it channels the IIT alumni community's expertise towards India's development and global leadership.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-600 font-light leading-relaxed text-justify md:text-center"
-          >
-            Its work has received national and international recognition, most notably, by the Hon'ble Prime Minister of India Shri Narendra Modi in his Independence Day 2026 address this year. IIT Directors and Faculty are regular participants in all the endeavours of PanIIT.
+            PanIIT Alumni India is the umbrella body uniting 500,000+ graduates across all 23 IITs globally. Through high-impact summits, policy dialogues, and dedicated foundation programs, we channel the unmatched expertise of the IIT alumni community to drive nation-building, frontier innovation, and India's global leadership.
           </motion.p>
         </div>
 
@@ -116,17 +78,11 @@ export default function About() {
           </div>
         </div>
 
-        {/* Impact & Sponsors Combined Black Band */}
+        {/* Impact & Reach Stats Band */}
         <div className="bg-[#0a0a0a] rounded-[2.5rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          {/* Background Image Overlay */}
-          <div 
-            className="absolute inset-0 opacity-10 bg-cover bg-center pointer-events-none mix-blend-overlay"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')" }}
-          />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/50 via-transparent to-[#0a0a0a]/80 pointer-events-none" />
 
-          {/* Section 1: Event In Numbers */}
-          <div className="relative z-10 mb-24">
+          <div className="relative z-10">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -mt-16 md:-mt-24 px-8 py-2 bg-blue-600 rounded-b-xl text-sm md:text-base font-bold uppercase tracking-widest shadow-lg">
               Impact & Reach
             </div>
@@ -160,7 +116,7 @@ export default function About() {
                 >
                   <BorderGlow
                     edgeSensitivity={30}
-                    glowColor="210 100 50" // Blue glow
+                    glowColor="210 100 50"
                     backgroundColor="#121212"
                     borderRadius={24}
                     glowRadius={40}
@@ -179,56 +135,6 @@ export default function About() {
               ))}
             </div>
           </div>
-
-          {/* Section 2: Sponsors Loop */}
-          <div className="relative z-10 border-t border-white/10 pt-20">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-black mb-12 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500"
-            >
-              PAST SPONSORS & PARTNERS
-            </motion.h3>
-
-            <div className="flex flex-col gap-10 w-full mb-12">
-              <div className="relative w-full">
-                <LogoLoop
-                  logos={tier1Logos}
-                  speed={40}
-                  direction="left"
-                  logoHeight={60}
-                  gap={100}
-                  pauseOnHover={true}
-                  scaleOnHover={true}
-                  fadeOut={true}
-                  fadeOutColor="#0a0a0a"
-                />
-              </div>
-
-              <div className="relative w-full">
-                <LogoLoop
-                  logos={tier2Logos}
-                  speed={40}
-                  direction="right"
-                  logoHeight={60}
-                  gap={100}
-                  pauseOnHover={true}
-                  scaleOnHover={true}
-                  fadeOut={true}
-                  fadeOutColor="#0a0a0a"
-                />
-              </div>
-            </div>
-            
-            <a
-              href="#partner"
-              className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/20 text-white font-bold uppercase tracking-widest rounded-sm hover:bg-white hover:text-black transition-colors"
-            >
-              Become a Partner
-            </a>
-          </div>
-
         </div>
 
       </div>

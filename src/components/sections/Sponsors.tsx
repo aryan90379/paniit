@@ -39,20 +39,13 @@ export default function Sponsors() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-[#153063] mb-4 tracking-wide uppercase"
+            className="text-3xl md:text-5xl font-bold text-[#153063] mb-4 tracking-wide uppercase"
           >
             Past Sponsors & Partners
           </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="w-24 h-1.5 bg-[#E13926] mx-auto"
-          />
         </div>
 
         <div className="flex flex-col gap-10 md:gap-16 w-full py-8">
-          {/* Top Strip (Left) */}
           <div className="relative w-full">
             <LogoLoop
               logos={tier1Logos}
@@ -67,7 +60,6 @@ export default function Sponsors() {
             />
           </div>
 
-          {/* Bottom Strip (Right) */}
           <div className="relative w-full">
             <LogoLoop
               logos={tier2Logos}
@@ -81,15 +73,6 @@ export default function Sponsors() {
               fadeOutColor="#ffffff"
             />
           </div>
-        </div>
-
-        <div className="mt-16 text-center">
-          <a
-            href="#partner"
-            className="inline-flex items-center justify-center px-8 py-3 border-2 border-[#153063] text-[#153063] font-bold uppercase tracking-widest rounded-sm hover:bg-[#153063] hover:text-white transition-colors"
-          >
-            Become a Partner
-          </a>
         </div>
 
       </div>
