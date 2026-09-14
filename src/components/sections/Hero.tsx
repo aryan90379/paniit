@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-[80px] bg-white flex flex-col justify-between overflow-hidden" id="hero">
+    <section className="relative w-full pt-[200px] bg-white flex flex-col justify-between overflow-hidden" id="hero">
       
       {/* FULL WIDTH SLIDER */}
       <div className="w-full h-[60vh] md:h-[75vh] min-h-[500px] max-h-[800px] relative ">
