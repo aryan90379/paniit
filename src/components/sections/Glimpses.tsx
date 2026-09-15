@@ -1,26 +1,22 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import DriftWall from '@/components/ui/DriftWall';
 
-// The two actual glimpse images provided, mixed with some relevant high-quality event placeholders
-// to ensure the DriftWall has enough tiles to look amazing.
-const items = [
-  { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 1' },
-  { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 2' },
-  { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 3' },
-  { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 4' },
-  { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 5' },
-  { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 6' },
-  { image: '/extracted_images/glimpse_p22_0.jpeg', title: 'PanIIT Glimpse 7' },
-  { image: '/extracted_images/glimpse_p23_0.jpeg', title: 'PanIIT Glimpse 8' },
+const GALLERY_IMAGES = [
+  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2000&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2000&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=2000&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2000&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1475721028070-2051d528b49e?q=80&w=2000&auto=format&fit=crop',
 ];
 
 export default function Glimpses() {
   return (
     <section className="py-24 bg-white text-gray-900 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl mb-12">
-        <div className="text-center">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+        
+        <div className="text-center mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,61 +34,31 @@ export default function Glimpses() {
           >
             Glimpses From The Past
           </motion.h2>
+          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">Relive the moments that shaped our journey. A visual retrospective of past PanIIT summits and milestones.</p>
         </div>
-      </div>
 
-      {/* Desktop View: Full-width immersive DriftWall */}
-      <div className="hidden md:block w-full h-[600px] lg:h-[700px]">
-        <DriftWall
-          items={items}
-          columns={6}
-          tileWidth={280}
-          tileHeight={180}
-          gap={18}
-          tilt={12}
-          turn={-10}
-          perspective={1200}
-          depth={120}
-          speed={35}
-          direction="up"
-          variance={0.5}
-          parallax={0}
-          lift={50}
-          fade={0.1}
-          dim={1.0}
-          overlayColor="transparent"
-          radius={16}
-          roll={0}
-          pauseOnHover={false}
-          grayscale={false}
-        />
-      </div>
-
-      {/* Mobile View: Horizontal Swipeable Carousel to save vertical space */}
-      <div className="md:hidden w-full pl-4 pb-8">
-        <div className="flex overflow-x-auto gap-4 hide-scrollbar snap-x snap-mandatory pr-4">
-          {items.map((item, i) => (
-            <div 
-              key={i} 
-              className="min-w-[75vw] sm:min-w-[70vw] snap-center shrink-0 rounded-2xl overflow-hidden border border-gray-200"
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          {GALLERY_IMAGES.map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300"
             >
+              <div className="absolute inset-0 bg-[#06206A]/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
               <img 
-                src={item.image} 
-                alt={item.title} 
-                className="w-full h-[250px] object-cover"
+                src={img} 
+                alt={`PanIIT Glimpse ${i+1}`}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
-        
-        {/* Swipe Indicator */}
-        <div className="flex justify-center mt-6 gap-2 opacity-50">
-          <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-          <div className="w-2 h-2 rounded-full bg-gray-300" />
-          <div className="w-2 h-2 rounded-full bg-gray-300" />
-        </div>
+
       </div>
-      
     </section>
   );
 }

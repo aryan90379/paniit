@@ -34,24 +34,9 @@ const GUESTS_OF_HONOUR = [
 ];
 
 const DISTINGUISHED_GUESTS = [
-  {
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20S.%20Krishnan%20Secretary%2C%20Ministry%20of%20Electronics%20and%20Information%20Technology.png',
-    name: 'Sri S. Krishnan, IAS',
-    role: 'Secretary',
-    org: 'Ministry of Electronics and IT'
-  },
-  {
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Vishwanadhan%20-%20Director%2C%20I%26PR.webp',
-    name: 'Sri Vishwanadhan, IAS',
-    role: 'Director',
-    org: 'I&PR'
-  },
-  {
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Kantilal%20Dande%20-%20Principal%20Secretary.jpeg',
-    name: 'Sri Kantilal Dande, IAS',
-    role: 'Principal Secretary',
-    org: 'Government of Andhra Pradesh'
-  },
+  
+  
+  
   {
     image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/IAS%20Krishna%20Teja%20-%20Commissioner%2C%20Panchayati%20Raj.jpeg',
     name: 'Sri Krishna Teja, IAS',
@@ -209,7 +194,7 @@ export default function Speakers() {
       {/* Key Guests and Speakers */}
       <div className="py-24 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 max-w-6xl">
-          <SectionTitle title="Key Guests and Speakers" />
+          <SectionTitle title="IIT Directors and Academicians" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
             {KEY_GUESTS.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />

@@ -100,10 +100,7 @@ export default function Footer() {
                 </li>
               </ul>
               
-              <a href="#" className="inline-flex items-center gap-2 mt-8 text-red-400 hover:text-red-300 font-bold transition-colors drop-shadow-lg bg-black/40 backdrop-blur-md px-5 py-2.5 rounded-xl border border-red-500/30">
-                <Download size={18} />
-                Download Brochure
-              </a>
+              
             </div>
           </div>
 
@@ -111,7 +108,7 @@ export default function Footer() {
           <div className="lg:col-span-3 lg:col-start-6">
             <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm drop-shadow-lg">Navigation</h4>
             <ul className="space-y-4">
-              {['About', 'Advantage', 'Speakers', 'Schedule', 'Partnership', 'Committee'].map((link) => (
+              {['About', 'Advantage', 'Speakers', 'Schedule', 'Committee'].map((link) => (
                 <li key={link}>
                   <a href={`#${link.toLowerCase()}`} className="text-white/90 hover:text-white transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold flex items-center gap-2">
                     <ArrowRight size={14} className="text-blue-400" />
@@ -129,19 +126,11 @@ export default function Footer() {
               <div className="relative z-10 flex-grow flex flex-col justify-center">
                 <h4 className="text-2xl font-black text-white mb-3">Register for the Summit</h4>
                 <p className="text-sm text-gray-200 mb-6 font-medium leading-relaxed">Secure your spot at Andhra's premier DeepTech event. Join industry leaders, innovators, and investors.</p>
-                <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-gray-300 uppercase tracking-wider pl-1">Work Email</label>
-                    <input 
-                      type="email" 
-                      placeholder="hello@company.com" 
-                      className="px-5 py-3.5 rounded-xl bg-black/80 border border-white/30 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors backdrop-blur-sm text-sm"
-                    />
-                  </div>
-                  <button className="px-5 py-4 rounded-xl bg-[#DD1D21] hover:bg-red-500 text-white font-black uppercase tracking-wide flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-red-500/25 mt-2">
+                <div className="mt-4">
+                  <a href="https://www.paniit.org/events/21873" target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-[#DD1D21] hover:bg-red-500 text-white font-black uppercase tracking-wide flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-red-500/25">
                     Register Now <ArrowRight size={18} />
-                  </button>
-                </form>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

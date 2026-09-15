@@ -64,41 +64,29 @@ export default function Navbar() {
 
           {/* Right Side: Action Buttons & Mobile Menu Toggle */}
           <div className="flex items-center gap-3 md:gap-4">
-            <a
-              href="#partner"
-              className="hidden lg:flex items-center justify-center px-6 py-2.5 md:py-3 border-2 border-[#06206A] text-[#06206A] font-bold text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-[#06206A] hover:text-white transition-colors"
-            >
-              Become a Partner
-            </a>
-            <a
-              href="#register"
+            <a 
+              href="https://www.paniit.org/events/21873"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:flex items-center justify-center px-6 py-2.5 md:py-3 bg-[#DD1D21] text-white font-bold text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg"
             >
               Register
             </a>
             
-            {/* Mobile Menu Toggle */}
-            <button
-              className="lg:hidden text-[#06206A] p-2 bg-gray-100 rounded-md"
+            <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-[#06206A] p-2 bg-gray-100 rounded-md"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
-          
         </div>
       </div>
 
-      {/* BOTTOM ROW - DARK BLUE BACKGROUND WITH LINKS */}
+      {/* BOTTOM ROW - NAV LINKS */}
       <div className="hidden lg:block bg-[#06206A] border-t border-white/10">
-        <div className="container mx-auto px-4">
-          <nav className="flex items-center justify-center">
-            <a
-              href="#partner"
-              className="text-white text-[13px] font-bold tracking-widest uppercase py-4 px-6 hover:bg-white/10 transition-colors underline underline-offset-4 decoration-[#DD1D21] decoration-2"
-            >
-              EOI for Partners
-            </a>
+        <div className="container mx-auto px-4 xl:px-8">
+          <nav className="flex justify-center items-center">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
@@ -115,13 +103,7 @@ export default function Navbar() {
       {/* MOBILE MENU DROP DOWN */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-[#06206A] border-t border-white/10 shadow-2xl flex flex-col">
-          <a
-            href="#partner"
-            className="text-white text-sm font-bold uppercase py-4 px-6 border-b border-white/10 hover:bg-white/5"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Become a Partner
-          </a>
+          
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
@@ -134,7 +116,9 @@ export default function Navbar() {
           ))}
           <div className="p-4 flex flex-col gap-3">
             <a
-              href="#register"
+              href="https://www.paniit.org/events/21873"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-center py-3 bg-[#DD1D21] text-white font-bold uppercase rounded-sm shadow-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >

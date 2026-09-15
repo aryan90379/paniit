@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import { Flag, Mic2, FileText, Users, Network, Rocket, Coffee, Award, Shield, Satellite, Microchip, BookOpen, Tractor, HeartPulse, Battery, Cpu } from 'lucide-react';
 
 const HIGHLIGHTS = [
-  { icon: Flag, label: 'Grand Opening Ceremony', desc: 'Kickoff with state leaders' },
-  { icon: Mic2, label: 'Visionary Keynotes', desc: 'Insights from global icons' },
-  { icon: FileText, label: 'Policy & Vision Papers', desc: 'Shaping the 2047 roadmap' },
-  { icon: Users, label: 'Leadership Panels', desc: 'CXO-level discussions' },
-  { icon: Network, label: 'Strategic Roundtables', desc: 'Exclusive networking' },
-  { icon: Rocket, label: 'Innovation Expo', desc: 'Cutting-edge startups' },
-  { icon: Coffee, label: 'Executive Lunch', desc: 'Connect with peers' },
-  { icon: Award, label: "Valedictory Address", desc: "Hon'ble CM's closing remarks" },
+  { icon: Flag, label: 'Grand Opening Ceremony', desc: 'Kickoff with state leaders', img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop' },
+  { icon: Mic2, label: 'Visionary Keynotes', desc: 'Insights from global icons', img: 'https://images.unsplash.com/photo-1475721028070-2051d528b49e?q=80&w=800&auto=format&fit=crop' },
+  { icon: FileText, label: 'Policy & Vision Papers', desc: 'Shaping the 2047 roadmap', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop' },
+  { icon: Users, label: 'Leadership Panels', desc: 'CXO-level discussions', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop' },
+  { icon: Network, label: 'Strategic Roundtables', desc: 'Exclusive networking', img: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop' },
+  { icon: Rocket, label: 'Innovation Expo', desc: 'Cutting-edge startups', img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop' },
+  { icon: Coffee, label: 'Executive Lunch', desc: 'Connect with peers', img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop' },
+  { icon: Award, label: "Valedictory Address", desc: "Hon'ble CM's closing remarks", img: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800&auto=format&fit=crop' },
 ];
 
 const THEMES = [
@@ -25,8 +25,6 @@ const THEMES = [
   { icon: Battery, label: 'Energy', color: 'text-[#DD1D21]', bg: 'bg-red-100', border: 'border-red-200' },
 ];
 
-const NOISE_SVG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIG9wYWNpdHk9IjAuODQiPjxkZWZzPjxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPgoJPGZlVHVyYnVsZW5jZSB0eXBlPSJ0dXJidWxlbmNlIiBiYXNlRnJlcXVlbmN5PSIwLjIiIG51bU9jdGF2ZXM9IjQiIHNlZWQ9IjE1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHJlc3VsdD0idHVyYnVsZW5jZSI+PC9mZVR1cmJ1bGVuY2U+Cgk8ZmVTcGVjdWxhckxpZ2h0aW5nIHN1cmZhY2VTY2FsZT0iMjYiIHNwZWN1bGFyQ29uc3RhbnQ9IjMiIHNwZWN1bGFyRXhwb25lbnQ9IjIwIiBsaWdodGluZy1jb2xvcj0iIzA1Njk2OSIgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpbj0idHVyYnVsZW5jZSIgcmVzdWx0PSJzcGVjdWxhckxpZ2h0aW5nIj4KICAgIAkJPGZlRGlzdGFudExpZ2h0IGF6aW11dGg9IjMiIGVsZXZhdGlvbj0iMTc4Ij48L2ZlRGlzdGFudExpZ2h0PgogIAk8L2ZlU3BlY3VsYXJMaWdodGluZz4KICAKPC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSIjMDU2OTY5IiBmaWx0ZXI9InVybCgjbm5ub2lzZS1maWx0ZXIpIj48L3JlY3Q+PC9zdmc+";
-
 export default function Highlights() {
   return (
     <section className="py-24 bg-white text-gray-900 relative border-t border-gray-100">
@@ -37,10 +35,11 @@ export default function Highlights() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-16 tracking-tight text-center"
+            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight text-center"
           >
             Summit Highlights
           </motion.h2>
+          <p className="text-center text-gray-500 mb-16 max-w-2xl mx-auto">Explore the key moments and infographic highlights of the PanIIT Andhra Pradesh Summit.</p>
           
           <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-8 px-4 md:px-0">
             {HIGHLIGHTS.map((item, i) => {
@@ -52,31 +51,25 @@ export default function Highlights() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 relative group cursor-pointer"
+                  className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[300px] snap-center shrink-0 relative group cursor-pointer rounded-[1.5rem] overflow-hidden shadow-md hover:shadow-xl transition-all"
                 >
-                  <div className="absolute inset-0 bg-[#DD1D21] rounded-[1.5rem] rotate-6 scale-95 opacity-20 mix-blend-multiply group-hover:rotate-8 transition-transform duration-300 origin-center" />
+                  {/* Infographic Background Image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                    style={{ backgroundImage: `url('${item.img}')` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#06206A]/90 via-[#06206A]/60 to-transparent" />
                   
-                  <div className="relative z-10 p-8 rounded-[1.5rem] h-full flex flex-col justify-center items-center text-center overflow-hidden border border-blue-400/30 shadow-[0_0.5rem_1rem_rgba(0,0,0,0.1),0_1rem_3rem_rgba(0,0,0,0.15)] bg-[#06206A] text-white transition-transform duration-300 group-hover:-translate-y-1">
-                    
-                    <div 
-                      className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none grayscale brightness-150" 
-                      style={{ backgroundImage: `url('${NOISE_SVG}')`, backgroundSize: 'cover' }} 
-                    />
-                    
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black/20 pointer-events-none" />
-
-                    <div className="relative z-20 flex flex-col items-center">
-                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 backdrop-blur-sm border border-white/20">
-                        <Icon size={24} className="text-red-400" />
-                      </div>
-                      <h3 className="font-bold text-xl leading-tight mb-2 text-white">
-                        {item.label}
-                      </h3>
-                      <p className="text-sm text-blue-200 opacity-80 leading-snug">
-                        {item.desc}
-                      </p>
+                  <div className="relative z-10 p-8 h-full flex flex-col justify-end text-white">
+                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-4 backdrop-blur-md border border-white/30">
+                      <Icon size={24} className="text-white" />
                     </div>
-
+                    <h3 className="font-bold text-xl leading-tight mb-2 text-white">
+                      {item.label}
+                    </h3>
+                    <p className="text-sm text-blue-100 opacity-90 leading-snug">
+                      {item.desc}
+                    </p>
                   </div>
                 </motion.div>
               );
@@ -89,12 +82,13 @@ export default function Highlights() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 tracking-tight text-center"
+            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight text-center"
           >
             Session Themes
           </motion.h2>
+          <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">Immersive tracks and deep-dives exploring the future of innovation.</p>
 
-          <div className="flex md:flex-wrap md:justify-center gap-4 max-w-5xl mx-auto overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-4 px-4 md:px-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto px-4 md:px-0">
             {THEMES.map((theme, i) => {
               const Icon = theme.icon;
               return (
@@ -104,10 +98,17 @@ export default function Highlights() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className={`snap-center shrink-0 flex items-center gap-3 px-6 py-4 rounded-full ${theme.bg} border ${theme.border} cursor-default hover:scale-105 transition-transform duration-300 shadow-sm`}
+                  className={`flex flex-col justify-between p-6 rounded-[1.5rem] ${theme.bg} border ${theme.border} cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 min-h-[150px] relative overflow-hidden group`}
                 >
-                  <Icon size={20} className={theme.color} />
-                  <span className="font-semibold text-gray-800 tracking-wide">{theme.label}</span>
+                  <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-150 transition-transform duration-500">
+                    <Icon size={120} className={theme.color} />
+                  </div>
+                  <div className="relative z-10">
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-4">
+                      <Icon size={20} className={theme.color} />
+                    </div>
+                    <span className="font-bold text-gray-800 tracking-wide text-lg leading-tight block">{theme.label}</span>
+                  </div>
                 </motion.div>
               );
             })}
@@ -115,9 +116,6 @@ export default function Highlights() {
         </div>
 
       </div>
-
-      {/* Convex curve dipping into the next section */}
-
     </section>
   );
 }
