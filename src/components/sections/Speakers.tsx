@@ -28,10 +28,10 @@ const DISTINGUISHED_GUESTS = [
     org: ""
   },
   {
-    image: PLACEHOLDER,
+    image: '/dr_purushotham.jpg',
     name: 'Dr Purushotham Hanumanthu',
-    role: 'Secretary to the Government',
-    org: 'Department of Science, Technology & Innovation, Government of Andhra Pradesh'
+    role: "Secretary to the Government\nDepartment of Science, Technology & Innovation,\nGovernment of Andhra Pradesh",
+    org: "Department of Science, Technology & Innovation, Government of Andhra Pradesh"
   }
 ];
 

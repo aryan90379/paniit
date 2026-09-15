@@ -42,30 +42,29 @@ export default function AdvantageLegacy() {
               <span className="text-gray-400 font-bold text-xl sm:text-2xl md:text-4xl mt-1 sm:mt-2 block">Legacy Initiatives</span>
             </motion.h2>
           </div>
-        </div>
-
-        <div className="flex md:grid md:grid-cols-2 overflow-x-auto md:overflow-visible items-start gap-4 sm:gap-6 hide-scrollbar snap-x snap-mandatory pb-6 px-[10vw] md:px-[max(1.5rem,calc((100vw-72rem)/2))]">
-          {LEGACY.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="min-w-[80vw] sm:min-w-[55vw] md:min-w-0 snap-center shrink-0 bg-white p-6 sm:p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-3 sm:gap-4 group shadow-xs"
-              >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-50 text-[#06206A] flex items-center justify-center mb-1 sm:mb-2 shadow-xs group-hover:scale-110 transition-transform duration-300">
-                  <Icon size={26} className="sm:w-8 sm:h-8" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#06206A]">{item.title}</h3>
-                <p className="text-sm sm:text-base text-gray-500 leading-relaxed font-medium">
-                  {item.desc}
-                </p>
-              </motion.div>
-            )
-          })}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {LEGACY.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="w-full bg-white p-6 sm:p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-3 sm:gap-4 group shadow-xs"
+                >
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-50 text-[#06206A] flex items-center justify-center mb-1 sm:mb-2 shadow-xs group-hover:scale-110 transition-transform duration-300">
+                    <Icon size={26} className="sm:w-8 sm:h-8" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#06206A]">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed font-medium">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
         </div>
       </div>
 
