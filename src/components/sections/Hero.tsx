@@ -1,36 +1,22 @@
 'use client';
-import MorphSlider from "@/components/ui/MorphSlider";
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ChevronDown } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { Calendar, MapPin } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section className="relative w-full pt-[80px] sm:pt-[90px] lg:pt-[205px] bg-white flex flex-col justify-between overflow-hidden" id="hero">
       
-      {/* FULL WIDTH SLIDER - Exact 16:9 ratio to take full height of image without cropping */}
-      <div className="w-full aspect-[16/9] relative">
-        <div className="w-full h-full overflow-hidden relative">
-          <MorphSlider
-            items={[
-              { image: 'https://wabflow.b-cdn.net/paniit/landing/image_2026-09-15_120838444.png', caption: 'PanIIT Andhra Pradesh Summit 2026' }
-            ]}
-            transition="melt"
-            intensity={0.0}
-            aberration={0.0}
-            drift={0.0}
-            autoplay={false}
-            overlayColor="#ffffff"
-            duration={1.0}
-            ease="power2.inOut"
-            scale={1.0}
-            loop={false}
-            radius={0}
-            showCaptions={false}
-            showControls={false}
-            showIndicators={false}
-          />
-        </div>
+      {/* FULL WIDTH BANNER - Exact 16:9 ratio to take full height of image without cropping */}
+      <div className="w-full aspect-[16/9] relative overflow-hidden bg-white shadow-sm">
+        <img
+          src="https://wabflow.b-cdn.net/paniit/landing/image_2026-09-15_120838444.png"
+          alt="PanIIT Andhra Pradesh Summit 2026"
+          className="w-full h-full object-cover"
+          loading="eager"
+          // @ts-expect-error fetchpriority attribute
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
         
       {/* BOTTOM ROW - Event Details menu style */}

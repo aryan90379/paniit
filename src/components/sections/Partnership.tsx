@@ -89,7 +89,7 @@ export default function Partnership() {
               viewport={{ once: true }}
               className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 md:col-span-2 row-span-1 bg-[#06206A] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] opacity-20 bg-cover bg-center mix-blend-overlay group-hover:opacity-30 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#06206A] via-[#092b87] to-[#041444]" />
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl -mr-40 -mt-40 pointer-events-none" />
               
               <Network className="text-white/10 absolute right-4 bottom-4 w-64 h-64 transform group-hover:scale-110 group-hover:-rotate-12 transition-all duration-700" />

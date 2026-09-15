@@ -109,10 +109,12 @@ export default function PastEminentSpeakers() {
                   className="snap-start shrink-0 w-[260px] md:w-[280px] flex flex-col items-center text-center group p-6 rounded-[30px] bg-white transition-all duration-300 relative border border-gray-100/50 hover:shadow-[0_15px_40px_-10px_rgba(99,102,241,0.2)]"
                 >
                   <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                    <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                    <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm"
                     />
                   </div>
@@ -153,6 +155,8 @@ export default function PastEminentSpeakers() {
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm"
                     />
                   </div>

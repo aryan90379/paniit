@@ -96,10 +96,12 @@ const SpeakerCard = ({ speaker }: { speaker: any }) => (
          style={{ boxShadow: '0 10px 40px -10px rgba(99, 102, 241, 0.4)' }} />
          
     <div className="relative w-32 h-32 md:w-48 md:h-48 mb-5 group-hover:-translate-y-1 transition-transform duration-300">
-      <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
+      <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
       <img 
         src={speaker.image || PLACEHOLDER} 
         alt={speaker.name} 
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100"
       />
     </div>
@@ -122,8 +124,8 @@ export default function Speakers() {
                    style={{ boxShadow: '0 20px 60px -15px rgba(99, 102, 241, 0.5)' }} />
                    
               <div className="relative w-64 h-64 md:w-80 md:h-80 mb-8 group-hover:-translate-y-2 transition-transform duration-300">
-                <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-3xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                <img src={CHIEF_GUEST.image} alt={CHIEF_GUEST.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-xl" />
+                <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                <img src={CHIEF_GUEST.image} alt={CHIEF_GUEST.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-xl" />
               </div>
               <h3 className="text-2xl md:text-4xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{CHIEF_GUEST.name}</h3>
               <p className="text-lg md:text-xl text-gray-500 relative z-10 font-medium">
@@ -148,8 +150,8 @@ export default function Speakers() {
                      style={{ boxShadow: '0 15px 50px -15px rgba(99, 102, 241, 0.4)' }} />
                      
                 <div className="relative w-40 h-40 md:w-56 md:h-56 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                  <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                  <img src={guest.image} alt={guest.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
+                  <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                  <img src={guest.image} alt={guest.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{guest.name}</h3>
                 <p className="text-sm md:text-base text-gray-500 relative z-10 whitespace-pre-line font-medium">
@@ -172,8 +174,8 @@ export default function Speakers() {
                      style={{ boxShadow: '0 15px 50px -15px rgba(99, 102, 241, 0.4)' }} />
                      
                 <div className="relative w-36 h-36 md:w-48 md:h-48 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                  <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                  <img src={guest.image} alt={guest.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
+                  <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                  <img src={guest.image} alt={guest.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{guest.name}</h3>
                 <p className="text-xs md:text-sm text-gray-500 relative z-10 whitespace-pre-line font-medium">

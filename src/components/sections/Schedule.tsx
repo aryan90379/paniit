@@ -117,8 +117,8 @@ export default function Schedule() {
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, margin: "-100px" }}
-                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
                   className={`p-8 md:p-12 rounded-[2rem] border transition-colors duration-500 ${
                     activeIdx === i 
                       ? 'bg-white border-red-100 shadow-[0_10px_40px_rgba(220,38,38,0.08)]' 

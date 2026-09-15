@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import { Flag, Mic2, FileText, Users, Network, Rocket, Coffee, Award, Shield, Satellite, Microchip, BookOpen, Tractor, HeartPulse, Battery, Cpu } from 'lucide-react';
 
 const HIGHLIGHTS = [
-  { icon: Flag, label: 'Grand Opening Ceremony', desc: 'Kickoff with state leaders', img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop' },
-  { icon: Mic2, label: 'Visionary Keynotes', desc: 'Insights from global icons', img: 'https://images.unsplash.com/photo-1475721028070-2051d528b49e?q=80&w=800&auto=format&fit=crop' },
-  { icon: FileText, label: 'Policy & Vision Papers', desc: 'Shaping the 2047 roadmap', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop' },
-  { icon: Users, label: 'Leadership Panels', desc: 'CXO-level discussions', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop' },
-  { icon: Network, label: 'Strategic Roundtables', desc: 'Exclusive networking', img: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop' },
-  { icon: Rocket, label: 'Innovation Expo', desc: 'Cutting-edge startups', img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop' },
-  { icon: Coffee, label: 'Executive Lunch', desc: 'Connect with peers', img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop' },
-  { icon: Award, label: "Valedictory Address", desc: "Hon'ble CM's closing remarks", img: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800&auto=format&fit=crop' },
+  { icon: Flag, label: 'Grand Opening Ceremony', desc: 'Kickoff with state leaders', tag: 'Inaugural' },
+  { icon: Mic2, label: 'Visionary Keynotes', desc: 'Insights from global icons', tag: 'Keynote' },
+  { icon: FileText, label: 'Policy & Vision Papers', desc: 'Shaping the 2047 roadmap', tag: 'Policy' },
+  { icon: Users, label: 'Leadership Panels', desc: 'CXO-level discussions', tag: 'Leadership' },
+  { icon: Network, label: 'Strategic Roundtables', desc: 'Exclusive networking', tag: 'Network' },
+  { icon: Rocket, label: 'Innovation Expo', desc: 'Cutting-edge startups', tag: 'Startups' },
+  { icon: Coffee, label: 'Executive Lunch', desc: 'Connect with peers', tag: 'Networking' },
+  { icon: Award, label: "Valedictory Address", desc: "Hon'ble CM's closing remarks", tag: 'Valedictory' },
 ];
 
 const THEMES = [
@@ -51,23 +51,24 @@ export default function Highlights() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[300px] snap-center shrink-0 relative group cursor-pointer rounded-[1.5rem] overflow-hidden shadow-md hover:shadow-xl transition-all"
+                  className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 min-h-[280px] snap-center shrink-0 relative group cursor-pointer rounded-[1.75rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-900/40 bg-gradient-to-br from-[#06206A] via-[#08287a] to-[#041444] p-8 flex flex-col justify-between"
                 >
-                  {/* Infographic Background Image */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
-                    style={{ backgroundImage: `url('${item.img}')` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#06206A]/90 via-[#06206A]/60 to-transparent" />
+                  <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#43AAF0]/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
                   
-                  <div className="relative z-10 p-8 h-full flex flex-col justify-end text-white">
-                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-4 backdrop-blur-md border border-white/30">
-                      <Icon size={24} className="text-white" />
+                  <div className="relative z-10 flex items-center justify-between">
+                    <div className="w-14 h-14 rounded-2xl bg-[#43AAF0]/20 flex items-center justify-center backdrop-blur-md border border-[#43AAF0]/40 text-[#43AAF0] group-hover:scale-110 group-hover:bg-[#43AAF0] group-hover:text-white transition-all duration-300 shadow-sm">
+                      <Icon size={26} />
                     </div>
-                    <h3 className="font-bold text-xl leading-tight mb-2 text-white">
+                    <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#C6E1F8] text-[11px] font-bold uppercase tracking-wider">
+                      {item.tag}
+                    </span>
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <h3 className="font-bold text-xl leading-tight mb-2 text-white group-hover:text-[#C6E1F8] transition-colors">
                       {item.label}
                     </h3>
-                    <p className="text-sm text-blue-100 opacity-90 leading-snug">
+                    <p className="text-sm text-[#C6E1F8]/80 leading-relaxed font-medium">
                       {item.desc}
                     </p>
                   </div>

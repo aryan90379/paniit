@@ -49,8 +49,8 @@ export default function VisionMission() {
             viewport={{ once: true }}
             className="col-span-1 md:col-span-2 row-span-1 bg-[#06184a] rounded-[2rem] p-8 md:p-10 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border-2 border-blue-800/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl"
           >
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-45 group-hover:opacity-55 group-hover:scale-105 transition-all duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#06184a] via-[#06184a]/60 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#06206A] via-[#092b87] to-[#041444]" />
+            <div className="absolute -right-12 -top-12 w-64 h-64 bg-[#43AAF0]/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
             
             <div className="relative z-10 flex items-center justify-between">
               <div className="w-14 h-14 bg-[#43AAF0]/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-[#43AAF0]/40 text-[#43AAF0] group-hover:scale-110 transition-transform duration-300">
@@ -81,8 +81,8 @@ export default function VisionMission() {
             transition={{ delay: 0.1 }}
             className="col-span-1 row-span-1 bg-[#051a54] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border-2 border-blue-900/50 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl"
           >
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#051a54] via-[#051a54]/60 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#041444] via-[#06206A] to-[#0a235c]" />
+            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#7ABDF1]/15 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
             
             <div className="relative z-10 flex items-center justify-between">
               <div className="w-14 h-14 bg-white/15 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/30 text-white group-hover:scale-110 transition-transform duration-300">
@@ -112,8 +112,8 @@ export default function VisionMission() {
             transition={{ delay: 0.2 }}
             className="col-span-1 row-span-1 bg-[#1a0826] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border-2 border-purple-900/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl"
           >
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-45 group-hover:opacity-55 group-hover:scale-105 transition-all duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1a0826] via-[#1a0826]/60 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1a0826] via-[#240b36] to-[#06206A]" />
+            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#DD1D21]/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
             
             <div className="relative z-10 flex items-center justify-between">
               <div className="w-14 h-14 bg-red-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-red-500/40 text-red-300 group-hover:scale-110 transition-transform duration-300">
@@ -143,8 +143,8 @@ export default function VisionMission() {
             transition={{ delay: 0.3 }}
             className="col-span-1 row-span-1 bg-[#062038] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border-2 border-teal-900/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl"
           >
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-55 group-hover:scale-105 transition-all duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#062038] via-[#062038]/60 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#062038] via-[#09355c] to-[#041444]" />
+            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#43AAF0]/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
             
             <div className="relative z-10 flex items-center justify-between">
               <div className="w-14 h-14 bg-teal-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-teal-500/40 text-teal-300 group-hover:scale-110 transition-transform duration-300">
@@ -174,8 +174,8 @@ export default function VisionMission() {
             transition={{ delay: 0.4 }}
             className="col-span-1 row-span-1 bg-[#06184a] rounded-[2rem] p-8 relative overflow-hidden group cursor-default min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 flex flex-col justify-between border-2 border-blue-900/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl"
           >
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-55 group-hover:scale-105 transition-all duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#06184a] via-[#06184a]/60 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#06184a] via-[#0a2b75] to-[#041444]" />
+            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#C6E1F8]/15 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
             
             <div className="relative z-10 flex items-center justify-between">
               <div className="w-14 h-14 bg-indigo-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-indigo-500/40 text-indigo-300 group-hover:scale-110 transition-transform duration-300">

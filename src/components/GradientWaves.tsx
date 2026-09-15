@@ -34,9 +34,9 @@ const hexToRgb = (hex: string): [number, number, number] => {
 };
 
 const detailToSteps = (detail: GradientWavesDetail): number => {
-  if (detail === 'low') return 40.0;
-  if (detail === 'high') return 110.0;
-  return 70.0;
+  if (detail === 'low') return 30.0;
+  if (detail === 'high') return 60.0;
+  return 45.0;
 };
 
 const vertex = `#version 300 es
@@ -193,7 +193,7 @@ const GradientWaves: React.FC<GradientWavesProps> = ({
       alpha: true,
       premultipliedAlpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2)
+      dpr: 1.0
     });
 
     const gl = renderer.gl;
@@ -269,7 +269,7 @@ const GradientWaves: React.FC<GradientWavesProps> = ({
     canvas.addEventListener('pointerleave', onPointerLeave);
 
     let raf = 0;
-    let isVisible = true;
+    let isVisible = false;
     let isPageVisible = !document.hidden;
     const t0 = performance.now();
 
@@ -301,7 +301,7 @@ const GradientWaves: React.FC<GradientWavesProps> = ({
         isVisible = entry.isIntersecting;
         isVisible ? tryStart() : tryStop();
       },
-      { threshold: 0 }
+      { rootMargin: '100px 0px', threshold: 0 }
     );
     io.observe(container);
 
@@ -310,8 +310,6 @@ const GradientWaves: React.FC<GradientWavesProps> = ({
       isPageVisible ? tryStart() : tryStop();
     };
     document.addEventListener('visibilitychange', onVisibility);
-
-    tryStart();
 
     return () => {
       tryStop();

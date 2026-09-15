@@ -16,8 +16,8 @@ const SectionTitle = ({ title }: { title: string }) => (
 const CircularProfile = ({ person }: { person: any }) => (
   <div className="min-w-[65vw] sm:min-w-[40vw] md:min-w-[250px] snap-center shrink-0 flex flex-col items-center text-center group p-4 rounded-[2rem] hover:bg-gray-50 transition-all duration-300 relative cursor-default">
     <div className="relative mb-6 group-hover:-translate-y-2 transition-transform duration-300 w-32 h-32 md:w-40 md:h-40">
-      <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-2xl rounded-full transition-opacity duration-300 pointer-events-none" />
-      <img src={person.image} alt={person.name} className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm" />
+      <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+      <img src={person.image} alt={person.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm" />
     </div>
     <h3 className="text-sm md:text-base font-bold text-[#06206A] leading-tight whitespace-pre-line mb-1 relative z-10 group-hover:text-indigo-600 transition-colors">
       {person.name}

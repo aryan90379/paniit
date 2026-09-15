@@ -24,7 +24,7 @@ export default function Footer() {
           zoom={1}
           height={5.5}
           fogDepth={15}
-          detail="high"
+          detail="medium"
           brightness={1.5}
           opacity={1}
           mouseInteraction={true}
