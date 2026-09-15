@@ -8,6 +8,7 @@ import Speakers from '@/components/sections/Speakers';
 import PastEminentSpeakers from '@/components/sections/PastEminentSpeakers';
 import Schedule from '@/components/sections/Schedule';
 import Glimpses from '@/components/sections/Glimpses';
+import PastSponsors from '@/components/sections/PastSponsors';
 import Committee from '@/components/sections/Committee';
 import Footer from '@/components/sections/Footer';
 
@@ -24,6 +25,7 @@ export default function Home() {
       <PastEminentSpeakers />
       <Highlights />
       <Glimpses />
+      <PastSponsors />
       <Committee />
       <Footer />
     </main>
