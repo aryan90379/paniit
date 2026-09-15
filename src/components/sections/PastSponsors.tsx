@@ -5,7 +5,6 @@ import { Award, Shield, Medal } from 'lucide-react';
 
 interface Sponsor {
   name: string;
-  logo?: string;
 }
 
 const GOLD_SPONSORS: Sponsor[] = [
@@ -15,8 +14,8 @@ const GOLD_SPONSORS: Sponsor[] = [
 ];
 
 const SILVER_SPONSORS: Sponsor[] = [
-  { name: 'SAP', logo: '/sponsors/SAP logo png transparent/Image_1.webp' },
-  { name: 'HDFC Mutual Fund', logo: '/sponsors/HDFC Bank logo png transparent/Image_1.jpg' },
+  { name: 'SAP' },
+  { name: 'HDFC Mutual Fund' },
   { name: 'Cashfree Payments' },
   { name: 'Harness' },
   { name: 'Bharat Ke Super Founders' },
@@ -36,10 +35,10 @@ const SILVER_SPONSORS: Sponsor[] = [
 ];
 
 const BRONZE_SPONSORS: Sponsor[] = [
-  { name: 'State Bank of India', logo: '/sponsors/SBI logo png transparent/Image_1.jpg' },
-  { name: 'Kotak Bank', logo: '/sponsors/Kotak Bank logo png transparent/Image_1.jpg' },
-  { name: 'Coal India', logo: '/sponsors/Coal India logo png transparent/Image_1.jpg' },
-  { name: 'NMDC', logo: '/sponsors/NMDC logo png transparent/Image_1.jpg' },
+  { name: 'State Bank of India (SBI)' },
+  { name: 'Kotak Mahindra Bank' },
+  { name: 'Coal India' },
+  { name: 'NMDC' },
   { name: 'GAIL' },
   { name: 'SIDBI' },
   { name: 'T-Hub' },
@@ -109,7 +108,7 @@ export default function PastSponsors() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-amber-50/80 via-white to-amber-50/30 border border-amber-200/80 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center text-center group min-h-[110px]"
+                className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-amber-50/80 via-white to-amber-50/30 border border-amber-200/80 shadow-sm hover:shadow-lg hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-center group min-h-[110px]"
               >
                 <span className="font-extrabold text-xl md:text-2xl text-gray-800 tracking-tight group-hover:text-amber-700 transition-colors">
                   {sponsor.name}
@@ -138,19 +137,11 @@ export default function PastSponsors() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i % 6) * 0.04 }}
-                className="p-4 rounded-xl bg-slate-50/60 border border-slate-200 hover:border-slate-300 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center group min-h-[90px]"
+                className="p-4 rounded-xl bg-slate-50/60 border border-slate-200 hover:border-slate-400 hover:bg-white shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center text-center group min-h-[90px]"
               >
-                {sponsor.logo ? (
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name} 
-                    className="max-h-10 max-w-[90px] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
-                ) : (
-                  <span className="font-bold text-sm text-gray-700 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
-                    {sponsor.name}
-                  </span>
-                )}
+                <span className="font-bold text-sm text-gray-700 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
+                  {sponsor.name}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -175,19 +166,11 @@ export default function PastSponsors() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i % 6) * 0.03 }}
-                className="p-3.5 rounded-xl bg-white border border-gray-200 hover:border-orange-300 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center group min-h-[80px]"
+                className="p-3.5 rounded-xl bg-white border border-gray-200 hover:border-orange-400 hover:bg-orange-50/20 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center text-center group min-h-[80px]"
               >
-                {sponsor.logo ? (
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name} 
-                    className="max-h-9 max-w-[80px] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
-                ) : (
-                  <span className="font-semibold text-xs md:text-sm text-gray-700 tracking-tight group-hover:text-orange-900 transition-colors leading-tight">
-                    {sponsor.name}
-                  </span>
-                )}
+                <span className="font-semibold text-xs md:text-sm text-gray-700 tracking-tight group-hover:text-orange-900 transition-colors leading-tight">
+                  {sponsor.name}
+                </span>
               </motion.div>
             ))}
           </div>
