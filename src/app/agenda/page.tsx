@@ -61,10 +61,10 @@ export default function AgendaPage() {
               </div>
               <div>
                 <div className="font-bold text-gray-900 text-sm sm:text-base">
-                  Pan IIT Summit - Agenda.pdf
+                  PanIIT AP Summit 2026.pdf
                 </div>
                 <div className="text-xs text-gray-500 font-medium">
-                  Official Document • 4.0 MB
+                  Official Document • 3.5 MB
                 </div>
               </div>
             </div>
