@@ -72,7 +72,7 @@ export default function About() {
                       </div>
                       
                       {/* Label */}
-                      <div className="text-[10px] md:text-xs text-[#C6E1F8]/90 font-bold uppercase tracking-wider leading-snug">
+                      <div className="text-[10px] md:text-xs text-[#C6E1F8]/90 font-bold tracking-wider leading-snug">
                         {stat.label}
                       </div>
 
