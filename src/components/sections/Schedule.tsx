@@ -30,37 +30,78 @@ const SCHEDULE = [
 export default function Schedule() {
   const [activeIdx, setActiveIdx] = useState(0);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sidebarNavRef = useRef<HTMLElement | null>(null);
+  const sidebarItemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
+  // Smooth click scroll to specific card with navbar offset
+  const handleNavClick = (i: number) => {
+    const target = sectionRefs.current[i];
+    if (!target) return;
+    const navbarHeight = 145;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    setActiveIdx(i);
+  };
+
+  // Robust RAF scroll listener to accurately track active card relative to navbar
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = Number(entry.target.getAttribute('data-index'));
-            setActiveIdx(idx);
+    let rafId = 0;
+
+    const handleScroll = () => {
+      const navbarHeight = 145;
+      const triggerY = navbarHeight + 80;
+      let currentIdx = 0;
+      let minDistance = Infinity;
+
+      sectionRefs.current.forEach((ref, idx) => {
+        if (!ref) return;
+        const rect = ref.getBoundingClientRect();
+        // Distance of card's top edge from the reading line
+        const distance = Math.abs(rect.top - triggerY);
+        // If the card is currently spanning or closest to reading line
+        if (rect.top <= triggerY + 120 && rect.bottom >= triggerY - 80) {
+          if (distance < minDistance) {
+            minDistance = distance;
+            currentIdx = idx;
           }
-        });
-      },
-      { rootMargin: '-20% 0px -60% 0px' }
-    );
+        }
+      });
 
-    sectionRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
+      setActiveIdx(currentIdx);
+    };
 
-    return () => observer.disconnect();
+    const onScroll = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
+
+  // Auto-scroll the sidebar list so active item stays in view
+  useEffect(() => {
+    const activeItem = sidebarItemRefs.current[activeIdx];
+    if (activeItem && sidebarNavRef.current) {
+      activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [activeIdx]);
 
   return (
     <section id="schedule" className="py-24 bg-white text-gray-900 relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight"
+            className="text-3xl md:text-5xl font-bold text-[#06206A] mb-4 tracking-tight uppercase"
           >
             Program Schedule
           </motion.h2>
@@ -69,42 +110,75 @@ export default function Schedule() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="inline-block px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 text-sm font-medium shadow-sm"
+            className="inline-block px-4 py-1.5 rounded-full bg-[#E3F0FA] border border-[#C6E1F8] text-[#06206A] text-xs font-bold uppercase tracking-wider shadow-sm"
           >
-            Tentative / Subject to change
+            3rd October, 2026 • Tentative / Subject to change
           </motion.div>
         </div>
 
-        <div className="flex flex-col md:flex-row relative gap-8 md:gap-16">
+        {/* Mobile Horizontal Quick-Jump Bar */}
+        <div className="md:hidden sticky top-[95px] z-20 bg-white/95 backdrop-blur-md py-3 -mx-4 px-4 border-y border-gray-200 flex gap-2 overflow-x-auto hide-scrollbar mb-8 shadow-xs">
+          {SCHEDULE.map((item, i) => {
+            const startTime = item.time.split(' – ')[0].split(' ')[0] + ' ' + item.time.split(' – ')[0].split(' ')[1];
+            const isActive = activeIdx === i;
+            return (
+              <button
+                key={i}
+                onClick={() => handleNavClick(i)}
+                className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                  isActive 
+                    ? 'bg-[#DD1D21] text-white shadow-sm scale-105' 
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {startTime}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-col md:flex-row relative gap-8 md:gap-12 items-start">
           
           {/* Sticky Sidebar Nav (Desktop) */}
-          <div className="hidden md:block w-1/3 relative">
-            <nav className="sticky top-32">
-              <ul className="list-none border-l-2 border-gray-200/60 pl-6 py-4 space-y-6">
+          <div className="hidden md:block w-1/3 relative self-start">
+            <nav 
+              ref={sidebarNavRef}
+              className="sticky top-40 max-h-[calc(100vh-200px)] overflow-y-auto hide-scrollbar pr-3"
+            >
+              <div className="text-[11px] font-black uppercase tracking-wider text-gray-400 mb-4 pl-3">
+                Schedule Timeline
+              </div>
+              <ul className="list-none border-l-2 border-gray-200 pl-3 py-1 space-y-2">
                 {SCHEDULE.map((item, i) => {
                   const startTime = item.time.split(' – ')[0].split(' ')[0] + ' ' + item.time.split(' – ')[0].split(' ')[1];
+                  const isActive = activeIdx === i;
                   return (
                     <li 
                       key={i} 
-                      className={`cursor-pointer transition-all duration-300 origin-left border-b border-dotted pb-2 ${
-                        activeIdx === i 
-                          ? 'text-[#DD1D21] font-bold scale-110 border-transparent' 
-                          : 'text-gray-400 hover:text-gray-900 border-gray-300'
+                      ref={(el) => { sidebarItemRefs.current[i] = el; }}
+                      className={`cursor-pointer transition-all duration-200 rounded-xl p-3 -ml-3 ${
+                        isActive 
+                          ? 'bg-red-50 text-[#DD1D21] font-bold border-l-4 border-[#DD1D21] pl-3.5 shadow-sm' 
+                          : 'text-gray-500 hover:text-[#06206A] hover:bg-gray-50'
                       }`}
-                      onClick={() => {
-                        sectionRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                      }}
+                      onClick={() => handleNavClick(i)}
                     >
-                      {startTime}
+                      <div className="text-sm font-bold flex items-center justify-between">
+                        <span>{startTime}</span>
+                        {isActive && <span className="w-2 h-2 rounded-full bg-[#DD1D21]" />}
+                      </div>
+                      <div className={`text-xs truncate max-w-[210px] mt-0.5 ${isActive ? 'text-red-700 font-semibold' : 'text-gray-400'}`}>
+                        {item.title}
+                      </div>
                     </li>
-                  )
+                  );
                 })}
               </ul>
             </nav>
           </div>
 
           {/* Main Content Scroll Area */}
-          <div className="w-full md:w-2/3">
+          <div className="w-full md:w-2/3 space-y-6">
             {SCHEDULE.map((item, i) => (
               <div 
                 key={i} 
@@ -112,40 +186,44 @@ export default function Schedule() {
                   sectionRefs.current[i] = el;
                 }}
                 data-index={i}
-                className="min-h-[40vh] md:min-h-[50vh] flex flex-col justify-center py-12 md:py-24"
+                className="scroll-mt-40 transition-all duration-300"
               >
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4 }}
-                  className={`p-8 md:p-12 rounded-[2rem] border transition-colors duration-500 ${
+                  transition={{ duration: 0.3 }}
+                  className={`p-6 md:p-8 rounded-[2rem] border transition-all duration-300 ${
                     activeIdx === i 
-                      ? 'bg-white border-red-100 shadow-[0_10px_40px_rgba(220,38,38,0.08)]' 
-                      : 'bg-white/50 border-gray-100 shadow-sm opacity-50'
+                      ? 'bg-white border-red-200 shadow-[0_10px_40px_rgba(220,38,38,0.08)] ring-1 ring-red-100' 
+                      : 'bg-white/70 border-gray-100 shadow-xs hover:border-gray-200'
                   }`}
                 >
-                  <div className="inline-block px-3 py-1 bg-red-50 text-[#DD1D21] font-bold rounded-lg mb-4 text-sm border border-red-100 shadow-sm">
-                    {item.time}
+                  <div className="flex items-center justify-between gap-4 mb-3">
+                    <div className="inline-block px-3 py-1 bg-red-50 text-[#DD1D21] font-bold rounded-lg text-xs md:text-sm border border-red-100 shadow-2xs">
+                      {item.time}
+                    </div>
+                    {activeIdx === i && (
+                      <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-[#DD1D21] uppercase tracking-wider">
+                        <span className="w-2 h-2 rounded-full bg-[#DD1D21] animate-pulse" />
+                        Active Session
+                      </span>
+                    )}
                   </div>
                   
-                  <h3 className={`text-3xl md:text-5xl font-bold mb-4 tracking-tight transition-colors duration-500 ${
-                    activeIdx === i ? 'text-gray-900' : 'text-gray-600'
+                  <h3 className={`text-2xl md:text-3xl font-bold mb-3 tracking-tight transition-colors duration-300 ${
+                    activeIdx === i ? 'text-gray-900' : 'text-gray-700'
                   }`}>
                     {item.title}
                   </h3>
                   {item.subtitle && (
-                    <p className="text-base md:text-xl font-medium text-gray-600 leading-relaxed whitespace-pre-line">
+                    <p className="text-sm md:text-base font-medium text-gray-600 leading-relaxed whitespace-pre-line">
                       {item.subtitle}
                     </p>
                   )}
                   
                   {activeIdx === i && (
-                    <motion.div 
-                      initial={{ opacity: 0, width: 0 }}
-                      animate={{ opacity: 1, width: "3rem" }}
-                      className="h-1 bg-[#DD1D21] mt-8 rounded-full"
-                    />
+                    <div className="h-1 w-12 bg-[#DD1D21] mt-6 rounded-full" />
                   )}
                 </motion.div>
               </div>

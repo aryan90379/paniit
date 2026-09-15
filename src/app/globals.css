@@ -25,18 +25,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
-/* Optimize rendering performance for long landing page sections */
+/* Optimize rendering performance for long landing page sections (excluding schedule to preserve sticky tracking) */
 #about,
 #advantage,
-#schedule,
 #speakers,
 #speakers-legacy-section,
 #glimpses,
