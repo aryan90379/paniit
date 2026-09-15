@@ -62,21 +62,21 @@ export default function Navbar() {
           </a>
 
           {/* Right Side: Action Buttons & Mobile Menu Toggle */}
-          <div className="flex items-center gap-3 md:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
             <a 
               href="https://www.paniit.org/events/21873"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center justify-center px-6 py-2.5 md:py-3 bg-[#DD1D21] text-white font-bold text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg"
+              className="flex items-center justify-center px-3 py-1.5 sm:px-6 sm:py-2.5 md:py-3 bg-[#DD1D21] text-white font-bold text-[11px] sm:text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg whitespace-nowrap"
             >
               Register Now
             </a>
             
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-[#06206A] p-2 bg-gray-100 rounded-md"
+              className="lg:hidden text-[#06206A] p-1.5 sm:p-2 bg-gray-100 rounded-md"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={22} className="sm:w-6 sm:h-6" /> : <Menu size={22} className="sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>

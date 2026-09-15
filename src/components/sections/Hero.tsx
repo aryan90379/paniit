@@ -75,6 +75,19 @@ export default function Hero() {
             </a>
           </div>
 
+          <div className="hidden md:block w-px h-12 bg-[#06206A]/20"></div>
+
+          <div className="w-full md:w-auto flex items-center justify-center">
+            <a
+              href="https://www.paniit.org/events/21873"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto text-center px-8 py-3.5 bg-[#DD1D21] hover:bg-red-600 text-white font-bold text-sm md:text-base uppercase tracking-wider rounded-sm shadow-md hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+            >
+              Register Now &rarr;
+            </a>
+          </div>
+
         </div>
       </motion.div>
     </section>
