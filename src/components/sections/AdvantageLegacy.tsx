@@ -29,21 +29,21 @@ const LEGACY = [
 export default function AdvantageLegacy() {
   return (
     <section id="advantage" className="bg-white">
-      <div className="py-24 bg-white border-t border-gray-100">
+      <div className="py-12 sm:py-16 md:py-24 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-black text-[#06206A] uppercase tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-[#06206A] uppercase tracking-tight"
             >
               Beyond The Summit<br/>
-              <span className="text-gray-400 font-bold text-2xl md:text-4xl mt-2 block">Legacy Initiatives</span>
+              <span className="text-gray-400 font-bold text-xl sm:text-2xl md:text-4xl mt-1 sm:mt-2 block">Legacy Initiatives</span>
             </motion.h2>
           </div>
 
-          <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-2 gap-6 hide-scrollbar snap-x snap-mandatory pb-8 px-4 md:px-0 -mx-4 md:mx-auto">
+          <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-2 gap-4 sm:gap-6 hide-scrollbar snap-x snap-mandatory pb-6 px-4 md:px-0 -mx-4 md:mx-auto">
             {LEGACY.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -53,13 +53,13 @@ export default function AdvantageLegacy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="min-w-[80vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 bg-white p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-4 group"
+                  className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 bg-white p-6 sm:p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all flex flex-col gap-3 sm:gap-4 group shadow-xs"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-white text-[#06206A] flex items-center justify-center mb-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                    <Icon size={32} />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-50 text-[#06206A] flex items-center justify-center mb-1 sm:mb-2 shadow-xs group-hover:scale-110 transition-transform duration-300">
+                    <Icon size={26} className="sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#06206A]">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed font-medium">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#06206A]">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </motion.div>
