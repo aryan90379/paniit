@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Flag, Mic2, FileText, Users, Network, Rocket, Coffee, Award, Shield, Satellite, Microchip, BookOpen, Tractor, HeartPulse, Battery, Cpu } from 'lucide-react';
+import { Flag, Mic2, FileText, Users, Network, Rocket, Coffee, Award, Shield, Satellite, Microchip, BookOpen, Tractor, HeartPulse, Leaf, Cpu, ArrowUpRight } from 'lucide-react';
 
 const HIGHLIGHTS = [
   { icon: Flag, label: 'Grand Opening Ceremony', desc: 'Kickoff with state leaders', tag: 'Inaugural' },
@@ -15,14 +15,54 @@ const HIGHLIGHTS = [
 ];
 
 const THEMES = [
-  { icon: Shield, label: 'AI in Governance', color: 'text-[#43AAF0]', bg: 'bg-[#C6E1F8]', border: 'border-blue-200' },
-  { icon: Satellite, label: 'Defence & SpaceTech', color: 'text-[#DD1D21]', bg: 'bg-red-100', border: 'border-red-200' },
-  { icon: Cpu, label: 'Quantum Computing', color: 'text-indigo-600', bg: 'bg-indigo-100', border: 'border-indigo-200' },
-  { icon: Microchip, label: 'Semiconductors', color: 'text-[#43AAF0]', bg: 'bg-[#E3F0FA]', border: 'border-blue-200' },
-  { icon: BookOpen, label: 'Skilling / Entrepreneurship', color: 'text-[#DD1D21]', bg: 'bg-red-50', border: 'border-red-200' },
-  { icon: Tractor, label: 'AgriTech', color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'border-indigo-200' },
-  { icon: HeartPulse, label: 'BioValley/HealthTech', color: 'text-[#43AAF0]', bg: 'bg-[#C6E1F8]', border: 'border-blue-200' },
-  { icon: Battery, label: 'Energy', color: 'text-[#DD1D21]', bg: 'bg-red-100', border: 'border-red-200' },
+  { 
+    icon: Shield, 
+    label: 'AI in Governance', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/AI%20in%20Governance%20(1).jpg',
+    tag: 'GovTech & Policy'
+  },
+  { 
+    icon: Satellite, 
+    label: 'Defence & SpaceTech', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/Defense%20and%20SpaceTech.jpg',
+    tag: 'Strategic Aerospace'
+  },
+  { 
+    icon: Cpu, 
+    label: 'Quantum Computing', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/Quantum%20Computing.webp',
+    tag: 'Next-Gen Computing'
+  },
+  { 
+    icon: Microchip, 
+    label: 'Semiconductors', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/Semiconductors.jpg',
+    tag: 'Silicon & VLSI'
+  },
+  { 
+    icon: BookOpen, 
+    label: 'Skilling / Entrepreneurship', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/Skilling_Entrepreneurship.webp',
+    tag: 'Talent & Startups'
+  },
+  { 
+    icon: Tractor, 
+    label: 'AgriTech', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/Agritech.jpg',
+    tag: 'Smart Agriculture'
+  },
+  { 
+    icon: HeartPulse, 
+    label: 'BioValley / HealthTech', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/Biovalley_HealthTech.jpg',
+    tag: 'Life Sciences'
+  },
+  { 
+    icon: Leaf, 
+    label: 'Green Energy', 
+    image: 'https://d3liyurciwi0wb.cloudfront.net/inforgraphics/Green%20Energy.jpg',
+    tag: 'CleanTech & Renewables'
+  },
 ];
 
 export default function Highlights() {
@@ -79,17 +119,23 @@ export default function Highlights() {
         </div>
 
         <div className="pb-8">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight text-center"
-          >
-            Session Themes
-          </motion.h2>
-          <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">Immersive tracks and deep-dives exploring the future of innovation.</p>
+          <div className="flex flex-col items-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <span className="w-2 h-2 rounded-full bg-[#DD1D21]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#DD1D21]">PanIIT Summit Tracks</span>
+            </div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-black text-[#06206A] mb-3 tracking-tight text-center uppercase"
+            >
+              Session Themes
+            </motion.h2>
+            <p className="text-center text-gray-500 max-w-2xl mx-auto font-medium">Immersive tracks and deep-dives exploring the future of innovation.</p>
+          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto px-4 md:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-6xl mx-auto px-4 md:px-0">
             {THEMES.map((theme, i) => {
               const Icon = theme.icon;
               return (
@@ -98,17 +144,44 @@ export default function Highlights() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className={`flex flex-col justify-between p-6 rounded-[1.5rem] ${theme.bg} border ${theme.border} cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 min-h-[150px] relative overflow-hidden group`}
+                  transition={{ delay: i * 0.05, duration: 0.35 }}
+                  className="group relative h-64 sm:h-72 rounded-[1.75rem] overflow-hidden cursor-pointer shadow-md hover:shadow-2xl border border-gray-200/80 hover:border-blue-400/60 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between p-6 bg-slate-950"
                 >
-                  <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-150 transition-transform duration-500">
-                    <Icon size={120} className={theme.color} />
-                  </div>
-                  <div className="relative z-10">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-4">
-                      <Icon size={20} className={theme.color} />
+                  {/* Background Infographic Image with Zoom on Hover */}
+                  <img
+                    src={theme.image}
+                    alt={theme.label}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
+                  />
+
+                  {/* Gradient Overlays for High Contrast & Text Legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20 group-hover:from-black/95 group-hover:via-black/40 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-[#06206A]/25 mix-blend-multiply opacity-60 group-hover:opacity-20 transition-opacity duration-500" />
+
+                  {/* Top Bar: Icon Badge & Arrow */}
+                  <div className="relative z-10 flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-sm group-hover:scale-110 group-hover:bg-[#DD1D21] group-hover:border-red-400 group-hover:shadow-lg transition-all duration-300">
+                      <Icon size={22} />
                     </div>
-                    <span className="font-bold text-gray-800 tracking-wide text-lg leading-tight block">{theme.label}</span>
+
+                    <div className="w-8 h-8 rounded-full bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center text-white/90 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+                      <ArrowUpRight size={16} />
+                    </div>
+                  </div>
+
+                  {/* Bottom Text Content */}
+                  <div className="relative z-10">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-300 group-hover:text-[#43AAF0] transition-colors block mb-1 drop-shadow-sm">
+                      {theme.tag}
+                    </span>
+                    <h3 className="font-black text-lg md:text-xl text-white tracking-tight leading-snug drop-shadow-md group-hover:text-white transition-colors">
+                      {theme.label}
+                    </h3>
+                    
+                    {/* Dynamic Accent Bar */}
+                    <div className="w-8 group-hover:w-16 h-1 bg-[#DD1D21] rounded-full mt-3 transition-all duration-300" />
                   </div>
                 </motion.div>
               );
