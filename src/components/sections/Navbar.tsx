@@ -69,7 +69,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="hidden sm:flex items-center justify-center px-6 py-2.5 md:py-3 bg-[#DD1D21] text-white font-bold text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg"
             >
-              Register
+              Register Now
             </a>
             
             <button 
