@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
-  { name: 'About Us', href: '#about' },
-  { name: 'Advantage', href: '#advantage' },
-  { name: 'Speakers', href: '#speakers' },
-  { name: 'Schedule', href: '#schedule' },
-  { name: 'Committee', href: '#committee' },
-  { name: 'Contact Us', href: '#contact' },
+  { name: 'About Us', href: '/#about' },
+  { name: 'Advantage', href: '/#advantage' },
+  { name: 'Speakers', href: '/#speakers' },
+  { name: 'Summit Agenda', href: '/#schedule' },
+  { name: 'Committee', href: '/#committee' },
+  { name: 'Contact Us', href: '/#contact' },
 ];
 
 export default function Navbar() {
