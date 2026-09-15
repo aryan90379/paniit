@@ -11,6 +11,7 @@ import Schedule from '@/components/sections/Schedule';
 import Glimpses from '@/components/sections/Glimpses';
 import PastSponsors from '@/components/sections/PastSponsors';
 import Committee from '@/components/sections/Committee';
+import EventDetails from '@/components/sections/EventDetails';
 import Footer from '@/components/sections/Footer';
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <Glimpses />
       <PastSponsors />
       <Committee />
+      <EventDetails />
       <Footer />
     </main>
   );
