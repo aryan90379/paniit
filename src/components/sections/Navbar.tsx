@@ -52,13 +52,12 @@ export default function Navbar() {
               className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-24'}`}
             />
             <div className={`hidden md:block w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-20'}`}></div>
-            <div className="hidden md:flex flex-col items-center">
+            <div className="hidden md:flex items-center">
               <img 
                 src="https://wabflow.b-cdn.net/paniit/logos/Emblem_of_Andhra_Pradesh.png" 
                 alt="Govt of Andhra Pradesh" 
-                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-8 md:h-10' : 'h-10 md:h-16'} mb-1`}
+                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-24'}`}
               />
-              <span className={`text-[8px] md:text-[10px] font-bold text-black uppercase tracking-wider ${isScrolled ? 'hidden' : 'block'}`}>Powered By Govt of AP</span>
             </div>
           </a>
 
