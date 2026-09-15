@@ -40,31 +40,26 @@ export default function Schedule() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-6 flex justify-center"
+            className="lg:col-span-6 flex justify-center w-full"
           >
             <Link 
               href="/agenda"
-              className="group relative block w-full max-w-[540px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_20px_50px_rgba(6,32,106,0.18)] transition-all duration-500 border border-gray-200/80 bg-linear-to-b from-gray-50 to-white cursor-pointer"
+              className="group relative block w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(6,32,106,0.18)] transition-all duration-500 border border-gray-200/80 bg-white cursor-pointer"
             >
-              {/* Preview Banner Graphic */}
-              <div className="relative aspect-4/3 w-full overflow-hidden bg-slate-100">
+              {/* Preview Banner Graphic - Full Natural Dimensions (16:9 uncropped) */}
+              <div className="relative w-full aspect-16/9 overflow-hidden bg-slate-50">
                 <img 
                   src="https://wabflow.b-cdn.net/paniit/landing/image_2026-09-15_120838444.png"
                   alt="PanIIT Andhra Pradesh Summit 2026 Agenda Preview"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-contain block group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
               </div>
 
               {/* Floating Pill Action Button */}
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between pointer-events-none">
-                <span className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-black/70 backdrop-blur-md text-white font-bold text-xs sm:text-sm shadow-xl border border-white/20 group-hover:bg-[#06206A] group-hover:border-[#06206A] transition-all duration-300">
+              <div className="absolute bottom-3.5 left-3.5 sm:bottom-4 sm:left-4 pointer-events-none">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-black/60 backdrop-blur-md text-white font-semibold text-xs sm:text-sm shadow-md border border-white/20 group-hover:bg-[#06206A] group-hover:border-[#06206A] transition-all duration-300">
                   <span>Explore the Full Schedule</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[#06206A] font-bold text-xs shadow-md">
-                  <Sparkles className="w-3.5 h-3.5 text-[#DD1D21]" />
-                  PDF Viewer
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </div>
             </Link>
