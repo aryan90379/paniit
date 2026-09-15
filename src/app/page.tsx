@@ -1,6 +1,7 @@
 import Navbar from '@/components/sections/Navbar';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
+import Dignitaries from '@/components/sections/Dignitaries';
 import VisionMission from '@/components/sections/VisionMission';
 import AdvantageLegacy from '@/components/sections/AdvantageLegacy';
 import Highlights from '@/components/sections/Highlights';
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Dignitaries />
       <VisionMission />
       <AdvantageLegacy />
       <Schedule />

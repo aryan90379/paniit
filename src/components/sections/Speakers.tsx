@@ -4,28 +4,7 @@ import { motion } from 'framer-motion';
 
 const PLACEHOLDER = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23cbd5e1%22%3E%3Cpath%20d%3D%22M12%2012c2.21%200%204-1.79%204-4s-1.79-4-4-4-4%201.79-4%204%201.79%204%204%204zm0%202c-2.67%200-8%201.34-8%204v2h16v-2c0-2.66-5.33-4-8-4z%22%2F%3E%3C%2Fsvg%3E";
 
-const CHIEF_GUEST = {
-  image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg',
-  name: 'Sri Nara Chandra Babu Naidu',
-  role: "Hon'ble Chief Minister",
-  org: "of Andhra Pradesh",
-  desc: "A nationally recognised visionary leader, widely acknowledged for championing technology, digital transformation, innovation and inclusive economic development."
-};
 
-const GUESTS_OF_HONOUR = [
-  {
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Kinjarapu%20%20Rammohan%20Naidu.png',
-    name: 'Shri Kinjarapu Rammohan Naidu',
-    role: "Hon'ble Minister of Civil Aviation,",
-    org: "Government of India"
-  },
-  {
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Lokesh.jpg',
-    name: 'Sri Nara Lokesh',
-    role: "Hon'ble Minister for Information Technology,\nElectronics and Communications,",
-    org: "Andhra Pradesh"
-  }
-];
 
 
 
@@ -127,54 +106,7 @@ export default function Speakers() {
   return (
     <section id="speakers" className="bg-white relative">
       
-      {/* Chief Guest */}
-      <div className="py-20 border-b border-gray-100 relative overflow-hidden ">
-        <div className="container mx-auto px-4">
-          <SectionTitle title="Chief Guest" />
-          <div className="max-w-2xl mx-auto flex flex-col items-center">
-            <div className="flex flex-col items-center text-center group p-8 md:p-12 rounded-[40px] hover:bg-white transition-all duration-300 relative">
-              <div className="absolute inset-0 rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
-                   style={{ boxShadow: '0 20px 60px -15px rgba(99, 102, 241, 0.5)' }} />
-                   
-              <div className="relative w-64 h-64 md:w-80 md:h-80 mb-8 group-hover:-translate-y-2 transition-transform duration-300">
-                <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                <img src={CHIEF_GUEST.image} alt={CHIEF_GUEST.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-xl" />
-              </div>
-              <h3 className="text-2xl md:text-4xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{CHIEF_GUEST.name}</h3>
-              <p className="text-lg md:text-xl text-gray-500 relative z-10 font-medium">
-                {CHIEF_GUEST.role}<br/>{CHIEF_GUEST.org}
-              </p>
-              <p className="mt-6 text-sm md:text-base text-gray-400 italic font-medium max-w-2xl mx-auto relative z-10">
-                {CHIEF_GUEST.desc}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Guest of Honour */}
-      <div className="py-20 border-b border-gray-100 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <SectionTitle title="Guest of Honour" />
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {GUESTS_OF_HONOUR.map((guest, i) => (
-              <div key={i} className="flex flex-col items-center text-center group p-6 md:p-8 rounded-3xl hover:bg-white transition-all duration-300 relative">
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
-                     style={{ boxShadow: '0 15px 50px -15px rgba(99, 102, 241, 0.4)' }} />
-                     
-                <div className="relative w-40 h-40 md:w-56 md:h-56 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                  <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                  <img src={guest.image} alt={guest.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{guest.name}</h3>
-                <p className="text-sm md:text-base text-gray-500 relative z-10 whitespace-pre-line font-medium">
-                  {guest.role}<br/>{guest.org}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Distinguished Guests */}
       <div className="py-20 border-b border-gray-100 bg-white">
