@@ -13,26 +13,22 @@ export default function Hero() {
         <div className="w-full h-full overflow-hidden relative">
           <MorphSlider
             items={[
-              { image: 'https://wabflow.b-cdn.net/paniit/landing/image_2026-09-15_120838444.png', caption: 'PanIIT Andhra Pradesh Summit 2026' },
-              { image: 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop', caption: 'Global Network' },
-              { image: 'https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop', caption: 'Actionable Insights' },
-              { image: 'https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop', caption: 'Real Impact' }
+              { image: 'https://wabflow.b-cdn.net/paniit/landing/image_2026-09-15_120838444.png', caption: 'PanIIT Andhra Pradesh Summit 2026' }
             ]}
             transition="melt"
-            intensity={0.06}
-            aberration={0.02}
+            intensity={0.0}
+            aberration={0.0}
             drift={0.0}
-            autoplay={true}
+            autoplay={false}
             overlayColor="#ffffff"
             duration={1.0}
             ease="power2.inOut"
             scale={1.0}
-            autoplayDelay={5}
-            loop={true}
+            loop={false}
             radius={0}
             showCaptions={false}
-            showControls={true}
-            showIndicators={true}
+            showControls={false}
+            showIndicators={false}
           />
         </div>
       </div>
