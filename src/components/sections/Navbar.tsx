@@ -43,20 +43,20 @@ export default function Navbar() {
             <img 
               src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg" 
               alt="PanIIT Alumni India" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-24'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-9 sm:h-12 md:h-16' : 'h-12 sm:h-16 md:h-24'}`}
             />
-            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-20'}`}></div>
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-8 sm:h-10 md:h-14' : 'h-10 sm:h-14 md:h-20'}`}></div>
             <img 
               src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
               alt="PanIIT AP Summit" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-24'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-9 sm:h-12 md:h-16' : 'h-12 sm:h-16 md:h-24'}`}
             />
-            <div className={`hidden md:block w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-20'}`}></div>
-            <div className="hidden md:flex items-center">
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-8 sm:h-10 md:h-14' : 'h-10 sm:h-14 md:h-20'}`}></div>
+            <div className="flex items-center">
               <img 
                 src="https://wabflow.b-cdn.net/paniit/logos/Emblem_of_Andhra_Pradesh.png" 
                 alt="Govt of Andhra Pradesh" 
-                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-10 md:h-14' : 'h-12 md:h-24'}`}
+                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-9 sm:h-12 md:h-16' : 'h-12 sm:h-16 md:h-24'}`}
               />
             </div>
           </a>

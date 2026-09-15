@@ -6,7 +6,11 @@ import { useEffect, useState, useRef } from 'react';
 const SCHEDULE = [
   { time: "08:00 AM – 09:00 AM", title: "Registration, Networking & Tea", subtitle: "Welcome delegates" },
   { time: "09:00 AM – 09:15 AM", title: "Lighting of the Lamp & Welcome Address", subtitle: "Opening of the summit" },
-  { time: "09:15 AM – 10:00 AM", title: "Inaugural Ceremony", subtitle: "Guest of Honour: Shri Kinjarapu Rammohan Naidu & Sri Lokesh Nara" },
+  { 
+    time: "09:15 AM – 10:00 AM", 
+    title: "Inaugural Ceremony", 
+    subtitle: "Guest of Honour:\nShri Kinjarapu Rammohan Naidu — Hon'ble Minister of Civil Aviation, Government of India\nSri Nara Lokesh — Hon'ble Minister for Information Technology, Electronics and Communications, Andhra Pradesh" 
+  },
   { time: "10:00 AM – 10:45 AM", title: "PANEL 1: Energy & Fuel Cost Optimisation", subtitle: "Swachh Andhra" },
   { time: "10:45 AM – 11:30 AM", title: "PANEL 2: Deep Tech in All Walks of Life", subtitle: "Quantum, Semiconductors & AI" },
   { time: "11:30 AM – 12:15 PM", title: "PANEL 3: Space & Defence Mfg", subtitle: "Product Perfection" },
@@ -131,7 +135,7 @@ export default function Schedule() {
                     {item.title}
                   </h3>
                   {item.subtitle && (
-                    <p className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
+                    <p className="text-base md:text-xl font-medium text-gray-600 leading-relaxed whitespace-pre-line">
                       {item.subtitle}
                     </p>
                   )}
