@@ -29,8 +29,8 @@ const CONTACTS = [
 
 export default function EventDetails() {
   return (
-    <section id="contact" className="py-20 md:py-24 bg-white text-gray-900 relative border-t border-gray-200">
-      <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+    <section id="contact" className="pt-20 md:pt-24 pb-0 bg-[#F8FAFC] text-gray-900 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
         
         {/* EVENT DETAILS BLOCK */}
         <div className="mb-14">
@@ -173,6 +173,53 @@ export default function EventDetails() {
           </div>
         </div>
 
+      </div>
+
+      {/* Smooth Morphing & Multi-layer Gradient Transition into Footer */}
+      <div className="relative w-full mt-12 md:mt-16 pointer-events-none select-none">
+        {/* Multi-layered Organic Morphing Waves */}
+        <div className="relative w-full overflow-hidden leading-none">
+          <svg
+            className="relative block w-full h-24 sm:h-32 md:h-44 lg:h-52"
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="waveGradBack" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#06206A" stopOpacity="0.15" />
+                <stop offset="100%" stopColor="#06206A" stopOpacity="0.4" />
+              </linearGradient>
+              <linearGradient id="waveGradMid" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#091A42" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#050C1D" stopOpacity="0.9" />
+              </linearGradient>
+              <linearGradient id="waveGradFront" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#0B132B" />
+                <stop offset="40%" stopColor="#050505" />
+                <stop offset="100%" stopColor="#050505" />
+              </linearGradient>
+            </defs>
+
+            {/* Back Wave: Subtle PanIIT Navy ambient curve */}
+            <path
+              d="M0,96 C240,170 480,40 720,110 C960,180 1200,70 1440,130 L1440,320 L0,320 Z"
+              fill="url(#waveGradBack)"
+            />
+
+            {/* Mid Wave: Deeper Navy Morphing Curve */}
+            <path
+              d="M0,160 C320,80 560,230 840,160 C1120,90 1320,190 1440,170 L1440,320 L0,320 Z"
+              fill="url(#waveGradMid)"
+            />
+
+            {/* Front Wave: Seamless transition to pure footer color (#050505) */}
+            <path
+              d="M0,224 C280,180 520,270 800,210 C1080,150 1280,240 1440,220 L1440,320 L0,320 Z"
+              fill="url(#waveGradFront)"
+            />
+          </svg>
+        </div>
       </div>
     </section>
   );

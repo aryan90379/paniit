@@ -6,7 +6,7 @@ import GradientWaves from '../GradientWaves';
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-[#050505] border-t border-white/10 pt-24 pb-12 overflow-hidden relative">
+    <footer id="footer" className="bg-[#050505] pt-8 md:pt-14 pb-12 overflow-hidden relative">
       
       {/* Immersive Wave Background - HIGH VISIBILITY */}
       <div className="hidden md:block absolute inset-0 z-0">
