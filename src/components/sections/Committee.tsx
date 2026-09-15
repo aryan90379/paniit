@@ -62,20 +62,7 @@ export default function Committee() {
     <section id="committee" className="py-20 md:py-28 bg-[#F8FAFC] text-gray-900 relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
-        {/* SECTION 1: SUMMIT ORGANISING CORE COMMITTEE */}
-        <div className="mb-20">
-          <SectionHeading 
-            title="Summit Organising Core Committee" 
-            subtitle="The leadership and core team driving the vision of PanIIT Andhra Pradesh Summit 2026."
-          />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6 justify-center">
-            {CORE_COMMITTEE.map((person, i) => (
-              <MemberCard key={i} person={person} />
-            ))}
-          </div>
-        </div>
-
-        {/* SECTION 2: PANIIT ALUMNI INDIA OFFICE BEARERS */}
+        {/* SECTION 1: PANIIT ALUMNI INDIA OFFICE BEARERS */}
         <div className="mb-20">
           <SectionHeading 
             title="PanIIT Alumni India Office Bearers" 
@@ -88,7 +75,7 @@ export default function Committee() {
           </div>
         </div>
 
-        {/* SECTION 3: SUMMIT ADVISORS */}
+        {/* SECTION 2: SUMMIT ADVISORS */}
         <div className="mb-20">
           <SectionHeading 
             title="Summit Advisors" 
@@ -96,6 +83,19 @@ export default function Committee() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 md:gap-6 justify-center max-w-4xl mx-auto">
             {ADVISORS.map((person, i) => (
+              <MemberCard key={i} person={person} />
+            ))}
+          </div>
+        </div>
+
+        {/* SECTION 3: SUMMIT ORGANISING CORE COMMITTEE */}
+        <div className="mb-20">
+          <SectionHeading 
+            title="Summit Organising Core Committee" 
+            subtitle="The leadership and core team driving the vision of PanIIT Andhra Pradesh Summit 2026."
+          />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6 justify-center">
+            {CORE_COMMITTEE.map((person, i) => (
               <MemberCard key={i} person={person} />
             ))}
           </div>
