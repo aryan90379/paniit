@@ -20,8 +20,8 @@ export default function Hero() {
   return (
     <section className="relative w-full pt-[80px] sm:pt-[90px] lg:pt-[205px] bg-white flex flex-col justify-between overflow-hidden" id="hero">
       
-      {/* FULL WIDTH BANNER CAROUSEL - Exact 16:9 ratio with WebGL Morph Slider */}
-      <div className="w-full aspect-[16/9] relative overflow-hidden bg-slate-950 shadow-md">
+      {/* FULL WIDTH BANNER CAROUSEL - WebGL Morph Slider */}
+      <div className="w-full aspect-[4/3] md:aspect-[16/9] relative overflow-hidden bg-slate-950 shadow-md">
         <MorphSlider
           items={HERO_SLIDES}
           transition="melt"
@@ -45,44 +45,51 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-        className="w-full bg-white backdrop-blur-md py-8 px-4 mt-8"
+        className="w-full bg-white py-6 md:py-8 px-4 sm:px-6 relative z-10 -mt-2 md:mt-0"
       >
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 bg-slate-50 md:bg-transparent rounded-[2rem] md:rounded-none p-6 md:p-0 border border-slate-100 md:border-none shadow-sm md:shadow-none">
           
-          <div className="flex flex-col text-center md:text-left">
-            <h3 className="font-black text-[#06206A] text-lg uppercase tracking-wide">Date & Time</h3>
-            <div className="flex items-center justify-center md:justify-start gap-2 mt-2 text-[#06206A]">
-              <Calendar size={20} className="text-[#DD1D21]" />
-              <span className="font-bold">3rd October, 2026</span>
+          <div className="flex flex-col items-center md:items-start w-full md:w-auto">
+            <h3 className="font-bold text-slate-400 text-[11px] sm:text-xs uppercase tracking-widest mb-1.5">Date & Time</h3>
+            <div className="flex items-center gap-2.5 text-[#06206A]">
+              <Calendar size={18} className="text-[#DD1D21]" />
+              <span className="font-black text-lg md:text-xl tracking-tight">3rd October, 2026</span>
             </div>
           </div>
           
-          <div className="hidden md:block w-px h-12 bg-[#06206A]/20"></div>
+          <div className="hidden md:block w-px h-12 bg-slate-200"></div>
+          {/* Mobile Divider */}
+          <div className="md:hidden w-full h-px bg-slate-200/60 my-1"></div>
 
-          <div className="flex flex-col text-center md:text-left flex-1 max-w-lg">
-            <h3 className="font-black text-[#06206A] text-lg uppercase tracking-wide">Venue</h3>
+          <div className="flex flex-col items-center md:items-start flex-1 max-w-lg w-full text-center md:text-left">
+            <h3 className="font-bold text-slate-400 text-[11px] sm:text-xs uppercase tracking-widest mb-1.5">Venue</h3>
             <a 
               href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center md:justify-start gap-2 mt-2 text-[#06206A] hover:text-[#DD1D21] transition-colors"
+              className="group flex flex-col md:flex-row items-center md:items-start gap-1.5 md:gap-2.5 text-[#06206A] hover:text-[#DD1D21] transition-colors"
             >
-              <MapPin size={20} className="text-[#DD1D21] group-hover:scale-110 transition-transform flex-shrink-0" />
-              <span className="font-bold leading-tight">
-                Dr. B. R. Ambedkar Kala Vedika, Vijayawada, AP
-                <span className="block text-xs uppercase tracking-wider text-[#DD1D21] mt-1 opacity-80 group-hover:opacity-100">Get Directions &rarr;</span>
+              <div className="flex items-center justify-center gap-2">
+                <MapPin size={18} className="text-[#DD1D21] group-hover:scale-110 transition-transform shrink-0" />
+                <span className="font-black text-lg md:text-xl leading-tight tracking-tight">
+                  Dr. B. R. Ambedkar Kala Vedika
+                </span>
+              </div>
+              <span className="text-sm font-bold text-slate-500 md:mt-0.5">
+                Vijayawada, AP
+                <span className="block md:inline-block md:ml-2 text-[11px] uppercase tracking-wider text-[#DD1D21] font-bold mt-1 md:mt-0 group-hover:underline">Get Directions &rarr;</span>
               </span>
             </a>
           </div>
 
-          <div className="hidden md:block w-px h-12 bg-[#06206A]/20"></div>
+          <div className="hidden md:block w-px h-12 bg-slate-200"></div>
 
-          <div className="w-full md:w-auto flex items-center justify-center">
+          <div className="w-full md:w-auto flex items-center justify-center mt-2 md:mt-0">
             <a
               href="https://www.paniit.org/events/21873"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-auto text-center px-8 py-3.5 bg-[#DD1D21] hover:bg-red-600 text-white font-bold text-sm md:text-base uppercase tracking-wider rounded-sm shadow-md hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+              className="w-full md:w-auto text-center px-8 py-4 bg-[#DD1D21] hover:bg-red-600 text-white font-black text-sm uppercase tracking-widest rounded-xl shadow-[0_8px_20px_-6px_rgba(221,29,33,0.4)] hover:shadow-[0_12px_25px_-6px_rgba(221,29,33,0.5)] transition-all duration-300 hover:-translate-y-1"
             >
               Register Now &rarr;
             </a>
