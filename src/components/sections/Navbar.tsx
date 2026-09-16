@@ -41,22 +41,22 @@ export default function Navbar() {
             className="flex items-center gap-3 md:gap-6 cursor-pointer hover:opacity-80 transition-opacity"
           >
             <img 
-              src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg" 
+              src="https://d3liyurciwi0wb.cloudfront.net/logo/PanIIT%20Logo%20(1)%20(1).jpeg" 
               alt="PanIIT Alumni India" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-9 sm:h-12 md:h-16' : 'h-12 sm:h-16 md:h-24'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-12 sm:h-16 md:h-20' : 'h-16 sm:h-20 md:h-32'}`}
             />
-            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-8 sm:h-10 md:h-14' : 'h-10 sm:h-14 md:h-20'}`}></div>
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-10 sm:h-14 md:h-16' : 'h-14 sm:h-16 md:h-28'}`}></div>
             <img 
-              src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
+              src="https://d3liyurciwi0wb.cloudfront.net/logo/PanIIT%20AP%20Logo%20(1)%20(1).jpeg" 
               alt="PanIIT AP Summit" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-9 sm:h-12 md:h-16' : 'h-12 sm:h-16 md:h-24'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-12 sm:h-16 md:h-20' : 'h-16 sm:h-20 md:h-32'}`}
             />
-            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-8 sm:h-10 md:h-14' : 'h-10 sm:h-14 md:h-20'}`}></div>
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-10 sm:h-14 md:h-16' : 'h-14 sm:h-16 md:h-28'}`}></div>
             <div className="flex items-center">
               <img 
-                src="https://wabflow.b-cdn.net/paniit/logos/Emblem_of_Andhra_Pradesh.png" 
+                src="https://d3liyurciwi0wb.cloudfront.net/logo/Emblem_of_Andhra_Pradesh%20(2).png" 
                 alt="Govt of Andhra Pradesh" 
-                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-9 sm:h-12 md:h-16' : 'h-12 sm:h-16 md:h-24'}`}
+                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-12 sm:h-16 md:h-20' : 'h-16 sm:h-20 md:h-32'}`}
               />
             </div>
           </a>
