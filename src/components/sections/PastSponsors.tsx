@@ -31,7 +31,7 @@ const SILVER_SPONSORS: Sponsor[] = [
   { name: 'SSG', logo: 'https://www.ssgbd.com/backend/system-images/logos/1-20260623010535-1547392810-435037727.png', scale: 1.2 },
   { name: 'Constella', logo: 'https://speedinfra.in/wp-content/uploads/2022/08/Constella_Logo-150.png', scale: 1.3 },
   { name: 'Taal', logo: 'https://media.licdn.com/dms/image/v2/D560BAQGwsKQMWKZfow/company-logo_200_200/company-logo_200_200/0/1726382060783/taalaviation_logo?e=2147483647&v=beta&t=h7YzdCo1o-566aOyPYSTUmsG3E95YaoMWec5M3VwD98', scale: 1.3 },
-  { name: 'Terrum' },
+  { name: 'Terrum', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/terrum.png', scale: 1.2 },
   { name: 'Vasavi Group', logo: 'https://play-lh.googleusercontent.com/v-dX8DbWVi5q1vYdeiC-qqyDPlen-yXnEp2tk8Uv9h-dVpcEMf2BJlRF29LvxA3Izuvi_BF_8_KKe-8Kj4YhIA=w240-h480-rw', scale: 1.2 },
   { name: 'Lexicon Infotech', logo: 'https://media.licdn.com/dms/image/v2/C510BAQFJwb3t848TQw/company-logo_200_200/company-logo_200_200/0/1631415127022/lexicon_infotech_ltd_logo?e=2147483647&v=beta&t=5pzxMglqIy671IdXHeIAqO96XoJTJHKMPx1eAsxJpZE', scale: 1.2 },
 ];
