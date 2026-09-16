@@ -127,7 +127,7 @@ function BentoCard({ item, index }: { item: Initiative; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className={`relative h-full ${item.colSpan}`}
+      className={`relative h-full shrink-0 snap-center w-[82vw] sm:w-[60vw] md:w-auto min-h-[260px] md:min-h-0 ${item.colSpan}`}
     >
       <div
         onMouseMove={handleMouseMove}
@@ -218,11 +218,16 @@ export default function AdvantageLegacy() {
           </motion.p>
         </div>
 
-        {/* 8-Card Magic Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+        {/* 8-Card Magic Bento Grid - Carousel on Mobile */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible gap-4 sm:gap-5 md:gap-6 pb-6 md:pb-0 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0">
           {INITIATIVES.map((item, index) => (
             <BentoCard key={item.id} item={item} index={index} />
           ))}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <div className="flex md:hidden items-center justify-center gap-2 mt-4 text-xs font-bold text-slate-400">
+          <span>Swipe to explore initiatives &rarr;</span>
         </div>
 
       </div>
