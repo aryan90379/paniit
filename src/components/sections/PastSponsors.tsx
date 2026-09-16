@@ -10,9 +10,9 @@ interface Sponsor {
 }
 
 const PAST_SPONSORS: Sponsor[] = [
-  { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png', scale: 1.8 },
-  { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png', scale: 1.4 },
-  { name: 'Kuku FM', logo: 'https://kukufm.com/appLogos/kuku-logo.png', scale: 0.95 },
+  { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png', scale: 1.3 },
+  { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png', scale: 1.3 },
+  { name: 'Kuku FM', logo: 'https://kukufm.com/appLogos/kuku-logo.png', scale: 1.1 },
   { name: 'SAP', logo: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1280px-SAP_2011_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail', scale: 1.3 },
   { name: 'HDFC Mutual Fund', logo: 'https://seekvectorlogo.com/wp-content/uploads/2019/02/hdfc-mutual-fund-vector-logo.png', scale: 1.4 },
   { name: 'Cashfree Payments', logo: 'https://cashfreelogo.cashfree.com/website/landings/homepage/cashfreeLogo.png', scale: 1.4 },
