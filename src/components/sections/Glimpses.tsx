@@ -37,33 +37,27 @@ export default function Glimpses() {
           <p className="mt-4 text-gray-500 max-w-2xl mx-auto">Relive the moments that shaped our journey. A visual retrospective of past PanIIT summits and milestones.</p>
         </div>
 
-        {/* Desktop Bento Grid */}
+        {/* Desktop Grid (3 above, 3 below) */}
         <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-6 px-6">
-          {GALLERY_IMAGES.map((img, i) => {
-            // Make the first image large (2 columns, 2 rows)
-            const isFeatured = i === 0;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-                transition={{ delay: i * 0.1 }}
-                className={`relative rounded-3xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 ${
-                  isFeatured ? 'col-span-2 row-span-2 min-h-[500px]' : 'col-span-1 aspect-[4/3]'
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06206A]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                <img 
-                  src={img} 
-                  alt={`PanIIT Glimpse ${i+1}`}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-              </motion.div>
-            );
-          })}
+          {GALLERY_IMAGES.map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
+              transition={{ delay: i * 0.1 }}
+              className="relative rounded-3xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 col-span-1 aspect-[4/3]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06206A]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+              <img 
+                src={img} 
+                alt={`PanIIT Glimpse ${i+1}`}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </motion.div>
+          ))}
         </div>
 
         {/* Mobile Swipe Carousel */}
