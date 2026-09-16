@@ -6,7 +6,7 @@ import { Globe } from 'lucide-react';
 const PARTNER_LOGOS = [
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.22.08%20PM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.22.45%20PM.png",
-  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.22%20PM.png",
+  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%20%203.23.22%20PM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.38%20PM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.50%20PM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.24.03%20PM.png",
