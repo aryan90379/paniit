@@ -154,10 +154,8 @@ export default function Speakers() {
             {INDUSTRY_LEADERS.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />
             ))}
-            <div className="flex flex-col justify-center items-center h-full min-h-[250px] p-4 md:p-6 rounded-3xl bg-white hover:bg-white transition-all duration-300 group cursor-pointer relative">
-               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
-                 style={{ boxShadow: '0 10px 40px -10px rgba(99, 102, 241, 0.4)' }} />
-              <div className="text-xl md:text-2xl font-bold text-gray-400 group-hover:text-indigo-600 transition-colors relative z-10">+ Many More</div>
+            <div className="flex flex-col justify-center items-center h-full min-h-[250px] p-4 md:p-6 rounded-3xl bg-white relative">
+              <div className="text-xl md:text-2xl font-bold text-[#06206A] relative z-10">+ Many More</div>
             </div>
           </div>
         </div>
