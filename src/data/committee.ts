@@ -30,7 +30,7 @@ export const OFFICE_BEARERS: CommitteeMember[] = [
     name: 'Ashish Kela', 
     role: 'Treasurer', 
     category: 'Office Bearers',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/ashish%20kela.jpeg',
   },
 ];
 
@@ -66,7 +66,7 @@ export const CORE_COMMITTEE: CommitteeMember[] = [
     name: 'Rajesh Kumar Dasari', 
     role: 'Summit Co-Chair', 
     category: 'Core Committee',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Rajesh%20Kumar%20Dasari.jpeg',
   },
   { 
     name: 'Sudhakar Gande', 
@@ -84,7 +84,7 @@ export const CORE_COMMITTEE: CommitteeMember[] = [
     name: 'Dr. Ramunaidu Randhi', 
     role: 'Core Committee', 
     category: 'Core Committee',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Dr.%20Ramunaidu%20Randhi',
   },
   { 
     name: 'Dr. Gundala Nagaraju', 
