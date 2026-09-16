@@ -239,8 +239,8 @@ export default function Highlights() {
             ))}
           </div>
 
-          {/* Mobile / tablet — simple 2-col even grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:hidden">
+          {/* Mobile / tablet — carousel */}
+          <div className="flex sm:grid sm:grid-cols-2 overflow-x-auto sm:overflow-visible gap-3 md:hidden pb-6 sm:pb-0 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
             {HIGHLIGHTS.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -250,7 +250,7 @@ export default function Highlights() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative group cursor-pointer overflow-hidden rounded-2xl bg-[#06101f] h-52"
+                  className="relative group cursor-pointer overflow-hidden rounded-2xl bg-[#06101f] h-60 sm:h-52 shrink-0 snap-center w-[85vw] sm:w-auto"
                 >
                   <img
                     src={item.image}
@@ -261,22 +261,27 @@ export default function Highlights() {
                     className="absolute inset-0 w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                  <div className="absolute top-3.5 left-3.5 z-10">
+                  <div className="absolute top-4 left-4 z-10">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-sm border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/75">
-                      <span className="w-1 h-1 rounded-full bg-[#DD1D21] shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21] shrink-0" />
                       {item.tag}
                     </span>
                   </div>
-                  <div className="absolute top-3.5 right-3.5 z-10 w-8 h-8 rounded-xl bg-white/8 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/60">
-                    <Icon size={14} strokeWidth={2} />
+                  <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-xl bg-white/8 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/60">
+                    <Icon size={16} strokeWidth={2} />
                   </div>
-                  <div className="absolute bottom-0 inset-x-0 z-10 p-4">
-                    <h3 className="text-white font-bold text-base leading-tight mb-1">{item.label}</h3>
-                    <p className="text-white/55 text-xs font-medium leading-snug">{item.desc}</p>
+                  <div className="absolute bottom-0 inset-x-0 z-10 p-5">
+                    <h3 className="text-white font-bold text-lg leading-tight mb-1.5">{item.label}</h3>
+                    <p className="text-white/55 text-sm font-medium leading-snug">{item.desc}</p>
                   </div>
                 </motion.div>
               );
             })}
+          </div>
+          
+          {/* Mobile Swipe Hint */}
+          <div className="flex sm:hidden items-center justify-center gap-2 mt-2 text-xs font-bold text-slate-400">
+            <span>Swipe to explore highlights &rarr;</span>
           </div>
         </div>
 
@@ -312,10 +317,18 @@ export default function Highlights() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {/* Session Themes Carousel */}
+          <div className="flex md:grid md:grid-cols-4 overflow-x-auto md:overflow-visible gap-3 pb-6 md:pb-0 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0">
             {THEMES.map((theme, i) => (
-              <ThemeCard key={i} theme={theme} i={i} />
+              <div key={i} className="shrink-0 snap-center w-[75vw] sm:w-[45vw] md:w-auto">
+                <ThemeCard theme={theme} i={i} />
+              </div>
             ))}
+          </div>
+
+          {/* Mobile Swipe Hint */}
+          <div className="flex md:hidden items-center justify-center gap-2 mt-2 text-xs font-bold text-slate-400">
+            <span>Swipe to explore themes &rarr;</span>
           </div>
         </div>
 
