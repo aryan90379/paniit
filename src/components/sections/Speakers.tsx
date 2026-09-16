@@ -66,10 +66,10 @@ const INDUSTRY_LEADERS = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/taslimarif%20saiyed.png', name: 'Dr. Taslimarif Saiyed, PhD', role: 'Director and CEO\nC-CAMP' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Shailesh Kumar', role: 'Head of AI\nJio' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ganesh%20ramakrishnan.png', name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director\nBharatGen' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shekar%20reddy.png', name: 'Sri Shekar Reddy', role: 'CMD\nCrux Biotech & SRI CHAKRA' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ram%20bandi.png', name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd Hyderabad' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/vidhya%20sagar.png', name: 'Dr. Vidhya Sagar', role: 'FMCD\nAvantel' }
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ganesh%20ramakrishnan.png', name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director, BharatGen' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shekar%20reddy.png', name: 'Sri G C Shekar Reddy', role: 'Director\nCompany:CRUX Bio eathnol\nIndia pvt Ltd.\nSri chakra poly plast (I) pvt Ltd' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ram%20bandi.png', name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd\nHyderabad' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/vidhya%20sagar.png', name: 'Vidya Sagar Abburi', role: 'Founder & CMD\nAvantel' }
 ];
 
 const SectionTitle = ({ title }: { title: string }) => (
