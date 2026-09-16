@@ -19,7 +19,7 @@ export default function AgendaPage() {
           
           {/* Back Button */}
           <div className="mb-6">
-            <Link 
+            <Link prefetch={false} 
               href="/#schedule" 
               className="inline-flex items-center gap-2 text-sm font-bold text-gray-600 hover:text-[#06206A] transition-colors group px-3 py-1.5 rounded-lg hover:bg-white border border-transparent hover:border-gray-200"
             >

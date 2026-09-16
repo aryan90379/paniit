@@ -42,7 +42,7 @@ export default function CommitteePage() {
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         
         <div className="mb-12">
-          <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-[#DD1D21] transition-colors font-bold text-sm uppercase tracking-wider">
+          <Link prefetch={false} href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-[#DD1D21] transition-colors font-bold text-sm uppercase tracking-wider">
             <ArrowLeft size={16} />
             Back to Home
           </Link>

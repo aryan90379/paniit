@@ -42,7 +42,7 @@ export default function Schedule() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-6 flex justify-center w-full"
           >
-            <Link 
+            <Link prefetch={false} 
               href="/agenda"
               className="group relative block w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(6,32,106,0.18)] transition-all duration-500 border border-gray-200/80 bg-white cursor-pointer"
             >
@@ -110,7 +110,7 @@ export default function Schedule() {
 
             {/* Action Buttons */}
             <div className="pt-4 flex flex-wrap justify-center lg:justify-start items-center gap-4">
-              <Link
+              <Link prefetch={false}
                 href="/agenda"
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#06206A] hover:bg-[#082a8a] text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
               >
