@@ -54,19 +54,19 @@ const INDUSTRY_LEADERS = [
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/LALIT%20AGARWAL.jpg', name: 'Sri Lalit Agarwal', role: 'Managing Director, India Region\nSchlumberger India' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Yaram%20Vijay%20%20Kumar.jpg', name: 'Sri Yaram Vijay Kumar', role: 'Country Leader - India\nHoneywell Aerospace' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Hitesh%20Garg%20(India%20MD)%20NXP_Semiconductors%20(2)%20(1).jpg', name: 'Sri Hitesh Garg', role: 'Vice President and India Country Manager\nNXP Semiconductors' },
-  { image: PLACEHOLDER, name: 'Sri Arun T. Ramchandani', role: 'Senior VP & Head\nL&T Precision Engineering & Systems' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/arum%20ramchandani.png', name: 'Sri Arun T. Ramchandani', role: 'Senior VP & Head\nL&T Precision Engineering & Systems' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Amit%20Singhee.jpg', name: 'Sri Amith Singhee', role: 'Chief Technology Officer\nIBM India and South Asia' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/C%20V%20Sridhar_%20Director%20of%20the%20Andhra%20Pradesh%20State%20Quantum%20Mission%20(APSQM).jpeg', name: 'Sri C V Sridhar', role: 'Mission Director\nAndhra Pradesh State Quantum Mission (APSQM) and the Amaravati Quantum Valley' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20Giridhar%20Parvatam.jpg', name: 'Dr. Giridhar Parvatam', role: 'Head\nCFTRI' },
-  { image: PLACEHOLDER, name: 'Dr. Jitendra Sharma', role: 'CEO\nAMTZ' },
-  { image: PLACEHOLDER, name: 'Sri Ankit Todi', role: 'Chief Sustainability Officer\nMahindra Group' },
-  { image: PLACEHOLDER, name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director\nBharatGen' },
-  { image: PLACEHOLDER, name: 'Suyash Singh', role: 'Co-founder & CEO\nGalaxEye' },
-  { image: PLACEHOLDER, name: 'Naga Bharath Daka', role: 'Co-founder & CTO\nSkyroot Aerospace' },
-  { image: PLACEHOLDER, name: 'Dr. Ramesh Hariharan', role: 'CEO & Co-Founder\nStrand Life Sciences' },
-  { image: PLACEHOLDER, name: 'Dr. Taslimarif Saiyed, PhD', role: 'Director and CEO\nC-CAMP' },
-  { image: PLACEHOLDER, name: 'Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
-  { image: PLACEHOLDER, name: 'Shailesh Kumar', role: 'Head of AI\nJio' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/jitendra%20sharma.png', name: 'Dr. Jitendra Sharma', role: 'CEO\nAMTZ' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ankit%20todi.png', name: 'Sri Ankit Todi', role: 'Chief Sustainability Officer\nMahindra Group' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ganesh%20ramakrishnan.png', name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director\nBharatGen' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/suyash%20singh.png', name: 'Suyash Singh', role: 'Co-founder & CEO\nGalaxEye' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/naga%20bharath%20daka.png', name: 'Naga Bharath Daka', role: 'Co-founder & CTO\nSkyroot Aerospace' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ramesh%20hariharan.png', name: 'Dr. Ramesh Hariharan', role: 'CEO & Co-Founder\nStrand Life Sciences' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/taslimarif%20saiyed.png', name: 'Dr. Taslimarif Saiyed, PhD', role: 'Director and CEO\nC-CAMP' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Shailesh Kumar', role: 'Head of AI\nJio' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sheshagiri%20Rao%20IIT%20M%20%2C%20CEO(%20X)%20HAL%20NASIK.jpeg', name: 'Sri BH. V. Seshagiri Rao', role: 'CEO( MC) Retd\nHAL, NASIK' },
   { image: PLACEHOLDER, name: 'Sri Shekar Reddy', role: 'CMD\nCrux Biotech & SRI CHAKRA' },
   { image: PLACEHOLDER, name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd Hyderabad' },
@@ -94,6 +94,9 @@ const SpeakerCard = ({ speaker }: { speaker: any }) => (
         alt={speaker.name} 
         loading="lazy"
         decoding="async"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
+        }}
         className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100"
       />
     </div>
