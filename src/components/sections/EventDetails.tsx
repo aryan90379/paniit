@@ -5,25 +5,31 @@ import { MapPin, Calendar, Clock, Phone, Mail, ExternalLink, Building2 } from 'l
 
 const CONTACTS = [
   {
-    name: 'Swadeep Pillarisetti',
-    role: 'Summit Chair',
-    phone: '+91 89716 97285',
-  },
-  {
-    name: 'Rajesh Kumar Dasari',
-    role: 'Summit Co-Chair',
-    phone: '+91 98450 65733',
-  },
-  {
-    name: 'Sudhakar Gande',
-    role: 'Summit Co-Chair',
-    phone: '+91 97691 80508',
-  },
-  {
     name: 'Padmini Padhy',
     role: 'PanIIT Secretariat',
     phone: '+91 97111 95445',
     email: 'secretariat@paniit.org',
+  },
+  {
+    name: 'Sanskreeti Raj',
+    role: 'PanIIT Secretariat',
+    phone: '+91 98354 19705',
+    email: 'sanskreeti.raj@paniit.org',
+  },
+  {
+    name: 'Sai Teja Duggempudi',
+    role: '',
+    phone: '+91 84189 44154',
+  },
+  {
+    name: 'Gadi Akhil Sai Ram',
+    role: '',
+    phone: '+91 94910 80512',
+  },
+  {
+    name: 'Thejaswini Kalasamudram',
+    role: '',
+    phone: '+91 78937 96502',
   },
 ];
 
@@ -126,7 +132,7 @@ export default function EventDetails() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {CONTACTS.map((item, idx) => (
               <motion.div
                 key={item.name}
