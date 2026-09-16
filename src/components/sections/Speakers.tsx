@@ -51,12 +51,12 @@ const KEY_GUESTS = [
 ];
 
 const INDUSTRY_LEADERS = [
-  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/LALIT%20AGARWAL.jpg', name: 'Sri Lalit Agarwal', role: 'Managing Director, India Region\nSchlumberger India' },
-  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Yaram%20Vijay%20%20Kumar.jpg', name: 'Sri Yaram Vijay Kumar', role: 'Country Leader - India\nHoneywell Aerospace' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/lalit%20agarwal.png', name: 'Sri Lalit Agarwal', role: 'Managing Director, India Region\nSchlumberger India' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Sri%20Yaram%20Vijay%20Kumar.png', name: 'Sri Yaram Vijay Kumar', role: 'Country Leader - India\nHoneywell Aerospace' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Hitesh%20Garg%20(India%20MD)%20NXP_Semiconductors%20(2)%20(1).jpg', name: 'Sri Hitesh Garg', role: 'Vice President and India Country Manager\nNXP Semiconductors' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/arum%20ramchandani.png', name: 'Sri Arun T. Ramchandani', role: 'Senior VP & Head\nL&T Precision Engineering & Systems' },
-  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Amit%20Singhee.jpg', name: 'Sri Amith Singhee', role: 'Chief Technology Officer\nIBM India and South Asia' },
-  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/C%20V%20Sridhar_%20Director%20of%20the%20Andhra%20Pradesh%20State%20Quantum%20Mission%20(APSQM).jpeg', name: 'Sri C V Sridhar', role: 'Mission Director\nAndhra Pradesh State Quantum Mission (APSQM) and the Amaravati Quantum Valley' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/amith%20Singhee.png', name: 'Sri Amith Singhee', role: 'Chief Technology Officer\nIBM India and South Asia' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/C%20V%20Sridhar.png', name: 'Sri C V Sridhar', role: 'Mission Director\nAndhra Pradesh State Quantum Mission (APSQM) and the Amaravati Quantum Valley' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20Giridhar%20Parvatam.jpg', name: 'Dr. Giridhar Parvatam', role: 'Head\nCFTRI' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/jitendra%20sharma.png', name: 'Dr. Jitendra Sharma', role: 'CEO\nAMTZ' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ankit%20todi.png', name: 'Sri Ankit Todi', role: 'Chief Sustainability Officer\nMahindra Group' },
