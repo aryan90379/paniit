@@ -71,10 +71,10 @@ export default function Schedule() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-6 flex flex-col justify-center space-y-6"
+            className="lg:col-span-6 flex flex-col justify-center space-y-6 text-center lg:text-left items-center lg:items-start"
           >
-            <div>
-              <div className="flex items-center gap-2 text-[#DD1D21] font-bold text-xs uppercase tracking-widest mb-2">
+            <div className="flex flex-col items-center lg:items-start">
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-[#DD1D21] font-bold text-xs uppercase tracking-widest mb-2">
                 <span className="w-2 h-2 rounded-full bg-[#DD1D21]" />
                 Official Summit Schedule
               </div>
@@ -83,7 +83,7 @@ export default function Schedule() {
               </h3>
             </div>
 
-            <div className="space-y-4 text-gray-600 text-base md:text-lg leading-relaxed">
+            <div className="space-y-4 text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl">
               <p>
                 Explore the complete summit agenda featuring keynote sessions, ministerial addresses, panel discussions, innovation showcases, networking opportunities, and cultural experiences.
               </p>
@@ -93,7 +93,7 @@ export default function Schedule() {
             </div>
 
             {/* Summit Quick Highlights Chips */}
-            <div className="pt-2 flex flex-wrap gap-2.5 text-xs font-semibold text-gray-700">
+            <div className="pt-2 flex flex-wrap justify-center lg:justify-start gap-2.5 text-xs font-semibold text-gray-700">
               <span className="px-3.5 py-1.5 bg-gray-100 rounded-full border border-gray-200">
                 Keynotes & Fireside Chats
               </span>
@@ -109,7 +109,7 @@ export default function Schedule() {
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-4 flex flex-wrap justify-center lg:justify-start items-center gap-4">
               <Link
                 href="/agenda"
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#06206A] hover:bg-[#082a8a] text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
