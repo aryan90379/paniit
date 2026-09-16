@@ -211,6 +211,12 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     category: 'Organising Committee',
     image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Vishal%20Bhandari.jpeg',
   },
+  { 
+    name: 'Devanand G', 
+    role: 'Committee Member', 
+    category: 'Organising Committee',
+    image: PLACEHOLDER,
+  },
 ];
 
 export const ALL_COMMITTEE_MEMBERS: CommitteeMember[] = [

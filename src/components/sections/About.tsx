@@ -122,7 +122,7 @@ export default function About() {
             </motion.p>
             
             {/* Stats Cards Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 md:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
               {COMBINED_STATS.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
@@ -132,7 +132,7 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                     transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                    className={`h-full ${i === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
+                    className={`h-full ${i === 4 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
                   >
                     <div className="relative h-full p-5 md:p-7 rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/[0.05] via-white/[0.02] to-transparent border border-white/[0.08] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_10px_30px_-10px_rgba(0,0,0,0.5)] backdrop-blur-md group hover:border-sky-400/40 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center justify-between text-center overflow-hidden cursor-default">
                       

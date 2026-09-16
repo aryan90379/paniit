@@ -84,12 +84,16 @@ export default function Footer() {
                       <div className="text-sm font-mono">+91 98354 19705</div>
                     </div>
                     <div>
-                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Sai Teja</div>
+                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Sai Teja Duggempudi</div>
                       <div className="text-sm font-mono">+91 84189 44154</div>
                     </div>
                     <div>
-                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Gadi Akhil</div>
+                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Gadi Akhil Sai Ram</div>
                       <div className="text-sm font-mono">+91 94910 80512</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Thejaswini Kalasamudram</div>
+                      <div className="text-sm font-mono">+91 78937 96502</div>
                     </div>
                   </div>
                 </li>

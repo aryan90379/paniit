@@ -43,20 +43,20 @@ export default function Navbar() {
             <img 
               src="https://d3liyurciwi0wb.cloudfront.net/logo/PanIIT%20Logo%20(1)%20(1).jpeg" 
               alt="PanIIT Alumni India" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-8 sm:h-12 md:h-20' : 'h-10 sm:h-16 md:h-32'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-6 sm:h-8 md:h-12 lg:h-20' : 'h-8 sm:h-10 md:h-16 lg:h-32'}`}
             />
-            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-6 sm:h-10 md:h-16' : 'h-8 sm:h-14 md:h-28'}`}></div>
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-4 sm:h-6 md:h-10 lg:h-16' : 'h-6 sm:h-8 md:h-14 lg:h-28'}`}></div>
             <img 
               src="https://d3liyurciwi0wb.cloudfront.net/logo/PanIIT%20AP%20Logo%20(1)%20(1).jpeg" 
               alt="PanIIT AP Summit" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-8 sm:h-12 md:h-20' : 'h-10 sm:h-16 md:h-32'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-6 sm:h-8 md:h-12 lg:h-20' : 'h-8 sm:h-10 md:h-16 lg:h-32'}`}
             />
-            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-6 sm:h-10 md:h-16' : 'h-8 sm:h-14 md:h-28'}`}></div>
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-4 sm:h-6 md:h-10 lg:h-16' : 'h-6 sm:h-8 md:h-14 lg:h-28'}`}></div>
             <div className="flex items-center">
               <img 
                 src="https://d3liyurciwi0wb.cloudfront.net/logo/Emblem_of_Andhra_Pradesh%20(2).png" 
                 alt="Govt of Andhra Pradesh" 
-                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-8 sm:h-12 md:h-20' : 'h-10 sm:h-16 md:h-32'}`}
+                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-6 sm:h-8 md:h-12 lg:h-20' : 'h-8 sm:h-10 md:h-16 lg:h-32'}`}
               />
             </div>
           </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
               href="https://www.paniit.org/events/21873"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center justify-center px-4 py-2 md:px-6 md:py-3 bg-[#DD1D21] text-white font-bold text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg whitespace-nowrap"
+              className="hidden lg:flex items-center justify-center px-4 py-2 md:px-6 md:py-3 bg-[#DD1D21] text-white font-bold text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg whitespace-nowrap"
             >
               Register Now
             </a>

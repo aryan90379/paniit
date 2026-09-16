@@ -18,18 +18,22 @@ const CONTACTS = [
   },
   {
     name: 'Sai Teja Duggempudi',
-    role: '',
+    role: 'Committee Member',
     phone: '+91 84189 44154',
   },
   {
     name: 'Gadi Akhil Sai Ram',
-    role: '',
+    role: 'Committee Member',
     phone: '+91 94910 80512',
   },
   {
     name: 'Thejaswini Kalasamudram',
-    role: '',
+    role: 'Committee Member',
     phone: '+91 78937 96502',
+  },
+  {
+    name: 'Kshitij Tiwari',
+    role: 'Committee Member',
   },
 ];
 
@@ -132,7 +136,7 @@ export default function EventDetails() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {CONTACTS.map((item, idx) => (
               <motion.div
                 key={item.name}
@@ -152,15 +156,17 @@ export default function EventDetails() {
                 </div>
 
                 <div className="space-y-2 pt-2">
-                  <a
-                    href={`tel:${item.phone.replace(/\s+/g, '')}`}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DD1D21] hover:bg-red-700 text-white text-xs font-bold tracking-wide transition-colors shadow-xs"
-                  >
-                    <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-                      <Phone className="w-3 h-3 fill-current" />
-                    </span>
-                    <span>{item.phone}</span>
-                  </a>
+                  {item.phone && (
+                    <a
+                      href={`tel:${item.phone.replace(/\s+/g, '')}`}
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DD1D21] hover:bg-red-700 text-white text-xs font-bold tracking-wide transition-colors shadow-xs"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                        <Phone className="w-3 h-3 fill-current" />
+                      </span>
+                      <span>{item.phone}</span>
+                    </a>
+                  )}
 
                   {item.email && (
                     <div className="pt-1">

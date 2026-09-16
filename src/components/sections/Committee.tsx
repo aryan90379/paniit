@@ -93,26 +93,13 @@ export default function Committee() {
         </div>
 
         {/* SECTION 3: SUMMIT ORGANISING CORE COMMITTEE */}
-        <div className="mb-20">
+        <div>
           <SectionHeading 
             title="Summit Organising Core Committee" 
             subtitle="The leadership and core team driving the vision of PanIIT Andhra Pradesh Summit 2026."
           />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6 justify-center">
-            {CORE_COMMITTEE.map((person, i) => (
-              <MemberCard key={i} person={person} />
-            ))}
-          </div>
-        </div>
-
-        {/* SECTION 4: ORGANISING COMMITTEE MEMBERS */}
-        <div>
-          <SectionHeading 
-            title="Organising Committee Members" 
-            subtitle="Dedicated alumni committee members executing tracks, student hackathons, showcases, and partnerships."
-          />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
-            {COMMITTEE_MEMBERS.map((person, i) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6 justify-center">
+            {[...CORE_COMMITTEE, ...COMMITTEE_MEMBERS].map((person, i) => (
               <MemberCard key={i} person={person} />
             ))}
           </div>
