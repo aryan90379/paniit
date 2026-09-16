@@ -39,8 +39,8 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 md:gap-12 lg:gap-8 mb-20">
           
           {/* Brand & Contact (Left Column) */}
-          <div className="lg:col-span-4 flex flex-col gap-12">
-            <div>
+          <div className="lg:col-span-4 flex flex-col gap-12 text-center lg:text-left items-center lg:items-start">
+            <div className="flex flex-col items-center lg:items-start">
               <div className="mb-6 inline-block bg-white p-3 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/20">
                 <div className="flex items-center gap-4">
                   <img 
@@ -61,19 +61,19 @@ export default function Footer() {
               </p>
             </div>
             
-            <div>
+            <div className="w-full flex flex-col items-center lg:items-start">
               <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm drop-shadow-lg">Contact Secretariat</h4>
-              <ul className="space-y-5">
-                <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold">
-                  <Mail size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
+              <ul className="space-y-6 lg:space-y-5 w-full flex flex-col items-center lg:items-start">
+                <li className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold text-center lg:text-left">
+                  <Mail size={20} className="text-blue-400 shrink-0 mt-0 lg:mt-0.5 drop-shadow-lg" />
                   <span>
                     <div className="font-bold text-white mb-1">PanIIT Secretariat</div>
                     <a href="mailto:secretariat@paniit.org" className="hover:text-blue-300 transition-colors block">secretariat@paniit.org</a>
                   </span>
                 </li>
 
-                <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold">
-                  <Phone size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
+                <li className="flex flex-col lg:flex-row items-center lg:items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold text-center lg:text-left">
+                  <Phone size={20} className="text-blue-400 shrink-0 mt-0 lg:mt-0.5 drop-shadow-lg" />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 w-full">
                     <div>
                       <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Padmini Padhy</div>
@@ -94,23 +94,21 @@ export default function Footer() {
                   </div>
                 </li>
 
-                <li className="flex items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold">
-                  <MapPin size={20} className="text-blue-400 shrink-0 mt-0.5 drop-shadow-lg" />
+                <li className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold text-center lg:text-left">
+                  <MapPin size={20} className="text-blue-400 shrink-0 mt-0 lg:mt-0.5 drop-shadow-lg" />
                   <span className="leading-snug">Dr. B. R. Ambedkar Kala Vedika,<br/>Buckingham Peta, Vijayawada</span>
                 </li>
               </ul>
-              
-              
             </div>
           </div>
 
           {/* Quick Links (Middle Column) */}
-          <div className="lg:col-span-3 lg:col-start-6">
+          <div className="lg:col-span-3 lg:col-start-6 flex flex-col items-center lg:items-start">
             <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm drop-shadow-lg">Navigation</h4>
             <ul className="space-y-4">
               {['About', 'Advantage', 'Speakers', 'Schedule', 'Committee'].map((link) => (
                 <li key={link}>
-                  <a href={`#${link.toLowerCase()}`} className="text-white/90 hover:text-white transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold flex items-center gap-2">
+                  <a href={`#${link.toLowerCase()}`} className="text-white/90 hover:text-white transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold flex items-center justify-center lg:justify-start gap-2">
                     <ArrowRight size={14} className="text-blue-400" />
                     {link}
                   </a>
@@ -120,13 +118,13 @@ export default function Footer() {
           </div>
 
           {/* Registration (Right Column) */}
-          <div className="lg:col-span-4 md:col-span-2">
-            <div id="register" className="p-8 md:p-10 rounded-[2rem] bg-black/60 backdrop-blur-xl border border-white/20 shadow-[0_0_50px_rgba(30,58,138,0.2)] relative overflow-hidden h-full flex flex-col">
+          <div className="lg:col-span-4 md:col-span-2 text-center lg:text-left">
+            <div id="register" className="p-8 md:p-10 rounded-[2rem] bg-black/60 backdrop-blur-xl border border-white/20 shadow-[0_0_50px_rgba(30,58,138,0.2)] relative overflow-hidden h-full flex flex-col items-center lg:items-start">
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-              <div className="relative z-10 flex-grow flex flex-col justify-center">
+              <div className="relative z-10 flex-grow flex flex-col justify-center w-full">
                 <h4 className="text-2xl font-black text-white mb-3">Register for the Summit</h4>
                 <p className="text-sm text-gray-200 mb-6 font-medium leading-relaxed">Secure your spot at Andhra's premier DeepTech event. Join industry leaders, innovators, and investors.</p>
-                <div className="mt-4">
+                <div className="mt-4 w-full">
                   <a href="https://www.paniit.org/events/21873" target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-[#DD1D21] hover:bg-red-500 text-white font-black uppercase tracking-wide flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-red-500/25">
                     Register Now <ArrowRight size={18} />
                   </a>
@@ -137,11 +135,11 @@ export default function Footer() {
           
         </div>
 
-        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white drop-shadow-lg font-semibold backdrop-blur-xl bg-black/40 py-4 px-6 rounded-2xl border border-white/10">
+        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white drop-shadow-lg font-semibold backdrop-blur-xl bg-black/40 py-4 px-6 rounded-2xl border border-white/10 text-center md:text-left">
           <div>
             &copy; {new Date().getFullYear()} PanIIT Alumni India. All rights reserved.
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-6 justify-center">
             <a href="#" className="hover:text-blue-300 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-blue-300 transition-colors">Terms of Service</a>
           </div>
