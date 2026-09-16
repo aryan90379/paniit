@@ -1,6 +1,6 @@
 'use client';
 
-import { OFFICE_BEARERS, ADVISORS, CORE_COMMITTEE, CORE_COMMITTEE_MEMBERS, COMMITTEE_MEMBERS, PLACEHOLDER } from '@/data/committee';
+import { ADVISORS, CORE_COMMITTEE, COMMITTEE_MEMBERS, PLACEHOLDER } from '@/data/committee';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -57,16 +57,6 @@ export default function CommitteePage() {
           </p>
         </div>
         
-        {/* OFFICE BEARERS */}
-        <div className="mb-24">
-          <SectionTitle title="PANIIT ALUMNI INDIA OFFICE BEARERS" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {OFFICE_BEARERS.map((person, i) => (
-              <CircularProfile key={i} person={person} />
-            ))}
-          </div>
-        </div>
-
         {/* ADVISORS */}
         <div className="mb-24">
           <SectionTitle title="SUMMIT ADVISORS" />
@@ -78,23 +68,21 @@ export default function CommitteePage() {
         </div>
 
         {/* CORE COMMITTEE */}
-        <div className="mb-24">
+        <div className="mb-16">
           <SectionTitle title="SUMMIT ORGANISING CORE COMMITTEE" />
+          {/* Chair & Co-Chair — large */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
-            {CORE_COMMITTEE.map((person, i) => (
+            {CORE_COMMITTEE.slice(0, 2).map((person, i) => (
               <CircularProfile key={i} person={person} large />
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {CORE_COMMITTEE_MEMBERS.map((person, i) => (
+          {/* Rest of core committee — regular size */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            {CORE_COMMITTEE.slice(2).map((person, i) => (
               <CircularProfile key={i} person={person} />
             ))}
           </div>
-        </div>
-
-        {/* OTHER MEMBERS */}
-        <div>
-          <SectionTitle title="ORGANISING COMMITTEE MEMBERS" />
+          {/* Organising Committee Members — same section, no extra heading */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
             {COMMITTEE_MEMBERS.map((person, i) => (
               <CircularProfile key={i} person={person} />
