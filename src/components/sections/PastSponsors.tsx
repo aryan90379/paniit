@@ -23,7 +23,7 @@ const SILVER_SPONSORS: Sponsor[] = [
   { name: 'Bharat Ke Super Founders', logo: 'https://bharatkesuperfounders.com/og-image.png', scale: 1.1 },
   { name: 'Rupeezy', logo: 'https://rupeezy.in/assets/header/rupeezy_logo.webp', scale: 1.1 },
   { name: 'Tally Solutions', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Tally_-_Logo.png', scale: 1.2 },
-  { name: 'VisionIAS' },
+  { name: 'VisionIAS', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4RvBHT9yDb2Qsm8pneDijXn51o2j9Kz-uIeSixSafXrt0rUNqDgjVQM&s=10', scale: 1.2 },
   { name: 'Astravion' },
   { name: 'BAC Infratech' },
   { name: 'Brihaspathi Technologies' },
