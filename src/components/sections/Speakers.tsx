@@ -45,8 +45,8 @@ const KEY_GUESTS = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20Shireesh%20Kedare-Picsart-AiImageEnhancer_11zon.webp', name: 'Prof. Shireesh Kedare', role: 'Director\nIIT Bombay' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Laxmidhar%20Behera.jpeg', name: 'Prof. Laxmidhar Behera', role: 'Director\nIIT Mandi' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20K,%20V,%20Krishna%20Rao-Picsart-AiImageEnhancer.jpeg', name: 'Prof. K. V. Krishna Rao', role: 'Director\nNIT Andhra Pradesh' },
-  { image: PLACEHOLDER, name: 'Prof. Shalivahan Srivastava', role: 'Director, Indian Institute of\nPetroleum & Energy, Vizag' },
-  { image: PLACEHOLDER, name: 'Prof. Balaram Ravindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shalivahan.png', name: 'Prof. Shalivahan Srivastava', role: 'Director, Indian Institute of\nPetroleum & Energy, Vizag' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/balaram%20ravindran.png', name: 'Prof. Balaram Ravindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Arun%20Tangirala.jpg', name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' }
 ];
 
