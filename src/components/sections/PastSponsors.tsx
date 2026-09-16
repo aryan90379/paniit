@@ -16,10 +16,10 @@ const GOLD_SPONSORS: Sponsor[] = [
 ];
 
 const SILVER_SPONSORS: Sponsor[] = [
-  { name: 'SAP' },
-  { name: 'HDFC Mutual Fund' },
-  { name: 'Cashfree Payments' },
-  { name: 'Harness' },
+  { name: 'SAP', logo: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1280px-SAP_2011_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail', scale: 1.2 },
+  { name: 'HDFC Mutual Fund', logo: 'https://seekvectorlogo.com/wp-content/uploads/2019/02/hdfc-mutual-fund-vector-logo.png', scale: 1.2 },
+  { name: 'Cashfree Payments', logo: 'https://cashfreelogo.cashfree.com/website/landings/homepage/cashfreeLogo.png', scale: 1.2 },
+  { name: 'Harness', logo: 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/3/harness-p6edn6642eebbkd9dajc.png/harness-tzgna80n4t7uh6lzkfrtv.png?_a=DATAiZAAZAA0', scale: 1.2 },
   { name: 'Bharat Ke Super Founders', logo: 'https://bharatkesuperfounders.com/og-image.png', scale: 1.1 },
   { name: 'Rupeezy', logo: 'https://rupeezy.in/assets/header/rupeezy_logo.webp', scale: 1.1 },
   { name: 'Tally Solutions', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Tally_-_Logo.png', scale: 1.2 },
