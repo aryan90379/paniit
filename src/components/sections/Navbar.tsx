@@ -29,7 +29,7 @@ export default function Navbar() {
       
       {/* TOP ROW - WHITE BACKGROUND WITH HUGE LOGOS */}
       <div className={`bg-white transition-all duration-300 ${isScrolled ? 'py-2 md:py-3' : 'py-3 md:py-6'}`}>
-        <div className="container mx-auto px-4 xl:px-8 flex flex-wrap items-center justify-between gap-4">
+        <div className="container mx-auto px-4 xl:px-8 flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Left Side: Large Logos */}
           <a 
@@ -38,25 +38,25 @@ export default function Navbar() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-3 md:gap-6 cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 sm:gap-4 md:gap-6 cursor-pointer hover:opacity-80 transition-opacity"
           >
             <img 
               src="https://d3liyurciwi0wb.cloudfront.net/logo/PanIIT%20Logo%20(1)%20(1).jpeg" 
               alt="PanIIT Alumni India" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-12 sm:h-16 md:h-20' : 'h-16 sm:h-20 md:h-32'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-8 sm:h-12 md:h-20' : 'h-10 sm:h-16 md:h-32'}`}
             />
-            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-10 sm:h-14 md:h-16' : 'h-14 sm:h-16 md:h-28'}`}></div>
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-6 sm:h-10 md:h-16' : 'h-8 sm:h-14 md:h-28'}`}></div>
             <img 
               src="https://d3liyurciwi0wb.cloudfront.net/logo/PanIIT%20AP%20Logo%20(1)%20(1).jpeg" 
               alt="PanIIT AP Summit" 
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-12 sm:h-16 md:h-20' : 'h-16 sm:h-20 md:h-32'}`}
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-8 sm:h-12 md:h-20' : 'h-10 sm:h-16 md:h-32'}`}
             />
-            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-10 sm:h-14 md:h-16' : 'h-14 sm:h-16 md:h-28'}`}></div>
+            <div className={`w-px bg-gray-300 transition-all duration-300 ${isScrolled ? 'h-6 sm:h-10 md:h-16' : 'h-8 sm:h-14 md:h-28'}`}></div>
             <div className="flex items-center">
               <img 
                 src="https://d3liyurciwi0wb.cloudfront.net/logo/Emblem_of_Andhra_Pradesh%20(2).png" 
                 alt="Govt of Andhra Pradesh" 
-                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-12 sm:h-16 md:h-20' : 'h-16 sm:h-20 md:h-32'}`}
+                className={`object-contain mix-blend-multiply transition-all duration-300 ${isScrolled ? 'h-8 sm:h-12 md:h-20' : 'h-10 sm:h-16 md:h-32'}`}
               />
             </div>
           </a>
@@ -67,16 +67,16 @@ export default function Navbar() {
               href="https://www.paniit.org/events/21873"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center px-3 py-1.5 sm:px-6 sm:py-2.5 md:py-3 bg-[#DD1D21] text-white font-bold text-[11px] sm:text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg whitespace-nowrap"
+              className="hidden sm:flex items-center justify-center px-4 py-2 md:px-6 md:py-3 bg-[#DD1D21] text-white font-bold text-xs md:text-sm uppercase tracking-wide rounded-sm hover:bg-red-600 transition-colors shadow-md hover:shadow-lg whitespace-nowrap"
             >
               Register Now
             </a>
             
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-[#06206A] p-1.5 sm:p-2 bg-gray-100 rounded-md"
+              className="lg:hidden text-[#06206A] p-2 bg-gray-100 rounded-md"
             >
-              {isMobileMenuOpen ? <X size={22} className="sm:w-6 sm:h-6" /> : <Menu size={22} className="sm:w-6 sm:h-6" />}
+              {isMobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
