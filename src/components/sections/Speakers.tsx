@@ -115,9 +115,9 @@ export default function Speakers() {
       <div className="py-20 border-b border-gray-100 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <SectionTitle title="Distinguished Guests" />
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
             {DISTINGUISHED_GUESTS.map((guest, i) => (
-              <div key={i} className="flex flex-col items-center text-center group p-6 md:p-8 rounded-3xl hover:bg-white transition-all duration-300 relative">
+              <div key={i} className="flex flex-col items-center text-center group p-4 md:p-6 rounded-3xl hover:bg-white transition-all duration-300 relative">
                 <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
                      style={{ boxShadow: '0 15px 50px -15px rgba(99, 102, 241, 0.4)' }} />
                      
