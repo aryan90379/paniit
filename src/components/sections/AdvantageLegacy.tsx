@@ -46,7 +46,7 @@ export default function AdvantageLegacy() {
             {LEGACY.map((item, i) => {
               const Icon = item.icon;
               return (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -58,11 +58,9 @@ export default function AdvantageLegacy() {
                     <Icon size={26} className="sm:w-8 sm:h-8" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#06206A]">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed font-medium">
-                    {item.desc}
-                  </p>
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed font-medium">{item.desc}</p>
                 </motion.div>
-              )
+              );
             })}
           </div>
         </div>
