@@ -67,18 +67,17 @@ export default function Hero() {
               href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col md:flex-row items-center md:items-start gap-1.5 md:gap-2.5 text-[#06206A] hover:text-[#DD1D21] transition-colors"
+              className="group flex flex-col items-center md:items-start text-[#06206A] hover:text-[#DD1D21] transition-colors"
             >
               <div className="flex items-center justify-center gap-2">
-                <MapPin size={18} className="text-[#DD1D21] group-hover:scale-110 transition-transform shrink-0 mt-1 self-start" />
-                <span className="font-black text-lg md:text-xl leading-tight tracking-tight max-w-[200px]">
+                <MapPin size={18} className="text-[#DD1D21] group-hover:scale-110 transition-transform shrink-0" />
+                <span className="font-black text-lg md:text-xl leading-tight tracking-tight">
                   Dr. B. R. Ambedkar Kala Vedika
                 </span>
               </div>
-              <div className="flex flex-col ml-0 md:ml-4 text-sm font-bold text-slate-500 md:mt-1">
-                <span>Vijayawada, AP</span>
-                <span className="text-[11px] uppercase tracking-wider text-[#DD1D21] font-bold mt-1 group-hover:underline">GET DIRECTIONS &rarr;</span>
-              </div>
+              <span className="text-[11px] uppercase tracking-wider text-[#DD1D21] font-bold mt-1.5 md:ml-6 group-hover:underline">
+                GET DIRECTIONS &rarr;
+              </span>
             </a>
           </div>
 
