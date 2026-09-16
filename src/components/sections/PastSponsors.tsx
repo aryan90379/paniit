@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Medal } from 'lucide-react';
+
 
 interface Sponsor {
   name: string;
@@ -9,13 +9,10 @@ interface Sponsor {
   scale?: number;
 }
 
-const GOLD_SPONSORS: Sponsor[] = [
+const PAST_SPONSORS: Sponsor[] = [
   { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png', scale: 1.8 },
   { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png', scale: 1.4 },
   { name: 'Kuku FM', logo: 'https://kukufm.com/appLogos/kuku-logo.png', scale: 0.95 },
-];
-
-const SILVER_SPONSORS: Sponsor[] = [
   { name: 'SAP', logo: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1280px-SAP_2011_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail', scale: 1.3 },
   { name: 'HDFC Mutual Fund', logo: 'https://seekvectorlogo.com/wp-content/uploads/2019/02/hdfc-mutual-fund-vector-logo.png', scale: 1.4 },
   { name: 'Cashfree Payments', logo: 'https://cashfreelogo.cashfree.com/website/landings/homepage/cashfreeLogo.png', scale: 1.4 },
@@ -65,64 +62,22 @@ export default function PastSponsors() {
           </p>
         </div>
 
-        {/* 1. GOLD SPONSORS */}
-        <div className="mb-20">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-full bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-600 shadow-sm">
-              <Award size={22} />
-            </div>
-            <h3 className="text-xl md:text-2xl font-black uppercase tracking-wider text-amber-700">
-              Gold Sponsors
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {GOLD_SPONSORS.map((sponsor, i) => (
+        {/* SPONSORS GRID */}
+        <div className="mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+            {PAST_SPONSORS.map((sponsor, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: (i % 5) * 0.04 }}
                 className="flex items-center justify-center text-center group min-h-[100px] hover:-translate-y-2 transition-transform duration-300"
               >
                 {sponsor.logo ? (
-                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[90px] object-contain mix-blend-multiply transition-transform duration-300" />
+                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[80px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
                 ) : (
-                  <span className="font-extrabold text-xl md:text-2xl text-gray-800 tracking-tight group-hover:text-amber-700 transition-colors">
-                    {sponsor.name}
-                  </span>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* 2. SILVER SPONSORS */}
-        <div className="mb-10">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-600 shadow-sm">
-              <Medal size={22} />
-            </div>
-            <h3 className="text-xl md:text-2xl font-black uppercase tracking-wider text-slate-700">
-              Silver Sponsors
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-            {SILVER_SPONSORS.map((sponsor, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-                transition={{ delay: (i % 6) * 0.04 }}
-                className="flex items-center justify-center text-center group min-h-[80px] hover:-translate-y-1 transition-transform duration-300"
-              >
-                {sponsor.logo ? (
-                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[65px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
-                ) : (
-                  <span className="font-bold text-sm text-gray-700 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
+                  <span className="font-extrabold text-lg md:text-xl text-gray-800 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
                     {sponsor.name}
                   </span>
                 )}
