@@ -68,9 +68,9 @@ const INDUSTRY_LEADERS = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Shailesh Kumar', role: 'Head of AI\nJio' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sheshagiri%20Rao%20IIT%20M%20%2C%20CEO(%20X)%20HAL%20NASIK.jpeg', name: 'Sri BH. V. Seshagiri Rao', role: 'CEO( MC) Retd\nHAL, NASIK' },
-  { image: PLACEHOLDER, name: 'Sri Shekar Reddy', role: 'CMD\nCrux Biotech & SRI CHAKRA' },
-  { image: PLACEHOLDER, name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd Hyderabad' },
-  { image: PLACEHOLDER, name: 'Dr. Vidhya Sagar', role: 'FMCD\nAvantel' }
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shekar%20reddy.png', name: 'Sri Shekar Reddy', role: 'CMD\nCrux Biotech & SRI CHAKRA' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ram%20bandi.png', name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd Hyderabad' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/vidhya%20sagar.png', name: 'Dr. Vidhya Sagar', role: 'FMCD\nAvantel' }
 ];
 
 const SectionTitle = ({ title }: { title: string }) => (
