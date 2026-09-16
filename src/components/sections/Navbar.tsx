@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -15,17 +15,45 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Dynamic height calculation
+    const updateNavbarHeight = () => {
+      if (headerRef.current) {
+        const height = headerRef.current.offsetHeight;
+        if (height > 0) {
+          // If at or near top of the page, record this as the unscrolled navbar height
+          if (window.scrollY < 20) {
+            document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+          }
+        }
+      }
+    };
+
+    updateNavbarHeight();
+
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(updateNavbarHeight) : null;
+    if (headerRef.current && ro) {
+      ro.observe(headerRef.current);
+    }
+
+    window.addEventListener('resize', updateNavbarHeight, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateNavbarHeight);
+      if (ro) ro.disconnect();
+    };
   }, []);
 
   return (
-    <header className="fixed top-0 w-full z-50 transition-all duration-300 shadow-lg">
+    <header id="main-navbar" ref={headerRef} className="fixed top-0 w-full z-50 transition-all duration-300 shadow-lg">
       
       {/* TOP ROW - WHITE BACKGROUND WITH HUGE LOGOS */}
       <div className={`bg-white transition-all duration-300 ${isScrolled ? 'py-2 md:py-3' : 'py-3 md:py-6'}`}>

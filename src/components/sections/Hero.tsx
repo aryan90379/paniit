@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
 import MorphSlider from '@/components/MorphSlider';
@@ -17,11 +18,61 @@ const HERO_SLIDES = [
 ];
 
 export default function Hero() {
-  return (
-    <section className="relative w-full pt-[80px] sm:pt-[90px] lg:pt-[205px] bg-white flex flex-col justify-between overflow-hidden" id="hero">
+  const [navHeight, setNavHeight] = useState<number>(0);
+
+  useEffect(() => {
+    const measureNavbar = () => {
+      const navbar = document.getElementById('main-navbar') || document.querySelector('header');
+      if (!navbar) return;
       
-      {/* FULL WIDTH BANNER CAROUSEL - WebGL Morph Slider */}
-      <div className="w-full aspect-[4/3] md:aspect-[16/9] relative overflow-hidden bg-slate-950 shadow-md">
+      const rect = navbar.getBoundingClientRect();
+      const h = Math.round(rect.height);
+      if (h > 0) {
+        // Capture unscrolled navbar height or initial height
+        if (window.scrollY < 20 || navHeight === 0) {
+          setNavHeight(h);
+        }
+      }
+    };
+
+    measureNavbar();
+
+    window.addEventListener('resize', measureNavbar, { passive: true });
+
+    const navbar = document.getElementById('main-navbar') || document.querySelector('header');
+    let ro: ResizeObserver | null = null;
+    if (navbar && typeof ResizeObserver !== 'undefined') {
+      ro = new ResizeObserver(() => {
+        measureNavbar();
+      });
+      ro.observe(navbar);
+    }
+
+    // Measure when header images finish loading
+    const imgs = navbar?.querySelectorAll('img') || [];
+    imgs.forEach((img) => {
+      if (!img.complete) {
+        img.addEventListener('load', measureNavbar, { once: true });
+      }
+    });
+
+    return () => {
+      window.removeEventListener('resize', measureNavbar);
+      if (ro) ro.disconnect();
+    };
+  }, [navHeight]);
+
+  return (
+    <section 
+      className="relative w-full bg-white flex flex-col justify-between overflow-hidden" 
+      id="hero"
+      style={{
+        paddingTop: navHeight ? `${navHeight}px` : 'var(--navbar-height, 70px)'
+      }}
+    >
+      
+      {/* FULL WIDTH BANNER CAROUSEL - WebGL Morph Slider (True 16:9 banner) */}
+      <div className="w-full aspect-[16/9] relative overflow-hidden bg-slate-950 shadow-md">
         <MorphSlider
           items={HERO_SLIDES}
           transition="melt"
@@ -45,7 +96,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-        className="w-full bg-white py-6 md:py-8 px-4 sm:px-6 relative z-10 -mt-2 md:mt-0"
+        className="w-full bg-white py-6 md:py-8 px-4 sm:px-6 relative z-10 mt-0"
       >
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 bg-slate-50 md:bg-transparent rounded-[2rem] md:rounded-none p-6 md:p-0 border border-slate-100 md:border-none shadow-sm md:shadow-none">
           
