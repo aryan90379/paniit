@@ -12,7 +12,7 @@ export const OFFICE_BEARERS: CommitteeMember[] = [
     name: 'Prabhat Kumar, IRS', 
     role: 'Chairman', 
     category: 'Office Bearers',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/prabhat%20kumar%20.jpg',
   },
   { 
     name: 'Dr. Amitabh Ranjan', 
@@ -51,7 +51,7 @@ export const ADVISORS: CommitteeMember[] = [
     name: 'Prof. Mahesh Panchagnula', 
     role: 'Ex Dean, IIT Madras', 
     category: 'Advisors',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/mahesh%20panchagnula.jpeg',
   },
 ];
 

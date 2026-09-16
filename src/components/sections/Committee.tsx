@@ -6,7 +6,8 @@ import {
   OFFICE_BEARERS, 
   ADVISORS, 
   COMMITTEE_MEMBERS, 
-  CommitteeMember 
+  CommitteeMember,
+  PLACEHOLDER
 } from '@/data/committee';
 
 const SectionHeading = ({ title, subtitle }: { title: string; subtitle?: string }) => (
@@ -37,10 +38,13 @@ const MemberCard = ({ person }: { person: CommitteeMember }) => (
     {/* Profile Image */}
     <div className="relative w-20 h-20 md:w-24 md:h-24 mb-4 shrink-0">
       <img 
-        src={person.image} 
+        src={person.image || PLACEHOLDER} 
         alt={person.name} 
         loading="lazy" 
         decoding="async" 
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
+        }}
         className="w-full h-full object-cover rounded-full bg-slate-100 border-2 border-white shadow-xs ring-1 ring-gray-100 group-hover:scale-105 transition-transform duration-300" 
       />
     </div>
