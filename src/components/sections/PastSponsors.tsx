@@ -6,12 +6,13 @@ import { Award, Medal } from 'lucide-react';
 interface Sponsor {
   name: string;
   logo?: string;
+  scale?: number;
 }
 
 const GOLD_SPONSORS: Sponsor[] = [
-  { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png' },
-  { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png' },
-  { name: 'Kuku FM', logo: 'https://kukufm.com/blog/wp-content/uploads/sites/4/2020/07/logo-1-scaled.jpg' },
+  { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png', scale: 1.8 },
+  { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png', scale: 1.4 },
+  { name: 'Kuku FM', logo: 'https://kukufm.com/blog/wp-content/uploads/sites/4/2020/07/logo-1-scaled.jpg', scale: 0.95 },
 ];
 
 const SILVER_SPONSORS: Sponsor[] = [
@@ -86,7 +87,7 @@ export default function PastSponsors() {
                 className="flex items-center justify-center text-center group min-h-[100px] hover:-translate-y-2 transition-transform duration-300"
               >
                 {sponsor.logo ? (
-                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" className="max-w-[90%] max-h-[90px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
+                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[90px] object-contain mix-blend-multiply transition-transform duration-300" />
                 ) : (
                   <span className="font-extrabold text-xl md:text-2xl text-gray-800 tracking-tight group-hover:text-amber-700 transition-colors">
                     {sponsor.name}
