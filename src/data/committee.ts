@@ -58,37 +58,37 @@ export const ADVISORS: CommitteeMember[] = [
 export const CORE_COMMITTEE: CommitteeMember[] = [
   { 
     name: 'Swadeep Pillarisetti', 
-    role: 'Summit Chair', 
+    role: 'Chair', 
     category: 'Core Committee',
     image: 'https://afilemanager.s3.dualstack.ap-southeast-1.amazonaws.com/prod/cid_0/pan_team_6.png',
   },
   { 
     name: 'Rajesh Kumar Dasari', 
-    role: 'Summit Co-Chair', 
+    role: 'Co-Chair', 
     category: 'Core Committee',
     image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Rajesh%20Kumar%20Dasari.jpeg',
   },
   { 
     name: 'Sudhakar Gande', 
-    role: 'Summit Co-Chair', 
+    role: '', 
     category: 'Core Committee',
     image: 'https://afilemanager.s3.dualstack.ap-southeast-1.amazonaws.com/prod/cid_0/pan_image_team_16.jpg',
   },
   { 
     name: 'M S Reddy', 
-    role: 'Core Committee', 
+    role: '', 
     category: 'Core Committee',
     image: 'https://afilemanager.s3.dualstack.ap-southeast-1.amazonaws.com/prod/cid_0/pan_image_team_15.png',
   },
   { 
     name: 'Dr. Ramunaidu Randhi', 
-    role: 'Core Committee', 
+    role: '', 
     category: 'Core Committee',
     image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Dr.%20Ramunaidu%20Randhi',
   },
   { 
     name: 'Dr. Gundala Nagaraju', 
-    role: 'Core Committee', 
+    role: '', 
     category: 'Core Committee',
     image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Dr.%20Gundala%20Nagaraju%20(right).jpg',
   },
