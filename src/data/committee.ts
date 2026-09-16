@@ -182,7 +182,7 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Thejaswini%20Kalasamudram.jpeg',
   },
   { 
-    name: 'Gadi Akhil Sai Ram', 
+    name: 'Akhil Sai Ram Gadi', 
     role: 'Committee Member', 
     category: 'Organising Committee',
     image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Gadi%20Akhil%20Sai%20Ram.jpg',

@@ -3,20 +3,20 @@
 import { motion } from 'framer-motion';
 
 const GALLERY_IMAGES = [
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2000&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2000&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=2000&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2000&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1475721028070-2051d528b49e?q=80&w=2000&auto=format&fit=crop',
+  'https://d3liyurciwi0wb.cloudfront.net/glimpses/01.png',
+  'https://d3liyurciwi0wb.cloudfront.net/glimpses/02.png',
+  'https://d3liyurciwi0wb.cloudfront.net/glimpses/03.png',
+  'https://d3liyurciwi0wb.cloudfront.net/glimpses/003.png',
+  'https://d3liyurciwi0wb.cloudfront.net/glimpses/04.png',
+  'https://d3liyurciwi0wb.cloudfront.net/glimpses/05.png',
 ];
 
 export default function Glimpses() {
   return (
-    <section className="py-24 bg-white text-gray-900 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+    <section className="py-24 bg-slate-50 text-gray-900 relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,8 +37,37 @@ export default function Glimpses() {
           <p className="mt-4 text-gray-500 max-w-2xl mx-auto">Relive the moments that shaped our journey. A visual retrospective of past PanIIT summits and milestones.</p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 overflow-x-auto sm:overflow-visible gap-4 md:gap-6 pb-6 sm:pb-0 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
+        {/* Desktop Bento Grid */}
+        <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-6 px-6">
+          {GALLERY_IMAGES.map((img, i) => {
+            // Make the first image large (2 columns, 2 rows)
+            const isFeatured = i === 0;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative rounded-3xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 ${
+                  isFeatured ? 'col-span-2 row-span-2 min-h-[500px]' : 'col-span-1 aspect-[4/3]'
+                }`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06206A]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                <img 
+                  src={img} 
+                  alt={`PanIIT Glimpse ${i+1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Mobile Swipe Carousel */}
+        <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 px-[10vw] gap-4">
           {GALLERY_IMAGES.map((img, i) => (
             <motion.div
               key={i}
@@ -46,22 +75,21 @@ export default function Glimpses() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 shrink-0 snap-center w-[85vw] sm:w-auto"
+              className="w-[80vw] shrink-0 snap-center relative aspect-[4/5] rounded-3xl overflow-hidden shadow-md"
             >
-              <div className="absolute inset-0 bg-[#06206A]/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
               <img 
                 src={img} 
                 alt={`PanIIT Glimpse ${i+1}`}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                className="w-full h-full object-cover"
               />
             </motion.div>
           ))}
         </div>
 
         {/* Mobile Swipe Hint */}
-        <div className="flex sm:hidden items-center justify-center gap-2 mt-2 text-xs font-bold text-slate-400">
+        <div className="flex md:hidden items-center justify-center gap-2 mt-2 text-xs font-bold text-slate-400">
           <span>Swipe to explore glimpses &rarr;</span>
         </div>
 
