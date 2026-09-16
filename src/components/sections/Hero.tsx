@@ -70,15 +70,15 @@ export default function Hero() {
               className="group flex flex-col md:flex-row items-center md:items-start gap-1.5 md:gap-2.5 text-[#06206A] hover:text-[#DD1D21] transition-colors"
             >
               <div className="flex items-center justify-center gap-2">
-                <MapPin size={18} className="text-[#DD1D21] group-hover:scale-110 transition-transform shrink-0" />
-                <span className="font-black text-lg md:text-xl leading-tight tracking-tight">
+                <MapPin size={18} className="text-[#DD1D21] group-hover:scale-110 transition-transform shrink-0 mt-1 self-start" />
+                <span className="font-black text-lg md:text-xl leading-tight tracking-tight max-w-[200px]">
                   Dr. B. R. Ambedkar Kala Vedika
                 </span>
               </div>
-              <span className="text-sm font-bold text-slate-500 md:mt-0.5">
-                Vijayawada, AP
-                <span className="block md:inline-block md:ml-2 text-[11px] uppercase tracking-wider text-[#DD1D21] font-bold mt-1 md:mt-0 group-hover:underline">Get Directions &rarr;</span>
-              </span>
+              <div className="flex flex-col ml-0 md:ml-4 text-sm font-bold text-slate-500 md:mt-1">
+                <span>Vijayawada, AP</span>
+                <span className="text-[11px] uppercase tracking-wider text-[#DD1D21] font-bold mt-1 group-hover:underline">GET DIRECTIONS &rarr;</span>
+              </div>
             </a>
           </div>
 
