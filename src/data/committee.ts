@@ -161,7 +161,7 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     name: 'Tejavath Jagadeesh', 
     role: 'Committee Member', 
     category: 'Organising Committee',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Tejavath%20Jagadeesh.jpeg',
   },
   { 
     name: 'Dr. Anjanna Matta', 
@@ -203,13 +203,13 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     name: 'Vishakh Agarwal', 
     role: 'Committee Member', 
     category: 'Organising Committee',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Vishakh%20Agarwal.jpeg',
   },
   { 
     name: 'Vishal Bhandari', 
     role: 'Committee Member', 
     category: 'Organising Committee',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Vishal%20Bhandari.jpeg',
   },
 ];
 
