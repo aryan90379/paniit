@@ -77,7 +77,10 @@ export default function PastSponsors() {
                 {sponsor.logo ? (
                   <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[80px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
                 ) : (
-                  <span className="font-extrabold text-lg md:text-xl text-gray-800 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
+                  <span 
+                    style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }}
+                    className="font-extrabold text-2xl md:text-3xl text-gray-800 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug inline-block"
+                  >
                     {sponsor.name}
                   </span>
                 )}
