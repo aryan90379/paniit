@@ -20,8 +20,8 @@ const SILVER_SPONSORS: Sponsor[] = [
   { name: 'HDFC Mutual Fund' },
   { name: 'Cashfree Payments' },
   { name: 'Harness' },
-  { name: 'Bharat Ke Super Founders' },
-  { name: 'Rupeezy' },
+  { name: 'Bharat Ke Super Founders', logo: 'https://bharatkesuperfounders.com/og-image.png', scale: 1.1 },
+  { name: 'Rupeezy', logo: 'https://rupeezy.in/assets/header/rupeezy_logo.webp', scale: 1.1 },
   { name: 'Tally Solutions' },
   { name: 'VisionIAS' },
   { name: 'Astravion' },
@@ -119,9 +119,13 @@ export default function PastSponsors() {
                 transition={{ delay: (i % 6) * 0.04 }}
                 className="p-4 rounded-xl bg-slate-50/60 border border-slate-200 hover:border-slate-400 hover:bg-white shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center text-center group min-h-[90px]"
               >
-                <span className="font-bold text-sm text-gray-700 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
-                  {sponsor.name}
-                </span>
+                {sponsor.logo ? (
+                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[50px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
+                ) : (
+                  <span className="font-bold text-sm text-gray-700 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
+                    {sponsor.name}
+                  </span>
+                )}
               </motion.div>
             ))}
           </div>
