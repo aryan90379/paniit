@@ -30,7 +30,7 @@ const SILVER_SPONSORS: Sponsor[] = [
   { name: 'Renova Hospitals', logo: 'https://renovahospitals.com/build/assets/logo-DwB5j4pz.jpg', scale: 1.2 },
   { name: 'SSG', logo: 'https://www.ssgbd.com/backend/system-images/logos/1-20260623010535-1547392810-435037727.png', scale: 1.2 },
   { name: 'Constella', logo: 'https://speedinfra.in/wp-content/uploads/2022/08/Constella_Logo-150.png', scale: 1.2 },
-  { name: 'Taal' },
+  { name: 'Taal', logo: 'https://media.licdn.com/dms/image/v2/D560BAQGwsKQMWKZfow/company-logo_200_200/company-logo_200_200/0/1726382060783/taalaviation_logo?e=2147483647&v=beta&t=h7YzdCo1o-566aOyPYSTUmsG3E95YaoMWec5M3VwD98', scale: 1.2 },
   { name: 'Terrum' },
   { name: 'Vasavi Group' },
   { name: 'Lexicon Infotech' },
