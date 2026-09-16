@@ -29,7 +29,7 @@ const SILVER_SPONSORS: Sponsor[] = [
   { name: 'Brihaspathi Technologies', logo: 'https://brihaspathi.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhighbtlogo-tm-1.bba8b8c1.png&w=640&q=75', scale: 1.2 },
   { name: 'Renova Hospitals', logo: 'https://renovahospitals.com/build/assets/logo-DwB5j4pz.jpg', scale: 1.2 },
   { name: 'SSG', logo: 'https://www.ssgbd.com/backend/system-images/logos/1-20260623010535-1547392810-435037727.png', scale: 1.2 },
-  { name: 'Constella' },
+  { name: 'Constella', logo: 'https://speedinfra.in/wp-content/uploads/2022/08/Constella_Logo-150.png', scale: 1.2 },
   { name: 'Taal' },
   { name: 'Terrum' },
   { name: 'Vasavi Group' },
