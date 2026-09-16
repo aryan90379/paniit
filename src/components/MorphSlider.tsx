@@ -354,7 +354,15 @@ class MorphEngine {
     this.loadTextures();
 
     this.boundLoop = this.loop.bind(this);
-    this.raf = requestAnimationFrame(this.boundLoop);
+    
+    this.io = new IntersectionObserver(([entry]) => {
+      this.isVisible = entry.isIntersecting;
+      this.isVisible ? this.tryStart() : this.tryStop();
+    }, { rootMargin: '100px 0px', threshold: 0 });
+    this.io.observe(this.container);
+
+    document.addEventListener('visibilitychange', this.onVisibilityChange);
+    this.tryStart();
   }
 
   private loadTextures(): void {
@@ -383,6 +391,28 @@ class MorphEngine {
     this.renderer.setSize(w, h);
     this.program.uniforms.uResolution.value = [this.gl.canvas.width, this.gl.canvas.height];
   }
+
+  private isVisible = true;
+  private isPageVisible = true;
+  private io: IntersectionObserver | null = null;
+
+  private tryStart(): void {
+    if (this.isVisible && this.isPageVisible && this.raf === 0) {
+      this.raf = requestAnimationFrame(this.boundLoop);
+    }
+  }
+
+  private tryStop(): void {
+    if (this.raf !== 0) {
+      cancelAnimationFrame(this.raf);
+      this.raf = 0;
+    }
+  }
+
+  private onVisibilityChange = () => {
+    this.isPageVisible = !document.hidden;
+    this.isPageVisible ? this.tryStart() : this.tryStop();
+  };
 
   private syncOptions(): void {
     const opts = this.getOptions();
@@ -532,9 +562,11 @@ class MorphEngine {
   }
 
   destroy(): void {
-    cancelAnimationFrame(this.raf);
+    this.tryStop();
     if (this.tween) this.tween.kill();
     this.resizeObserver.disconnect();
+    if (this.io) this.io.disconnect();
+    document.removeEventListener('visibilitychange', this.onVisibilityChange);
     this.canvas.removeEventListener('webglcontextlost', this.boundContextLost);
     this.textures.forEach(tex => {
       if (tex && tex.texture) this.gl.deleteTexture(tex.texture);
