@@ -12,7 +12,7 @@ interface Sponsor {
 const GOLD_SPONSORS: Sponsor[] = [
   { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png', scale: 1.8 },
   { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png', scale: 1.4 },
-  { name: 'Kuku FM', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/Screenshot%202026-09-16%20at%209.49.15%20PM.png', scale: 0.95 },
+  { name: 'Kuku FM', logo: 'https://kukufm.com/appLogos/kuku-logo.png', scale: 0.95 },
 ];
 
 const SILVER_SPONSORS: Sponsor[] = [
