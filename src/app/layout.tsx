@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PAN IIT Andhra Pradesh Summit 2026 | India's Flagship AI Summit",
+  title: "Andhra's Resilient DeepTech Decade: Anchored by PanIIT",
   description:
-    "The PanIIT Andhra Pradesh Summit in collaboration with the Government of Andhra Pradesh is a premier gathering of the global IIT ecosystem — 500,000+ alumni across 23 IITs shaping technology, business, and policy worldwide.",
+    "Andhra's DeepTech Decade. Join us in shaping the future of innovation, investment, and talent.",
   openGraph: {
-    title: "PAN IIT Andhra Pradesh Summit 2026 | India's Flagship AI Summit",
+    title: "Andhra's Resilient DeepTech Decade: Anchored by PanIIT",
     description:
-      "The PanIIT Andhra Pradesh Summit in collaboration with the Government of Andhra Pradesh is a premier gathering of the global IIT ecosystem.",
+      "Andhra's DeepTech Decade. Join us in shaping the future of innovation, investment, and talent.",
     type: "website",
   },
 };
