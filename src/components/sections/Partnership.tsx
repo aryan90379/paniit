@@ -57,7 +57,7 @@ export default function Partnership() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               className="inline-block px-6 py-2 rounded-full bg-[#C6E1F8] text-blue-800 font-bold uppercase tracking-widest mb-6 border border-blue-200"
             >
               Exclusive Partnership
@@ -65,7 +65,7 @@ export default function Partnership() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-[#06206A] mb-6 tracking-tight"
             >
               WHY PARTNER WITH US?
@@ -73,7 +73,7 @@ export default function Partnership() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               className="text-gray-500 font-medium text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
             >
               Join an elite ecosystem of global leaders and secure your brand's position at the forefront of India's deep-tech and industrial revolution.
@@ -86,7 +86,7 @@ export default function Partnership() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 md:col-span-2 row-span-1 bg-[#06206A] rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#06206A] via-[#092b87] to-[#041444]" />
@@ -109,7 +109,7 @@ export default function Partnership() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: 0.1 }}
               className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 row-span-1 bg-gradient-to-br from-[#DD1D21] to-red-700 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
@@ -130,7 +130,7 @@ export default function Partnership() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: 0.2 }}
               className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 row-span-1 bg-white border border-gray-200 rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-center shadow-md group"
             >
@@ -151,7 +151,7 @@ export default function Partnership() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: 0.3 }}
               className="min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 col-span-1 md:col-span-2 row-span-1 bg-gray-900 rounded-[2rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-center shadow-xl group"
             >
@@ -180,7 +180,7 @@ export default function Partnership() {
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                   transition={{ delay: i * 0.1 }}
                   className="bg-white border border-gray-200 px-6 py-3 rounded-full flex items-center gap-3 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer"
                 >
@@ -200,7 +200,7 @@ export default function Partnership() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               className="text-3xl md:text-5xl font-bold text-[#06206A] mb-4 tracking-wide uppercase"
             >
               Past Sponsors & Partners
@@ -243,7 +243,7 @@ export default function Partnership() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             className="text-3xl md:text-5xl font-bold text-[#06206A] mb-6 tracking-tight uppercase"
           >
             Partnership Tiers At A Glance
@@ -256,7 +256,7 @@ export default function Partnership() {
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: i * 0.1 }}
               className={`p-8 rounded-[2rem] flex flex-col min-w-[75vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0 ${
                 tier.popular 

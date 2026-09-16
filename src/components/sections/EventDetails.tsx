@@ -47,7 +47,7 @@ export default function EventDetails() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               className="bg-[#F8FAFC] rounded-2xl p-6 border border-gray-200/80 shadow-xs flex items-start gap-4 hover:border-gray-300 transition-colors"
             >
               <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center shrink-0 text-[#DD1D21]">
@@ -70,7 +70,7 @@ export default function EventDetails() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: 0.1 }}
               className="bg-[#F8FAFC] rounded-2xl p-6 border border-gray-200/80 shadow-xs flex items-start gap-4 hover:border-gray-300 transition-colors"
             >
@@ -94,7 +94,7 @@ export default function EventDetails() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: 0.2 }}
               className="bg-[#F8FAFC] rounded-2xl p-6 border border-gray-200/80 shadow-xs flex items-start gap-4 hover:border-gray-300 transition-colors"
             >
@@ -132,7 +132,7 @@ export default function EventDetails() {
                 key={item.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                 transition={{ delay: idx * 0.08 }}
                 className="bg-[#F8FAFC] rounded-2xl p-6 border border-gray-200/80 shadow-xs hover:shadow-md hover:border-gray-300 transition-all duration-200 flex flex-col justify-between"
               >

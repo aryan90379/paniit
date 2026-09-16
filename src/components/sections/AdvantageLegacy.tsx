@@ -125,7 +125,7 @@ function BentoCard({ item, index }: { item: Initiative; index: number }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
       className={`relative h-full shrink-0 snap-center w-[82vw] sm:w-[60vw] md:w-auto min-h-[260px] md:min-h-0 ${item.colSpan}`}
     >
@@ -201,7 +201,7 @@ export default function AdvantageLegacy() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#06206A] uppercase tracking-tight"
           >
             Beyond The Summit
@@ -210,7 +210,7 @@ export default function AdvantageLegacy() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ delay: 0.08 }}
             className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#DD1D21] mt-2 tracking-tight"
           >

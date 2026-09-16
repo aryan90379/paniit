@@ -14,7 +14,7 @@ export default function Schedule() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             className="text-3xl md:text-5xl font-black text-[#06206A] mb-4 tracking-tight uppercase"
           >
             Summit Agenda
@@ -22,7 +22,7 @@ export default function Schedule() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ delay: 0.1 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E3F0FA] border border-[#C6E1F8] text-[#06206A] text-xs md:text-sm font-bold uppercase tracking-wider shadow-xs"
           >
@@ -38,7 +38,7 @@ export default function Schedule() {
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ duration: 0.5 }}
             className="lg:col-span-6 flex justify-center w-full"
           >
@@ -69,7 +69,7 @@ export default function Schedule() {
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-6 flex flex-col justify-center space-y-6 text-center lg:text-left items-center lg:items-start"
           >

@@ -84,7 +84,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md mb-6 hover:bg-white/[0.08] transition-all shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
             >
@@ -101,7 +101,7 @@ export default function About() {
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight uppercase"
             >
@@ -114,7 +114,7 @@ export default function About() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ duration: 0.6, delay: 0.15 }}
               className="text-slate-400 max-w-2xl mx-auto mb-12 md:mb-16 text-sm md:text-base font-normal leading-relaxed tracking-wide"
             >
@@ -130,7 +130,7 @@ export default function About() {
                     key={i}
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                     transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
                     className={`h-full ${i === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
                   >

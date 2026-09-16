@@ -44,7 +44,7 @@ export default function OurPartners() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             className="text-3xl md:text-5xl lg:text-6xl font-black text-[#06206A] tracking-tight uppercase"
           >
             Our Partners
@@ -58,7 +58,7 @@ export default function OurPartners() {
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: i * 0.05 }}
               className="aspect-square relative bg-white flex items-center justify-center rounded-2xl p-4 border border-transparent hover:border-blue-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >

@@ -248,7 +248,7 @@ export default function Highlights() {
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                   transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
                   className="relative group cursor-pointer overflow-hidden rounded-2xl bg-[#06101f] h-60 sm:h-52 shrink-0 snap-center w-[85vw] sm:w-auto"
                 >

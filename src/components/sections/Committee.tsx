@@ -31,7 +31,7 @@ const MemberCard = ({ person }: { person: CommitteeMember }) => (
   <motion.div
     initial={{ opacity: 0, y: 15 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
+    viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
     transition={{ duration: 0.3 }}
     className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-xs hover:shadow-xl border border-gray-100/90 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1.5 group relative"
   >

@@ -65,7 +65,7 @@ export default function PastEminentSpeakers() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             className="text-3xl md:text-5xl font-bold text-[#06206A] mb-4 tracking-tight uppercase"
           >
             Legacy of Eminent Speakers
@@ -73,7 +73,7 @@ export default function PastEminentSpeakers() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ delay: 0.1 }}
             className="text-gray-500 font-medium max-w-2xl mx-auto"
           >
@@ -146,7 +146,7 @@ export default function PastEminentSpeakers() {
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                   transition={{ delay: (i % 5) * 0.05 }}
                   className="flex flex-col items-center text-center group p-4 md:p-6 rounded-[30px] hover:bg-white transition-all duration-300 relative hover:shadow-[0_15px_40px_-10px_rgba(99,102,241,0.2)]"
                 >

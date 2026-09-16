@@ -17,7 +17,7 @@ export default function Engagement() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E3F0FA] border border-blue-200 text-[#43AAF0] font-semibold text-sm mb-6 uppercase tracking-widest"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
@@ -27,7 +27,7 @@ export default function Engagement() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black text-[#0f172a] tracking-tight mb-4"
           >
@@ -37,7 +37,7 @@ export default function Engagement() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto"
           >
@@ -52,7 +52,7 @@ export default function Engagement() {
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
               transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
               className="relative aspect-[4/3] rounded-[2rem] overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 shrink-0 snap-center w-[85vw] md:w-auto"
             >
