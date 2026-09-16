@@ -215,7 +215,7 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     name: 'Devanand G', 
     role: 'Committee Member', 
     category: 'Organising Committee',
-    image: PLACEHOLDER,
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/devanand%20(1).png',
   },
 ];
 
