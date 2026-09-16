@@ -22,7 +22,7 @@ const SILVER_SPONSORS: Sponsor[] = [
   { name: 'Harness' },
   { name: 'Bharat Ke Super Founders', logo: 'https://bharatkesuperfounders.com/og-image.png', scale: 1.1 },
   { name: 'Rupeezy', logo: 'https://rupeezy.in/assets/header/rupeezy_logo.webp', scale: 1.1 },
-  { name: 'Tally Solutions' },
+  { name: 'Tally Solutions', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Tally_-_Logo.png', scale: 1.2 },
   { name: 'VisionIAS' },
   { name: 'Astravion' },
   { name: 'BAC Infratech' },
