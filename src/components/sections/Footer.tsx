@@ -57,7 +57,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-white font-medium max-w-md drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                Andhra's DeepTech Decade. Join us in shaping the future of innovation, investment, and talent.
+                Andhra's Resilient DeepTech Decade: Anchored by PanIIT
               </p>
             </div>
             
