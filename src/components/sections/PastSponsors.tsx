@@ -83,10 +83,10 @@ export default function PastSponsors() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-amber-50/80 via-white to-amber-50/30 border border-amber-200/80 shadow-sm hover:shadow-lg hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-center group min-h-[120px]"
+                className="flex items-center justify-center text-center group min-h-[100px] hover:-translate-y-2 transition-transform duration-300"
               >
                 {sponsor.logo ? (
-                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" className="max-w-[85%] max-h-[70px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
+                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" className="max-w-[90%] max-h-[90px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
                 ) : (
                   <span className="font-extrabold text-xl md:text-2xl text-gray-800 tracking-tight group-hover:text-amber-700 transition-colors">
                     {sponsor.name}
