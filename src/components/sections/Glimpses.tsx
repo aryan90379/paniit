@@ -38,7 +38,7 @@ export default function Glimpses() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 overflow-x-auto sm:overflow-visible gap-4 md:gap-6 pb-6 sm:pb-0 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
           {GALLERY_IMAGES.map((img, i) => (
             <motion.div
               key={i}
@@ -46,7 +46,7 @@ export default function Glimpses() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300"
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 shrink-0 snap-center w-[85vw] sm:w-auto"
             >
               <div className="absolute inset-0 bg-[#06206A]/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
               <img 
@@ -58,6 +58,11 @@ export default function Glimpses() {
               />
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <div className="flex sm:hidden items-center justify-center gap-2 mt-2 text-xs font-bold text-slate-400">
+          <span>Swipe to explore glimpses &rarr;</span>
         </div>
 
       </div>
