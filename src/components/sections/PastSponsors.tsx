@@ -5,12 +5,13 @@ import { Award, Shield, Medal } from 'lucide-react';
 
 interface Sponsor {
   name: string;
+  logo?: string;
 }
 
 const PAST_SPONSORS: Sponsor[] = [
-  { name: 'Ayana Woods' },
-  { name: 'Groww' },
-  { name: 'Kuku FM' },
+  { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png' },
+  { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png' },
+  { name: 'Kuku FM', logo: 'https://kukufm.com/blog/wp-content/uploads/sites/4/2020/07/logo-1-scaled.jpg' },
   { name: 'SAP' },
   { name: 'HDFC Mutual Fund' },
   { name: 'Cashfree Payments' },
@@ -72,9 +73,13 @@ export default function PastSponsors() {
                 transition={{ delay: (i % 6) * 0.04 }}
                 className="p-4 md:p-6 rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-[#DD1D21]/30 hover:bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-center group min-h-[100px]"
               >
-                <span className="font-bold text-sm md:text-base text-gray-700 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
-                  {sponsor.name}
-                </span>
+                {sponsor.logo ? (
+                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" className="max-w-[85%] max-h-[60px] object-contain mix-blend-multiply" />
+                ) : (
+                  <span className="font-bold text-sm md:text-base text-gray-700 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug">
+                    {sponsor.name}
+                  </span>
+                )}
               </motion.div>
             ))}
           </div>
