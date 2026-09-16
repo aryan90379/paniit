@@ -1,207 +1,252 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { MapPin, Globe2, Cpu, TrendingUp, Users, Target, Rocket, Lightbulb, Network } from 'lucide-react';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Globe2, Cpu, Users, Target, Rocket, Lightbulb, MapPin } from 'lucide-react';
+
+const CF = 'https://d3liyurciwi0wb.cloudfront.net/vision';
+
+const CARDS = [
+  {
+    icon: Target,
+    label: 'Swarna Andhra 2047',
+    badge: 'Roadmap to 2047',
+    tags: ['Viksit Bharat', 'Frontier R&D'],
+    desc: 'Aligning state priorities with Viksit Bharat 2047 to establish Andhra Pradesh as an innovation superpower.',
+    footer: null,
+    image: `${CF}/swarna%20andhra%202047.jpeg`,
+    localImage: '/vision/swarna andhra 2047.jpeg',
+    cols: 2,
+    accentColor: 'sky',
+  },
+  {
+    icon: Users,
+    label: 'Global Network',
+    badge: '500k+ IITians',
+    tags: null,
+    desc: 'Uniting alumni leaders, global CXOs, and policymakers to channel capital and leadership into AP.',
+    footer: 'Alumni • Industry • Policy',
+    image: `${CF}/global%20network.jpg`,
+    localImage: '/vision/global network.jpg',
+    cols: 1,
+    accentColor: 'sky',
+  },
+  {
+    icon: Rocket,
+    label: 'AI & Deep Tech',
+    badge: 'Frontier Tech',
+    tags: null,
+    desc: 'Catalyzing breakthroughs in Quantum Computing, Artificial Intelligence, and Clean Energy ecosystems.',
+    footer: 'Quantum • AI • Startups',
+    image: `${CF}/DeepTech%20AI.jpg`,
+    localImage: '/vision/DeepTech AI.jpg',
+    cols: 1,
+    accentColor: 'red',
+  },
+  {
+    icon: Lightbulb,
+    label: 'Talent Pool',
+    badge: 'Future Workforce',
+    tags: null,
+    desc: 'Transforming Andhra Pradesh youth into globally competitive engineering and research talent.',
+    footer: 'Mentorship • Academia • Chairs',
+    image: `${CF}/talent%20pool.jpg`,
+    localImage: '/vision/talent pool.jpg',
+    cols: 1,
+    accentColor: 'sky',
+  },
+  {
+    icon: MapPin,
+    label: 'Innovation Hub',
+    badge: 'Innovation Hub',
+    tags: null,
+    desc: 'Showcasing Andhra Pradesh as a premier destination for high-value strategic tech investments.',
+    footer: 'Semiconductors • R&D Parks',
+    image: `${CF}/innovation%20hub.jpg`,
+    localImage: '/vision/innovation hub.jpg',
+    cols: 1,
+    accentColor: 'sky',
+  },
+];
+
+function VisionCard({ card, i }: { card: typeof CARDS[0]; i: number }) {
+  const Icon = card.icon;
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
+  const isBig = card.cols === 2;
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      style={{ gridColumn: `span ${card.cols}` }}
+      className="relative group cursor-default overflow-hidden rounded-2xl bg-[#060e1f] min-h-[300px] md:min-h-0"
+    >
+      {/* Photo */}
+      <img
+        src={card.image}
+        alt={card.label}
+        loading="lazy"
+        decoding="async"
+        onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700 ease-out"
+      />
+
+      {/* Brand tint overlay — keeps navy identity */}
+      <div className="absolute inset-0 bg-[#06206A]/45 mix-blend-multiply" />
+
+      {/* Soft bottom vignette for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+      {/* Hairline top highlight */}
+      <div className="absolute top-0 inset-x-0 h-px bg-white/12 group-hover:bg-white/22 transition-colors duration-500" />
+
+      {/* Badge — top right */}
+      <div className="absolute top-4 right-4 z-10">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/12 text-[10px] font-bold uppercase tracking-widest text-white/80">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21] shrink-0" />
+          {card.badge}
+        </span>
+      </div>
+
+      {/* Icon squircle — top left */}
+      <div className="absolute top-4 left-4 z-10 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/12 flex items-center justify-center text-white/75 group-hover:bg-white/18 group-hover:text-white transition-all duration-300">
+        <Icon size={18} strokeWidth={2} />
+      </div>
+
+      {/* Content — bottom */}
+      <div className="absolute bottom-0 inset-x-0 z-10 p-5 sm:p-6">
+        {/* Tags row (only on big card) */}
+        {card.tags && (
+          <div className="flex flex-wrap gap-2 mb-2">
+            {card.tags.map(t => (
+              <span key={t} className="px-2.5 py-0.5 rounded-md bg-white/15 text-white/80 text-[10px] font-bold uppercase tracking-wider">
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <h3 className={`font-black text-white leading-tight tracking-tight mb-1.5 ${isBig ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-lg sm:text-xl'}`}>
+          {card.label}
+        </h3>
+
+        <p className={`text-white/60 font-medium leading-snug ${isBig ? 'text-sm sm:text-base max-w-lg' : 'text-xs sm:text-sm'}`}>
+          {card.desc}
+        </p>
+
+        {card.footer && (
+          <div className="mt-3 pt-3 border-t border-white/10">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300/80">{card.footer}</span>
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
 
 export default function VisionMission() {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const titleInView = useInView(titleRef, { once: true, margin: '-80px' });
+
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-white text-gray-900 relative">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        
-        <div className="mb-10 md:mb-16 text-center md:text-left flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-8">
-          <div className="max-w-2xl">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-block px-4 py-1 rounded-full border border-red-200 bg-red-50 text-[#DD1D21] text-xs sm:text-sm font-bold uppercase tracking-widest mb-4 md:mb-6"
+    <section className="py-16 sm:py-20 md:py-28 bg-white text-gray-900 relative">
+      <div className="container mx-auto px-4 sm:px-6 md:px-10 max-w-7xl">
+
+        {/* Header */}
+        <div ref={titleRef} className="mb-10 sm:mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={titleInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DD1D21]/6 border border-[#DD1D21]/15 mb-4"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21]" />
+            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-[#DD1D21]">Our Vision</span>
+          </motion.div>
+
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-10">
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              animate={titleInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.06 }}
+              className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-6xl font-black text-[#06206A] uppercase tracking-tight leading-none"
             >
-              Our Vision
-            </motion.div>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-6xl font-black text-[#06206A] tracking-tight leading-[1.15]"
-            >
-              Vision of PanIIT<br className="hidden md:block" /> Andhra Pradesh Summit
+              Vision of PanIIT<br className="hidden sm:block" /> Andhra Pradesh
             </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={titleInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.45, delay: 0.14 }}
+              className="text-slate-500 text-sm sm:text-base max-w-sm leading-relaxed md:text-right shrink-0"
+            >
+              A strategic roadmap to elevate Andhra Pradesh as India's premier destination for deep-tech and industrial innovation.
+            </motion.p>
           </div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg text-gray-500 font-medium max-w-md text-center md:text-left"
-          >
-            A strategic roadmap to elevate Andhra Pradesh as India's premier destination for deep-tech and industrial innovation.
-          </motion.p>
         </div>
 
-        {/* Visual Bento Grid - Infographic Carousel on Mobile / Grid on Desktop */}
-        <div className="flex md:grid overflow-x-auto md:overflow-visible grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pb-6 md:pb-0 hide-scrollbar snap-x snap-mandatory auto-rows-[340px] -mx-4 px-4 md:mx-0 md:px-0">
-          
-          {/* Card 1: Swarna Andhra 2047 */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 row-span-1 bg-[#06184a] rounded-[2rem] p-6 sm:p-8 md:p-10 relative overflow-hidden group cursor-default w-[88vw] sm:w-[70vw] md:w-auto snap-center shrink-0 flex flex-col justify-between border-2 border-blue-800/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl min-h-[320px] md:min-h-0"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#06206A] via-[#092b87] to-[#041444]" />
-            <div className="absolute -right-12 -top-12 w-64 h-64 bg-[#43AAF0]/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
-            
-            <div className="relative z-10 flex items-center justify-between gap-3 mb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#43AAF0]/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-[#43AAF0]/40 text-[#43AAF0] group-hover:scale-110 transition-transform duration-300 shrink-0">
-                <Target size={24} className="sm:w-7 sm:h-7" />
-              </div>
-              <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-[11px] sm:text-xs font-black uppercase tracking-wider shrink-0">
-                Roadmap to 2047
-              </span>
-            </div>
-
-            <div className="relative z-10">
-              <div className="flex flex-wrap gap-2 mb-2 sm:mb-3">
-                <span className="px-2.5 py-0.5 rounded-md bg-[#43AAF0]/25 text-[#C6E1F8] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">Viksit Bharat</span>
-                <span className="px-2.5 py-0.5 rounded-md bg-white/15 text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">Frontier R&D</span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-2 sm:mb-3 tracking-tight">Swarna Andhra 2047</h3>
-              <p className="text-[#C6E1F8] text-sm sm:text-base md:text-lg font-medium max-w-lg leading-relaxed">
-                Aligning state priorities with Viksit Bharat 2047 to establish Andhra Pradesh as an innovation superpower.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 2: Global Network */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="col-span-1 row-span-1 bg-[#051a54] rounded-[2rem] p-6 sm:p-8 relative overflow-hidden group cursor-default w-[88vw] sm:w-[70vw] md:w-auto snap-center shrink-0 flex flex-col justify-between border-2 border-blue-900/50 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl min-h-[300px] md:min-h-0"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#041444] via-[#06206A] to-[#0a235c]" />
-            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#7ABDF1]/15 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
-            
-            <div className="relative z-10 flex items-center justify-between gap-3 mb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/15 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/30 text-white group-hover:scale-110 transition-transform duration-300 shrink-0">
-                <Users size={24} className="sm:w-7 sm:h-7" />
-              </div>
-              <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-[#C6E1F8] text-[11px] font-bold uppercase tracking-wider shrink-0">
-                500k+ IITians
-              </span>
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-tight">Global Network</h3>
-              <p className="text-[#C6E1F8] font-medium text-xs sm:text-sm leading-relaxed mb-3">
-                Uniting alumni leaders, global CXOs, and policymakers to channel capital and leadership into AP.
-              </p>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#43AAF0] uppercase tracking-wider">
-                Alumni • Industry • Policy
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 3: Deep Tech */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="col-span-1 row-span-1 bg-[#1a0826] rounded-[2rem] p-6 sm:p-8 relative overflow-hidden group cursor-default w-[88vw] sm:w-[70vw] md:w-auto snap-center shrink-0 flex flex-col justify-between border-2 border-purple-900/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl min-h-[300px] md:min-h-0"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1a0826] via-[#240b36] to-[#06206A]" />
-            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#DD1D21]/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
-            
-            <div className="relative z-10 flex items-center justify-between gap-3 mb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-red-500/40 text-red-300 group-hover:scale-110 transition-transform duration-300 shrink-0">
-                <Rocket size={24} className="sm:w-7 sm:h-7" />
-              </div>
-              <span className="px-3 py-1 rounded-full bg-red-500/20 backdrop-blur-md border border-red-400/30 text-red-200 text-[11px] font-bold uppercase tracking-wider shrink-0">
-                Frontier Tech
-              </span>
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-tight">AI & Deep Tech</h3>
-              <p className="text-red-100 font-medium text-xs sm:text-sm leading-relaxed mb-3">
-                Catalyzing breakthroughs in Quantum Computing, Artificial Intelligence, and Clean Energy ecosystems.
-              </p>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-red-300 uppercase tracking-wider">
-                Quantum • AI • Startups
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 4: Talent Pool */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="col-span-1 row-span-1 bg-[#062038] rounded-[2rem] p-6 sm:p-8 relative overflow-hidden group cursor-default w-[88vw] sm:w-[70vw] md:w-auto snap-center shrink-0 flex flex-col justify-between border-2 border-teal-900/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl min-h-[300px] md:min-h-0"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#062038] via-[#09355c] to-[#041444]" />
-            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#43AAF0]/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
-            
-            <div className="relative z-10 flex items-center justify-between gap-3 mb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-teal-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-teal-500/40 text-teal-300 group-hover:scale-110 transition-transform duration-300 shrink-0">
-                <Lightbulb size={24} className="sm:w-7 sm:h-7" />
-              </div>
-              <span className="px-3 py-1 rounded-full bg-teal-500/20 backdrop-blur-md border border-teal-400/30 text-teal-200 text-[11px] font-bold uppercase tracking-wider shrink-0">
-                Future Workforce
-              </span>
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-tight">Talent Pool</h3>
-              <p className="text-teal-100 font-medium text-xs sm:text-sm leading-relaxed mb-3">
-                Transforming Andhra Pradesh youth into globally competitive engineering and research talent.
-              </p>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-300 uppercase tracking-wider">
-                Mentorship • Academia • Chairs
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 5: Innovation Hub */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="col-span-1 row-span-1 bg-[#06184a] rounded-[2rem] p-6 sm:p-8 relative overflow-hidden group cursor-default w-[88vw] sm:w-[70vw] md:w-auto snap-center shrink-0 flex flex-col justify-between border-2 border-blue-900/40 hover:border-[#43AAF0] hover:shadow-[0_15px_40px_-10px_rgba(67,170,240,0.4)] transition-all duration-500 shadow-xl min-h-[300px] md:min-h-0"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#06184a] via-[#0a2b75] to-[#041444]" />
-            <div className="absolute -right-8 -top-8 w-48 h-48 bg-[#C6E1F8]/15 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
-            
-            <div className="relative z-10 flex items-center justify-between gap-3 mb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-indigo-500/20 rounded-2xl flex items-center justify-center backdrop-blur-md border border-indigo-500/40 text-indigo-300 group-hover:scale-110 transition-transform duration-300 shrink-0">
-                <MapPin size={24} className="sm:w-7 sm:h-7" />
-              </div>
-              <span className="px-3 py-1 rounded-full bg-indigo-500/20 backdrop-blur-md border border-indigo-400/30 text-indigo-200 text-[11px] font-bold uppercase tracking-wider shrink-0">
-                Innovation Hub
-              </span>
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-tight">Innovation Hub</h3>
-              <p className="text-indigo-100 font-medium text-xs sm:text-sm leading-relaxed mb-3">
-                Showcasing Andhra Pradesh as a premier destination for high-value strategic tech investments.
-              </p>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#43AAF0] uppercase tracking-wider">
-                Semiconductors • R&D Parks
-              </div>
-            </div>
-          </motion.div>
-
+        {/* Desktop Bento Grid — 3-col, auto rows */}
+        <div
+          className="hidden md:grid gap-3"
+          style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridAutoRows: '300px' }}
+        >
+          {CARDS.map((card, i) => (
+            <VisionCard key={i} card={card} i={i} />
+          ))}
         </div>
 
-        {/* Mobile Swipe Hint */}
-        <div className="flex md:hidden items-center justify-center gap-2 mt-4 text-xs font-bold text-gray-400">
-          <span>Swipe to explore 5 vision pillars &rarr;</span>
+        {/* Mobile / Tablet — horizontal scroll cards */}
+        <div className="flex md:hidden gap-3.5 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory hide-scrollbar">
+          {CARDS.map((card, i) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="relative group shrink-0 snap-center w-[78vw] sm:w-[55vw] overflow-hidden rounded-2xl bg-[#060e1f] h-64"
+              >
+                <img
+                  src={card.image}
+                  alt={card.label}
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
+                  className="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-[#06206A]/45 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+
+                <div className="absolute top-3.5 right-3.5 z-10">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/75">
+                    <span className="w-1 h-1 rounded-full bg-[#DD1D21] shrink-0" />
+                    {card.badge}
+                  </span>
+                </div>
+                <div className="absolute top-3.5 left-3.5 z-10 w-9 h-9 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/70">
+                  <Icon size={15} strokeWidth={2} />
+                </div>
+
+                <div className="absolute bottom-0 inset-x-0 z-10 p-4">
+                  <h3 className="text-white font-bold text-lg leading-tight mb-1">{card.label}</h3>
+                  <p className="text-white/55 text-xs font-medium leading-snug">{card.desc}</p>
+                  {card.footer && (
+                    <span className="block mt-2 text-[9px] font-bold uppercase tracking-widest text-sky-300/75">{card.footer}</span>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Mobile swipe hint */}
+        <div className="flex md:hidden items-center justify-center gap-2 mt-3 text-xs font-bold text-gray-400">
+          <span>Swipe to explore 5 vision pillars →</span>
         </div>
 
       </div>
