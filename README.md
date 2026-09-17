@@ -23,6 +23,9 @@ The codebase is organized in the `src/` directory.
 ```
 .
 ├── public/                 # Static assets (images, fonts, PDFs, SVGs)
+│   ├── committee/          # Local committee portraits
+│   ├── speakers/legacy/    # Legacy of Eminent Speakers portraits
+│   ├── sponsors/past/      # Featured past-sponsor logos
 │   ├── summit_highlights/  # Highlight images from past events
 │   ├── user_images/        # User-uploaded content
 │   └── PanIIT_AP_Summit_2026_Agenda.pdf # Event schedule document
@@ -36,8 +39,8 @@ The codebase is organized in the `src/` directory.
 │   ├── components/
 │   │   ├── sections/       # UI sections for the landing page
 │   │   │   ├── About.tsx
-│   │   │   ├── AdvantageLegacy.tsx
-│   │   │   ├── Committee.tsx
+│   │   │   ├── AdvantageLegacy.tsx  # Initiatives (`#initiatives`)
+│   │   │   ├── Committee.tsx        # Team (`#committee`)
 │   │   │   ├── Dignitaries.tsx
 │   │   │   ├── Engagement.tsx
 │   │   │   ├── EventDetails.tsx
@@ -64,9 +67,11 @@ The codebase is organized in the `src/` directory.
 │   └── lib/
 │       └── utils.ts        # Helper utilities like clsx/tailwind-merge
 ├── package.json            # Dependencies and scripts
-├── tailwind.config.ts      # Tailwind configuration
+├── postcss.config.mjs      # Tailwind v4 / PostCSS
 └── next.config.ts          # Next.js configuration
 ```
+
+Landing-page nav (and matching footer links): About Us (`#about`), Initiatives (`#initiatives`), Speakers (`#speakers`), Summit Agenda (`#schedule`), Team (`#committee`), Contact Us (`#contact`).
 
 ## Key Technologies
 
