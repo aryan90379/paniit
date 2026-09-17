@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PanIIT Andhra Pradesh Summit 2026
+
+This is the official repository for the **Andhra's Resilient DeepTech Decade: Anchored by PanIIT** summit website. The project is built with [Next.js](https://nextjs.org), React, TypeScript, Tailwind CSS, and Framer Motion for animations.
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+```bash
+npm install
+```
 
+Then, run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The codebase is organized in the `src/` directory.
 
-## Learn More
+```
+.
+├── public/                 # Static assets (images, fonts, PDFs, SVGs)
+│   ├── summit_highlights/  # Highlight images from past events
+│   ├── user_images/        # User-uploaded content
+│   └── PanIIT_AP_Summit_2026_Agenda.pdf # Event schedule document
+├── src/
+│   ├── app/                # Next.js App Router
+│   │   ├── agenda/         # /agenda route
+│   │   ├── committee/      # /committee route
+│   │   ├── layout.tsx      # Global layout and fonts
+│   │   ├── page.tsx        # Landing page (Main entry)
+│   │   └── globals.css     # Tailwind and global styles
+│   ├── components/
+│   │   ├── sections/       # UI sections for the landing page
+│   │   │   ├── About.tsx
+│   │   │   ├── AdvantageLegacy.tsx
+│   │   │   ├── Committee.tsx
+│   │   │   ├── Dignitaries.tsx
+│   │   │   ├── Engagement.tsx
+│   │   │   ├── EventDetails.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Glimpses.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Highlights.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── OurPartners.tsx
+│   │   │   ├── Partnership.tsx
+│   │   │   ├── PastEminentSpeakers.tsx
+│   │   │   ├── PastSponsors.tsx
+│   │   │   ├── Schedule.tsx
+│   │   │   ├── Speakers.tsx
+│   │   │   └── VisionMission.tsx
+│   │   ├── ui/             # Shared UI components and effects
+│   │   ├── AeroShards.tsx
+│   │   ├── ChromaGrid.tsx
+│   │   ├── GradientWaves.tsx
+│   │   ├── SpecularButton.tsx
+│   │   └── WebThreads.tsx
+│   ├── data/
+│   │   └── committee.ts    # Organizing committee data
+│   └── lib/
+│       └── utils.ts        # Helper utilities like clsx/tailwind-merge
+├── package.json            # Dependencies and scripts
+├── tailwind.config.ts      # Tailwind configuration
+└── next.config.ts          # Next.js configuration
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Key Technologies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js (App Router)** - React framework
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Animations and gestures
+- **Lucide React** - Icons
+- **TypeScript** - Type safety
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is deployed to [Vercel](https://vercel.com). Commits pushed to the `main` branch will be automatically deployed to production.
