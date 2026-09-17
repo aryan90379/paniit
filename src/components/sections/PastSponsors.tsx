@@ -21,7 +21,6 @@ const PAST_SPONSORS: Sponsor[] = [
   { name: 'Rupeezy', logo: 'https://rupeezy.in/assets/header/rupeezy_logo.webp', scale: 1.2 },
   { name: 'Tally Solutions', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Tally_-_Logo.png', scale: 0.65 },
   { name: 'VisionIAS', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4RvBHT9yDb2Qsm8pneDijXn51o2j9Kz-uIeSixSafXrt0rUNqDgjVQM&s=10', scale: 1.5 },
-  { name: 'Astravion' },
   { name: 'BAC Infratech', logo: 'https://www.bacinfratech.com/assets/images/header-logo.webp', scale: 1.1 },
   { name: 'Brihaspathi Technologies', logo: 'https://brihaspathi.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhighbtlogo-tm-1.bba8b8c1.png&w=640&q=75', scale: 0.7 },
   { name: 'Renova Hospitals', logo: 'https://renovahospitals.com/build/assets/logo-DwB5j4pz.jpg', scale: 0.9 },

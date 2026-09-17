@@ -27,12 +27,6 @@ const DISTINGUISHED_GUESTS = [
     role: "Chief Executive Officer,\nNational Health Authority,\nMinistry of Health and\nFamily Welfare, Government\nof India",
     org: ""
   },
-  {
-    image: '/dr_purushotham.jpg',
-    name: 'Dr Purushotham Hanumanthu',
-    role: "Secretary to the Government\nDepartment of Science, Technology & Innovation,\nGovernment of Andhra Pradesh",
-    org: "Department of Science, Technology & Innovation, Government of Andhra Pradesh"
-  }
 ];
 
 const KEY_GUESTS = [
@@ -60,6 +54,9 @@ const INDUSTRY_LEADERS = [
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Dr.%20Giridhar%20Parvatam.jpg', name: 'Dr. Giridhar Parvatam', role: 'Head\nCFTRI' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/jitendra%20sharma.png', name: 'Dr. Jitendra Sharma', role: 'CEO\nAMTZ' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ankit%20todi.png', name: 'Sri Ankit Todi', role: 'Chief Sustainability Officer\nMahindra Group' },
+];
+
+const EMERGING_VENTURES = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/naga%20bharath%20daka.png', name: 'Naga Bharath Daka', role: 'Co-founder & CTO\nSkyroot Aerospace' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/suyash%20singh.png', name: 'Suyash Singh', role: 'Co-founder & CEO\nGalaxEye' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ramesh%20hariharan.png', name: 'Dr. Ramesh Hariharan', role: 'CEO & Co-Founder\nStrand Life Sciences' },
@@ -114,7 +111,7 @@ export default function Speakers() {
       <div className="py-20 border-b border-gray-100 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <SectionTitle title="Distinguished Guests" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-3xl mx-auto">
             {DISTINGUISHED_GUESTS.map((guest, i) => (
               <div key={i} className="flex flex-col items-center text-center group p-4 md:p-6 rounded-3xl hover:bg-white transition-all duration-300 relative">
                 <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
@@ -147,11 +144,23 @@ export default function Speakers() {
       </div>
 
       {/* Industry Leaders */}
-      <div className="py-24 bg-white">
+      <div className="py-24 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 max-w-6xl">
           <SectionTitle title="Industry Leaders" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
             {INDUSTRY_LEADERS.map((speaker, i) => (
+              <SpeakerCard key={i} speaker={speaker} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Emerging Ventures & Unicorns */}
+      <div className="py-24 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <SectionTitle title="Emerging Ventures & Unicorns" />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
+            {EMERGING_VENTURES.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />
             ))}
             <div className="flex flex-col justify-center items-center h-full min-h-[250px] p-4 md:p-6 rounded-3xl bg-white relative">

@@ -91,14 +91,11 @@ function VisionCard({ card, i }: { card: typeof CARDS[0]; i: number }) {
         loading="lazy"
         decoding="async"
         onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700 ease-out"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
       />
 
-      {/* Brand tint overlay — keeps navy identity */}
-      <div className="absolute inset-0 bg-[#06206A]/45 mix-blend-multiply" />
-
       {/* Soft bottom vignette for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
 
       {/* Hairline top highlight */}
       <div className="absolute top-0 inset-x-0 h-px bg-white/12 group-hover:bg-white/22 transition-colors duration-500" />
@@ -217,10 +214,9 @@ export default function VisionMission() {
                   loading="lazy"
                   decoding="async"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
-                  className="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700"
+                  className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-[#06206A]/45 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
 
                 <div className="absolute top-3.5 right-3.5 z-10">
                   <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/75">

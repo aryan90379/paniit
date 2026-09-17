@@ -29,7 +29,7 @@ export default function Engagement() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black text-[#0f172a] tracking-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] tracking-tight mb-4 whitespace-nowrap"
           >
             PanIIT &times; Govt. of Andhra Pradesh
           </motion.h2>

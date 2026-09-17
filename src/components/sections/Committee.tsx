@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { 
   CORE_COMMITTEE, 
+  CORE_COMMITTEE_MEMBERS,
   OFFICE_BEARERS, 
   ADVISORS, 
   COMMITTEE_MEMBERS, 
@@ -54,10 +55,11 @@ const MemberCard = ({ person }: { person: CommitteeMember }) => (
       {person.name}
     </h3>
 
-    {/* Role */}
-    <p className="text-[11px] md:text-xs font-bold uppercase tracking-wider text-gray-400 text-center line-clamp-2">
-      {person.role || 'Committee Member'}
-    </p>
+    {person.role ? (
+      <p className="text-[11px] md:text-xs font-bold uppercase tracking-wider text-gray-400 text-center line-clamp-2">
+        {person.role}
+      </p>
+    ) : null}
   </motion.div>
 );
 
@@ -98,10 +100,18 @@ export default function Committee() {
             title="Summit Organising Core Committee" 
             subtitle="The leadership and core team driving the vision of PanIIT Andhra Pradesh Summit 2026."
           />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6 justify-center">
-            {[...CORE_COMMITTEE, ...COMMITTEE_MEMBERS].map((person, i) => (
+          <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6 justify-center max-w-md mx-auto mb-6">
+            {CORE_COMMITTEE.slice(0, 2).map((person, i) => (
               <MemberCard key={i} person={person} />
             ))}
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6 justify-center">
+            {[...CORE_COMMITTEE_MEMBERS, ...COMMITTEE_MEMBERS].map((person, i) => (
+              <MemberCard key={i} person={person} />
+            ))}
+            <div className="flex flex-col items-center justify-center text-center min-h-[180px] md:min-h-[200px]">
+              <div className="text-lg md:text-xl font-extrabold text-[#06206A]">+ Many More</div>
+            </div>
           </div>
         </div>
 

@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
-import MorphSlider from '@/components/MorphSlider';
 
 const HERO_SLIDES = [
   {
@@ -16,6 +15,81 @@ const HERO_SLIDES = [
     image: '/landing_banner.png',
   },
 ];
+
+function PlainBanner({ slides }: { slides: { image: string }[] }) {
+  const [index, setIndex] = useState(0);
+  const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    if (hovering || slides.length < 2) return undefined;
+    const id = window.setTimeout(() => setIndex(i => (i + 1) % slides.length), 4000);
+    return () => window.clearTimeout(id);
+  }, [hovering, index, slides.length]);
+
+  const go = (dir: number) => {
+    setIndex(i => (i + dir + slides.length) % slides.length);
+  };
+
+  return (
+    <div
+      className="relative w-full h-full bg-white"
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+    >
+      {slides.map((slide, i) => (
+        <img
+          key={slide.image}
+          src={slide.image}
+          alt=""
+          draggable={false}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out ${
+            i === index ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      ))}
+
+      {slides.length > 1 && (
+        <>
+          <div className="absolute top-1/2 left-0 right-0 z-10 flex justify-between px-4 -translate-y-1/2 pointer-events-none">
+            <button
+              type="button"
+              className="pointer-events-auto inline-flex items-center justify-center w-10 h-10 rounded-full text-white border border-white/20 bg-black/40 cursor-pointer hover:bg-black/55"
+              aria-label="Previous slide"
+              onClick={() => go(-1)}
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className="pointer-events-auto inline-flex items-center justify-center w-10 h-10 rounded-full text-white border border-white/20 bg-black/40 cursor-pointer hover:bg-black/55"
+              aria-label="Next slide"
+              onClick={() => go(1)}
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div className="absolute left-0 right-0 bottom-4 z-10 flex gap-2 justify-center items-center" role="tablist" aria-label="Slides">
+            {slides.map((slide, i) => (
+              <button
+                key={slide.image}
+                type="button"
+                role="tab"
+                aria-selected={i === index}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2 rounded-full ${i === index ? 'w-[22px] bg-[#DD1D21]' : 'w-2 bg-white/40'}`}
+                onClick={() => setIndex(i)}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function Hero() {
   const [navHeight, setNavHeight] = useState<number>(0);
@@ -62,33 +136,24 @@ export default function Hero() {
     };
   }, [navHeight]);
 
+  const navOffset = navHeight ? `${navHeight}px` : 'var(--navbar-height, 70px)';
+
   return (
     <section 
       className="relative w-full bg-white flex flex-col justify-between overflow-hidden" 
       id="hero"
       style={{
-        paddingTop: navHeight ? `${navHeight}px` : 'var(--navbar-height, 70px)'
+        paddingTop: navOffset
       }}
     >
       
-      {/* FULL WIDTH BANNER CAROUSEL - WebGL Morph Slider (True 16:9 banner) */}
-      <div className="w-full aspect-[16/9] relative overflow-hidden bg-slate-950 shadow-md">
-        <MorphSlider
-          items={HERO_SLIDES}
-          transition="melt"
-          duration={1.2}
-          intensity={0.55}
-          aberration={0.35}
-          drift={0.4}
-          autoplay={true}
-          autoplayDelay={4}
-          loop={true}
-          radius={0}
-          showCaptions={false}
-          showControls={true}
-          showIndicators={true}
-          className="w-full h-full"
-        />
+      {/* FULL WIDTH BANNER CAROUSEL - fills remaining first screen under the navbar */}
+      <div
+        className="w-full relative overflow-hidden bg-white shadow-md"
+        style={{ height: `calc(100dvh - ${navOffset})` }}
+      >
+        <PlainBanner slides={HERO_SLIDES} />
+        {/* plain still-image carousel — no WebGL MorphSlider */}
       </div>
         
       {/* BOTTOM ROW - Event Details menu style */}

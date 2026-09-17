@@ -34,6 +34,7 @@ const CONTACTS = [
   {
     name: 'Kshitij Tiwari',
     role: 'Committee Member',
+    phone: '+91 81819 08383',
   },
 ];
 
@@ -156,20 +157,8 @@ export default function EventDetails() {
                 </div>
 
                 <div className="space-y-2 pt-2">
-                  {item.phone && (
-                    <a
-                      href={`tel:${item.phone.replace(/\s+/g, '')}`}
-                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DD1D21] hover:bg-red-700 text-white text-xs font-bold tracking-wide transition-colors shadow-xs"
-                    >
-                      <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-                        <Phone className="w-3 h-3 fill-current" />
-                      </span>
-                      <span>{item.phone}</span>
-                    </a>
-                  )}
-
                   {item.email && (
-                    <div className="pt-1">
+                    <div>
                       <a
                         href={`mailto:${item.email}`}
                         className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#DD1D21] hover:underline"
@@ -178,6 +167,18 @@ export default function EventDetails() {
                         <span>{item.email}</span>
                       </a>
                     </div>
+                  )}
+
+                  {item.phone && (
+                    <a
+                      href={`tel:${item.phone.replace(/\s+/g, '')}`}
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E3F0FA] hover:bg-[#D4E8F6] text-[#06206A] border border-[#C6E1F8] text-xs font-bold tracking-wide transition-colors shadow-xs"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-white/70 flex items-center justify-center">
+                        <Phone className="w-3 h-3 fill-current" />
+                      </span>
+                      <span>{item.phone}</span>
+                    </a>
                   )}
                 </div>
               </motion.div>

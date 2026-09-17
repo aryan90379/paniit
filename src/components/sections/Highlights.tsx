@@ -115,10 +115,10 @@ function HighlightCard({ item, i }: { item: (typeof HIGHLIGHTS)[0]; i: number })
         loading="lazy"
         decoding="async"
         onError={(e) => { (e.currentTarget as HTMLImageElement).src = item.localImage; }}
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-65 group-hover:opacity-82 group-hover:scale-105 transition-all duration-700 ease-out"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-85 group-hover:opacity-95 group-hover:scale-105 transition-all duration-700 ease-out"
       />
       {/* Soft vignette — only from bottom, not a full blackout */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
       {/* Hairline highlight on top edge */}
       <div className="absolute top-0 inset-x-0 h-px bg-white/10 group-hover:bg-white/18 transition-colors duration-500" />
 
@@ -167,9 +167,9 @@ function ThemeCard({ theme, i }: { theme: (typeof THEMES)[0]; i: number }) {
         alt={theme.label}
         loading="lazy"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-55 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700 ease-out"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
       <div className="absolute top-0 inset-x-0 h-px bg-white/10 group-hover:bg-white/18 transition-colors duration-500" />
 
       <div className="absolute top-3.5 left-3.5 z-10 w-9 h-9 rounded-xl bg-white/8 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/70 group-hover:bg-[#DD1D21]/80 group-hover:text-white group-hover:border-red-300/20 transition-all duration-300">
@@ -258,9 +258,9 @@ export default function Highlights() {
                     loading="lazy"
                     decoding="async"
                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = item.localImage; }}
-                    className="absolute inset-0 w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-85 group-hover:opacity-95 group-hover:scale-105 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
                   <div className="absolute top-4 left-4 z-10">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-sm border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/75">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21] shrink-0" />
