@@ -9,18 +9,18 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-10 mb-8">
 
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-md">
-            <div className="mb-4 inline-block bg-white p-2.5 rounded-xl">
-              <div className="flex items-center gap-3">
+            <div className="mb-4 inline-block bg-white p-3.5 rounded-xl">
+              <div className="flex items-center gap-4">
                 <img
                   src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg"
                   alt="PanIIT Alumni India"
-                  className="h-10 object-contain mix-blend-multiply"
+                  className="h-16 md:h-20 object-contain mix-blend-multiply"
                 />
-                <div className="w-px h-8 bg-[#06206A]/20" />
+                <div className="w-px h-12 bg-[#06206A]/20" />
                 <img
                   src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg"
                   alt="PanIIT AP Summit"
-                  className="h-10 object-contain mix-blend-multiply"
+                  className="h-16 md:h-20 object-contain mix-blend-multiply"
                 />
               </div>
             </div>

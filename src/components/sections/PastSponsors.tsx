@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -20,7 +21,7 @@ const FEATURED_SPONSORS: Sponsor[] = [
   { name: 'MSN Realty', logo: '/sponsors/past/msn-realty.png' },
 ];
 
-const PAST_SPONSORS: Sponsor[] = [
+const VISIBLE_SPONSORS: Sponsor[] = [
   { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png', scale: 2.4 },
   { name: 'Groww', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/groww.png', scale: 1.5 },
   { name: 'Kuku FM', logo: 'https://kukufm.com/appLogos/kuku-logo.png', scale: 0.75 },
@@ -30,6 +31,9 @@ const PAST_SPONSORS: Sponsor[] = [
   { name: 'Harness', logo: 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/3/harness-p6edn6642eebbkd9dajc.png/harness-tzgna80n4t7uh6lzkfrtv.png?_a=DATAiZAAZAA0', scale: 2.2 },
   { name: 'Bharat Ke Super Founders', logo: 'https://bharatkesuperfounders.com/og-image.png', scale: 1.0 },
   { name: 'Rupeezy', logo: 'https://rupeezy.in/assets/header/rupeezy_logo.webp', scale: 1.2 },
+];
+
+const MORE_SPONSORS: Sponsor[] = [
   { name: 'Tally Solutions', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Tally_-_Logo.png', scale: 0.65 },
   { name: 'VisionIAS', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4RvBHT9yDb2Qsm8pneDijXn51o2j9Kz-uIeSixSafXrt0rUNqDgjVQM&s=10', scale: 1.5 },
   { name: 'BAC Infratech', logo: 'https://www.bacinfratech.com/assets/images/header-logo.webp', scale: 1.1 },
@@ -76,6 +80,9 @@ function SponsorLogo({
 }
 
 export default function PastSponsors() {
+  const [showMore, setShowMore] = useState(false);
+  const visibleSponsors = showMore ? [...VISIBLE_SPONSORS, ...MORE_SPONSORS] : VISIBLE_SPONSORS;
+
   return (
     <section id="past-sponsors" className="py-20 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
@@ -108,7 +115,7 @@ export default function PastSponsors() {
           <div className="max-w-6xl mx-auto mt-10 mb-8 h-px bg-[#C4A35A]/40" />
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-            {PAST_SPONSORS.map((sponsor, i) => (
+            {visibleSponsors.map((sponsor, i) => (
               <motion.div
                 key={sponsor.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -120,6 +127,15 @@ export default function PastSponsors() {
                 <SponsorLogo sponsor={sponsor} />
               </motion.div>
             ))}
+            <div className="flex items-center justify-center min-h-[100px]">
+              <button
+                type="button"
+                onClick={() => setShowMore((open) => !open)}
+                className="min-h-11 px-6 py-3 bg-[#06206A] text-white rounded-full font-semibold hover:bg-[#081a52] transition-colors"
+              >
+                {showMore ? 'View Less' : 'View More'}
+              </button>
+            </div>
           </div>
         </div>
 

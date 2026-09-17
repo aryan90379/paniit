@@ -33,7 +33,7 @@ const DISTINGUISHED_GUESTS = [
 const KEY_GUESTS = [
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20V.%20Kamakoti%20Director%2C%20IIT%20Madras.jpg', name: 'Prof. V. Kamakoti', role: 'Director\nIIT Madras' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20Shireesh%20Kedare-Picsart-AiImageEnhancer_11zon.webp', name: 'Prof. Shireesh Kedare', role: 'Director\nIIT Bombay' },
-  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Satyamnarayana_%20IIT%20Tirupathi%20director.jpeg', name: 'Prof. K N Satyamnarayana', role: 'Director\nIIT Tirupati' },
+  { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Satyamnarayana_%20IIT%20Tirupathi%20director.jpeg', name: 'Prof. K.N. Satyanarayana', role: 'Director\nIIT Tirupati' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Budaraju%20Srinivasa%20Murty_%20IITH%20director.jpeg', name: 'Prof. B. S. Murthy', role: 'Director\nIIT Hyderabad' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20%20Sukumar%20Mishra%20Director%20%20IIT%20%20(ISM)%20Dhanbad.jpg', name: 'Prof. Sukumar Mishra', role: 'Director\nIIT (ISM) Dhanbad' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Suhas%20Joshi%2C%20Director%2C%20IIT%20Indore.jpg', name: 'Prof. Suhas Joshi', role: 'Director\nIIT Indore' },
@@ -41,7 +41,7 @@ const KEY_GUESTS = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Laxmidhar%20Behera.jpeg', name: 'Prof. Laxmidhar Behera', role: 'Director\nIIT Mandi' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20K,%20V,%20Krishna%20Rao-Picsart-AiImageEnhancer.jpeg', name: 'Prof. K. V. Krishna Rao', role: 'Director\nNIT Andhra Pradesh' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shalivahan.png', name: 'Prof. Shalivahan Srivastava', role: 'Director, Indian Institute of\nPetroleum & Energy, Vizag' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/balaram%20ravindran.png', name: 'Prof. Balaram Ravindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/balaram%20ravindran.png', name: 'Prof. Balaraman Ravindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Arun%20Tangirala.jpg', name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' }
 ];
 
@@ -65,7 +65,7 @@ const EMERGING_VENTURES = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Shailesh Kumar', role: 'Head of AI\nJio' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ganesh%20ramakrishnan.png', name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director, BharatGen' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shekar%20reddy.png', name: 'Sri G C Shekar Reddy', role: 'Director\nCompany:CRUX Bio eathnol\nIndia pvt Ltd.\nSri chakra poly plast (I) pvt Ltd' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shekar%20reddy.png', name: 'Sri G C Shekar Reddy', role: 'Director\nCRUX Bio Ethanol India Pvt Ltd\nSri Chakra Poly Plast (I) Pvt Ltd' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ram%20bandi.png', name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd\nHyderabad' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/vidhya%20sagar.png', name: 'Vidya Sagar Abburi', role: 'Founder & CMD\nAvantel' }
 ];

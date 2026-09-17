@@ -5,21 +5,15 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   async headers() {
+    // Never pin /_next/*.js as immutable — that caches stale client
+    // bundles in dev and causes hydration mismatches (old Navbar vs new SSR).
+    if (process.env.NODE_ENV !== 'production') {
+      return [];
+    }
+
     return [
       {
-        // Cache all static files in the public directory
-        // and standard Next.js static assets for 1 year
-        source: '/(.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|woff2|woff|ttf|pdf))',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        // Cache API responses and other static files if needed
-        source: '/_next/image(.*)',
+        source: '/(.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff2|woff|ttf|pdf))',
         headers: [
           {
             key: 'Cache-Control',

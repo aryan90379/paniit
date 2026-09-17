@@ -19,7 +19,7 @@ const CONTACTS = [
     phone: '+91 84189 44154',
   },
   {
-    name: 'Gadi Akhil Sai Ram',
+    name: 'Akhil Sai Ram Gadi',
     phone: '+91 94910 80512',
   },
   {
@@ -28,7 +28,6 @@ const CONTACTS = [
   },
   {
     name: 'Kshitij Tiwari',
-    phone: '+91 81819 08383',
   },
 ];
 

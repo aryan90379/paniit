@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -13,6 +14,24 @@ const GALLERY_IMAGES = [
 ];
 
 export default function Glimpses() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const centerFirstCard = () => {
+      const card = track.querySelector<HTMLElement>('[data-glimpse-card]');
+      if (!card) return;
+      const left = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+      track.scrollLeft = Math.max(0, left);
+    };
+
+    centerFirstCard();
+    const id = window.requestAnimationFrame(centerFirstCard);
+    return () => window.cancelAnimationFrame(id);
+  }, []);
+
   return (
     <section className="py-20 md:py-24 bg-paper text-gray-900 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl">
@@ -23,9 +42,10 @@ export default function Glimpses() {
           subtitle="Relive the moments that shaped our journey. A visual retrospective of past PanIIT summits and milestones."
           className="mb-12 md:mb-16 px-4"
         />
+      </div>
 
-        {/* Desktop Grid (3 above, 3 below) */}
-        <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-6 px-6">
+      {/* Desktop Grid (3 above, 3 below) */}
+      <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-6 px-6 container mx-auto max-w-7xl">
           {GALLERY_IMAGES.map((img, i) => (
             <motion.div
               key={i}
@@ -47,33 +67,41 @@ export default function Glimpses() {
           ))}
         </div>
 
-        {/* Mobile Swipe Carousel */}
-        <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 px-[10vw] gap-4">
+      <div
+        ref={trackRef}
+        className="flex md:hidden overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6"
+        style={{
+          paddingLeft: '10vw',
+          paddingRight: '10vw',
+          scrollPaddingLeft: '10vw',
+          scrollPaddingRight: '10vw',
+        }}
+      >
           {GALLERY_IMAGES.map((img, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-              transition={{ delay: i * 0.1 }}
-              className="w-[80vw] shrink-0 snap-center relative aspect-[4/5] rounded-3xl overflow-hidden shadow-md"
+              data-glimpse-card={i === 0 ? true : undefined}
+              className="snap-center relative aspect-[4/5] rounded-3xl overflow-hidden shadow-md"
+              style={{
+                flex: '0 0 80vw',
+                width: '80vw',
+                minWidth: '80vw',
+                marginRight: i < GALLERY_IMAGES.length - 1 ? 16 : 0,
+              }}
             >
               <img 
                 src={img} 
                 alt={`PanIIT Glimpse ${i+1}`}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
-            </motion.div>
+            </div>
           ))}
-        </div>
+      </div>
 
-        {/* Mobile Swipe Hint */}
-        <div className="flex md:hidden items-center justify-center gap-2 mt-2 text-xs font-bold text-slate-400">
-          <span>Swipe to explore glimpses &rarr;</span>
-        </div>
-
+      <div className="flex md:hidden items-center justify-center gap-2 mt-2 text-xs font-bold text-slate-400">
+        <span>Swipe to explore glimpses &rarr;</span>
       </div>
     </section>
   );

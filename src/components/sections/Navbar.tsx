@@ -92,7 +92,7 @@ export default function Navbar() {
               href="https://www.paniit.org/events/21873"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center justify-center min-h-11 px-5 py-2.5 bg-[#DD1D21] text-white font-semibold text-sm tracking-wide rounded-sm hover:bg-red-600 transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center min-h-9 px-3 py-2 bg-[#DD1D21] text-white font-semibold text-xs tracking-wide rounded-sm hover:bg-red-600 transition-colors whitespace-nowrap lg:min-h-11 lg:px-5 lg:py-2.5 lg:text-sm"
             >
               Register Now
             </a>
