@@ -4,7 +4,7 @@ import { Mail, MapPin, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-[#050505] pt-10 md:pt-12 pb-8 relative">
+    <footer id="footer" className="bg-[#06206A] pt-10 md:pt-12 pb-8 relative">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-10 mb-8">
 
@@ -27,24 +27,30 @@ export default function Footer() {
             <p className="font-serif text-white/85 text-base font-medium mb-4">
               Andhra's Resilient DeepTech Decade: Anchored by PanIIT
             </p>
-            <a href="mailto:secretariat@paniit.org" className="inline-flex items-center gap-2 text-sm text-white hover:text-blue-300 transition-colors font-semibold">
-              <Mail size={16} className="text-blue-400 shrink-0" />
+            <a href="mailto:secretariat@paniit.org" className="inline-flex items-center gap-2 text-sm text-white/85 hover:text-white transition-colors font-semibold">
+              <Mail size={16} className="text-[#C4A35A] shrink-0" />
               secretariat@paniit.org
             </a>
             <p className="inline-flex items-start gap-2 text-sm text-white/80 font-medium mt-2">
-              <MapPin size={16} className="text-blue-400 shrink-0 mt-0.5" />
+              <MapPin size={16} className="text-[#C4A35A] shrink-0 mt-0.5" />
               <span>Dr. B. R. Ambedkar Kala Vedika, Buckingham Peta, Vijayawada</span>
             </p>
           </div>
 
           <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold">
-            {['About', 'Advantage', 'Speakers', 'Schedule', 'Committee'].map((link) => (
+            {[
+              { name: 'About', href: '#about' },
+              { name: 'Initiatives', href: '#initiatives' },
+              { name: 'Speakers', href: '#speakers' },
+              { name: 'Schedule', href: '#schedule' },
+              { name: 'Team', href: '#committee' },
+            ].map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.name}
+                href={link.href}
                 className="text-white/80 hover:text-white transition-colors"
               >
-                {link}
+                {link.name}
               </a>
             ))}
           </nav>
@@ -60,7 +66,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="pt-5 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/70 font-medium text-center md:text-left">
+        <div className="pt-5 border-t border-[#C4A35A]/25 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/70 font-medium text-center md:text-left">
           <div>
             &copy; 2026 PanIIT Alumni India. All rights reserved.
           </div>

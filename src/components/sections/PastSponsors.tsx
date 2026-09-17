@@ -3,12 +3,22 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
 
-
 interface Sponsor {
   name: string;
   logo?: string;
   scale?: number;
 }
+
+const FEATURED_SPONSORS: Sponsor[] = [
+  { name: 'Government of Karnataka', logo: '/sponsors/past/government-of-karnataka.png' },
+  { name: 'Government of Telangana', logo: '/sponsors/past/government-of-telangana.png' },
+  { name: 'Karnataka Udyog Mitra', logo: '/sponsors/past/karnataka-udyog-mitra.jpg' },
+  { name: 'NMDC', logo: '/sponsors/past/nmdc.jpg' },
+  { name: 'MSIL', logo: '/sponsors/past/msil.png' },
+  { name: 'Global IT Associates', logo: '/sponsors/past/global-it-associates.png' },
+  { name: 'Janapriya Upscale', logo: '/sponsors/past/janapriya-upscale.png' },
+  { name: 'MSN Realty', logo: '/sponsors/past/msn-realty.png' },
+];
 
 const PAST_SPONSORS: Sponsor[] = [
   { name: 'Ayana Woods', logo: 'https://d3liyurciwi0wb.cloudfront.net/gold%20past%20/ayana%20woods.png', scale: 2.4 },
@@ -33,6 +43,38 @@ const PAST_SPONSORS: Sponsor[] = [
   { name: 'Lexicon Infotech', logo: 'https://media.licdn.com/dms/image/v2/C510BAQFJwb3t848TQw/company-logo_200_200/company-logo_200_200/0/1631415127022/lexicon_infotech_ltd_logo?e=2147483647&v=beta&t=5pzxMglqIy671IdXHeIAqO96XoJTJHKMPx1eAsxJpZE', scale: 2.4 },
 ];
 
+function SponsorLogo({
+  sponsor,
+  featured = false,
+}: {
+  sponsor: Sponsor;
+  featured?: boolean;
+}) {
+  if (!sponsor.logo) {
+    return (
+      <span
+        style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }}
+        className="font-extrabold text-2xl md:text-3xl text-gray-800 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug inline-block"
+      >
+        {sponsor.name}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={sponsor.logo}
+      alt={sponsor.name}
+      loading="lazy"
+      style={{
+        transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none',
+        maxHeight: featured ? 110 : 80,
+      }}
+      className="max-w-[90%] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
+    />
+  );
+}
+
 export default function PastSponsors() {
   return (
     <section id="past-sponsors" className="py-20 md:py-24 bg-white relative overflow-hidden">
@@ -45,28 +87,37 @@ export default function PastSponsors() {
           className="mb-14 md:mb-16"
         />
 
-        {/* SPONSORS GRID */}
         <div className="mb-10">
+          <div className="max-w-6xl mx-auto rounded-2xl bg-[#F7F4EE] border border-[#06206A]/10 px-4 py-6 sm:px-6 sm:py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {FEATURED_SPONSORS.map((sponsor, i) => (
+                <motion.div
+                  key={sponsor.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                  transition={{ delay: (i % 4) * 0.04 }}
+                  className="flex items-center justify-center text-center group min-h-36 overflow-visible px-2 py-3"
+                >
+                  <SponsorLogo sponsor={sponsor} featured />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div className="max-w-6xl mx-auto mt-10 mb-8 h-px bg-[#C4A35A]/40" />
+
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
             {PAST_SPONSORS.map((sponsor, i) => (
               <motion.div
-                key={i}
+                key={sponsor.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
                 transition={{ delay: (i % 5) * 0.04 }}
                 className="flex items-center justify-center text-center group min-h-[100px]"
               >
-                {sponsor.logo ? (
-                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[80px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
-                ) : (
-                  <span 
-                    style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }}
-                    className="font-extrabold text-2xl md:text-3xl text-gray-800 tracking-tight group-hover:text-[#06206A] transition-colors leading-snug inline-block"
-                  >
-                    {sponsor.name}
-                  </span>
-                )}
+                <SponsorLogo sponsor={sponsor} />
               </motion.div>
             ))}
           </div>

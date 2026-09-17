@@ -13,7 +13,11 @@ import {
   GraduationCap, 
   ArrowUpRight 
 } from 'lucide-react';
-import SectionHeading from '@/components/ui/SectionHeading';
+
+const headingFade = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
+};
 
 interface Initiative {
   id: string;
@@ -167,12 +171,12 @@ function BentoCard({ item, index }: { item: Initiative; index: number }) {
           </div>
 
           {/* Title */}
-          <h3 className="text-lg sm:text-xl font-serif font-medium text-[#06206A] tracking-tight mb-2.5 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-serif font-medium text-[#06206A] tracking-tight mb-2.5 leading-snug">
             {item.title}
           </h3>
 
           {/* Exact Description */}
-          <p className="text-base text-slate-600 font-medium leading-relaxed">
+          <p className="text-lg text-slate-600 font-medium leading-relaxed">
             {item.desc}
           </p>
         </div>
@@ -189,15 +193,39 @@ function BentoCard({ item, index }: { item: Initiative; index: number }) {
 
 export default function AdvantageLegacy() {
   return (
-    <section id="advantage" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+    <section id="initiatives" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
 
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
         
-        <SectionHeading
-          title="Beyond the Summit"
-          subtitle="PanIIT–Andhra Pradesh Legacy Initiatives"
-          className="mb-12 sm:mb-16"
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ staggerChildren: 0.08 }}
+          className="text-center mx-auto w-full mb-12 sm:mb-16"
+        >
+          <motion.h2
+            variants={headingFade}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="font-medium text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.15] max-w-full text-pretty break-words whitespace-normal text-[#06206A]"
+            style={{ fontFamily: 'var(--font-newsreader), ui-serif, Georgia, serif' }}
+          >
+            PanIIT–Andhra Pradesh Legacy Initiatives
+          </motion.h2>
+          <motion.div
+            variants={{ hidden: { scaleX: 0, opacity: 0 }, show: { scaleX: 1, opacity: 1 } }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-4 h-px w-14 bg-[#C4A35A] origin-center mx-auto"
+          />
+          <motion.p
+            variants={headingFade}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-4 text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-[#06206A]"
+            style={{ fontFamily: 'var(--font-newsreader), ui-serif, Georgia, serif' }}
+          >
+            Beyond the Summit
+          </motion.p>
+        </motion.div>
 
         {/* 8-Card Magic Bento Grid - Carousel on Mobile */}
         <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible gap-4 sm:gap-5 md:gap-6 pb-6 md:pb-0 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0">

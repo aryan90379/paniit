@@ -195,13 +195,13 @@ export default function EventDetails() {
                 <stop offset="100%" stopColor="#06206A" stopOpacity="0.4" />
               </linearGradient>
               <linearGradient id="waveGradMid" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#091A42" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#050C1D" stopOpacity="0.9" />
+                <stop offset="0%" stopColor="#06206A" stopOpacity="0.55" />
+                <stop offset="100%" stopColor="#06206A" stopOpacity="0.9" />
               </linearGradient>
               <linearGradient id="waveGradFront" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#0B132B" />
-                <stop offset="40%" stopColor="#050505" />
-                <stop offset="100%" stopColor="#050505" />
+                <stop offset="0%" stopColor="#08308A" />
+                <stop offset="40%" stopColor="#06206A" />
+                <stop offset="100%" stopColor="#06206A" />
               </linearGradient>
             </defs>
 
@@ -217,7 +217,7 @@ export default function EventDetails() {
               fill="url(#waveGradMid)"
             />
 
-            {/* Front Wave: Seamless transition to pure footer color (#050505) */}
+            {/* Front Wave: Seamless transition to footer navy (#06206A) */}
             <path
               d="M0,224 C280,180 520,270 800,210 C1080,150 1280,240 1440,220 L1440,320 L0,320 Z"
               fill="url(#waveGradFront)"
