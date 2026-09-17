@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Flag, Mic2, FileText, Users, Network, Rocket, Coffee, Award, Shield, Satellite, Microchip, BookOpen, Tractor, HeartPulse, Leaf, Cpu } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 // span config: cols/rows for desktop 4-col bento grid
 // Layout: [0]=2×2 hero, [1]=1×1, [2]=1×1, [3]=2×1 wide, [4]=1×1, [5]=1×1, [6]=1×1, [7]=1×1
@@ -118,7 +119,7 @@ function HighlightCard({ item, i }: { item: (typeof HIGHLIGHTS)[0]; i: number })
         className="absolute inset-0 w-full h-full object-cover object-center opacity-85 group-hover:opacity-95 group-hover:scale-105 transition-all duration-700 ease-out"
       />
       {/* Soft vignette — only from bottom, not a full blackout */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 via-40% to-transparent" />
       {/* Hairline highlight on top edge */}
       <div className="absolute top-0 inset-x-0 h-px bg-white/10 group-hover:bg-white/18 transition-colors duration-500" />
 
@@ -136,11 +137,11 @@ function HighlightCard({ item, i }: { item: (typeof HIGHLIGHTS)[0]; i: number })
       </div>
 
       {/* Bottom text */}
-      <div className="absolute bottom-0 inset-x-0 z-10 p-4 sm:p-5">
-        <h3 className={`font-bold text-white leading-tight tracking-tight ${isBig ? 'text-xl sm:text-2xl md:text-3xl mb-1.5' : 'text-base sm:text-lg mb-1'}`}>
+      <div className="absolute bottom-0 inset-x-0 z-10 p-4 sm:p-5 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
+        <h3 className={`font-serif font-medium text-white leading-tight tracking-tight ${isBig ? 'text-xl sm:text-2xl md:text-3xl mb-1.5' : 'text-base sm:text-lg mb-1'}`}>
           {item.label}
         </h3>
-        <p className={`text-white/55 font-medium leading-snug ${isBig ? 'text-sm sm:text-base' : 'text-xs sm:text-sm'}`}>
+        <p className={`text-white/90 font-medium leading-snug ${isBig ? 'text-base sm:text-lg' : 'text-sm sm:text-base'}`}>
           {item.desc}
         </p>
       </div>
@@ -169,17 +170,17 @@ function ThemeCard({ theme, i }: { theme: (typeof THEMES)[0]; i: number }) {
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 via-40% to-transparent" />
       <div className="absolute top-0 inset-x-0 h-px bg-white/10 group-hover:bg-white/18 transition-colors duration-500" />
 
       <div className="absolute top-3.5 left-3.5 z-10 w-9 h-9 rounded-xl bg-white/8 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/70 group-hover:bg-[#DD1D21]/80 group-hover:text-white group-hover:border-red-300/20 transition-all duration-300">
         <Icon size={15} strokeWidth={2} />
       </div>
 
-      <div className="absolute bottom-0 inset-x-0 z-10 p-4">
-        <span className="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-sky-300/75 mb-1">{theme.tag}</span>
-        <h3 className="text-white font-bold text-sm sm:text-base leading-tight">{theme.label}</h3>
-        <div className="mt-2 h-0.5 w-5 bg-[#DD1D21] rounded-full group-hover:w-9 transition-all duration-300" />
+      <div className="absolute bottom-0 inset-x-0 z-10 p-4 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
+        <span className="block text-[9px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#C4A35A] mb-1">{theme.tag}</span>
+        <h3 className="text-white font-serif font-medium text-sm sm:text-base leading-tight">{theme.label}</h3>
+        <div className="mt-2 h-px w-5 bg-[#C4A35A] group-hover:w-9 transition-all duration-300" />
       </div>
     </motion.div>
   );
@@ -192,41 +193,24 @@ export default function Highlights() {
   const themeTitleInView = useInView(themeTitleRef, { once: true, margin: '-80px' });
 
   return (
-    <section id="highlights" className="py-24 sm:py-28 md:py-32 bg-white text-gray-900 relative border-t border-gray-100">
+    <section id="highlights" className="py-20 md:py-24 bg-white text-gray-900 relative">
       <div className="container mx-auto px-4 sm:px-6 md:px-10 max-w-7xl">
 
-        {/* ── SUMMIT HIGHLIGHTS ── */}
-        <div className="mb-20 sm:mb-24 md:mb-28">
+        <div className="mb-20 sm:mb-24">
 
-          {/* Header — left-aligned like Claude / Wispr */}
           <div ref={titleRef} className="mb-10 sm:mb-12">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={titleInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#06206A]/6 border border-[#06206A]/12 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.15em] text-[#06206A]">Flagship Experience</span>
+              <SectionHeading
+                align="left"
+                eyebrow="Flagship Experience"
+                title="Summit Highlights"
+                subtitle="Key milestones, high-impact sessions, and visionary gatherings defining the PanIIT Andhra Pradesh Summit 2026."
+              />
             </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              animate={titleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.06 }}
-              className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-6xl font-black text-[#06206A] uppercase tracking-tight leading-none mb-3"
-            >
-              Summit Highlights
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={titleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.12 }}
-              className="text-slate-500 text-sm sm:text-base max-w-lg leading-relaxed"
-            >
-              Key milestones, high-impact sessions, and visionary gatherings defining the PanIIT Andhra Pradesh Summit 2026.
-            </motion.p>
           </div>
 
           {/* Desktop bento — 4 col, auto rows of 220px */}
@@ -260,7 +244,7 @@ export default function Highlights() {
                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = item.localImage; }}
                     className="absolute inset-0 w-full h-full object-cover object-center opacity-85 group-hover:opacity-95 group-hover:scale-105 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 via-40% to-transparent" />
                   <div className="absolute top-4 left-4 z-10">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-sm border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/75">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21] shrink-0" />
@@ -270,9 +254,9 @@ export default function Highlights() {
                   <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-xl bg-white/8 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/60">
                     <Icon size={16} strokeWidth={2} />
                   </div>
-                  <div className="absolute bottom-0 inset-x-0 z-10 p-5">
-                    <h3 className="text-white font-bold text-lg leading-tight mb-1.5">{item.label}</h3>
-                    <p className="text-white/55 text-sm font-medium leading-snug">{item.desc}</p>
+                  <div className="absolute bottom-0 inset-x-0 z-10 p-5 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
+                    <h3 className="text-white font-serif font-medium text-lg leading-tight mb-1.5">{item.label}</h3>
+                    <p className="text-white/90 text-base font-medium leading-snug">{item.desc}</p>
                   </div>
                 </motion.div>
               );
@@ -292,29 +276,14 @@ export default function Highlights() {
               initial={{ opacity: 0, y: 10 }}
               animate={themeTitleInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DD1D21]/6 border border-[#DD1D21]/12 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.15em] text-[#DD1D21]">PanIIT Summit Tracks</span>
+              <SectionHeading
+                align="left"
+                eyebrow="PanIIT Summit Tracks"
+                title="Session Themes"
+                subtitle="Immersive tracks and deep-dives exploring the future of innovation."
+              />
             </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              animate={themeTitleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.06 }}
-              className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-6xl font-black text-[#06206A] uppercase tracking-tight leading-none mb-3"
-            >
-              Session Themes
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={themeTitleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.12 }}
-              className="text-slate-500 text-sm sm:text-base max-w-lg leading-relaxed"
-            >
-              Immersive tracks and deep-dives exploring the future of innovation.
-            </motion.p>
           </div>
 
           {/* Session Themes Carousel */}

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Download, ExternalLink, FileText, Calendar } from 'lucide-react';
+import { ArrowLeft, Download, ExternalLink, FileText } from 'lucide-react';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 
@@ -11,7 +11,7 @@ export default function AgendaPage() {
     document.title = 'PanIIT Andhra Pradesh Summit 2026: Complete Agenda Unveiled';
   }, []);
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-gray-900 selection:bg-blue-500/20 selection:text-[#06206A]">
+    <div className="min-h-screen flex flex-col bg-paper text-gray-900 selection:bg-[#06206A]/15 selection:text-[#06206A]">
       <Navbar />
 
       <main className="flex-1 pt-36 sm:pt-44 md:pt-48 pb-20">
@@ -23,19 +23,18 @@ export default function AgendaPage() {
               href="/#schedule" 
               className="inline-flex items-center gap-2 text-sm font-bold text-gray-600 hover:text-[#06206A] transition-colors group px-3 py-1.5 rounded-lg hover:bg-white border border-transparent hover:border-gray-200"
             >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-[#DD1D21]" />
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-[#06206A]" />
               <span>Go Back</span>
             </Link>
           </div>
 
           {/* Page Heading & Subtitle */}
           <div className="mb-8 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E3F0FA] border border-[#C6E1F8] text-[#06206A] text-xs font-bold uppercase tracking-wider">
-              <Calendar className="w-3.5 h-3.5" />
-              <span>3rd October, 2026 • Vijayawada</span>
+            <div className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#06206A]">
+              3rd October, 2026 · Vijayawada
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#06206A] tracking-tight leading-tight">
+            <h1 className="font-serif font-medium text-3xl sm:text-4xl md:text-5xl text-[#06206A] tracking-tight leading-tight">
               PanIIT Andhra Pradesh Summit 2026: Complete Agenda Unveiled
             </h1>
             

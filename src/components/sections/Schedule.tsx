@@ -2,34 +2,19 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Calendar, Sparkles } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Schedule() {
   return (
-    <section id="schedule" className="py-20 md:py-28 bg-white text-gray-900 relative border-t border-gray-200">
+    <section id="schedule" className="py-20 md:py-24 bg-paper text-gray-900 relative">
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
         
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            className="text-3xl md:text-5xl font-black text-[#06206A] mb-4 tracking-tight uppercase"
-          >
-            Summit Agenda
-          </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E3F0FA] border border-[#C6E1F8] text-[#06206A] text-xs md:text-sm font-bold uppercase tracking-wider shadow-xs"
-          >
-            <Calendar className="w-3.5 h-3.5 text-[#06206A]" />
-            <span>3rd October, 2026 • Vijayawada, Andhra Pradesh</span>
-          </motion.div>
-        </div>
+        <SectionHeading
+          eyebrow="3rd October, 2026 · Vijayawada"
+          title="Summit Agenda"
+          className="mb-12 md:mb-16"
+        />
 
         {/* 2-Column Showcase (Matching PanIIT Summit Layout) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -74,11 +59,10 @@ export default function Schedule() {
             className="lg:col-span-6 flex flex-col justify-center space-y-6 text-center lg:text-left items-center lg:items-start"
           >
             <div className="flex flex-col items-center lg:items-start">
-              <div className="flex items-center justify-center lg:justify-start gap-2 text-[#DD1D21] font-bold text-xs uppercase tracking-widest mb-2">
-                <span className="w-2 h-2 rounded-full bg-[#DD1D21]" />
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-[#06206A] font-semibold text-xs uppercase tracking-[0.18em] mb-2">
                 Official Summit Schedule
               </div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#06206A] tracking-tight leading-tight">
+              <h3 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-[#06206A] tracking-tight leading-tight">
                 PanIIT Andhra Pradesh Summit 2026
               </h3>
             </div>
@@ -112,7 +96,7 @@ export default function Schedule() {
             <div className="pt-4 flex flex-wrap justify-center lg:justify-start items-center gap-4">
               <Link prefetch={false}
                 href="/agenda"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#06206A] hover:bg-[#082a8a] text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2.5 min-h-11 px-8 py-3 rounded-full bg-[#06206A] hover:bg-[#081a52] text-white font-semibold text-sm sm:text-base transition-colors"
               >
                 <span>View Complete Agenda</span>
                 <ArrowRight className="w-4 h-4" />
@@ -121,9 +105,9 @@ export default function Schedule() {
               <a
                 href="/PanIIT_AP_Summit_2026_Agenda.pdf"
                 download="PanIIT_AP_Summit_2026_Agenda.pdf"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-gray-50 text-gray-800 font-bold text-sm sm:text-base border border-gray-300 hover:border-gray-400 shadow-xs hover:shadow-sm transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 rounded-full bg-transparent text-[#06206A] font-semibold text-sm sm:text-base border border-[#06206A]/30 hover:border-[#06206A] hover:bg-white/60 transition-colors"
               >
-                <Download className="w-4 h-4 text-[#DD1D21]" />
+                <Download className="w-4 h-4" />
                 <span>Download Agenda (PDF)</span>
               </a>
             </div>

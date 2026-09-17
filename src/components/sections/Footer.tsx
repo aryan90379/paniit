@@ -24,7 +24,7 @@ export default function Footer() {
                 />
               </div>
             </div>
-            <p className="text-white/80 text-sm font-medium mb-4">
+            <p className="font-serif text-white/85 text-base font-medium mb-4">
               Andhra's Resilient DeepTech Decade: Anchored by PanIIT
             </p>
             <a href="mailto:secretariat@paniit.org" className="inline-flex items-center gap-2 text-sm text-white hover:text-blue-300 transition-colors font-semibold">
@@ -54,7 +54,7 @@ export default function Footer() {
             href="https://www.paniit.org/events/21873"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#DD1D21] hover:bg-red-500 text-white font-black uppercase tracking-wide text-sm transition-colors"
+            className="inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 rounded-md bg-[#DD1D21] hover:bg-red-500 text-white font-semibold tracking-wide text-sm transition-colors"
           >
             Register Now <ArrowRight size={16} />
           </a>

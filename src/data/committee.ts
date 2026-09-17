@@ -60,7 +60,7 @@ export const CORE_COMMITTEE: CommitteeMember[] = [
     name: 'Swadeep Pillarisetti', 
     role: 'Chair', 
     category: 'Core Committee',
-    image: 'https://afilemanager.s3.dualstack.ap-southeast-1.amazonaws.com/prod/cid_0/pan_team_6.png',
+    image: '/committee/swadeep-pillarisetti.png',
   },
   { 
     name: 'Rajesh Kumar Dasari', 

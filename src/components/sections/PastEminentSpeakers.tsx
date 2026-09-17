@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Grid } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 const PLACEHOLDER = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23cbd5e1%22%3E%3Cpath%20d%3D%22M12%2012c2.21%200%204-1.79%204-4s-1.79-4-4-4-4%201.79-4%204%201.79%204%204%204zm0%202c-2.67%200-8%201.34-8%204v2h16v-2c0-2.66-5.33-4-8-4z%22%2F%3E%3C%2Fsvg%3E";
 
@@ -23,22 +24,22 @@ const PAST_SPEAKERS = [
   { image: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Carl_Bass_Autodesk.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original', name: 'Sri Carl Bass', desc: 'Former President & CEO, Autodesk' },
   { image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Nitin_Jairam_Gadkari.jpg/250px-Nitin_Jairam_Gadkari.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail', name: 'Sri Nitin Gadkari', desc: 'Union Minister, Road Transport & Highways' },
   { image: 'https://etimg.etb2bimg.com/photo/125431002.cms', name: 'Sri Piyush Goyal', desc: 'Union Minister, Commerce and Industry of India' },
-  { image: PLACEHOLDER, name: 'Sri Abhay Karandikar', desc: 'Member, NITI Aayog' },
-  { image: PLACEHOLDER, name: 'Sri MK Stalin', desc: 'Chief Minister, Tamil Nadu' },
-  { name: 'Sri Dr. V Anantha Nageswaran', desc: 'Chief Economic Advisor, Government of India' },
-  { name: 'Sri Sudhansh Panth', desc: 'IAS (IITKGP) Chief Secretary Rajasthan' },
-  { name: 'Sri Navin Mittal, IAS', desc: 'Special Chief Secretary, Policy, Regulation & Energy at Govt. of Telangana' },
-  { name: 'Sri Phani Kishan Addepalli', desc: 'Cofounder, Swiggy' },
-  { name: 'Sri Ankit Mehta', desc: 'CEO, ideaForge' },
-  { name: 'Sri Tarun Mehta', desc: 'Cofounder & CEO, Ather Energy' },
-  { name: 'Smt. Asha Jadeja Motwani', desc: 'Founder, Motwani Jadeja Family Foundation' },
-  { name: 'Smt. Sharon Pickering', desc: 'Vice-Chancellor and President of Monash University' },
-  { name: 'Sri Markus Schäfer', desc: 'Board of Directors Member & CTO Mercedes-Benz Group AG' },
-  { name: 'Sri Naotaka Nishiyama', desc: 'Founder & CEO, Talendy' },
-  { name: 'Sri Lal Chand Bisu', desc: 'Cofounder & CEO Kuku FM' },
-  { name: 'Sri Venkat Padmanabhan', desc: 'Managing Director, Microsoft Research India' },
-  { name: 'Sri Harsh Jain', desc: 'Cofounder & COO, Groww' },
-  { name: 'Sri Abhishek Bansal', desc: 'Cofounder & CEO, Shadowfax' },
+  { image: '/speakers/legacy/abhay-karandikar.jpg', name: 'Sri Abhay Karandikar', desc: 'Member, NITI Aayog' },
+  { image: '/speakers/legacy/mk-stalin.jpg', name: 'Sri MK Stalin', desc: 'Chief Minister, Tamil Nadu' },
+  { image: '/speakers/legacy/v-anantha-nageswaran.jpg', name: 'Sri Dr. V Anantha Nageswaran', desc: 'Chief Economic Advisor, Government of India' },
+  { image: '/speakers/legacy/sudhansh-pant.jpg', name: 'Sri Sudhansh Panth', desc: 'IAS (IITKGP) Chief Secretary Rajasthan' },
+  { image: '/speakers/legacy/navin-mittal.jpg', name: 'Sri Navin Mittal, IAS', desc: 'Special Chief Secretary, Policy, Regulation & Energy at Govt. of Telangana' },
+  { image: '/speakers/legacy/phani-kishan-addepalli.jpg', name: 'Sri Phani Kishan Addepalli', desc: 'Cofounder, Swiggy' },
+  { image: '/speakers/legacy/ankit-mehta.png', name: 'Sri Ankit Mehta', desc: 'CEO, ideaForge' },
+  { image: '/speakers/legacy/tarun-mehta.jpg', name: 'Sri Tarun Mehta', desc: 'Cofounder & CEO, Ather Energy' },
+  { image: '/speakers/legacy/asha-jadeja-motwani.jpg', name: 'Smt. Asha Jadeja Motwani', desc: 'Founder, Motwani Jadeja Family Foundation' },
+  { image: '/speakers/legacy/sharon-pickering.jpg', name: 'Smt. Sharon Pickering', desc: 'Vice-Chancellor and President of Monash University' },
+  { image: '/speakers/legacy/markus-schafer.jpg', name: 'Sri Markus Schäfer', desc: 'Board of Directors Member & CTO Mercedes-Benz Group AG' },
+  { image: '/speakers/legacy/naotaka-nishiyama.jpg', name: 'Sri Naotaka Nishiyama', desc: 'Founder & CEO, Talendy' },
+  { image: '/speakers/legacy/lal-chand-bisu.jpg', name: 'Sri Lal Chand Bisu', desc: 'Cofounder & CEO Kuku FM' },
+  { image: '/speakers/legacy/venkat-padmanabhan.jpg', name: 'Sri Venkat Padmanabhan', desc: 'Managing Director, Microsoft Research India' },
+  { image: '/speakers/legacy/harsh-jain.jpg', name: 'Sri Harsh Jain', desc: 'Cofounder & COO, Groww' },
+  { image: '/speakers/legacy/abhishek-bansal.jpg', name: 'Sri Abhishek Bansal', desc: 'Cofounder & CEO, Shadowfax' },
 ];
 
 export default function PastEminentSpeakers() {
@@ -58,41 +59,27 @@ export default function PastEminentSpeakers() {
   };
 
   return (
-    <section id="speakers-legacy-section" className="py-24 bg-white relative border-t border-gray-200">
+    <section id="speakers-legacy-section" className="py-20 md:py-24 bg-paper relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
-        <div className="text-center mb-12">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            className="text-3xl md:text-5xl font-bold text-[#06206A] mb-4 tracking-tight uppercase"
-          >
-            Legacy of Eminent Speakers
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            transition={{ delay: 0.1 }}
-            className="text-gray-500 font-medium max-w-2xl mx-auto"
-          >
-            PanIIT summits have previously hosted global leaders, honoring our legacy of tech, policy, and innovation leadership.
-          </motion.p>
-        </div>
+        <SectionHeading
+          title="Legacy of Eminent Speakers"
+          subtitle="PanIIT summits have previously hosted global leaders, honoring our legacy of tech, policy, and innovation leadership."
+          className="mb-12"
+        />
 
         {!showAll ? (
           <div className="relative">
             {/* Carousel Navigation */}
             <button 
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-gray-50 transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-11 h-11 md:w-12 md:h-12 bg-white rounded-full border border-[#06206A]/10 flex items-center justify-center z-20 text-[#06206A] hover:bg-paper transition-colors"
             >
               <ChevronLeft size={24} />
             </button>
             <button 
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-20 text-[#06206A] hover:bg-gray-50 transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-11 h-11 md:w-12 md:h-12 bg-white rounded-full border border-[#06206A]/10 flex items-center justify-center z-20 text-[#06206A] hover:bg-paper transition-colors"
             >
               <ChevronRight size={24} />
             </button>
@@ -106,21 +93,20 @@ export default function PastEminentSpeakers() {
               {PAST_SPEAKERS.slice(0, 10).map((speaker, i) => (
                 <div 
                   key={i}
-                  className="snap-start shrink-0 w-[260px] md:w-[280px] flex flex-col items-center text-center group p-6 rounded-[30px] bg-white transition-all duration-300 relative border border-gray-100/50 hover:shadow-[0_15px_40px_-10px_rgba(99,102,241,0.2)]"
+                  className="group snap-start shrink-0 w-[260px] md:w-[280px] flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-[#06206A]/8"
                 >
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                    <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                  <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6">
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm"
+                      className="w-full h-full object-cover rounded-full bg-white portrait-ring"
                     />
                   </div>
-                  <h3 className="font-bold text-[#06206A] text-base md:text-lg leading-snug mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
+                  <h3 className="font-semibold text-[#06206A] text-base md:text-lg leading-snug mb-2">{speaker.name}</h3>
                   {speaker.desc && (
-                    <p className="text-xs md:text-sm text-gray-500 relative z-10 font-medium">{speaker.desc}</p>
+                    <p className="text-sm md:text-base text-slate-500">{speaker.desc}</p>
                   )}
                 </div>
               ))}
@@ -130,7 +116,7 @@ export default function PastEminentSpeakers() {
             <div className="flex justify-center mt-6">
               <button 
                 onClick={() => setShowAll(true)}
-                className="group flex items-center gap-2 px-8 py-3 bg-[#06206A] text-white rounded-full font-semibold hover:bg-indigo-600 transition-all shadow-md hover:shadow-lg"
+                className="group flex items-center justify-center gap-2 min-h-11 px-8 py-3 bg-[#06206A] text-white rounded-full font-semibold hover:bg-[#081a52] transition-colors"
               >
                 <Grid size={18} />
                 View All Speakers
@@ -148,21 +134,20 @@ export default function PastEminentSpeakers() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                   transition={{ delay: (i % 5) * 0.05 }}
-                  className="flex flex-col items-center text-center group p-4 md:p-6 rounded-[30px] hover:bg-white transition-all duration-300 relative hover:shadow-[0_15px_40px_-10px_rgba(99,102,241,0.2)]"
+                  className="group flex flex-col items-center text-center p-4 md:p-6"
                 >
-                  <div className="relative w-28 h-28 md:w-32 md:h-32 mb-5 group-hover:-translate-y-1 transition-transform duration-300">
-                    <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-15 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+                  <div className="relative w-24 h-24 md:w-32 md:h-32 mb-5">
                     <img 
                       src={speaker.image || PLACEHOLDER} 
                       alt={speaker.name} 
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-sm"
+                      className="w-full h-full object-cover rounded-full bg-white portrait-ring"
                     />
                   </div>
-                  <h3 className="font-bold text-[#06206A] text-sm md:text-base leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors">{speaker.name}</h3>
+                  <h3 className="font-semibold text-[#06206A] text-sm md:text-base leading-snug mb-1.5">{speaker.name}</h3>
                   {speaker.desc && (
-                    <p className="text-[11px] md:text-xs text-gray-500 relative z-10 font-medium">{speaker.desc}</p>
+                    <p className="text-xs md:text-sm text-slate-500">{speaker.desc}</p>
                   )}
                 </motion.div>
               ))}

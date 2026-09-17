@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 const PLACEHOLDER = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23cbd5e1%22%3E%3Cpath%20d%3D%22M12%2012c2.21%200%204-1.79%204-4s-1.79-4-4-4-4%201.79-4%204%201.79%204%204%204zm0%202c-2.67%200-8%201.34-8%204v2h16v-2c0-2.66-5.33-4-8-4z%22%2F%3E%3C%2Fsvg%3E";
 
@@ -69,22 +70,15 @@ const EMERGING_VENTURES = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/vidhya%20sagar.png', name: 'Vidya Sagar Abburi', role: 'Founder & CMD\nAvantel' }
 ];
 
-const SectionTitle = ({ title }: { title: string }) => (
-  <div className="flex flex-col items-center mb-16 pt-12">
-    <h2 className="text-3xl md:text-5xl font-black text-[#06206A] uppercase tracking-wide text-center">
-      {title}
-    </h2>
-    <div className="w-16 h-1.5 bg-[#DD1D21] mt-4"></div>
-  </div>
-);
-
-const SpeakerCard = ({ speaker }: { speaker: any }) => (
-  <div className="flex flex-col items-center text-center group p-4 md:p-6 rounded-3xl hover:bg-white transition-all duration-300 relative h-full">
-    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
-         style={{ boxShadow: '0 10px 40px -10px rgba(99, 102, 241, 0.4)' }} />
-         
-    <div className="relative w-32 h-32 md:w-48 md:h-48 mb-5 group-hover:-translate-y-1 transition-transform duration-300">
-      <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
+const SpeakerCard = ({ speaker }: { speaker: { image?: string; name: string; role: string } }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 18 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+    className="group flex flex-col items-center text-center p-4 md:p-6 relative h-full"
+  >
+    <div className="relative w-28 h-28 md:w-40 md:h-40 mb-5">
       <img 
         src={speaker.image || PLACEHOLDER} 
         alt={speaker.name} 
@@ -93,48 +87,47 @@ const SpeakerCard = ({ speaker }: { speaker: any }) => (
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
         }}
-        className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100"
+        className="w-full h-full object-cover rounded-full bg-white portrait-ring"
       />
     </div>
-    <h3 className="font-bold text-[#06206A] text-sm md:text-lg leading-snug mb-1.5 relative z-10 group-hover:text-indigo-600 transition-colors whitespace-pre-line">{speaker.name}</h3>
-    <p className="text-xs md:text-sm text-gray-500 relative z-10 whitespace-pre-line font-medium">{speaker.role}</p>
-  </div>
+    <h3 className="font-semibold text-[#06206A] text-sm md:text-lg leading-snug mb-1.5 whitespace-pre-line">{speaker.name}</h3>
+    <p className="text-sm md:text-base text-slate-500 whitespace-pre-line">{speaker.role}</p>
+  </motion.div>
 );
 
 export default function Speakers() {
   return (
     <section id="speakers" className="bg-white relative">
-      
 
-
-      {/* Distinguished Guests */}
-      <div className="py-20 border-b border-gray-100 bg-white">
+      <div className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
-          <SectionTitle title="Distinguished Guests" />
+          <SectionHeading eyebrow="Confirmed Speakers" title="Distinguished Guests" className="mb-12 md:mb-16" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-3xl mx-auto">
             {DISTINGUISHED_GUESTS.map((guest, i) => (
-              <div key={i} className="flex flex-col items-center text-center group p-4 md:p-6 rounded-3xl hover:bg-white transition-all duration-300 relative">
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
-                     style={{ boxShadow: '0 15px 50px -15px rgba(99, 102, 241, 0.4)' }} />
-                     
-                <div className="relative w-36 h-36 md:w-48 md:h-48 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                  <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                  <img src={guest.image} alt={guest.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="group flex flex-col items-center text-center p-4 md:p-6"
+              >
+                <div className="relative w-32 h-32 md:w-44 md:h-44 mb-6">
+                  <img src={guest.image} alt={guest.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full bg-white portrait-ring" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{guest.name}</h3>
-                <p className="text-xs md:text-sm text-gray-500 relative z-10 whitespace-pre-line font-medium">
+                <h3 className="text-lg md:text-xl font-semibold text-[#06206A] mb-2">{guest.name}</h3>
+                <p className="text-sm md:text-base text-slate-500 whitespace-pre-line">
                   {guest.role}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Key Guests and Speakers */}
-      <div className="py-24 bg-white border-b border-gray-100">
+      <div className="py-20 md:py-24 bg-paper">
         <div className="container mx-auto px-4 max-w-6xl">
-          <SectionTitle title="IIT Directors and Academicians" />
+          <SectionHeading title="IIT Directors and Academicians" className="mb-12 md:mb-16" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
             {KEY_GUESTS.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />
@@ -143,10 +136,9 @@ export default function Speakers() {
         </div>
       </div>
 
-      {/* Industry Leaders */}
-      <div className="py-24 bg-white border-b border-gray-100">
+      <div className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <SectionTitle title="Industry Leaders" />
+          <SectionHeading title="Industry Leaders" className="mb-12 md:mb-16" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
             {INDUSTRY_LEADERS.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />
@@ -155,16 +147,15 @@ export default function Speakers() {
         </div>
       </div>
 
-      {/* Emerging Ventures & Unicorns */}
-      <div className="py-24 bg-white">
+      <div className="py-20 md:py-24 bg-paper">
         <div className="container mx-auto px-4 max-w-6xl">
-          <SectionTitle title="Emerging Ventures & Unicorns" />
+          <SectionHeading title="Emerging Ventures & Unicorns" className="mb-12 md:mb-16" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
             {EMERGING_VENTURES.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />
             ))}
-            <div className="flex flex-col justify-center items-center h-full min-h-[250px] p-4 md:p-6 rounded-3xl bg-white relative">
-              <div className="text-xl md:text-2xl font-bold text-[#06206A] relative z-10">+ Many More</div>
+            <div className="flex flex-col justify-center items-center h-full min-h-[200px] p-4">
+              <div className="font-serif text-xl md:text-2xl font-medium text-[#06206A]">+ Many More</div>
             </div>
           </div>
         </div>

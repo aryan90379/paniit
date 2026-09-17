@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 
 interface Sponsor {
@@ -34,32 +35,15 @@ const PAST_SPONSORS: Sponsor[] = [
 
 export default function PastSponsors() {
   return (
-    <section id="past-sponsors" className="py-24 bg-white relative border-t border-gray-100 overflow-hidden">
+    <section id="past-sponsors" className="py-20 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
-        {/* Section Heading */}
-        <div className="text-center mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            className="inline-block px-4 py-1 rounded-full border border-blue-200 bg-[#E3F0FA] text-[#43AAF0] text-sm font-medium mb-4 uppercase tracking-widest"
-          >
-            Partnerships & Legacy
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-black text-[#06206A] tracking-tight uppercase"
-          >
-            Past Sponsors
-          </motion.h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto font-medium">
-            Acknowledging the distinguished organizations and partners who championed previous editions of the PanIIT Summit.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Partnerships & Legacy"
+          title="Past Sponsors"
+          subtitle="Acknowledging the distinguished organizations and partners who championed previous editions of the PanIIT Summit."
+          className="mb-14 md:mb-16"
+        />
 
         {/* SPONSORS GRID */}
         <div className="mb-10">
@@ -71,7 +55,7 @@ export default function PastSponsors() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
                 transition={{ delay: (i % 5) * 0.04 }}
-                className="flex items-center justify-center text-center group min-h-[100px] hover:-translate-y-2 transition-transform duration-300"
+                className="flex items-center justify-center text-center group min-h-[100px]"
               >
                 {sponsor.logo ? (
                   <img src={sponsor.logo} alt={sponsor.name} loading="lazy" style={{ transform: sponsor.scale ? `scale(${sponsor.scale})` : 'none' }} className="max-w-[90%] max-h-[80px] object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />

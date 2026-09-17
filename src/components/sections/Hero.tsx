@@ -53,7 +53,7 @@ function PlainBanner({ slides }: { slides: { image: string }[] }) {
           <div className="absolute top-1/2 left-0 right-0 z-10 flex justify-between px-4 -translate-y-1/2 pointer-events-none">
             <button
               type="button"
-              className="pointer-events-auto inline-flex items-center justify-center w-10 h-10 rounded-full text-white border border-white/20 bg-black/40 cursor-pointer hover:bg-black/55"
+              className="pointer-events-auto inline-flex items-center justify-center w-11 h-11 rounded-full text-white border border-white/20 bg-black/40 cursor-pointer hover:bg-black/55"
               aria-label="Previous slide"
               onClick={() => go(-1)}
             >
@@ -63,7 +63,7 @@ function PlainBanner({ slides }: { slides: { image: string }[] }) {
             </button>
             <button
               type="button"
-              className="pointer-events-auto inline-flex items-center justify-center w-10 h-10 rounded-full text-white border border-white/20 bg-black/40 cursor-pointer hover:bg-black/55"
+              className="pointer-events-auto inline-flex items-center justify-center w-11 h-11 rounded-full text-white border border-white/20 bg-black/40 cursor-pointer hover:bg-black/55"
               aria-label="Next slide"
               onClick={() => go(1)}
             >
@@ -166,10 +166,10 @@ export default function Hero() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 bg-slate-50 md:bg-transparent rounded-[2rem] md:rounded-none p-6 md:p-0 border border-slate-100 md:border-none shadow-sm md:shadow-none">
           
           <div className="flex flex-col items-center md:items-start w-full md:w-auto">
-            <h3 className="font-bold text-slate-400 text-[11px] sm:text-xs uppercase tracking-widest mb-1.5">Date & Time</h3>
+            <h3 className="font-semibold text-slate-500 text-[11px] sm:text-xs uppercase tracking-[0.18em] mb-1.5">Date & Time</h3>
             <div className="flex items-center gap-2.5 text-[#06206A]">
-              <Calendar size={18} className="text-[#DD1D21]" />
-              <span className="font-black text-lg md:text-xl tracking-tight">3rd October, 2026</span>
+              <Calendar size={18} className="text-[#C4A35A]" />
+              <span className="font-serif font-medium text-xl md:text-2xl tracking-tight">3rd October, 2026</span>
             </div>
           </div>
           
@@ -178,7 +178,7 @@ export default function Hero() {
           <div className="md:hidden w-full h-px bg-slate-200/60 my-1"></div>
 
           <div className="flex flex-col items-center md:items-start flex-1 max-w-lg w-full text-center md:text-left">
-            <h3 className="font-bold text-slate-400 text-[11px] sm:text-xs uppercase tracking-widest mb-1.5">Venue</h3>
+            <h3 className="font-semibold text-slate-500 text-[11px] sm:text-xs uppercase tracking-[0.18em] mb-1.5">Venue</h3>
             <a 
               href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
               target="_blank"
@@ -186,13 +186,13 @@ export default function Hero() {
               className="group flex flex-col items-center md:items-start text-[#06206A] hover:text-[#DD1D21] transition-colors"
             >
               <div className="flex items-center justify-center gap-2">
-                <MapPin size={18} className="text-[#DD1D21] group-hover:scale-110 transition-transform shrink-0" />
-                <span className="font-black text-lg md:text-xl leading-tight tracking-tight">
+                <MapPin size={18} className="text-[#C4A35A] shrink-0" />
+                <span className="font-serif font-medium text-xl md:text-2xl leading-tight tracking-tight">
                   Dr. B. R. Ambedkar Kala Vedika
                 </span>
               </div>
-              <span className="text-[11px] uppercase tracking-wider text-[#DD1D21] font-bold mt-1.5 md:ml-6 group-hover:underline">
-                GET DIRECTIONS &rarr;
+              <span className="text-[11px] uppercase tracking-[0.16em] text-[#06206A] font-semibold mt-1.5 md:ml-6 group-hover:underline">
+                Get directions →
               </span>
             </a>
           </div>
@@ -204,7 +204,7 @@ export default function Hero() {
               href="https://www.paniit.org/events/21873"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-auto text-center px-8 py-4 bg-[#DD1D21] hover:bg-red-600 text-white font-black text-sm uppercase tracking-widest rounded-xl shadow-[0_8px_20px_-6px_rgba(221,29,33,0.4)] hover:shadow-[0_12px_25px_-6px_rgba(221,29,33,0.5)] transition-all duration-300 hover:-translate-y-1"
+              className="w-full md:w-auto min-h-11 text-center inline-flex items-center justify-center px-8 py-3.5 bg-[#DD1D21] hover:bg-red-600 text-white font-semibold text-sm tracking-wide rounded-md transition-transform duration-300 hover:scale-[1.03]"
             >
               Register Now &rarr;
             </a>
