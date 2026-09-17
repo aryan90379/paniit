@@ -2,7 +2,8 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Globe2, Cpu, Users, Target, Rocket, Lightbulb, MapPin } from 'lucide-react';
+import { Users, Target, Rocket, Lightbulb, MapPin } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 const CF = 'https://d3liyurciwi0wb.cloudfront.net/vision';
 
@@ -91,14 +92,11 @@ function VisionCard({ card, i }: { card: typeof CARDS[0]; i: number }) {
         loading="lazy"
         decoding="async"
         onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700 ease-out"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
       />
 
-      {/* Brand tint overlay — keeps navy identity */}
-      <div className="absolute inset-0 bg-[#06206A]/45 mix-blend-multiply" />
-
       {/* Soft bottom vignette for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 via-40% to-transparent" />
 
       {/* Hairline top highlight */}
       <div className="absolute top-0 inset-x-0 h-px bg-white/12 group-hover:bg-white/22 transition-colors duration-500" />
@@ -117,7 +115,7 @@ function VisionCard({ card, i }: { card: typeof CARDS[0]; i: number }) {
       </div>
 
       {/* Content — bottom */}
-      <div className="absolute bottom-0 inset-x-0 z-10 p-5 sm:p-6">
+      <div className="absolute bottom-0 inset-x-0 z-10 p-5 sm:p-6 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
         {/* Tags row (only on big card) */}
         {card.tags && (
           <div className="flex flex-wrap gap-2 mb-2">
@@ -129,17 +127,17 @@ function VisionCard({ card, i }: { card: typeof CARDS[0]; i: number }) {
           </div>
         )}
 
-        <h3 className={`font-black text-white leading-tight tracking-tight mb-1.5 ${isBig ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-lg sm:text-xl'}`}>
+        <h3 className={`font-serif font-medium text-white leading-tight tracking-tight mb-1.5 ${isBig ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-lg sm:text-xl'}`}>
           {card.label}
         </h3>
 
-        <p className={`text-white/60 font-medium leading-snug ${isBig ? 'text-sm sm:text-base max-w-lg' : 'text-xs sm:text-sm'}`}>
+        <p className={`text-white/90 font-medium leading-snug ${isBig ? 'text-base sm:text-lg max-w-lg' : 'text-sm sm:text-base'}`}>
           {card.desc}
         </p>
 
         {card.footer && (
           <div className="mt-3 pt-3 border-t border-white/10">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300/80">{card.footer}</span>
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#C4A35A]">{card.footer}</span>
           </div>
         )}
       </div>
@@ -152,40 +150,22 @@ export default function VisionMission() {
   const titleInView = useInView(titleRef, { once: true, margin: '-80px' });
 
   return (
-    <section className="py-16 sm:py-20 md:py-28 bg-white text-gray-900 relative">
+    <section className="py-16 sm:py-20 md:py-24 bg-paper text-gray-900 relative">
       <div className="container mx-auto px-4 sm:px-6 md:px-10 max-w-7xl">
 
-        {/* Header */}
         <div ref={titleRef} className="mb-10 sm:mb-14">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={titleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DD1D21]/6 border border-[#DD1D21]/15 mb-4"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-[#DD1D21]">Our Vision</span>
+            <SectionHeading
+              align="left"
+              eyebrow="Our Vision"
+              title="Vision of PanIIT Andhra Pradesh"
+              subtitle="A strategic roadmap to elevate Andhra Pradesh as India's premier destination for deep-tech and industrial innovation."
+            />
           </motion.div>
-
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              animate={titleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.06 }}
-              className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-6xl font-black text-[#06206A] uppercase tracking-tight leading-none"
-            >
-              Vision of PanIIT<br className="hidden sm:block" /> Andhra Pradesh
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={titleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.45, delay: 0.14 }}
-              className="text-slate-500 text-sm sm:text-base max-w-sm leading-relaxed md:text-right shrink-0"
-            >
-              A strategic roadmap to elevate Andhra Pradesh as India's premier destination for deep-tech and industrial innovation.
-            </motion.p>
-          </div>
         </div>
 
         {/* Desktop Bento Grid — 3-col, auto rows */}
@@ -217,10 +197,9 @@ export default function VisionMission() {
                   loading="lazy"
                   decoding="async"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
-                  className="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700"
+                  className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-[#06206A]/45 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 via-40% to-transparent" />
 
                 <div className="absolute top-3.5 right-3.5 z-10">
                   <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/75">
@@ -232,11 +211,11 @@ export default function VisionMission() {
                   <Icon size={15} strokeWidth={2} />
                 </div>
 
-                <div className="absolute bottom-0 inset-x-0 z-10 p-4">
-                  <h3 className="text-white font-bold text-lg leading-tight mb-1">{card.label}</h3>
-                  <p className="text-white/55 text-xs font-medium leading-snug">{card.desc}</p>
+                <div className="absolute bottom-0 inset-x-0 z-10 p-4 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
+                  <h3 className="text-white font-serif font-medium text-lg leading-tight mb-1">{card.label}</h3>
+                  <p className="text-white/90 text-sm font-medium leading-snug">{card.desc}</p>
                   {card.footer && (
-                    <span className="block mt-2 text-[9px] font-bold uppercase tracking-widest text-sky-300/75">{card.footer}</span>
+                    <span className="block mt-2 text-[9px] font-semibold uppercase tracking-widest text-[#C4A35A]">{card.footer}</span>
                   )}
                 </div>
               </motion.div>

@@ -262,6 +262,7 @@ interface EngineConfig {
   reducedMotion: boolean;
   getOptions: () => EngineOptions;
   onIndexChange: (index: number) => void;
+  onContextLost?: () => void;
   dprCap: number;
 }
 
@@ -270,6 +271,7 @@ class MorphEngine {
   private items: MorphItem[];
   private getOptions: () => EngineOptions;
   private onIndexChange: (index: number) => void;
+  private onContextLostCallback?: () => void;
   private reducedMotion: boolean;
 
   private current: number;
@@ -291,12 +293,14 @@ class MorphEngine {
   private raf = 0;
   private boundLoop: (t: number) => void;
   private boundContextLost: (e: Event) => void;
+  private destroyed = false;
 
   constructor(container: HTMLElement, config: EngineConfig) {
     this.container = container;
     this.items = config.items;
     this.getOptions = config.getOptions;
     this.onIndexChange = config.onIndexChange;
+    this.onContextLostCallback = config.onContextLost;
     this.reducedMotion = config.reducedMotion;
     this.current = config.startIndex;
     this.shownIndex = config.startIndex;
@@ -311,6 +315,7 @@ class MorphEngine {
 
     this.canvas = this.gl.canvas as HTMLCanvasElement;
     this.canvas.className = 'block w-full h-full';
+    this.canvas.style.opacity = '0';
     container.appendChild(this.canvas);
 
     this.geometry = new Triangle(this.gl);
@@ -358,7 +363,7 @@ class MorphEngine {
     this.io = new IntersectionObserver(([entry]) => {
       this.isVisible = entry.isIntersecting;
       this.isVisible ? this.tryStart() : this.tryStop();
-    }, { rootMargin: '100px 0px', threshold: 0 });
+    }, { rootMargin: '80% 0px', threshold: 0 });
     this.io.observe(this.container);
 
     document.addEventListener('visibilitychange', this.onVisibilityChange);
@@ -398,7 +403,10 @@ class MorphEngine {
 
   private tryStart(): void {
     if (this.isVisible && this.isPageVisible && this.raf === 0) {
-      this.raf = requestAnimationFrame(this.boundLoop);
+      this.raf = requestAnimationFrame(t => {
+        this.loop(t);
+        this.canvas.style.opacity = '1';
+      });
     }
   }
 
@@ -407,6 +415,7 @@ class MorphEngine {
       cancelAnimationFrame(this.raf);
       this.raf = 0;
     }
+    this.canvas.style.opacity = '0';
   }
 
   private onVisibilityChange = () => {
@@ -556,12 +565,15 @@ class MorphEngine {
     }
   }
 
-  private onContextLost(e: Event): void {
-    e.preventDefault();
-    cancelAnimationFrame(this.raf);
+  private onContextLost(): void {
+    if (this.destroyed) return;
+    this.raf = 0;
+    this.canvas.style.opacity = '0';
+    this.onContextLostCallback?.();
   }
 
   destroy(): void {
+    this.destroyed = true;
     this.tryStop();
     if (this.tween) this.tween.kill();
     this.resizeObserver.disconnect();
@@ -601,8 +613,11 @@ export default function MorphSlider({
 }: MorphSliderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<MorphEngine | null>(null);
+  const indexRef = useRef(startIndex);
   const [index, setIndex] = useState(startIndex);
+  const [engineEpoch, setEngineEpoch] = useState(0);
   const [hovering, setHovering] = useState(false);
+  indexRef.current = index;
 
   const optsRef = useRef<EngineOptions>({
     transition,
@@ -623,21 +638,22 @@ export default function MorphSlider({
 
     const engine = new MorphEngine(containerRef.current, {
       items,
-      startIndex,
+      startIndex: indexRef.current,
       reducedMotion,
       dprCap: 2,
       getOptions: () => optsRef.current,
-      onIndexChange: setIndex
+      onIndexChange: setIndex,
+      onContextLost: () => setEngineEpoch(n => n + 1)
     });
     engineRef.current = engine;
-    setIndex(startIndex);
+    setIndex(indexRef.current);
 
     return () => {
       engine.destroy();
       engineRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items, startIndex]);
+  }, [items, startIndex, engineEpoch]);
 
   const handleNext = useCallback(() => engineRef.current?.next(), []);
   const handlePrev = useCallback(() => engineRef.current?.prev(), []);
@@ -711,6 +727,7 @@ export default function MorphSlider({
   return (
     <div
       className={`relative w-full h-full overflow-hidden select-none bg-[#0c0c0e] ${className}`.trim()}
+      data-ms-version="2"
       style={
         {
           borderRadius: `${radius}px`,
@@ -723,9 +740,19 @@ export default function MorphSlider({
       onMouseLeave={() => setHovering(false)}
       {...props}
     >
+      {items[index]?.image ? (
+        <img
+          src={items[index].image}
+          alt=""
+          aria-hidden="true"
+          draggable={false}
+          data-hero-fallback="true"
+          className="absolute inset-0 z-0 h-full w-full object-cover pointer-events-none"
+        />
+      ) : null}
       <div
         ref={containerRef}
-        className="absolute inset-0 cursor-grab active:cursor-grabbing outline-none focus-visible:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.7)]"
+        className="absolute inset-0 z-[1] cursor-grab active:cursor-grabbing outline-none focus-visible:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.7)]"
         role="group"
         aria-roledescription="carousel"
         aria-label="Image morph slider"

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 const GALLERY_IMAGES = [
   'https://d3liyurciwi0wb.cloudfront.net/glimpses/01.png',
@@ -13,29 +14,15 @@ const GALLERY_IMAGES = [
 
 export default function Glimpses() {
   return (
-    <section className="py-24 bg-slate-50 text-gray-900 relative overflow-hidden">
+    <section className="py-20 md:py-24 bg-paper text-gray-900 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         
-        <div className="text-center mb-16 px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            className="inline-block px-4 py-1 rounded-full border border-blue-200 bg-[#E3F0FA] text-[#43AAF0] text-sm font-medium mb-4 uppercase tracking-widest"
-          >
-            Past Events
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#06206A] tracking-tight uppercase"
-          >
-            Glimpses From The Past
-          </motion.h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">Relive the moments that shaped our journey. A visual retrospective of past PanIIT summits and milestones.</p>
-        </div>
+        <SectionHeading
+          eyebrow="Past Events"
+          title="Glimpses From the Past"
+          subtitle="Relive the moments that shaped our journey. A visual retrospective of past PanIIT summits and milestones."
+          className="mb-12 md:mb-16 px-4"
+        />
 
         {/* Desktop Grid (3 above, 3 below) */}
         <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-6 px-6">

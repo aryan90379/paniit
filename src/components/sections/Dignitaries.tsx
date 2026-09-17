@@ -1,5 +1,8 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import SectionHeading from '@/components/ui/SectionHeading';
+
 const CHIEF_GUEST = {
   image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg',
   name: 'Sri Nara Chandra Babu Naidu',
@@ -23,61 +26,57 @@ const GUESTS_OF_HONOUR = [
   }
 ];
 
-const SectionTitle = ({ title }: { title: string }) => (
-  <div className="flex flex-col items-center mb-16 pt-12">
-    <h2 className="text-3xl md:text-5xl font-black text-[#06206A] uppercase tracking-wide text-center">
-      {title}
-    </h2>
-    <div className="w-16 h-1.5 bg-[#DD1D21] mt-4"></div>
-  </div>
-);
-
 export default function Dignitaries() {
   return (
-    <section className="bg-white relative">
+    <section className="bg-paper relative">
 
-      {/* Chief Guest */}
-      <div className="py-20 border-b border-gray-100 relative overflow-hidden">
+      <div className="py-20 md:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <SectionTitle title="Chief Guest" />
+          <SectionHeading eyebrow="Summit Dignitaries" title="Chief Guest" className="mb-12 md:mb-16" />
           <div className="max-w-2xl mx-auto flex flex-col items-center">
-            <div className="flex flex-col items-center text-center group p-8 md:p-12 rounded-[40px] hover:bg-white transition-all duration-300 relative">
-              <div className="absolute inset-0 rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                   style={{ boxShadow: '0 20px 60px -15px rgba(99, 102, 241, 0.5)' }} />
-              <div className="relative w-64 h-64 md:w-80 md:h-80 mb-8 group-hover:-translate-y-2 transition-transform duration-300">
-                <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                <img src={CHIEF_GUEST.image} alt={CHIEF_GUEST.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-xl" />
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="group flex flex-col items-center text-center p-6 md:p-10"
+            >
+              <div className="relative w-56 h-56 md:w-72 md:h-72 mb-8">
+                <img src={CHIEF_GUEST.image} alt={CHIEF_GUEST.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full bg-white portrait-ring" />
               </div>
-              <h3 className="text-2xl md:text-4xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{CHIEF_GUEST.name}</h3>
-              <p className="text-lg md:text-xl text-gray-500 relative z-10 font-medium">
+              <h3 className="font-serif font-medium text-2xl md:text-4xl text-[#06206A] mb-2">{CHIEF_GUEST.name}</h3>
+              <p className="text-base md:text-lg text-slate-500 font-medium">
                 {CHIEF_GUEST.role}<br/>{CHIEF_GUEST.org}
               </p>
-              <p className="mt-6 text-sm md:text-base text-gray-400 italic font-medium max-w-2xl mx-auto relative z-10">
+              <p className="mt-6 text-base md:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
                 {CHIEF_GUEST.desc}
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Guest of Honour */}
-      <div className="py-20 border-b border-gray-100 bg-white">
+      <div className="py-20 md:py-24 bg-white border-y border-[#06206A]/8">
         <div className="container mx-auto px-4 max-w-5xl">
-          <SectionTitle title="Guest of Honour" />
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+          <SectionHeading title="Guests of Honour" className="mb-12 md:mb-16" />
+          <div className="flex flex-wrap justify-center gap-8 md:gap-14">
             {GUESTS_OF_HONOUR.map((guest, i) => (
-              <div key={i} className="flex flex-col items-center text-center group p-6 md:p-8 rounded-3xl hover:bg-white transition-all duration-300 relative">
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                     style={{ boxShadow: '0 15px 50px -15px rgba(99, 102, 241, 0.4)' }} />
-                <div className="relative w-40 h-40 md:w-56 md:h-56 mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                  <div className="absolute inset-[-15%] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl rounded-full transition-opacity duration-300 pointer-events-none" />
-                  <img src={guest.image} alt={guest.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full relative z-10 bg-white border border-gray-100 shadow-md" />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="group flex flex-col items-center text-center p-4 md:p-6 max-w-sm"
+              >
+                <div className="relative w-36 h-36 md:w-52 md:h-52 mb-6">
+                  <img src={guest.image} alt={guest.name} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full bg-white portrait-ring" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#06206A] mb-2 relative z-10 group-hover:text-indigo-600 transition-colors">{guest.name}</h3>
-                <p className="text-sm md:text-base text-gray-500 relative z-10 whitespace-pre-line font-medium">
+                <h3 className="font-serif font-medium text-xl md:text-2xl text-[#06206A] mb-2">{guest.name}</h3>
+                <p className="text-base md:text-lg text-slate-500 whitespace-pre-line font-medium">
                   {guest.role}<br/>{guest.org}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

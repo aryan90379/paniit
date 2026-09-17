@@ -1,151 +1,78 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Download, ArrowRight } from 'lucide-react';
-import GradientWaves from '../GradientWaves';
+import { Mail, MapPin, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-[#050505] pt-8 md:pt-14 pb-12 overflow-hidden relative">
-      
-      {/* Immersive Wave Background - HIGH VISIBILITY */}
-      <div className="hidden md:block absolute inset-0 z-0">
-        <GradientWaves
-          horizonColor="#000000" 
-          waveColor="#06206A" // PanIIT Navy Blue
-          crestColor="#DD1D21" // PanIIT Red
-          speed={0.4}
-          amplitude={2.5}
-          waveScale={0.6}
-          waveRatio={0.9}
-          swell={35}
-          turbulence={20}
-          tilt={1.11}
-          zoom={1}
-          height={5.5}
-          fogDepth={15}
-          detail="medium"
-          brightness={1.5}
-          opacity={1}
-          mouseInteraction={true}
-          parallaxStrength={0.5}
-          grain={true}
-          grainIntensity={0.05}
-        />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#050505] to-transparent pointer-events-none" />
-      </div>
-
+    <footer id="footer" className="bg-[#06206A] pt-10 md:pt-12 pb-8 relative">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 md:gap-12 lg:gap-8 mb-20">
-          
-          {/* Brand & Contact (Left Column) */}
-          <div className="lg:col-span-4 flex flex-col gap-12 text-center lg:text-left items-center lg:items-start">
-            <div className="flex flex-col items-center lg:items-start">
-              <div className="mb-6 inline-block bg-white p-3 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/20">
-                <div className="flex items-center gap-4">
-                  <img 
-                    src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg" 
-                    alt="PanIIT Alumni India" 
-                    className="h-12 object-contain mix-blend-multiply" 
-                  />
-                  <div className="w-px h-10 bg-[#06206A]/20"></div>
-                  <img 
-                    src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg" 
-                    alt="PanIIT AP Summit" 
-                    className="h-12 object-contain mix-blend-multiply" 
-                  />
-                </div>
-              </div>
-              <p className="text-white font-medium max-w-md drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                Andhra's Resilient DeepTech Decade: Anchored by PanIIT
-              </p>
-            </div>
-            
-            <div className="w-full flex flex-col items-center lg:items-start">
-              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm drop-shadow-lg">Contact Secretariat</h4>
-              <ul className="space-y-6 lg:space-y-5 w-full flex flex-col items-center lg:items-start">
-                <li className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold text-center lg:text-left">
-                  <Mail size={20} className="text-blue-400 shrink-0 mt-0 lg:mt-0.5 drop-shadow-lg" />
-                  <span>
-                    <div className="font-bold text-white mb-1">PanIIT Secretariat</div>
-                    <a href="mailto:secretariat@paniit.org" className="hover:text-blue-300 transition-colors block">secretariat@paniit.org</a>
-                  </span>
-                </li>
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-10 mb-8">
 
-                <li className="flex flex-col lg:flex-row items-center lg:items-start gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold text-center lg:text-left">
-                  <Phone size={20} className="text-blue-400 shrink-0 mt-0 lg:mt-0.5 drop-shadow-lg" />
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 w-full">
-                    <div>
-                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Padmini Padhy</div>
-                      <div className="text-sm font-mono">+91 97111 95445</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Sanskreeti Raj</div>
-                      <div className="text-sm font-mono">+91 98354 19705</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Sai Teja Duggempudi</div>
-                      <div className="text-sm font-mono">+91 84189 44154</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Gadi Akhil Sai Ram</div>
-                      <div className="text-sm font-mono">+91 94910 80512</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-300 text-xs uppercase tracking-wider mb-0.5">Thejaswini Kalasamudram</div>
-                      <div className="text-sm font-mono">+91 78937 96502</div>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold text-center lg:text-left">
-                  <MapPin size={20} className="text-blue-400 shrink-0 mt-0 lg:mt-0.5 drop-shadow-lg" />
-                  <span className="leading-snug">Dr. B. R. Ambedkar Kala Vedika,<br/>Buckingham Peta, Vijayawada</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Quick Links (Middle Column) */}
-          <div className="lg:col-span-3 lg:col-start-6 flex flex-col items-center lg:items-start">
-            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm drop-shadow-lg">Navigation</h4>
-            <ul className="space-y-4">
-              {['About', 'Advantage', 'Speakers', 'Schedule', 'Committee'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase()}`} className="text-white/90 hover:text-white transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-semibold flex items-center justify-center lg:justify-start gap-2">
-                    <ArrowRight size={14} className="text-blue-400" />
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Registration (Right Column) */}
-          <div className="lg:col-span-4 md:col-span-2 text-center lg:text-left">
-            <div id="register" className="p-8 md:p-10 rounded-[2rem] bg-black/60 backdrop-blur-xl border border-white/20 shadow-[0_0_50px_rgba(30,58,138,0.2)] relative overflow-hidden h-full flex flex-col items-center lg:items-start">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-              <div className="relative z-10 flex-grow flex flex-col justify-center w-full">
-                <h4 className="text-2xl font-black text-white mb-3">Register for the Summit</h4>
-                <p className="text-sm text-gray-200 mb-6 font-medium leading-relaxed">Secure your spot at Andhra's premier DeepTech event. Join industry leaders, innovators, and investors.</p>
-                <div className="mt-4 w-full">
-                  <a href="https://www.paniit.org/events/21873" target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-[#DD1D21] hover:bg-red-500 text-white font-black uppercase tracking-wide flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-red-500/25">
-                    Register Now <ArrowRight size={18} />
-                  </a>
-                </div>
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-md">
+            <div className="mb-4 inline-block bg-white p-2.5 rounded-xl">
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg"
+                  alt="PanIIT Alumni India"
+                  className="h-10 object-contain mix-blend-multiply"
+                />
+                <div className="w-px h-8 bg-[#06206A]/20" />
+                <img
+                  src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg"
+                  alt="PanIIT AP Summit"
+                  className="h-10 object-contain mix-blend-multiply"
+                />
               </div>
             </div>
+            <p className="font-serif text-white/85 text-base font-medium mb-4">
+              Andhra's Resilient DeepTech Decade: Anchored by PanIIT
+            </p>
+            <a href="mailto:secretariat@paniit.org" className="inline-flex items-center gap-2 text-sm text-white/85 hover:text-white transition-colors font-semibold">
+              <Mail size={16} className="text-[#C4A35A] shrink-0" />
+              secretariat@paniit.org
+            </a>
+            <p className="inline-flex items-start gap-2 text-sm text-white/80 font-medium mt-2">
+              <MapPin size={16} className="text-[#C4A35A] shrink-0 mt-0.5" />
+              <span>Dr. B. R. Ambedkar Kala Vedika, Buckingham Peta, Vijayawada</span>
+            </p>
           </div>
-          
+
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold">
+            {[
+              { name: 'About', href: '#about' },
+              { name: 'Initiatives', href: '#initiatives' },
+              { name: 'Speakers', href: '#speakers' },
+              { name: 'Schedule', href: '#schedule' },
+              { name: 'Team', href: '#committee' },
+            ].map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          <a
+            id="register"
+            href="https://www.paniit.org/events/21873"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 rounded-md bg-[#DD1D21] hover:bg-red-500 text-white font-semibold tracking-wide text-sm transition-colors"
+          >
+            Register Now <ArrowRight size={16} />
+          </a>
         </div>
 
-        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white drop-shadow-lg font-semibold backdrop-blur-xl bg-black/40 py-4 px-6 rounded-2xl border border-white/10 text-center md:text-left">
+        <div className="pt-5 border-t border-[#C4A35A]/25 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/70 font-medium text-center md:text-left">
           <div>
-            &copy; {new Date().getFullYear()} PanIIT Alumni India. All rights reserved.
+            &copy; 2026 PanIIT Alumni India. All rights reserved.
           </div>
-          <div className="flex gap-6 justify-center">
-            <a href="#" className="hover:text-blue-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-blue-300 transition-colors">Terms of Service</a>
+          <div className="flex gap-5">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
