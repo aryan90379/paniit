@@ -5,7 +5,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 
 const IMAGES = [
   'https://d3liyurciwi0wb.cloudfront.net/vision/TOGETHER/PHOTO-2026-09-16-13-58-48.jpg',
-  'https://d3liyurciwi0wb.cloudfront.net/vision/TOGETHER/PHOTO-2026-09-16-13-58-29.jpg'
+  '/engagement/govt-meeting.jpeg',
 ];
 
 export default function Engagement() {

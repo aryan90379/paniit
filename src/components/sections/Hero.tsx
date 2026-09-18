@@ -4,18 +4,29 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
 
+const HERO_SLIDES = [
+  {
+    src: '/hero/banner.png',
+    alt: 'PanIIT Andhra Pradesh Summit 2026 — Chief Guest Sri Nara Chandra Babu Naidu',
+  },
+  {
+    src: '/hero/guests-of-honour.png',
+    alt: 'PanIIT Andhra Pradesh Summit 2026 — Guests of Honour',
+  },
+];
+
 export default function Hero() {
   const [navHeight, setNavHeight] = useState<number>(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const measureNavbar = () => {
       const navbar = document.getElementById('main-navbar') || document.querySelector('header');
       if (!navbar) return;
-      
+
       const rect = navbar.getBoundingClientRect();
       const h = Math.round(rect.height);
       if (h > 0) {
-        // Capture unscrolled navbar height or initial height
         if (window.scrollY < 20 || navHeight === 0) {
           setNavHeight(h);
         }
@@ -35,7 +46,6 @@ export default function Hero() {
       ro.observe(navbar);
     }
 
-    // Measure when header images finish loading
     const imgs = navbar?.querySelectorAll('img') || [];
     imgs.forEach((img) => {
       if (!img.complete) {
@@ -49,34 +59,58 @@ export default function Hero() {
     };
   }, [navHeight]);
 
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setIndex((current) => (current + 1) % HERO_SLIDES.length);
+    }, 5500);
+    return () => window.clearInterval(id);
+  }, []);
+
   const navOffset = navHeight ? `${navHeight}px` : 'var(--navbar-height, 70px)';
 
   return (
-    <section 
-      className="relative w-full bg-white flex flex-col justify-between overflow-hidden" 
+    <section
+      className="relative w-full bg-white flex flex-col justify-between"
       id="hero"
       style={{
-        paddingTop: navOffset
+        paddingTop: navOffset,
       }}
     >
-      
-      <div className="w-full bg-white">
-        <img
-          src="/hero_banner.png"
-          alt="PanIIT Andhra Pradesh Summit 2026"
-          className="w-full h-auto block"
-        />
+      <div className="relative w-full bg-white">
+        {HERO_SLIDES.map((slide, i) => (
+          <img
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            className={`block ${
+              i === 0 ? 'w-full h-auto' : 'absolute inset-0 w-full h-full object-cover'
+            } ${i === index ? 'opacity-100' : 'opacity-0'}`}
+            style={{ transition: 'opacity 700ms ease' }}
+          />
+        ))}
+
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+          {HERO_SLIDES.map((slide, i) => (
+            <button
+              key={slide.src}
+              type="button"
+              aria-label={`Show slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-2 rounded-full transition-all ${
+                i === index ? 'w-[22px] bg-white' : 'w-2 bg-white/40'
+              }`}
+            />
+          ))}
+        </div>
       </div>
-        
-      {/* BOTTOM ROW - Event Details menu style */}
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
         className="w-full bg-white py-6 md:py-8 px-4 sm:px-6 relative z-10 mt-0"
       >
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 bg-slate-50 md:bg-transparent rounded-[2rem] md:rounded-none p-6 md:p-0 border border-slate-100 md:border-none shadow-sm md:shadow-none">
-          
           <div className="flex flex-col items-center md:items-start w-full md:w-auto">
             <h3 className="font-semibold text-slate-500 text-[11px] sm:text-xs uppercase tracking-[0.18em] mb-1.5">Date & Time</h3>
             <div className="flex items-center gap-2.5 text-[#06206A]">
@@ -84,14 +118,13 @@ export default function Hero() {
               <span className="font-serif font-medium text-xl md:text-2xl tracking-tight">3rd October, 2026</span>
             </div>
           </div>
-          
+
           <div className="hidden md:block w-px h-12 bg-slate-200"></div>
-          {/* Mobile Divider */}
           <div className="md:hidden w-full h-px bg-slate-200/60 my-1"></div>
 
           <div className="flex flex-col items-center md:items-start flex-1 max-w-lg w-full text-center md:text-left">
             <h3 className="font-semibold text-slate-500 text-[11px] sm:text-xs uppercase tracking-[0.18em] mb-1.5">Venue</h3>
-            <a 
+            <a
               href="https://www.google.com/maps/dir//Dr.+B.+R.+Ambedkar'+Kala+Vedika,+GJ5J%2B8P2,+Buckinghampeta,+Vijayawada,+Andhra+Pradesh+520002/@19.1443224,72.9106087,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a35f100214ca94f:0xed340268dedead72!2m2!1d80.6317745!2d16.5082645"
               target="_blank"
               rel="noopener noreferrer"
@@ -121,7 +154,6 @@ export default function Hero() {
               Register Now &rarr;
             </a>
           </div>
-
         </div>
       </motion.div>
     </section>
