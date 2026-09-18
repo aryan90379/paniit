@@ -178,8 +178,8 @@ function ThemeCard({ theme, i }: { theme: (typeof THEMES)[0]; i: number }) {
       </div>
 
       <div className="absolute bottom-0 inset-x-0 z-10 p-4 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
-        <span className="block text-[9px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#C4A35A] mb-1">{theme.tag}</span>
-        <h3 className="text-white font-serif font-medium text-sm sm:text-base leading-tight">{theme.label}</h3>
+        <span className="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#C4A35A] mb-1">{theme.tag}</span>
+        <h3 className="text-white font-serif font-medium text-[15px] sm:text-[17px] leading-tight">{theme.label}</h3>
         <div className="mt-2 h-px w-5 bg-[#C4A35A] group-hover:w-9 transition-all duration-300" />
       </div>
     </motion.div>

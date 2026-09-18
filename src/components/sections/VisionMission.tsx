@@ -2,79 +2,94 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Users, Target, Rocket, Lightbulb, MapPin } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const CF = 'https://d3liyurciwi0wb.cloudfront.net/vision';
 
 const CARDS = [
   {
-    icon: Target,
     label: 'Swarna Andhra 2047',
-    badge: 'Roadmap to 2047',
-    tags: ['Viksit Bharat', 'Frontier R&D'],
     desc: 'Aligning state priorities with Viksit Bharat 2047 to establish Andhra Pradesh as an innovation superpower.',
-    footer: null,
     image: `${CF}/swarna%20andhra%202047.jpeg`,
     localImage: '/vision/swarna andhra 2047.jpeg',
     cols: 2,
-    accentColor: 'sky',
   },
   {
-    icon: Users,
     label: 'Global Network',
-    badge: '500k+ IITians',
-    tags: null,
     desc: 'Uniting alumni leaders, global CXOs, and policymakers to channel capital and leadership into AP.',
-    footer: 'Alumni • Industry • Policy',
     image: `${CF}/global%20network.jpg`,
     localImage: '/vision/global network.jpg',
     cols: 1,
-    accentColor: 'sky',
   },
   {
-    icon: Rocket,
     label: 'AI & Deep Tech',
-    badge: 'Frontier Tech',
-    tags: null,
     desc: 'Catalyzing breakthroughs in Quantum Computing, Artificial Intelligence, and Clean Energy ecosystems.',
-    footer: 'Quantum • AI • Startups',
     image: `${CF}/DeepTech%20AI.jpg`,
     localImage: '/vision/DeepTech AI.jpg',
     cols: 1,
-    accentColor: 'red',
   },
   {
-    icon: Lightbulb,
     label: 'Talent Pool',
-    badge: 'Future Workforce',
-    tags: null,
     desc: 'Transforming Andhra Pradesh youth into globally competitive engineering and research talent.',
-    footer: 'Mentorship • Academia • Chairs',
     image: `${CF}/talent%20pool.jpg`,
     localImage: '/vision/talent pool.jpg',
     cols: 1,
-    accentColor: 'sky',
   },
   {
-    icon: MapPin,
     label: 'Innovation Hub',
-    badge: 'Innovation Hub',
-    tags: null,
     desc: 'Showcasing Andhra Pradesh as a premier destination for high-value strategic tech investments.',
-    footer: 'Semiconductors • R&D Parks',
     image: `${CF}/innovation%20hub.jpg`,
     localImage: '/vision/innovation hub.jpg',
     cols: 1,
-    accentColor: 'sky',
   },
 ];
 
-function VisionCard({ card, i }: { card: typeof CARDS[0]; i: number }) {
-  const Icon = card.icon;
+function CardPhoto({ card }: { card: (typeof CARDS)[0] }) {
+  return (
+    <img
+      src={card.image}
+      alt=""
+      loading="lazy"
+      decoding="async"
+      onError={(e) => {
+        (e.currentTarget as HTMLImageElement).src = card.localImage;
+      }}
+      className="w-full h-full object-cover object-center"
+    />
+  );
+}
+
+function CardCopy({
+  card,
+  featured = false,
+}: {
+  card: (typeof CARDS)[0];
+  featured?: boolean;
+}) {
+  return (
+    <div
+      className={`flex flex-col justify-center h-full bg-[#F7F4EE] border border-[#06206A] ${
+        featured ? 'p-6 md:p-8' : 'p-4 sm:p-5'
+      }`}
+    >
+      <h3
+        className={`font-serif font-medium text-[#06206A] leading-tight tracking-tight mb-2 ${
+          featured ? 'text-2xl md:text-3xl' : 'text-lg sm:text-xl'
+        }`}
+      >
+        {card.label}
+      </h3>
+      <p className={`text-slate-600 font-medium leading-snug ${featured ? 'text-base md:text-lg' : 'text-sm'}`}>
+        {card.desc}
+      </p>
+    </div>
+  );
+}
+
+function VisionCard({ card, i }: { card: (typeof CARDS)[0]; i: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
-  const isBig = card.cols === 2;
+  const featured = card.cols === 2;
 
   return (
     <motion.div
@@ -83,63 +98,15 @@ function VisionCard({ card, i }: { card: typeof CARDS[0]; i: number }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
       style={{ gridColumn: `span ${card.cols}` }}
-      className="relative group cursor-default overflow-hidden rounded-2xl bg-[#060e1f] min-h-[300px] md:min-h-0"
+      className={`h-full overflow-hidden rounded-2xl bg-[#F7F4EE] flex ${
+        featured ? 'flex-row' : 'flex-col'
+      }`}
     >
-      {/* Photo */}
-      <img
-        src={card.image}
-        alt={card.label}
-        loading="lazy"
-        decoding="async"
-        onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
-      />
-
-      {/* Soft bottom vignette for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 via-40% to-transparent" />
-
-      {/* Hairline top highlight */}
-      <div className="absolute top-0 inset-x-0 h-px bg-white/12 group-hover:bg-white/22 transition-colors duration-500" />
-
-      {/* Badge — top right */}
-      <div className="absolute top-4 right-4 z-10">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/12 text-[10px] font-bold uppercase tracking-widest text-white/80">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#DD1D21] shrink-0" />
-          {card.badge}
-        </span>
+      <div className={`overflow-hidden shrink-0 ${featured ? 'w-[45%] h-full' : 'w-full h-[55%]'}`}>
+        <CardPhoto card={card} />
       </div>
-
-      {/* Icon squircle — top left */}
-      <div className="absolute top-4 left-4 z-10 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/12 flex items-center justify-center text-white/75 group-hover:bg-white/18 group-hover:text-white transition-all duration-300">
-        <Icon size={18} strokeWidth={2} />
-      </div>
-
-      {/* Content — bottom */}
-      <div className="absolute bottom-0 inset-x-0 z-10 p-5 sm:p-6 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
-        {/* Tags row (only on big card) */}
-        {card.tags && (
-          <div className="flex flex-wrap gap-2 mb-2">
-            {card.tags.map(t => (
-              <span key={t} className="px-2.5 py-0.5 rounded-md bg-white/15 text-white/80 text-[10px] font-bold uppercase tracking-wider">
-                {t}
-              </span>
-            ))}
-          </div>
-        )}
-
-        <h3 className={`font-serif font-medium text-white leading-tight tracking-tight mb-1.5 ${isBig ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-lg sm:text-xl'}`}>
-          {card.label}
-        </h3>
-
-        <p className={`text-white/90 font-medium leading-snug ${isBig ? 'text-base sm:text-lg max-w-lg' : 'text-sm sm:text-base'}`}>
-          {card.desc}
-        </p>
-
-        {card.footer && (
-          <div className="mt-3 pt-3 border-t border-white/10">
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#C4A35A]">{card.footer}</span>
-          </div>
-        )}
+      <div className="flex-1 min-w-0 min-h-0 h-full">
+        <CardCopy card={card} featured={featured} />
       </div>
     </motion.div>
   );
@@ -168,62 +135,33 @@ export default function VisionMission() {
           </motion.div>
         </div>
 
-        {/* Desktop Bento Grid — 3-col, auto rows */}
         <div
           className="hidden md:grid gap-3"
-          style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridAutoRows: '300px' }}
+          style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridAutoRows: '320px' }}
         >
           {CARDS.map((card, i) => (
-            <VisionCard key={i} card={card} i={i} />
+            <VisionCard key={card.label} card={card} i={i} />
           ))}
         </div>
 
-        {/* Mobile / Tablet — horizontal scroll cards */}
         <div className="flex md:hidden gap-3.5 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory hide-scrollbar">
-          {CARDS.map((card, i) => {
-            const Icon = card.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
-                transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                className="relative group shrink-0 snap-center w-[78vw] sm:w-[55vw] overflow-hidden rounded-2xl bg-[#060e1f] h-64"
-              >
-                <img
-                  src={card.image}
-                  alt={card.label}
-                  loading="lazy"
-                  decoding="async"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = card.localImage; }}
-                  className="absolute inset-0 w-full h-full object-cover object-center opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 via-40% to-transparent" />
-
-                <div className="absolute top-3.5 right-3.5 z-10">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/75">
-                    <span className="w-1 h-1 rounded-full bg-[#DD1D21] shrink-0" />
-                    {card.badge}
-                  </span>
-                </div>
-                <div className="absolute top-3.5 left-3.5 z-10 w-9 h-9 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/70">
-                  <Icon size={15} strokeWidth={2} />
-                </div>
-
-                <div className="absolute bottom-0 inset-x-0 z-10 p-4 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">
-                  <h3 className="text-white font-serif font-medium text-lg leading-tight mb-1">{card.label}</h3>
-                  <p className="text-white/90 text-sm font-medium leading-snug">{card.desc}</p>
-                  {card.footer && (
-                    <span className="block mt-2 text-[9px] font-semibold uppercase tracking-widest text-[#C4A35A]">{card.footer}</span>
-                  )}
-                </div>
-              </motion.div>
-            );
-          })}
+          {CARDS.map((card, i) => (
+            <motion.div
+              key={card.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: '0px 0px -50px 0px' }}
+              transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              className="shrink-0 snap-center w-[78vw] sm:w-[55vw] overflow-hidden rounded-2xl bg-[#F7F4EE] flex flex-col"
+            >
+              <div className="w-full h-44 overflow-hidden shrink-0">
+                <CardPhoto card={card} />
+              </div>
+              <CardCopy card={card} />
+            </motion.div>
+          ))}
         </div>
 
-        {/* Mobile swipe hint */}
         <div className="flex md:hidden items-center justify-center gap-2 mt-3 text-xs font-bold text-gray-400">
           <span>Swipe to explore 5 vision pillars →</span>
         </div>
