@@ -5,11 +5,14 @@ import { Globe } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const PARTNER_LOGOS = [
+  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.35.21%E2%80%AFPM.png", // IIT Madras
+  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.38%E2%80%AFPM.png", // IIT Bombay
+  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.50%E2%80%AFPM.png", // IIT Delhi
+  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.34.52%E2%80%AFPM.png", // IIT Kanpur
+  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.35.10%E2%80%AFPM.png", // IIT Kharagpur
+  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.22.45%E2%80%AFPM.png", // IIT (BHU) Varanasi
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.22.08%E2%80%AFPM.png",
-  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.22.45%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.22%E2%80%AFPM.png",
-  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.38%E2%80%AFPM.png",
-  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.23.50%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.24.03%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.24.16%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.24.27%E2%80%AFPM.png",
@@ -19,9 +22,6 @@ const PARTNER_LOGOS = [
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.33.49%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.34.18%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.34.29%E2%80%AFPM.png",
-  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.34.52%E2%80%AFPM.png",
-  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.35.10%E2%80%AFPM.png",
-  "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.35.21%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.35.33%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.35.45%E2%80%AFPM.png",
   "https://d3liyurciwi0wb.cloudfront.net/iitlogo/Screenshot%202026-09-16%20at%203.35.55%E2%80%AFPM.png",

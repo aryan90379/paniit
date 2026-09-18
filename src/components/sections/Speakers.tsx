@@ -58,16 +58,16 @@ const INDUSTRY_LEADERS = [
 ];
 
 const EMERGING_VENTURES = [
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/naga%20bharath%20daka.png', name: 'Naga Bharath Daka', role: 'Co-founder & CTO\nSkyroot Aerospace' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/suyash%20singh.png', name: 'Suyash Singh', role: 'Co-founder & CEO\nGalaxEye' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/naga%20bharath%20daka.png', name: 'Sri Naga Bharath Daka', role: 'Co-founder & CTO\nSkyroot Aerospace' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/suyash%20singh.png', name: 'Sri Suyash Singh', role: 'Co-founder & CEO\nGalaxEye' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ramesh%20hariharan.png', name: 'Dr. Ramesh Hariharan', role: 'CEO & Co-Founder\nStrand Life Sciences' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/taslimarif%20saiyed.png', name: 'Dr. Taslimarif Saiyed, PhD', role: 'Director and CEO\nC-CAMP' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Shailesh Kumar', role: 'Head of AI\nJio' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Sri Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Sri Shailesh Kumar', role: 'Head of AI\nJio' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ganesh%20ramakrishnan.png', name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director, BharatGen' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shekar%20reddy.png', name: 'Sri G C Shekar Reddy', role: 'Director\nCRUX Bio Ethanol India Pvt Ltd\nSri Chakra Poly Plast (I) Pvt Ltd' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ram%20bandi.png', name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd\nHyderabad' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/vidhya%20sagar.png', name: 'Vidya Sagar Abburi', role: 'Founder & CMD\nAvantel' }
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/vidhya%20sagar.png', name: 'Sri Vidya Sagar Abburi', role: 'Founder & CMD\nAvantel' }
 ];
 
 const SpeakerCard = ({ speaker }: { speaker: { image?: string; name: string; role: string } }) => (
