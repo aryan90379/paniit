@@ -110,30 +110,6 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     image: 'https://afilemanager.s3.dualstack.ap-southeast-1.amazonaws.com/prod/cid_0/pan_team_4.png',
   },
   { 
-    name: 'Abhilash Kondai', 
-    role: '', 
-    category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Abhilash%20Kondai.jpg',
-  },
-  { 
-    name: 'J V Prem Kumar Reddy', 
-    role: '', 
-    category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/J%20V%20Prem%20Kumar%20Reddy.jpeg',
-  },
-  { 
-    name: 'NS Bhanuprakash', 
-    role: '', 
-    category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/NS%20Bhanuprakash.jpg',
-  },
-  { 
-    name: 'Pradip Sasmal', 
-    role: '', 
-    category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Pradip%20Sasmal.jpg',
-  },
-  { 
     name: 'Prof. Murali Krishna Iyyanki', 
     role: '', 
     category: 'Organising Committee',
