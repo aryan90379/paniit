@@ -14,7 +14,7 @@ const CHIEF_GUEST = {
 const GUESTS_OF_HONOUR = [
   {
     image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Kinjarapu%20%20Rammohan%20Naidu.png',
-    name: 'Shri Kinjarapu Rammohan Naidu',
+    name: 'Shri Kinjarapu Ram Mohan Naidu',
     role: "Hon'ble Minister of Civil Aviation,",
     org: "Government of India"
   },
