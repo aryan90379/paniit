@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const GALLERY_IMAGES = [
-  'https://d3liyurciwi0wb.cloudfront.net/glimpses/01.png',
-  'https://d3liyurciwi0wb.cloudfront.net/glimpses/02.png',
-  'https://d3liyurciwi0wb.cloudfront.net/glimpses/03.png',
-  'https://d3liyurciwi0wb.cloudfront.net/glimpses/003.png',
-  'https://d3liyurciwi0wb.cloudfront.net/glimpses/04.png',
-  'https://d3liyurciwi0wb.cloudfront.net/glimpses/05.png',
+  { src: 'https://d3liyurciwi0wb.cloudfront.net/glimpses/01.png', focus: 'center' },
+  { src: 'https://d3liyurciwi0wb.cloudfront.net/glimpses/02.png', focus: 'center' },
+  { src: 'https://d3liyurciwi0wb.cloudfront.net/glimpses/03.png', focus: 'center' },
+  { src: 'https://d3liyurciwi0wb.cloudfront.net/glimpses/003.png', focus: 'center' },
+  { src: 'https://d3liyurciwi0wb.cloudfront.net/glimpses/04.png', focus: 'center' },
+  { src: 'https://d3liyurciwi0wb.cloudfront.net/glimpses/05.png', focus: 'center' },
 ];
 
 export default function Glimpses() {
@@ -48,7 +48,7 @@ export default function Glimpses() {
       <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-6 px-6 container mx-auto max-w-7xl">
           {GALLERY_IMAGES.map((img, i) => (
             <motion.div
-              key={i}
+              key={img.src}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }} style={{ WebkitTransform: "translateZ(0)", willChange: "transform, opacity" }}
@@ -57,11 +57,12 @@ export default function Glimpses() {
             >
               <div className="absolute inset-0 bg-gradient-to-t from-[#06206A]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
               <img 
-                src={img} 
+                src={img.src} 
                 alt={`PanIIT Glimpse ${i+1}`}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                style={{ objectPosition: img.focus }}
               />
             </motion.div>
           ))}
@@ -79,9 +80,9 @@ export default function Glimpses() {
       >
           {GALLERY_IMAGES.map((img, i) => (
             <div
-              key={i}
+              key={img.src}
               data-glimpse-card={i === 0 ? true : undefined}
-              className="snap-center relative aspect-[4/5] rounded-3xl overflow-hidden shadow-md"
+              className="snap-center relative aspect-[3/2] rounded-3xl overflow-hidden shadow-md bg-paper"
               style={{
                 flex: '0 0 80vw',
                 width: '80vw',
@@ -90,11 +91,12 @@ export default function Glimpses() {
               }}
             >
               <img 
-                src={img} 
+                src={img.src} 
                 alt={`PanIIT Glimpse ${i+1}`}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-contain"
+                style={{ objectPosition: img.focus }}
               />
             </div>
           ))}

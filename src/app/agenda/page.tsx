@@ -46,9 +46,9 @@ export default function AgendaPage() {
           {/* Hero Banner Creative */}
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white mb-10">
             <img 
-              src="https://wabflow.b-cdn.net/paniit/landing/image_2026-09-15_120838444.png"
-              alt="PanIIT Andhra Pradesh Summit 2026 Official Agenda Banner"
-              className="w-full h-auto object-cover"
+              src="/agenda/schedule.jpeg"
+              alt="PanIIT Andhra Pradesh Summit 2026 Program Schedule"
+              className="w-full h-auto"
             />
           </div>
 
@@ -60,17 +60,17 @@ export default function AgendaPage() {
               </div>
               <div>
                 <div className="font-bold text-gray-900 text-sm sm:text-base">
-                  PanIIT AP Summit 2026.pdf
+                  PanIIT AP Summit brochure 2026.pdf
                 </div>
                 <div className="text-xs text-gray-500 font-medium">
-                  Official Document • 3.5 MB
+                  Official Brochure
                 </div>
               </div>
             </div>
 
             <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
               <a
-                href="/PanIIT_AP_Summit_2026_Agenda.pdf"
+                href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 text-gray-700 font-bold text-xs sm:text-sm transition-all"
@@ -80,8 +80,8 @@ export default function AgendaPage() {
               </a>
 
               <a
-                href="/PanIIT_AP_Summit_2026_Agenda.pdf"
-                download="PanIIT_AP_Summit_2026_Agenda.pdf"
+                href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
+                download="PanIIT AP Summit brochure 2026.pdf"
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#06206A] hover:bg-[#082a8a] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all"
               >
                 <Download className="w-4 h-4 text-white" />
@@ -101,7 +101,7 @@ export default function AgendaPage() {
             </div>
 
             <iframe 
-              src="/PanIIT_AP_Summit_2026_Agenda.pdf#view=FitH&toolbar=1" 
+              src="/agenda/PanIIT-AP-Summit-brochure-2026.pdf#view=FitH&toolbar=1" 
               className="w-full h-[650px] sm:h-[850px] lg:h-[1050px] border-none"
               title="PanIIT Andhra Pradesh Summit 2026 Agenda Document"
             />
@@ -111,7 +111,7 @@ export default function AgendaPage() {
           <div className="mt-4 p-4 rounded-xl bg-blue-50/60 border border-blue-100 text-xs sm:text-sm text-gray-600 text-center">
             Viewing on a mobile device? For the best reading experience with pinch-to-zoom, you can also{' '}
             <a 
-              href="/PanIIT_AP_Summit_2026_Agenda.pdf" 
+              href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[#06206A] font-bold underline hover:text-[#DD1D21]"

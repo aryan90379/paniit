@@ -31,12 +31,11 @@ export default function Schedule() {
               href="/agenda"
               className="group relative block w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(6,32,106,0.18)] transition-all duration-500 border border-gray-200/80 bg-white cursor-pointer"
             >
-              {/* Preview Banner Graphic - Full Natural Dimensions (16:9 uncropped) */}
-              <div className="relative w-full aspect-16/9 overflow-hidden bg-slate-50">
+              <div className="relative w-full bg-slate-50">
                 <img 
-                  src="https://wabflow.b-cdn.net/paniit/landing/image_2026-09-15_120838444.png"
-                  alt="PanIIT Andhra Pradesh Summit 2026 Agenda Preview"
-                  className="w-full h-full object-contain block group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+                  src="/agenda/schedule.jpeg"
+                  alt="PanIIT Andhra Pradesh Summit 2026 Program Schedule"
+                  className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 />
               </div>
 
@@ -103,8 +102,8 @@ export default function Schedule() {
               </Link>
 
               <a
-                href="/PanIIT_AP_Summit_2026_Agenda.pdf"
-                download="PanIIT_AP_Summit_2026_Agenda.pdf"
+                href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
+                download="PanIIT AP Summit brochure 2026.pdf"
                 className="inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 rounded-full bg-transparent text-[#06206A] font-semibold text-sm sm:text-base border border-[#06206A]/30 hover:border-[#06206A] hover:bg-white/60 transition-colors"
               >
                 <Download className="w-4 h-4" />

@@ -28,7 +28,7 @@ The codebase is organized in the `src/` directory.
 │   ├── sponsors/past/      # Featured past-sponsor logos
 │   ├── summit_highlights/  # Highlight images from past events
 │   ├── user_images/        # User-uploaded content
-│   └── PanIIT_AP_Summit_2026_Agenda.pdf # Event schedule document
+│   └── agenda/             # Program schedule image and 2026 brochure PDF
 ├── src/
 │   ├── app/                # Next.js App Router
 │   │   ├── agenda/         # /agenda route
