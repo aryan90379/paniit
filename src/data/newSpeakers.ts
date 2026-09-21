@@ -7,6 +7,7 @@ export interface PreparedSpeaker {
   org: string;
   image: string;
   imageFocus?: string;
+  listed?: boolean;
   source: SpeakerSource;
   section: WebsiteSection;
 }
@@ -151,18 +152,20 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'emerging',
   },
   {
-    name: 'Sri Karthik Reddy',
-    role: 'Co-Founder & Managing Partner',
-    org: 'Blume Ventures',
-    image: '/speakers/karthik-reddy.jpg',
+    name: 'Sri T.C. Meenakshisundaram',
+    role: 'Founder & Vice Chairman',
+    org: 'Chiratae Ventures',
+    image: '/speakers/tc-meenakshisundaram.png',
+    imageFocus: 'object-[center_22%]',
     source: 'roundtable',
     section: 'investors',
   },
   {
-    name: 'Smt. Anjali Bansal',
-    role: 'Founder & Partner',
-    org: 'Avaana Capital',
-    image: '/speakers/anjali-bansal.jpg',
+    name: 'Smt. Vani Kola',
+    role: 'Founding Partner',
+    org: 'Kalaari Capital',
+    image: '/speakers/vani-kola.png',
+    listed: false,
     source: 'roundtable',
     section: 'investors',
   },
@@ -175,10 +178,10 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'investors',
   },
   {
-    name: 'Smt. Vani Kola',
-    role: 'Founding Partner',
-    org: 'Kalaari Capital',
-    image: '/speakers/vani-kola.png',
+    name: 'Sri Karthik Reddy',
+    role: 'Co-Founder & Managing Partner',
+    org: 'Blume Ventures',
+    image: '/speakers/karthik-reddy.jpg',
     source: 'roundtable',
     section: 'investors',
   },
@@ -208,6 +211,22 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'investors',
   },
   {
+    name: 'Smt. Anjali Bansal',
+    role: 'Founder & Partner',
+    org: 'Avaana Capital',
+    image: '/speakers/anjali-bansal.jpg',
+    source: 'roundtable',
+    section: 'investors',
+  },
+  {
+    name: 'Sri Ashish Taneja',
+    role: 'Founding Partner & CFO',
+    org: 'GrowX Ventures',
+    image: '/speakers/ashish-taneja.jpg',
+    source: 'roundtable',
+    section: 'investors',
+  },
+  {
     name: 'Sri Mayuresh Raut',
     role: 'Co-Founder & Managing Partner',
     org: 'Seafund',
@@ -223,18 +242,10 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     source: 'roundtable',
     section: 'investors',
   },
-  {
-    name: 'Sri Ashish Taneja',
-    role: 'Founding Partner & CFO',
-    org: 'GrowX Ventures',
-    image: '/speakers/ashish-taneja.jpg',
-    source: 'roundtable',
-    section: 'investors',
-  },
 ];
 
 export const speakersBySection = (section: WebsiteSection) =>
-  NEW_SPEAKERS.filter((speaker) => speaker.section === section);
+  NEW_SPEAKERS.filter((speaker) => speaker.section === section && speaker.listed !== false);
 
 export const speakerRoleLine = (speaker: PreparedSpeaker) =>
   speaker.org ? `${speaker.role}\n${speaker.org}` : speaker.role;

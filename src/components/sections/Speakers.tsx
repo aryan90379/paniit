@@ -117,7 +117,8 @@ const SpeakerCard = ({ speaker }: { speaker: { image?: string; imageFocus?: stri
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
         }}
-        className={`w-full h-full object-cover rounded-full bg-white portrait-ring ${speaker.imageFocus ?? ''}`}
+        className={`w-full h-full object-cover rounded-full bg-white portrait-ring ${speaker.imageFocus ? 'object-[center_22%]' : ''}`}
+        style={speaker.imageFocus ? { objectPosition: 'center 22%' } : undefined}
       />
     </div>
     <h3 className="font-semibold text-[#06206A] text-sm md:text-lg leading-snug mb-1.5 whitespace-pre-line">{speaker.name}</h3>
