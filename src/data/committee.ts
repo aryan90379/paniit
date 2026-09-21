@@ -39,13 +39,13 @@ export const ADVISORS: CommitteeMember[] = [
     name: 'Prof. V. Kamakoti', 
     role: 'Director, IIT Madras', 
     category: 'Advisors',
-    image: "https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20V.%20Kamakoti%20Director%2C%20IIT%20Madras.jpg",
+    image: "https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20V.%20Kamakoti%20Director%2C%20IIT%20Madras.jpg",
   },
   { 
     name: 'Dr. K. N. Satyanarayana', 
     role: 'Director, IIT Tirupati', 
     category: 'Advisors',
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Satyamnarayana_%20IIT%20Tirupathi%20director.jpeg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Satyamnarayana_%20IIT%20Tirupathi%20director.jpeg',
   },
   { 
     name: 'Prof. Mahesh Panchagnula', 

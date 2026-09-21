@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const CHIEF_GUEST = {
-  image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Chandrababu%20Naidu.jpg',
+  image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Sri%20Nara%20Chandrababu%20Naidu.jpg',
   name: 'Sri Nara Chandra Babu Naidu',
   role: "Hon'ble Chief Minister",
   org: "of Andhra Pradesh",
@@ -13,13 +13,13 @@ const CHIEF_GUEST = {
 
 const GUESTS_OF_HONOUR = [
   {
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Kinjarapu%20%20Rammohan%20Naidu.png',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Sri%20Kinjarapu%20%20Rammohan%20Naidu.png',
     name: 'Shri Kinjarapu Ram Mohan Naidu',
     role: "Hon'ble Minister of Civil Aviation,",
     org: "Government of India"
   },
   {
-    image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Sri%20Nara%20Lokesh.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Sri%20Nara%20Lokesh.jpg',
     name: 'Sri Nara Lokesh',
     role: "Hon'ble Minister for Information Technology,\nElectronics and Communications,",
     org: "Andhra Pradesh"
