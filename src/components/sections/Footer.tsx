@@ -12,13 +12,13 @@ export default function Footer() {
             <div className="mb-4 inline-block bg-white p-3.5 rounded-xl">
               <div className="flex items-center gap-4">
                 <img
-                  src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20Logo.jpeg"
+                  src="https://d3liyurciwi0wb.cloudfront.net/logos/PanIIT%20Logo.jpeg"
                   alt="PanIIT Alumni India"
                   className="h-16 md:h-20 object-contain mix-blend-multiply"
                 />
                 <div className="w-px h-12 bg-[#06206A]/20" />
                 <img
-                  src="https://wabflow.b-cdn.net/paniit/logos/PanIIT%20AP%20Logo.jpeg"
+                  src="https://d3liyurciwi0wb.cloudfront.net/logos/PanIIT%20AP%20Logo.jpeg"
                   alt="PanIIT AP Summit"
                   className="h-16 md:h-20 object-contain mix-blend-multiply"
                 />

@@ -18,7 +18,7 @@ export const OFFICE_BEARERS: CommitteeMember[] = [
     name: 'Dr. Amitabh Ranjan', 
     role: 'Vice Chairman', 
     category: 'Office Bearers',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Dr.%20Amitabh%20Ranjan.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Dr.%20Amitabh%20Ranjan.jpg',
   },
   { 
     name: 'Rajeev Singh', 
@@ -90,7 +90,7 @@ export const CORE_COMMITTEE: CommitteeMember[] = [
     name: 'Dr. Gundala Nagaraju', 
     role: '', 
     category: 'Core Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Dr.%20Gundala%20Nagaraju%20(right).jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Dr.%20Gundala%20Nagaraju%20(right).jpg',
   },
 ];
 
@@ -113,25 +113,25 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     name: 'Prof. Murali Krishna Iyyanki', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Prof.%20Murali%20Krishna%20%20Iyyanki%20(left).jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Prof.%20Murali%20Krishna%20%20Iyyanki%20(left).jpg',
   },
   { 
     name: 'Rajesh Rathi', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Rajesh%20Rathi.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Rajesh%20Rathi.jpg',
   },
   { 
     name: 'Phani Arega', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Phani%20Arega.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Phani%20Arega.jpg',
   },
   { 
     name: 'Sai Teja Duggempudi', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Sai%20Teja%20Duggempudi.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Sai%20Teja%20Duggempudi.jpg',
   },
   { 
     name: 'Tejavath Jagadeesh', 
@@ -143,25 +143,25 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     name: 'Dr. Anjanna Matta', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Dr.%20Anjanna%20Matta.jpeg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Dr.%20Anjanna%20Matta.jpeg',
   },
   { 
     name: 'C P Madhusudan', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/C%20P%20Madhusudan_.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/C%20P%20Madhusudan_.jpg',
   },
   { 
     name: 'Thejaswini Kalasamudram', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Thejaswini%20Kalasamudram.jpeg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Thejaswini%20Kalasamudram.jpeg',
   },
   { 
     name: 'Akhil Sai Ram Gadi', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Gadi%20Akhil%20Sai%20Ram.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Gadi%20Akhil%20Sai%20Ram.jpg',
   },
   { 
     name: 'Kshitij Tiwari', 
@@ -173,7 +173,7 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     name: 'Sanskreeti Raj', 
     role: '', 
     category: 'Organising Committee',
-    image: 'https://wabflow.b-cdn.net/paniit/organising%20committee/Sanskreeti%20Raj.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/Sanskreeti%20Raj.jpg',
   },
   { 
     name: 'Vishakh Agarwal', 
