@@ -53,7 +53,7 @@ const KEY_GUESTS = [
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Suhas%20Joshi%2C%20Director%2C%20IIT%20Indore.jpg', name: 'Prof. Suhas Joshi', role: 'Director\nIIT Indore' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/prof%20a%20seshadri%20sekhar%20director%20iit%20palakkad-Picsart-AiImageEnhancer.jpg', name: 'Dr. A. Seshadri Sekhar', role: 'Director\nIIT Palakkad' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Laxmidhar%20Behera.jpeg', name: 'Prof. Laxmidhar Behera', role: 'Director\nIIT Mandi' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20K,%20V,%20Krishna%20Rao-Picsart-AiImageEnhancer.jpeg', name: 'Prof. K. V. Krishna Rao', role: 'Director\nNIT Andhra Pradesh' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20K,%20V,%20Krishna%20Rao-Picsart-AiImageEnhancer.jpeg', name: 'Dr. K. V. Krishna Rao', role: 'Former Deputy Director\nIIT Bombay' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shalivahan.png', name: 'Prof. Shalivahan Srivastava', role: 'Director, Indian Institute of\nPetroleum & Energy, Vizag' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/balaram%20ravindran.png', name: 'Prof. Balaraman Ravindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
   { image: 'https://wabflow.b-cdn.net/paniit/dignitaries%20pictures/Prof.%20Arun%20Tangirala.jpg', name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' }

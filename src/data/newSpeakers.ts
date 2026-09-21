@@ -15,7 +15,7 @@ export interface PreparedSpeaker {
 export const NEW_SPEAKERS: PreparedSpeaker[] = [
   {
     name: 'Sri K. Vijayanand, IAS',
-    role: 'Special Chief Secretary, Energy',
+    role: 'Former Chief Secretary and current Ex-Officio Special Chief Secretary, Energy',
     org: 'Government of Andhra Pradesh',
     image: '/speakers/k-vijayanand.jpg',
     imageFocus: 'object-[center_22%]',
@@ -40,7 +40,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Dr. N. Yuvaraj, IAS',
-    role: 'Secretary, Industries & Commerce',
+    role: 'Secretary to Government for the Industries & Commerce and Food Processing Department',
     org: 'Government of Andhra Pradesh',
     image: '/speakers/n-yuvaraj.jpg',
     source: 'both',
@@ -55,7 +55,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'distinguished',
   },
   {
-    name: 'Dr. P. Dhatri Reddy',
+    name: 'Dr. P. Dhatri Reddy, IAS',
     role: 'CEO',
     org: 'Ratan Tata Innovation Hub',
     image: '/speakers/p-dhatri-reddy.png',
@@ -72,7 +72,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'distinguished',
   },
   {
-    name: 'Smt. J. Shyamala Rao, IAS',
+    name: 'Shri J. Shyamala Rao, IAS',
     role: 'Special Chief Secretary, Higher Education',
     org: 'Government of Andhra Pradesh',
     image: '/speakers/j-shyamala-rao.jpg',
@@ -81,7 +81,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Dr. Purushotham Hanumanthu',
-    role: 'Secretary, Science & Technology',
+    role: 'Secretary, Science, Technology & Innovation',
     org: 'Government of Andhra Pradesh',
     image: '/speakers/hanumanthu-purushotham.jpg',
     source: 'roundtable',
@@ -96,8 +96,8 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'industry',
   },
   {
-    name: 'Sri Suraj Rengarajan',
-    role: 'India CTO',
+    name: 'Dr. Suraj Rengarajan',
+    role: 'Principal Technologist',
     org: 'Applied Materials',
     image: '/speakers/suraj-rengarajan.png',
     source: 'both',
@@ -137,7 +137,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Sri Aditya Kandoi',
-    role: 'Co-Founder & COO',
+    role: 'Founder & CEO',
     org: 'RedCliffe Labs',
     image: '/speakers/aditya-kandoi.png',
     source: 'panel',
@@ -145,7 +145,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Sri Anil Kumar S.G.',
-    role: 'Founder & CEO',
+    role: 'Founder & Chairman',
     org: 'Samunnati',
     image: '/speakers/anil-kumar-sg.jpg',
     source: 'panel',
@@ -157,15 +157,6 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     org: 'Chiratae Ventures',
     image: '/speakers/tc-meenakshisundaram.png',
     imageFocus: 'object-[center_22%]',
-    source: 'roundtable',
-    section: 'investors',
-  },
-  {
-    name: 'Smt. Vani Kola',
-    role: 'Founding Partner',
-    org: 'Kalaari Capital',
-    image: '/speakers/vani-kola.png',
-    listed: false,
     source: 'roundtable',
     section: 'investors',
   },
@@ -187,7 +178,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Sri Vishesh Rajaram',
-    role: 'General Partner',
+    role: 'Founding Partner',
     org: 'Speciale Invest',
     image: '/speakers/vishesh-rajaram.jpg',
     imageFocus: 'object-[center_22%]',
@@ -196,7 +187,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Sri Manu Iyer',
-    role: 'Founding Partner',
+    role: 'General Partner',
     org: 'Bluehill VC',
     image: '/speakers/manu-iyer.jpg',
     source: 'roundtable',
@@ -204,9 +195,17 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Sri Pankaj Raina',
-    role: 'CEO',
+    role: 'Managing Director',
     org: 'Zephyr Peacock',
     image: '/speakers/pankaj-raina.jpg',
+    source: 'roundtable',
+    section: 'investors',
+  },
+  {
+    name: 'Smt. Vani Kola',
+    role: 'Founder and MD',
+    org: 'Kalaari Capital',
+    image: '/speakers/vani-kola.png',
     source: 'roundtable',
     section: 'investors',
   },
@@ -220,7 +219,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   },
   {
     name: 'Sri Ashish Taneja',
-    role: 'Founding Partner & CFO',
+    role: 'Founding Partner & CEO',
     org: 'GrowX Ventures',
     image: '/speakers/ashish-taneja.jpg',
     source: 'roundtable',
