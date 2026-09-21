@@ -1,4 +1,4 @@
-# PanIIT Andhra Pradesh Summit 2026 
+# PanIIT Andhra Pradesh Summit 2026
 
 This is the official repository for the **Andhra's Resilient DeepTech Decade: Anchored by PanIIT** summit website. The project is built with [Next.js](https://nextjs.org), React, TypeScript, Tailwind CSS, and Framer Motion for animations.
 
