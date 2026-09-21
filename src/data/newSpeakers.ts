@@ -103,14 +103,6 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'industry',
   },
   {
-    name: 'Sri Pawan Mulukutla',
-    role: 'Executive Director',
-    org: 'WRI India',
-    image: '/speakers/pawan-mulukutla.png',
-    source: 'roundtable',
-    section: 'industry',
-  },
-  {
     name: 'Sri Deepak Sharma',
     role: 'MD & CEO',
     org: 'Schneider Electric India',
@@ -119,26 +111,10 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'industry',
   },
   {
-    name: 'Sri Rajeev Juneja',
-    role: 'MD & Vice Chairman',
-    org: 'Mankind Pharma',
-    image: '/speakers/rajeev-juneja.jpg',
-    source: 'roundtable',
-    section: 'industry',
-  },
-  {
     name: 'Sri Mallik Tatipamula',
     role: 'CTO',
     org: 'Ericsson Silicon Valley',
     image: '/speakers/mallik-tatipamula.jpg',
-    source: 'roundtable',
-    section: 'industry',
-  },
-  {
-    name: 'Smt. Sangeeta Reddy',
-    role: 'Joint MD',
-    org: 'Apollo Hospitals Group',
-    image: '/speakers/sangeeta-reddy.jpg',
     source: 'roundtable',
     section: 'industry',
   },
@@ -199,14 +175,6 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'investors',
   },
   {
-    name: 'Sri Mahendran Balachandran',
-    role: 'Co-Founder & Managing Partner',
-    org: 'Accel',
-    image: '/speakers/mahendran-balachandran.jpg',
-    source: 'roundtable',
-    section: 'investors',
-  },
-  {
     name: 'Smt. Vani Kola',
     role: 'Founding Partner',
     org: 'Kalaari Capital',
@@ -226,7 +194,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   {
     name: 'Sri Manu Iyer',
     role: 'Founding Partner',
-    org: '',
+    org: 'Bluehill VC',
     image: '/speakers/manu-iyer.jpg',
     source: 'roundtable',
     section: 'investors',
@@ -242,7 +210,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   {
     name: 'Sri Mayuresh Raut',
     role: 'Co-Founder & Managing Partner',
-    org: '',
+    org: 'Seafund',
     image: '/speakers/mayuresh-raut.jpg',
     source: 'roundtable',
     section: 'investors',
@@ -250,7 +218,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   {
     name: 'Sri Sharad Bansal',
     role: 'Founding Partner',
-    org: '',
+    org: 'Warmup Ventures',
     image: '/speakers/sharad-bansal.png',
     source: 'roundtable',
     section: 'investors',
@@ -258,7 +226,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
   {
     name: 'Sri Ashish Taneja',
     role: 'Founding Partner & CFO',
-    org: '',
+    org: 'GrowX Ventures',
     image: '/speakers/ashish-taneja.jpg',
     source: 'roundtable',
     section: 'investors',
