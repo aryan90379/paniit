@@ -26,9 +26,6 @@ const CONTACTS = [
     name: 'Thejaswini Kalasamudram',
     phone: '+91 78937 96502',
   },
-  {
-    name: 'Kshitij Tiwari',
-  },
 ];
 
 export default function EventDetails() {
