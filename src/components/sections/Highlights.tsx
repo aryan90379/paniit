@@ -14,7 +14,6 @@ const HIGHLIGHTS = [
     desc: 'Kickoff with state leaders and global dignitaries',
     tag: 'Inaugural',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/grand%20opening.jpg',
-    localImage: '/summit_highlights/grand opening.jpg',
     cols: 2, rows: 2,
   },
   {
@@ -23,7 +22,6 @@ const HIGHLIGHTS = [
     desc: 'Insights from global technology icons',
     tag: 'Keynote',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/visionary%20keynotes.jpg',
-    localImage: '/summit_highlights/visionary keynotes.jpg',
     cols: 1, rows: 1,
   },
   {
@@ -32,7 +30,6 @@ const HIGHLIGHTS = [
     desc: 'Shaping the Andhra Pradesh 2047 roadmap',
     tag: 'Policy',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/policy%20papers.jpg',
-    localImage: '/summit_highlights/policy papers.jpg',
     cols: 1, rows: 1,
   },
   {
@@ -41,7 +38,6 @@ const HIGHLIGHTS = [
     desc: 'CXO-level discussions and IIT director roundtables',
     tag: 'Leadership',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/speaker-giving-talk-conference-hall-260nw-2321303215%20(1).webp',
-    localImage: '/summit_highlights/speaker-giving-talk-conference-hall-260nw-2321303215 (1).webp',
     cols: 2, rows: 1,
   },
   {
@@ -50,7 +46,6 @@ const HIGHLIGHTS = [
     desc: 'High-level closed-door sessions',
     tag: 'Network',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/strategic%20roundtables.jpg',
-    localImage: '/summit_highlights/strategic roundtables.jpg',
     cols: 1, rows: 1,
   },
   {
@@ -59,7 +54,6 @@ const HIGHLIGHTS = [
     desc: 'Startups and breakthrough prototypes',
     tag: 'Startups',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/innovation%20expo.jpg',
-    localImage: '/summit_highlights/innovation expo.jpg',
     cols: 1, rows: 1,
   },
   {
@@ -68,7 +62,6 @@ const HIGHLIGHTS = [
     desc: 'Curated networking connecting peers and leaders',
     tag: 'Networking',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/executive%20lunch.jpg',
-    localImage: '/summit_highlights/executive lunch.jpg',
     cols: 1, rows: 1,
   },
   {
@@ -77,7 +70,6 @@ const HIGHLIGHTS = [
     desc: "Hon'ble CM's closing address and declaration",
     tag: 'Valedictory',
     image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/valedictory%20by%20cm.jpg',
-    localImage: '/summit_highlights/valedictory by cm.jpg',
     cols: 1, rows: 1,
   },
 ];
@@ -115,7 +107,6 @@ function HighlightCard({ item, i }: { item: (typeof HIGHLIGHTS)[0]; i: number })
         alt={item.label}
         loading="lazy"
         decoding="async"
-        onError={(e) => { (e.currentTarget as HTMLImageElement).src = item.localImage; }}
         className="absolute inset-0 w-full h-full object-cover object-center opacity-85 group-hover:opacity-95 group-hover:scale-105 transition-all duration-700 ease-out"
       />
       {/* Soft vignette — only from bottom, not a full blackout */}
