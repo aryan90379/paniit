@@ -13,7 +13,7 @@ const HIGHLIGHTS = [
     label: 'Grand Opening Ceremony',
     desc: 'Kickoff with state leaders and global dignitaries',
     tag: 'Inaugural',
-    image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/grand%20opening.jpg',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/summit_highlights/grand_opening.png',
     cols: 2, rows: 2,
   },
   {
