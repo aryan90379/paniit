@@ -6,11 +6,11 @@ import { Calendar, MapPin } from 'lucide-react';
 
 const HERO_SLIDES = [
   {
-    src: '/hero/banner.png',
+    src: 'https://d3liyurciwi0wb.cloudfront.net/hero/banner.png',
     alt: 'PanIIT Andhra Pradesh Summit 2026 — Chief Guest Sri Nara Chandra Babu Naidu',
   },
   {
-    src: '/hero/guests-of-honour.png',
+    src: 'https://d3liyurciwi0wb.cloudfront.net/hero/guests-of-honour.png',
     alt: 'PanIIT Andhra Pradesh Summit 2026 — Guests of Honour',
   },
 ];
