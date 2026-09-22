@@ -72,7 +72,7 @@ export const NEW_SPEAKERS: PreparedSpeaker[] = [
     section: 'distinguished',
   },
   {
-    name: 'Shri J. Shyamala Rao, IAS',
+    name: 'Sri J. Syamala Rao, IAS',
     role: 'Special Chief Secretary, Higher Education',
     org: 'Government of Andhra Pradesh',
     image: 'https://d3liyurciwi0wb.cloudfront.net/speakers/j-shyamala-rao.jpg',
