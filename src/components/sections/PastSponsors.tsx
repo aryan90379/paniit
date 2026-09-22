@@ -11,14 +11,14 @@ interface Sponsor {
 }
 
 const FEATURED_SPONSORS: Sponsor[] = [
-  { name: 'Government of Karnataka', logo: '/sponsors/past/government-of-karnataka.png' },
-  { name: 'Government of Telangana', logo: '/sponsors/past/government-of-telangana.png' },
-  { name: 'Karnataka Udyog Mitra', logo: '/sponsors/past/karnataka-udyog-mitra.jpg' },
-  { name: 'NMDC', logo: '/sponsors/past/nmdc.jpg' },
-  { name: 'MSIL', logo: '/sponsors/past/msil.png' },
-  { name: 'Global IT Associates', logo: '/sponsors/past/global-it-associates.png' },
-  { name: 'Janapriya Upscale', logo: '/sponsors/past/janapriya-upscale.png' },
-  { name: 'MSN Realty', logo: '/sponsors/past/msn-realty.png' },
+  { name: 'Government of Karnataka', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/government-of-karnataka.png' },
+  { name: 'Government of Telangana', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/government-of-telangana.png' },
+  { name: 'Karnataka Udyog Mitra', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/karnataka-udyog-mitra.jpg' },
+  { name: 'NMDC', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/nmdc.jpg' },
+  { name: 'MSIL', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/msil.png' },
+  { name: 'Global IT Associates', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/global-it-associates.png' },
+  { name: 'Janapriya Upscale', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/janapriya-upscale.png' },
+  { name: 'MSN Realty', logo: 'https://d3liyurciwi0wb.cloudfront.net/sponsors/past/msn-realty.png' },
 ];
 
 const VISIBLE_SPONSORS: Sponsor[] = [
