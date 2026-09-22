@@ -8,31 +8,31 @@ const CARDS = [
   {
     label: 'Swarna Andhra 2047',
     desc: 'Aligning state priorities with Viksit Bharat 2047 to establish Andhra Pradesh as an innovation superpower.',
-    image: '/vision/swarna-andhra-2047.png',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/vision/swarna-andhra-2047.png',
     cols: 2,
   },
   {
     label: 'Global Network',
     desc: 'Uniting alumni leaders, global CXOs, and policymakers to channel capital and leadership into AP.',
-    image: '/vision/global-network.png',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/vision/global-network.png',
     cols: 1,
   },
   {
     label: 'AI & Deep Tech',
     desc: 'Catalyzing breakthroughs in Quantum Computing, Artificial Intelligence, and Clean Energy ecosystems.',
-    image: '/vision/ai-deep-tech.png',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/vision/ai-deep-tech.png',
     cols: 1,
   },
   {
     label: 'Talent Pool',
     desc: 'Transforming Andhra Pradesh youth into globally competitive engineering and research talent.',
-    image: '/vision/talent-pool.png',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/vision/talent-pool.png',
     cols: 1,
   },
   {
     label: 'Innovation Hub',
     desc: 'Showcasing Andhra Pradesh as a premier destination for high-value strategic tech investments.',
-    image: '/vision/innovation-hub.png',
+    image: 'https://d3liyurciwi0wb.cloudfront.net/vision/innovation-hub.png',
     cols: 1,
   },
 ];
