@@ -6,6 +6,11 @@ import { speakerRoleLine, speakersBySection } from '@/data/newSpeakers';
 
 const PLACEHOLDER = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23cbd5e1%22%3E%3Cpath%20d%3D%22M12%2012c2.21%200%204-1.79%204-4s-1.79-4-4-4-4%201.79-4%204%201.79%204%204%204zm0%202c-2.67%200-8%201.34-8%204v2h16v-2c0-2.66-5.33-4-8-4z%22%2F%3E%3C%2Fsvg%3E";
 
+const portraitPosition = (imageFocus?: string) => {
+  if (!imageFocus) return undefined;
+  return imageFocus.includes('%') ? imageFocus : 'center 22%';
+};
+
 
 
 
@@ -57,11 +62,11 @@ const KEY_GUESTS = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shalivahan.png', name: 'Prof. Shalivahan Srivastava', role: 'Director, Indian Institute of\nPetroleum & Energy, Vizag' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/balaram%20ravindran.png', name: 'Prof. Balaraman Ravindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Arun%20Tangirala.jpg', name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' },
-  { image: '/speakers/manoj-singh-gaur.png', name: 'Prof. Manoj Singh Gaur', role: 'Director\nIIT Jammu' },
+  { image: '/speakers/manoj-singh-gaur.png', name: 'Prof. Manoj Singh Gaur', role: 'Director\nIIT Jammu', imageFocus: 'center 8%' },
   { image: '/speakers/tata-narasinga-rao.jpeg', name: 'Prof. Tata Narasinga Rao', role: 'Vice Chancellor\nSri Venkateswara University' },
-  { image: '/speakers/v-uma.png', name: 'Prof. V. Uma', role: 'Vice Chancellor\nSri Padmavati Mahila Visvavidyalayam' },
+  { image: '/speakers/v-uma.png', name: 'Prof. V. Uma', role: 'Vice Chancellor\nSri Padmavati Mahila Visvavidyalayam', imageFocus: 'center 18%' },
   { image: '/speakers/csrk-prasad.jpeg', name: 'Prof. C.S.R.K. Prasad', role: 'Vice Chancellor\nJNTU-Kakinada' },
-  { image: '/speakers/balamurali-shankar.jpeg', name: 'Mr. Balamurali Shankar', role: 'Chief Knowledge Officer\nIITM Pravartak Technologies Foundation' },
+  { image: '/speakers/balamurali-shankar.jpeg', name: 'Mr. Balamurali Shankar', role: 'Chief Knowledge Officer\nIITM Pravartak Technologies Foundation', imageFocus: '0% 40%' },
   { image: '/speakers/mj-shankar-raman.jpeg', name: 'Dr. M. J. Shankar Raman', role: 'CEO\nIITM Pravartak Technologies Foundation' },
 ];
 
@@ -92,7 +97,7 @@ const EMERGING_VENTURES = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/suyash%20singh.png', name: 'Sri Suyash Singh', role: 'Co-founder & CEO\nGalaxEye' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ramesh%20hariharan.png', name: 'Dr. Ramesh Hariharan', role: 'Founder & CEO\nStrand Life Sciences' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Sri Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Sri Shailesh Kumar', role: 'Head of AI\nJio' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Sri Shailesh Kumar', role: 'Head of AI\nJio', imageFocus: 'center 18%' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ganesh%20ramakrishnan.png', name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director, BharatGen' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shekar%20reddy.png', name: 'Sri G C Shekar Reddy', role: 'Director\nCRUX Bio Ethanol India Pvt Ltd\nSri Chakra Poly Plast (I) Pvt Ltd' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ram%20bandi.png', name: 'Sri Ram Bandi', role: 'Founder & CEO\nStyrax Instruments India Pvt Ltd\nHyderabad' },
@@ -121,8 +126,8 @@ const SpeakerCard = ({ speaker }: { speaker: { image?: string; imageFocus?: stri
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
         }}
-        className={`w-full h-full object-cover rounded-full bg-white portrait-ring ${speaker.imageFocus ? 'object-[center_22%]' : ''}`}
-        style={speaker.imageFocus ? { objectPosition: 'center 22%' } : undefined}
+        className="w-full h-full object-cover rounded-full bg-white portrait-ring"
+        style={speaker.imageFocus ? { objectPosition: portraitPosition(speaker.imageFocus) } : undefined}
       />
     </div>
     <h3 className="font-semibold text-[#06206A] text-sm md:text-lg leading-snug mb-1.5 whitespace-pre-line">{speaker.name}</h3>
