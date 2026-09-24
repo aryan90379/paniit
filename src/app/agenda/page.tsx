@@ -46,7 +46,7 @@ export default function AgendaPage() {
           {/* Hero Banner Creative */}
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white mb-10">
             <img 
-              src="https://d3liyurciwi0wb.cloudfront.net/agenda/schedule.jpeg"
+              src="/agenda/schedule.jpeg"
               alt="PanIIT Andhra Pradesh Summit 2026 Program Schedule"
               className="w-full h-auto"
             />
@@ -70,7 +70,7 @@ export default function AgendaPage() {
 
             <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
               <a
-                href="https://d3liyurciwi0wb.cloudfront.net/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
+                href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 text-gray-700 font-bold text-xs sm:text-sm transition-all"
@@ -80,7 +80,7 @@ export default function AgendaPage() {
               </a>
 
               <a
-                href="https://d3liyurciwi0wb.cloudfront.net/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
+                href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
                 download="PanIIT AP Summit brochure 2026.pdf"
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#06206A] hover:bg-[#082a8a] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all"
               >
@@ -101,7 +101,7 @@ export default function AgendaPage() {
             </div>
 
             <iframe 
-              src="https://d3liyurciwi0wb.cloudfront.net/agenda/PanIIT-AP-Summit-brochure-2026.pdf#view=FitH&toolbar=1" 
+              src="/agenda/PanIIT-AP-Summit-brochure-2026.pdf#view=FitH&toolbar=1" 
               className="w-full h-[650px] sm:h-[850px] lg:h-[1050px] border-none"
               title="PanIIT Andhra Pradesh Summit 2026 Agenda Document"
             />
@@ -111,7 +111,7 @@ export default function AgendaPage() {
           <div className="mt-4 p-4 rounded-xl bg-blue-50/60 border border-blue-100 text-xs sm:text-sm text-gray-600 text-center">
             Viewing on a mobile device? For the best reading experience with pinch-to-zoom, you can also{' '}
             <a 
-              href="https://d3liyurciwi0wb.cloudfront.net/agenda/PanIIT-AP-Summit-brochure-2026.pdf" 
+              href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[#06206A] font-bold underline hover:text-[#DD1D21]"

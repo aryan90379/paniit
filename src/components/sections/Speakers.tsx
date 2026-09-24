@@ -25,7 +25,7 @@ const DISTINGUISHED_GUESTS: {
 }[] = [
   {
     image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Sri%20Sai%20Prasad%20Guttapalli%20Chief%20Secretary%20of%20Andhra%20Pradesh.png',
-    name: 'Sri Sai Prasad Guttapalli',
+    name: 'Sri G. Sai Prasad, IAS',
     role: "Chief Secretary of\nAndhra Pradesh",
     org: ""
   },
@@ -53,19 +53,24 @@ const KEY_GUESTS = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Suhas%20Joshi%2C%20Director%2C%20IIT%20Indore.jpg', name: 'Prof. Suhas Joshi', role: 'Director\nIIT Indore' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/prof%20a%20seshadri%20sekhar%20director%20iit%20palakkad-Picsart-AiImageEnhancer.jpg', name: 'Dr. A. Seshadri Sekhar', role: 'Director\nIIT Palakkad' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Laxmidhar%20Behera.jpeg', name: 'Prof. Laxmidhar Behera', role: 'Director\nIIT Mandi' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20K,%20V,%20Krishna%20Rao-Picsart-AiImageEnhancer.jpeg', name: 'Dr. K. V. Krishna Rao', role: 'Former Deputy Director\nIIT Bombay' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof,%20K,%20V,%20Krishna%20Rao-Picsart-AiImageEnhancer.jpeg', name: 'Prof. K. V. Krishna Rao', role: 'Director\nNIT Andhra Pradesh' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shalivahan.png', name: 'Prof. Shalivahan Srivastava', role: 'Director, Indian Institute of\nPetroleum & Energy, Vizag' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/balaram%20ravindran.png', name: 'Prof. Balaraman Ravindran', role: 'Head of Department of Data Science\nand AI at IIT Madras, WSAI, RBCDSAI &\nCeRAI at IIT Madras.' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Arun%20Tangirala.jpg', name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' }
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Prof.%20Arun%20Tangirala.jpg', name: 'Prof. Arun Tangirala', role: 'Dean, CDO, PI, AI Based Agritech\nIIT Tirupati' },
+  { image: '/speakers/manoj-singh-gaur.png', name: 'Prof. Manoj Singh Gaur', role: 'Director\nIIT Jammu' },
+  { image: '/speakers/tata-narasinga-rao.jpeg', name: 'Prof. Tata Narasinga Rao', role: 'Vice Chancellor\nSri Venkateswara University' },
+  { image: '/speakers/v-uma.png', name: 'Prof. V. Uma', role: 'Vice Chancellor\nSri Padmavati Mahila Visvavidyalayam' },
+  { image: '/speakers/csrk-prasad.jpeg', name: 'Prof. C.S.R.K. Prasad', role: 'Vice Chancellor\nJNTU-Kakinada' },
+  { image: '/speakers/balamurali-shankar.jpeg', name: 'Mr. Balamurali Shankar', role: 'Chief Knowledge Officer\nIITM Pravartak Technologies Foundation' },
+  { image: '/speakers/mj-shankar-raman.jpeg', name: 'Dr. M. J. Shankar Raman', role: 'CEO\nIITM Pravartak Technologies Foundation' },
 ];
 
 const INDUSTRY_LEADERS = [
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/lalit%20agarwal.png', name: 'Sri Lalit Agarwal', role: 'Managing Director, India Region\nSchlumberger India' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Sri%20Yaram%20Vijay%20Kumar.png', name: 'Sri Yaram Vijay Kumar', role: 'Country Leader - India\nHoneywell Aerospace' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Hitesh%20Garg%20(India%20MD)%20NXP_Semiconductors%20(2)%20(1).jpg', name: 'Sri Hitesh Garg', role: 'Vice President and India Country Manager\nNXP Semiconductors' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/arum%20ramchandani.png', name: 'Sri Arun T. Ramchandani', role: 'Senior VP & Head\nL&T Precision Engineering & Systems' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/amith%20Singhee.png', name: 'Sri Amith Singhee', role: 'Chief Technology Officer\nIBM India and South Asia' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/C%20V%20Sridhar.png', name: 'Sri C V Sridhar', role: 'Mission Director\nAndhra Pradesh State Quantum Mission (APSQM) and the Amaravati Quantum Valley' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/lalit%20agarwal.png', name: 'Sri Lalit Aggarwal', role: 'India Head\nSchlumberger India' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Sri%20Yaram%20Vijay%20Kumar.png', name: 'Sri Yaram Vijay Kumar', role: 'India MD\nHoneywell Aerospace' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Hitesh%20Garg%20(India%20MD)%20NXP_Semiconductors%20(2)%20(1).jpg', name: 'Sri Hitesh Garg', role: 'India MD\nNXP Semiconductors' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/arum%20ramchandani.png', name: 'Sri Arun Ramchandani', role: 'Sr Vice President & Head\nL&T Precision Engineering & Systems' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/amith%20Singhee.png', name: 'Sri Amit Singhee', role: 'Director, IBM Research India & IBM Software Innovation Lab\nCTO, IBM India & South Asia' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Dr.%20Giridhar%20Parvatam.jpg', name: 'Dr. Giridhar Parvatam', role: 'Head\nCFTRI' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ankit%20todi.png', name: 'Sri Ankit Todi', role: 'Chief Sustainability Officer\nMahindra Group' },
   ...speakersBySection('industry').map((speaker) => ({
@@ -85,8 +90,7 @@ const VENTURE_INVESTORS = speakersBySection('investors').map((speaker) => ({
 const EMERGING_VENTURES = [
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/naga%20bharath%20daka.png', name: 'Sri Naga Bharath Daka', role: 'Co-founder & CTO\nSkyroot Aerospace' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/suyash%20singh.png', name: 'Sri Suyash Singh', role: 'Co-founder & CEO\nGalaxEye' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ramesh%20hariharan.png', name: 'Dr. Ramesh Hariharan', role: 'CEO & Co-Founder\nStrand Life Sciences' },
-  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/taslimarif%20saiyed.png', name: 'Dr. Taslimarif Saiyed, PhD', role: 'Director and CEO\nC-CAMP' },
+  { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ramesh%20hariharan.png', name: 'Dr. Ramesh Hariharan', role: 'Founder & CEO\nStrand Life Sciences' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Kaustubh%20Dhonde.png', name: 'Sri Kaustubh Dhonde', role: 'Co-founder & CEO\nAutoNxt' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/shailesh%20kumar.png', name: 'Sri Shailesh Kumar', role: 'Head of AI\nJio' },
   { image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/ganesh%20ramakrishnan.png', name: 'Prof. Ganesh Ramakrishnan', role: 'Founding Director, BharatGen' },
@@ -153,6 +157,7 @@ export default function Speakers() {
                       (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
                     }}
                     className={`w-full h-full object-cover rounded-full bg-white portrait-ring ${guest.imageFocus ? 'object-[center_22%]' : ''}`}
+                    style={guest.imageFocus ? { objectPosition: 'center 22%' } : undefined}
                   />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-[#06206A] mb-2">{guest.name}</h3>

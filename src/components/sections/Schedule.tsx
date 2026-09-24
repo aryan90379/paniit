@@ -33,7 +33,7 @@ export default function Schedule() {
             >
               <div className="relative w-full bg-slate-50">
                 <img 
-                  src="https://d3liyurciwi0wb.cloudfront.net/agenda/schedule.jpeg"
+                  src="/agenda/schedule.jpeg"
                   alt="PanIIT Andhra Pradesh Summit 2026 Program Schedule"
                   className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 />
@@ -102,7 +102,7 @@ export default function Schedule() {
               </Link>
 
               <a
-                href="https://d3liyurciwi0wb.cloudfront.net/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
+                href="/agenda/PanIIT-AP-Summit-brochure-2026.pdf"
                 download="PanIIT AP Summit brochure 2026.pdf"
                 className="inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 rounded-full bg-transparent text-[#06206A] font-semibold text-sm sm:text-base border border-[#06206A]/30 hover:border-[#06206A] hover:bg-white/60 transition-colors"
               >
