@@ -193,6 +193,12 @@ export const COMMITTEE_MEMBERS: CommitteeMember[] = [
     category: 'Organising Committee',
     image: 'https://d3liyurciwi0wb.cloudfront.net/organising%20commitee/devanand%20(1).png',
   },
+  {
+    name: 'Rama Kishore',
+    role: '',
+    category: 'Organising Committee',
+    image: '/committee/rama-kishore.jpeg',
+  },
 ];
 
 export const ALL_COMMITTEE_MEMBERS: CommitteeMember[] = [
