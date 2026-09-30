@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
 
     return [
       {
-        source: '/(.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff2|woff|ttf|pdf))',
+        source: '/:all*(svg|png|jpg|jpeg|gif|webp|ico|woff2|woff|ttf|pdf)',
         headers: [
           {
             key: 'Cache-Control',
