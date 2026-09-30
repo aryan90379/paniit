@@ -34,12 +34,6 @@ const DISTINGUISHED_GUESTS: {
     role: "Chief Secretary of\nAndhra Pradesh",
     org: ""
   },
-  {
-    image: 'https://d3liyurciwi0wb.cloudfront.net/dignitaries/Dr.%20Sunil%20Kumar%20Barnwal.jpg',
-    name: 'Dr. Sunil Kumar Barnwal',
-    role: "Chief Executive Officer,\nNational Health Authority,\nMinistry of Health and\nFamily Welfare, Government\nof India",
-    org: ""
-  },
   ...speakersBySection('distinguished').map((speaker) => ({
     image: speaker.image,
     imageFocus: speaker.imageFocus,
@@ -66,8 +60,7 @@ const KEY_GUESTS = [
   { image: '/speakers/tata-narasinga-rao.jpeg', name: 'Prof. Tata Narasinga Rao', role: 'Vice Chancellor\nSri Venkateswara University' },
   { image: '/speakers/v-uma.png', name: 'Prof. V. Uma', role: 'Vice Chancellor\nSri Padmavati Mahila Visvavidyalayam', imageFocus: 'center 18%' },
   { image: '/speakers/csrk-prasad.jpeg', name: 'Prof. C.S.R.K. Prasad', role: 'Vice Chancellor\nJNTU-Kakinada' },
-  { image: '/speakers/balamurali-shankar.jpeg', name: 'Mr. Balamurali Shankar', role: 'Chief Knowledge Officer\nIITM Pravartak Technologies Foundation', imageFocus: '0% 40%' },
-  { image: '/speakers/mj-shankar-raman.jpeg', name: 'Dr. M. J. Shankar Raman', role: 'CEO\nIITM Pravartak Technologies Foundation' },
+  { image: '/speakers/madhusudhanan-baskaran.jpg', name: 'Sri Madhusudhanan Baskaran', role: 'Chief Data & AI Strategist\nCentre for Human Centric Artificial Intelligence, IITM Pravartak' },
 ];
 
 const INDUSTRY_LEADERS = [
