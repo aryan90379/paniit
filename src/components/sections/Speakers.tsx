@@ -102,13 +102,13 @@ const EMERGING_VENTURES = [
   })),
 ];
 
-const SpeakerCard = ({ speaker }: { speaker: { image?: string; imageFocus?: string; name: string; role: string } }) => (
+const SpeakerCard = ({ speaker, className = '' }: { speaker: { image?: string; imageFocus?: string; name: string; role: string }, className?: string }) => (
   <motion.div
     initial={{ opacity: 0, y: 18 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-    className="group flex flex-col items-center text-center p-4 md:p-6 relative h-full"
+    className={`group flex flex-col items-center text-center p-4 md:p-6 relative h-full ${className}`}
   >
     <div className="relative w-28 h-28 md:w-40 md:h-40 mb-5">
       <img 
@@ -143,7 +143,7 @@ export default function Speakers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.5, delay: Math.min(i * 0.04, 0.24), ease: [0.22, 1, 0.36, 1] }}
-                className="group flex flex-col items-center text-center p-4 md:p-6"
+                className={`group flex flex-col items-center text-center p-4 md:p-6 ${DISTINGUISHED_GUESTS.length % 2 !== 0 && i === DISTINGUISHED_GUESTS.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}
               >
                 <div className="relative w-32 h-32 md:w-44 md:h-44 mb-6">
                   <img
@@ -173,7 +173,7 @@ export default function Speakers() {
           <SectionHeading title="IIT Directors and Academicians" className="mb-12 md:mb-16" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
             {KEY_GUESTS.map((speaker, i) => (
-              <SpeakerCard key={i} speaker={speaker} />
+              <SpeakerCard key={i} speaker={speaker} className={KEY_GUESTS.length % 2 !== 0 && i === KEY_GUESTS.length - 1 ? 'col-span-2 md:col-span-1' : ''} />
             ))}
           </div>
         </div>
@@ -184,7 +184,7 @@ export default function Speakers() {
           <SectionHeading title="Industry Leaders" className="mb-12 md:mb-16" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
             {INDUSTRY_LEADERS.map((speaker, i) => (
-              <SpeakerCard key={i} speaker={speaker} />
+              <SpeakerCard key={i} speaker={speaker} className={INDUSTRY_LEADERS.length % 2 !== 0 && i === INDUSTRY_LEADERS.length - 1 ? 'col-span-2 md:col-span-1' : ''} />
             ))}
           </div>
         </div>
@@ -194,8 +194,8 @@ export default function Speakers() {
         <div className="container mx-auto px-4 max-w-6xl">
           <SectionHeading title="Venture Capitalists & Investors" className="mb-12 md:mb-16" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
-            {VENTURE_INVESTORS.map((speaker) => (
-              <SpeakerCard key={speaker.name} speaker={speaker} />
+            {VENTURE_INVESTORS.map((speaker, i) => (
+              <SpeakerCard key={speaker.name} speaker={speaker} className={VENTURE_INVESTORS.length % 2 !== 0 && i === VENTURE_INVESTORS.length - 1 ? 'col-span-2 md:col-span-1' : ''} />
             ))}
           </div>
         </div>
@@ -208,7 +208,7 @@ export default function Speakers() {
             {EMERGING_VENTURES.map((speaker, i) => (
               <SpeakerCard key={i} speaker={speaker} />
             ))}
-            <div className="flex flex-col justify-center items-center h-full min-h-[200px] p-4">
+            <div className={`flex flex-col justify-center items-center h-full min-h-[200px] p-4 ${(EMERGING_VENTURES.length + 1) % 2 !== 0 ? 'col-span-2 md:col-span-1' : ''}`}>
               <div className="font-serif text-xl md:text-2xl font-medium text-[#06206A]">+ Many More</div>
             </div>
           </div>
